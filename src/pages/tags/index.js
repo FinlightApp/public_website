@@ -1,8 +1,12 @@
 import * as React from "react";
-import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
 import { Link, graphql } from "gatsby";
 import Layout from "../../components/Layout";
+
+const kebabCase = string => string
+.replace(/([a-z])([A-Z])/g, "$1-$2")
+.replace(/[\s_]+/g, '-')
+.toLowerCase();
 
 const TagsPage = ({
   data: {

@@ -1,9 +1,13 @@
-const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
+
+  const kebabCase = string => string
+    .replace(/([a-z])([A-Z])/g, "$1-$2")
+    .replace(/[\s_]+/g, '-')
+    .toLowerCase();
 
   return graphql(`
     {
@@ -49,16 +53,16 @@ exports.createPages = ({ actions, graphql }) => {
     let tags = []
     // Iterate through each post, putting all found tags into `tags`
     posts.forEach((edge) => {
-      if (_.get(edge, `node.frontmatter.tags`)) {
+      if (edge?.node?.frontmatter?.tags) {
         tags = tags.concat(edge.node.frontmatter.tags)
       }
     })
     // Eliminate duplicate tags
-    tags = _.uniq(tags)
+    tags = [...new Set(tags)]
 
     // Make tag pages
     tags.forEach((tag) => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`
+      const tagPath = `/tags/${kebabCase(tag)}/`
 
       createPage({
         path: tagPath,

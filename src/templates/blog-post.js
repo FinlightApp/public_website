@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
@@ -16,6 +15,10 @@ export const BlogPostTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
+  const kebabCase = string => string
+    .replace(/([a-z])([A-Z])/g, "$1-$2")
+    .replace(/[\s_]+/g, '-')
+    .toLowerCase();
 
   return (
     <section className="section">
@@ -33,7 +36,7 @@ export const BlogPostTemplate = ({
                 <h4>Tags</h4>
                 <ul className="taglist">
                   {tags.map((tag) => (
-                    <li key={tag + `tag`}>
+                    <li key={`${tag}tag`}>
                       <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                     </li>
                   ))}
