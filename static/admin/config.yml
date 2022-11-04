@@ -13,6 +13,22 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "components"
+    label: "components"
+    files:
+      - file: "src/pages/components/hero.md"
+        label: "hero page"
+        name: "hero"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "hero-page",
+            }
+          - { label: "title", name: "title", widget: "string" }
+          - { label: image, name: image, widget: image }
+          - { label: heading, name: heading, widget: string }
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
@@ -32,7 +48,6 @@ collections:
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
-
   - name: "pages"
     label: "Pages"
     files:
@@ -48,8 +63,11 @@ collections:
             }
           - { label: Title, name: title, widget: string }
           - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
           - { label: Subheading, name: subheading, widget: string }
+          - { label: Title2, name: title2, widget: string }
+          - { label: Image2, name: image2, widget: image }
+          - { label: Subheading2, name: subheading2, widget: string }
+          - { label: Heading, name: heading, widget: string }
           - {
               label: Mainpitch,
               name: mainpitch,
