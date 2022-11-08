@@ -24,8 +24,16 @@ export const IndexPageTemplate = ({
   const heroImage = getImage(image) || image;
   return (
     <div>
-      <FullWidthImage img={heroImage} title={title} subheading={subheading} />
-      <Hero img={heroImage} imageHero={imageHero} title={title} subheading={subheading} button={button} />
+      <FullWidthImage 
+        img={heroImage}
+        title={title}
+        subheading={subheading} />
+      <Hero 
+        img={heroImage}
+        imageHero={imageHero}
+        title={title}
+        subheading={subheading}
+        button={button} />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -118,37 +126,37 @@ IndexPage.propTypes = {
 export default IndexPage;
 
 export const pageQuery = graphql`
-query IndexPageTemplate {
-  markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-    frontmatter {
-      title
-      image {
-        childImageSharp {
-          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-        }
-      }
-      imageHero
-      heading
-      subheading
-      button
-      mainpitch {
+  query IndexPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+      frontmatter {
         title
-        description
-      }
-      description
-      intro {
-        blurbs {
-          image {
-            childImageSharp {
-              gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
-            }
+        image {
+          childImageSharp {
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
-          text
         }
+        imageHero
         heading
+        subheading
+        button
+        mainpitch {
+          title
+          description
+        }
         description
+        intro {
+          blurbs {
+            image {
+              childImageSharp {
+                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+              }
+            }
+            text
+          }
+          heading
+          description
+        }
       }
     }
   }
-}
 `;
