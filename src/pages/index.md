@@ -2,6 +2,7 @@
 templateKey: index-page
 title: Great coffee with suger
 image: /img/jumbotron.jpg
+imageHero: /img/jumbotron.jpg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:

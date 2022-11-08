@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import HeroImg from '../img/new_design/Mask group.svg'
 export default function FullWidthImage(props) {
   const {
     img,
+    imageHero,
     title,
     subheading,
     imgPosition = 'center',
@@ -30,7 +30,7 @@ export default function FullWidthImage(props) {
         h-full w-full
         px-12'>
           <img
-            src={ HeroImg }
+            src={ imageHero }
             className='self-center lg-w-full lg:h-auto'
             alt='heroImg'/>
         </div>
