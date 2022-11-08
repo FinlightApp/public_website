@@ -9,16 +9,7 @@ export default function Hero(props) {
     title,
     subheading,
     button,
-    imgPosition = 'center',
   } = props;
-
-  const backgroundImage = {
-    backgroundImage: `url('${ img }')`,
-    backgroundSize: 'cover',
-    position: imgPosition,
-    height: '800px',
-    width: '100%'
-  };
 
   return (
     <React.Fragment>
@@ -27,8 +18,7 @@ export default function Hero(props) {
         pt-48 lg:pt-52 md:py-10
         lg:gap-10
         bg-[url${(img)}] bg-cover bg-center
-      `}
-      style={ backgroundImage }>
+      `} >
         <div
         className='
           hidden md:flex md:flex-col

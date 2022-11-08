@@ -14,15 +14,14 @@ export const IndexPageTemplate = ({
   image,
   imageHero,
   title,
-  subheading,
   heading,
+  subheading,
   button,
   mainpitch,
   description,
   intro,
 }) => {
   const heroImage = getImage(image) || image;
-  
   return (
     <div>
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
