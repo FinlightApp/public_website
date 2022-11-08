@@ -1,21 +1,18 @@
-import React from "react";
+import React from 'react';
 import PropTypes from "prop-types";
-import { GatsbyImage } from "gatsby-plugin-image";
-
 import HeroImg from '../img/new_design/Mask group.svg'
-
 export default function FullWidthImage(props) {
   const {
     img,
     title,
     subheading,
-    imgPosition = "top left",
+    imgPosition = 'center',
   } = props;
 
   const backgroundImage = {
     backgroundImage: `url('${img}')`,
     backgroundSize: 'cover',
-    position: 'imgPosition',
+    position: imgPosition,
     height: '800px',
     width: '100%'
   };
@@ -26,14 +23,14 @@ export default function FullWidthImage(props) {
       flex md:flex-col lg:flex-row
       pt-48 lg:pt-52 md:py-10
       lg:gap-10'
-      style={backgroundImage}>
+      style={ backgroundImage }>
         <div
         className='
         hidden md:flex md:flex-col
         h-full w-full
         px-12'>
           <img
-            src={HeroImg}
+            src={ HeroImg }
             className='self-center lg-w-full lg:h-auto'
             alt='heroImg'/>
         </div>
@@ -44,14 +41,14 @@ export default function FullWidthImage(props) {
           <h1 className='
           m:width-full
           lg:text-5xl text-3xl'>
-            {'We are making VC investing even simpler than public stock investing'}
+            { title }
           </h1>
           <p
           className='
           sm:width-full
           md:text-xl
           sm:text-base'>
-            { 'We do more than enabling investors to allocate to top decile VCs across vintages,regions and sectors from as low as 10k GBP. We also eliminate the entire admin GPs have to go through to on-board, serve and report to LPs.' }
+            { subheading }
           </p>
           <button
           className='
@@ -60,7 +57,7 @@ export default function FullWidthImage(props) {
           p-2
           bg-blue-600 text-white
           rounded'>
-            {'Info Request'}
+            { 'Info Request' }
           </button>
         </div>
       </div>
