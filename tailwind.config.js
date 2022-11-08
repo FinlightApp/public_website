@@ -5,20 +5,7 @@ module.exports = {
      "./src/components/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
-    extend: {
-      screens: {
-        'sm': '640px',
-        'md': '768px',
-        'lg': '1024px',
-        'xl': '1280px',
-        '2xl': '1536px',
-      },
-      height: {
-        '100': '400px',
-        '112': '700px',
-        '144': '800px'
-      },
-    },
+    extend: {}
   },
   plugins: [],
 }

@@ -7,22 +7,26 @@ import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
+import Hero from '../components/Hero'
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   image,
+  imageHero,
   title,
   subheading,
   heading,
+  button,
   mainpitch,
   description,
   intro,
 }) => {
-  const heroImg = getImage(image) || image;
+  const heroImage = getImage(image) || image;
   
   return (
     <div>
-      <FullWidthImage img={heroImg} title={title} subheading={subheading} />
+      <FullWidthImage img={heroImage} title={title} subheading={subheading} />
+      <Hero img={heroImage} imageHero={imageHero} title={title} subheading={subheading} button={button} />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -124,8 +128,10 @@ query IndexPageTemplate {
           gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
+      imageHero
       heading
       subheading
+      button
       mainpitch {
         title
         description

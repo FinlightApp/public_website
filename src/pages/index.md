@@ -5,6 +5,7 @@ image: /img/jumbotron.jpg
 imageHero: /img/jumbotron.jpg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
+button: Info Request
 mainpitch:
   title: Why Kaldi
   description: >

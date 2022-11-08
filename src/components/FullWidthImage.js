@@ -1,65 +1,102 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
+import { GatsbyImage } from "gatsby-plugin-image";
+
 export default function FullWidthImage(props) {
   const {
+    height = 400,
     img,
-    imageHero,
     title,
     subheading,
-    imgPosition = 'center',
+    imgPosition = "top left",
   } = props;
-
-  const backgroundImage = {
-    backgroundImage: `url('${img}')`,
-    backgroundSize: 'cover',
-    position: imgPosition,
-    height: '800px',
-    width: '100%'
-  };
 
   return (
     <React.Fragment>
-      <div className='
-      flex md:flex-col lg:flex-row
-      pt-48 lg:pt-52 md:py-10
-      lg:gap-10'
-      style={ backgroundImage }>
-        <div
-        className='
-        hidden md:flex md:flex-col
-        h-full w-full
-        px-12'>
+      <div
+        className="margin-top-0"
+        style={{
+          display: "grid",
+          alignItems: "center",
+        }}
+      >
+        {img?.url ? (
           <img
-            src={ imageHero }
-            className='self-center lg-w-full lg:h-auto'
-            alt='heroImg'/>
-        </div>
-        <div className='
-        flex flex-col
-        px-12 gap-y-10
-        text-center text-white'>
-          <h1 className='
-          m:width-full
-          lg:text-5xl text-3xl'>
-            { title }
-          </h1>
-          <p
-          className='
-          sm:width-full
-          md:text-xl
-          sm:text-base'>
-            { subheading }
-          </p>
-          <button
-          className='
-          self-center
-          w-40
-          p-2
-          bg-blue-600 text-white
-          rounded'>
-            { 'Info Request' }
-          </button>
-        </div>
+            src={img}
+            objectFit={"cover"}
+            objectPosition={imgPosition}
+            style={{
+              gridArea: "1/1",
+              // You can set a maximum height for the image, if you wish.
+              height: height,
+              width: "100%",
+            }}
+            // This is a presentational image, so the alt should be an empty string
+            alt=""
+          />
+        ) : (
+          <GatsbyImage
+            image={img}
+            objectFit={"cover"}
+            objectPosition={imgPosition}
+            style={{
+              gridArea: "1/1",
+              // You can set a maximum height for the image, if you wish.
+              maxHeight: height,
+            }}
+            layout="fullWidth"
+            // You can optionally force an aspect ratio for the generated image
+            aspectratio={3 / 1}
+            // This is a presentational image, so the alt should be an empty string
+            alt=""
+            formats={["auto", "webp", "avif"]}
+          />
+        )}
+        {(title || subheading) && (
+          <div
+            style={{
+              // By using the same grid area for both, they are stacked on top of each other
+              gridArea: "1/1",
+              position: "relative",
+              // This centers the other elements inside the hero component
+              placeItems: "center",
+              display: "grid",
+            }}
+          >
+            {/* Any content here will be centered in the component */}
+            {title && (
+              <h1
+                className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                style={{
+                  boxShadow:
+                    "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
+                  backgroundColor: "rgb(255, 68, 0)",
+                  color: "white",
+                  lineHeight: "1",
+                  padding: "0.25em",
+                }}
+              >
+                {title}
+              </h1>
+            )}
+            {subheading && (
+              <h3
+                className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
+                style={{
+                  boxShadow:
+                    "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
+                  backgroundColor: "rgb(255, 68, 0)",
+                  color: "white",
+                  lineHeight: "1",
+                  padding: "0.25rem",
+                  marginTop: "0.5rem",
+                }}
+              >
+                {subheading}
+              </h3>
+            )}
+          </div>
+        )}
       </div>
     </React.Fragment>
   );

@@ -50,6 +50,7 @@ collections:
           - { label: ImageHero, name: imageHero, widget: image }
           - { label: Subheading, name: subheading, widget: string }
           - { label: Heading, name: heading, widget: string }
+          - { label: Button, name: button, widget: string }
           - {
               label: Mainpitch,
               name: mainpitch,
