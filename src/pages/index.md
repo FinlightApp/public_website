@@ -1,14 +1,9 @@
 ---
-templateKey: hero-page
+templateKey: index-page
 title: Great coffee with suger
 image: /img/jumbotron.jpg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
-title2: We are making VC investing even simpler than public stock investing
-image2: /img/Hero 1.svg'
-subheading2: We do more than enabling investors to allocate to top decile VCs across vintages,
-          regions and sectors from as low as 10k GBP. We also eliminate the entire admin GPs
-          have to go through to on-board, serve and report to LPs.
 mainpitch:
   title: Why Kaldi
   description: >

@@ -17,16 +17,16 @@ export default function Hero() {
     flex flex-col lg:flex-row justify-center
     h-screen
     text-center'>
-      <div className='hidden md:flex self-center justify-center  w-full'>
-        <img
+      <div className='hidden md:flex md:flex-col'>
+        <img className=''
         src={HeroImg}
         alt='PC'
         style={{ width:'500px', height: '400px' }}/>
       </div>
       <div className='
-      flex flex-col self-center
+      flex flex-col
       h-auto w-full
-      gap-8 p-8
+      gap-8 p-4
       text-white'>
         <h1 className='text-2xl md:text-5xl'>
           We are making VC investing even simpler than public stock investing
