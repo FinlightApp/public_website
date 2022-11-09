@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from "prop-types";
-import { GatsbyImage } from "gatsby-plugin-image";
+import PropTypes from 'prop-types';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 export default function Hero(props) {
   const {
@@ -13,52 +13,41 @@ export default function Hero(props) {
 
   return (
     <React.Fragment>
-      <div className={`
-        flex md:flex-col lg:flex-row
-        pt-48 lg:pt-52 md:py-10 lg:gap-10
+      <div
+      className={`
+        flex flex-1 flex-col lg:flex-row
+        p-10
         bg-[url${(img)}] bg-cover bg-center
-      `} >
+      `}>
         <div
         className='
-          hidden md:flex md:flex-col
-          h-full w-full
-          px-12
+          hidden md:flex flex-1 flex-col
+          p-10
         '>
           <GatsbyImage
           image={ imageHero }
-          className='
-            self-center
-            lg-w-full lg:h-auto
-            w-[500px] h-[400px]
-          '
+          className='self-center'
           alt='imageHero'
-          formats={['auto', 'webp', 'avif']}
+          formats={ ['auto', 'webp'] }
           />
         </div>
-        <div className='
-          flex flex-col
-          px-12 gap-y-10
-          text-center text-white
+        <div
+        className='
+          flex flex-1 flex-col
+          gap-y-10
+          text-center text-black
         '>
-          <h1 className='
-            m:width-full
-            lg:text-5xl text-3xl
-          '>
+          <h1 className='lg:text-5xl text-3xl'>
             { title }
           </h1>
           <p
-          className='
-            sm:width-full
-            md:text-xl sm:text-base
-          '>
+          className='sm:text-base md:text-xl'>
             { subheading }
           </p>
           <button
           className='
-            self-center
-            w-40
-            p-2
-            bg-blue-600 text-white
+            self-center p-2 w-40
+            bg-blue-600 text-black
             rounded
           '>
             { button }
