@@ -15,8 +15,7 @@ export default function Hero(props) {
     <React.Fragment>
       <div className={`
         flex md:flex-col lg:flex-row
-        pt-48 lg:pt-52 md:py-10
-        lg:gap-10
+        pt-48 lg:pt-52 md:py-10 lg:gap-10
         bg-[url${(img)}] bg-cover bg-center
       `} >
         <div
@@ -50,8 +49,7 @@ export default function Hero(props) {
           <p
           className='
             sm:width-full
-            md:text-xl
-            sm:text-base
+            md:text-xl sm:text-base
           '>
             { subheading }
           </p>
