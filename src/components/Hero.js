@@ -13,8 +13,7 @@ export default function Hero(props) {
 
   return (
     <React.Fragment>
-      <div
-      className={`
+      <div className={`
         flex flex-1 flex-col lg:flex-row
         p-10
         bg-[url${(img)}] bg-cover bg-center
@@ -24,15 +23,13 @@ export default function Hero(props) {
           hidden md:flex flex-1 flex-col
           p-10
         '>
-          <GatsbyImage
+          <GatsbyImage className='self-center'
           image={ imageHero }
-          className='self-center'
           alt='imageHero'
           formats={ ['auto', 'webp'] }
           />
         </div>
-        <div
-        className='
+        <div className='
           flex flex-1 flex-col
           gap-y-10
           text-center text-black
@@ -40,12 +37,10 @@ export default function Hero(props) {
           <h1 className='lg:text-5xl text-3xl'>
             { title }
           </h1>
-          <p
-          className='sm:text-base md:text-xl'>
+          <p className='sm:text-base md:text-xl'>
             { subheading }
           </p>
-          <button
-          className='
+          <button className='
             self-center p-2 w-40
             bg-blue-600 text-black
             rounded
