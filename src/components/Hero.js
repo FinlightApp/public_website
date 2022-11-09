@@ -18,8 +18,7 @@ export default function Hero(props) {
         p-10
         bg-[url${(img)}] bg-cover bg-center
       `}>
-        <div
-        className='
+        <div className='
           hidden md:flex flex-1 flex-col
           p-10
         '>
