@@ -48,9 +48,9 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: Image, name: image, widget: image }
           - { label: ImageHero, name: imageHero, widget: image }
-          - { label: Subheading, name: subheading, widget: string }
           - { label: Heading, name: heading, widget: string }
-          - { label: Button, name: button, widget: string }
+          - { label: Subheading, name: subheading, widget: string }
+          - { label: HeroButton, name: heroButton, widget: string }
           - {
               label: Mainpitch,
               name: mainpitch,

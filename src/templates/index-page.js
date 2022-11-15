@@ -7,7 +7,7 @@ import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
-import Hero from '../components/Hero'
+import Hero from '../components/hero'
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -16,24 +16,25 @@ export const IndexPageTemplate = ({
   title,
   heading,
   subheading,
-  button,
+  heroButton,
   mainpitch,
   description,
   intro,
 }) => {
-  const heroImage = getImage(image) || image;
+  const heroImageBg = getImage(image) || image;
+  const heroImg = getImage(imageHero) || imageHero;
   return (
     <div>
+      <Hero
+      img={heroImageBg}
+      imageHero={heroImg}
+      title={title}
+      subheading={subheading}
+      heroButton={ heroButton }/>
       <FullWidthImage 
-        img={heroImage}
+        img={heroImageBg}
         title={title}
         subheading={subheading} />
-      <Hero 
-        img={heroImage}
-        imageHero={imageHero}
-        title={title}
-        subheading={subheading}
-        button={button} />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -87,9 +88,11 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  ImageHero: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
+  heroButton: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   intro: PropTypes.shape({
@@ -104,9 +107,11 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
+        imageHero={frontmatter.ImageHero}
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
+        heroButton={frontmatter.heroButton}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -138,7 +143,7 @@ export const pageQuery = graphql`
         imageHero
         heading
         subheading
-        button
+        heroButton
         mainpitch {
           title
           description

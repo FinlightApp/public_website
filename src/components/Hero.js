@@ -1,52 +1,87 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import herobg from '../img/heroBg.svg'
+import heroImg from '../img/heroImage.svg'
 
 export default function Hero(props) {
   const {
     img,
-    imageHero,
     title,
+    imageHero,
     subheading,
-    button,
+    heroButton,
   } = props;
 
   return (
     <React.Fragment>
-      <div className={`
-        flex flex-1 flex-col lg:flex-row
-        p-10
-        bg-[url${(img)}] bg-cover bg-center
-      `}>
-        <div className='
-          hidden md:flex flex-1 flex-col
-          p-10
-        '>
-          <GatsbyImage className='self-center'
-          image={ imageHero }
-          alt='imageHero'
-          formats={ ['auto', 'webp'] }
-          />
-        </div>
-        <div className='
-          flex flex-1 flex-col
-          gap-y-10
-          text-center text-black
-        '>
-          <h1 className='lg:text-5xl text-3xl'>
-            { title }
-          </h1>
-          <p className='sm:text-base md:text-xl'>
-            { subheading }
-          </p>
-          <button className='
-            self-center p-2 w-40
-            bg-blue-600 text-black
-            rounded
-          '>
-            { button }
-          </button>
-        </div>
+      <div 
+      className='
+        relative flex content-center
+        margin-top-0 margin-left-0'
+      >
+        {img?.url ? (
+          <img
+          className='w-full h-full'
+          src={ herobg }
+          alt='heroBg'/>
+        ) : (
+          <GatsbyImage
+          image={ herobg }
+          formats={ ['auto', 'webp'] }/>
+        )}
+      {(title || subheading || imageHero || heroButton ) && (
+        <div
+        className='
+          absolute top-4 
+          flex flex-col lg:flex-row items-center justify-center
+          w-full h-full gap-2 
+          p-8'
+        >
+          {img?.url ? (
+            <img
+            className='
+              hidden md:flex
+              max-h-[300px] max-w-[400px]'
+              src={ heroImg }
+              alt='heroImage'/>
+            ) : (
+            <GatsbyImage
+            className='
+              hidden md:flex lg:flex-row
+              md:h-[250px] md:w-[200px]'
+            image={ heroImg }
+            formats={ ['auto', 'webp'] }/>
+            )}
+            <div 
+            className='
+              flex flex-col
+              gap-4 px-10
+              text-center'
+            >
+              {title && (
+                <h1 className='text-3xl text-white lg:text-5xl'>
+                  { title }
+                </h1>
+              )}
+              {subheading && (
+                <h3 className='text-white sm:text-base md:text-xl'>
+                  { subheading }
+                </h3>
+              )}
+              {/* {heroButton && ( */}
+                <button
+                className='
+                  self-center
+                  w-40 p-2
+                text-white bg-blue-600 rounded'
+                >
+                  { heroButton }
+                </button>
+              {/* )}  */}
+            </div>
+          </div>
+        )}
       </div>
     </React.Fragment>
   );
@@ -55,6 +90,8 @@ export default function Hero(props) {
 Hero.propTypes = {
   img: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  height: PropTypes.number,
   subheading: PropTypes.string,
+  heroButton: PropTypes.string
 };
+
+
