@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import herobg from '../img/heroBg.svg'
-import heroImg from '../img/heroImage.svg'
 
 export default function Hero(props) {
   const {
@@ -21,11 +19,11 @@ export default function Hero(props) {
         {img?.url ? (
           <img
           className='w-full h-full'
-          src={ herobg }
+          src={ img }
           alt='heroBg'/>
         ) : (
           <GatsbyImage
-          image={ herobg }
+          image={ img }
           formats={ ['auto', 'webp'] }/>
         )}
       {(title || subheading || imageHero || heroButton ) && (
@@ -37,14 +35,14 @@ export default function Hero(props) {
             className='
               hidden md:flex
               max-h-[300px] max-w-[400px]'
-              src={ heroImg }
+              src={ imageHero }
               alt='heroImage'/>
             ) : (
             <GatsbyImage
             className='
               hidden md:flex lg:flex-row
               md:h-[250px] md:w-[200px]'
-            image={ heroImg }
+            image={ imageHero }
             formats={ ['auto', 'webp'] }/>
             )}
             <div 
