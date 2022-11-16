@@ -39,6 +39,7 @@ collections:
         label: "Landing Page"
         name: "index"
         fields:
+          
           - {
               label: "Template Key",
               name: "templateKey",

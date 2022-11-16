@@ -7,8 +7,8 @@ import heroImg from '../img/heroImage.svg'
 export default function Hero(props) {
   const {
     img,
-    title,
     imageHero,
+    title,
     subheading,
     heroButton,
   } = props;
@@ -16,9 +16,7 @@ export default function Hero(props) {
   return (
     <React.Fragment>
       <div 
-      className='
-        relative flex content-center
-        margin-top-0 margin-left-0'
+      className='relative flex content-center margin-top-0 margin-left-0'
       >
         {img?.url ? (
           <img
@@ -32,13 +30,9 @@ export default function Hero(props) {
         )}
       {(title || subheading || imageHero || heroButton ) && (
         <div
-        className='
-          absolute top-4 
-          flex flex-col lg:flex-row items-center justify-center
-          w-full h-full gap-2 
-          p-8'
+        className='absolute flex flex-col items-center justify-center w-full h-full gap-2 p-8 top-4 lg:flex-row'
         >
-          {img?.url ? (
+          {imageHero?.url ? (
             <img
             className='
               hidden md:flex
@@ -54,10 +48,7 @@ export default function Hero(props) {
             formats={ ['auto', 'webp'] }/>
             )}
             <div 
-            className='
-              flex flex-col
-              gap-4 px-10
-              text-center'
+            className='flex flex-col gap-4 px-10 text-center '
             >
               {title && (
                 <h1 className='text-3xl text-white lg:text-5xl'>
@@ -69,16 +60,13 @@ export default function Hero(props) {
                   { subheading }
                 </h3>
               )}
-              {/* {heroButton && ( */}
+              {heroButton && (
                 <button
-                className='
-                  self-center
-                  w-40 p-2
-                text-white bg-blue-600 rounded'
+                className='self-center w-40 p-2 text-white bg-blue-600 rounded '
                 >
                   { heroButton }
                 </button>
-              {/* )}  */}
+              )}
             </div>
           </div>
         )}
@@ -89,6 +77,7 @@ export default function Hero(props) {
 
 Hero.propTypes = {
   img: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  imageHero: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   subheading: PropTypes.string,
   heroButton: PropTypes.string

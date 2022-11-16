@@ -1,8 +1,8 @@
 ---
 templateKey: index-page
 title: Great coffee with suger
-image: /img/home-jumbotron.jpg
-imageHero: /img/heroImg.svg
+image: /img/heroBg.svg
+imageHero: /img/heroImage.svg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
 heroButton: Info Request

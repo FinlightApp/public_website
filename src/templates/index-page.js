@@ -30,7 +30,7 @@ export const IndexPageTemplate = ({
       imageHero={heroImg}
       title={title}
       subheading={subheading}
-      heroButton={ heroButton }/>
+      heroButton={heroButton }/>
       <FullWidthImage 
         img={heroImageBg}
         title={title}
@@ -88,7 +88,7 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  ImageHero: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  imageHero: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
@@ -107,7 +107,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
-        imageHero={frontmatter.ImageHero}
+        imageHero={frontmatter.imageHero}
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
@@ -165,3 +165,4 @@ export const pageQuery = graphql`
     }
   }
 `;
+
