@@ -46,12 +46,12 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - { label: Title, name: title, widget: string }
+          - { label: Title Hero, name: titleHero, widget: string }
           - { label: Image, name: image, widget: image }
-          - { label: ImageHero, name: imageHero, widget: image }
+          - { label: Image Hero, name: imageHero, widget: image }
           - { label: Heading, name: heading, widget: string }
           - { label: Subheading, name: subheading, widget: string }
-          - { label: HeroButton, name: heroButton, widget: string }
+          - { label: Hero Button, name: heroButton, widget: string }
           - {
               label: Mainpitch,
               name: mainpitch,

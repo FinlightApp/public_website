@@ -6,14 +6,13 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
-import FullWidthImage from "../components/FullWidthImage";
 import Hero from '../components/hero'
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
+  titleHero,
   image,
   imageHero,
-  title,
   heading,
   subheading,
   heroButton,
@@ -28,13 +27,9 @@ export const IndexPageTemplate = ({
       <Hero
       img={heroImageBg}
       imageHero={heroImg}
-      title={title}
+      titleHero={titleHero}
       subheading={subheading}
       heroButton={heroButton }/>
-      <FullWidthImage 
-        img={heroImageBg}
-        title={title}
-        subheading={subheading} />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -89,7 +84,7 @@ export const IndexPageTemplate = ({
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   imageHero: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
+  titleHero: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
   heroButton: PropTypes.string,
@@ -108,7 +103,7 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate
         image={frontmatter.image}
         imageHero={frontmatter.imageHero}
-        title={frontmatter.title}
+        titleHero={frontmatter.titleHero}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         heroButton={frontmatter.heroButton}
@@ -134,7 +129,7 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
+        titleHero
         image {
           childImageSharp {
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)

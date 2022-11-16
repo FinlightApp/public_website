@@ -4,9 +4,9 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 export default function Hero(props) {
   const {
+    titleHero,
     img,
     imageHero,
-    title,
     subheading,
     heroButton,
   } = props;
@@ -26,7 +26,7 @@ export default function Hero(props) {
           image={ img }
           formats={ ['auto', 'webp'] }/>
         )}
-      {(title || subheading || imageHero || heroButton ) && (
+      {(titleHero || subheading || imageHero || heroButton ) && (
         <div
         className='absolute flex flex-col items-center justify-center w-full h-full gap-2 p-8 top-4 lg:flex-row'
         >
@@ -48,9 +48,9 @@ export default function Hero(props) {
             <div 
             className='flex flex-col gap-4 px-10 text-center '
             >
-              {title && (
+              {titleHero && (
                 <h1 className='text-3xl text-white lg:text-5xl'>
-                  { title }
+                  { titleHero }
                 </h1>
               )}
               {subheading && (
@@ -74,9 +74,9 @@ export default function Hero(props) {
 }
 
 Hero.propTypes = {
+  titleHero: PropTypes.string,
   img: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   imageHero: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
   subheading: PropTypes.string,
   heroButton: PropTypes.string
 };

@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: Great coffee with suger
+titleHero: Great coffee with suger
 image: /img/heroBg.svg
 imageHero: /img/heroImage.svg
 heading: Great coffee with a conscience
