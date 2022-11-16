@@ -4,10 +4,10 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 export default function Hero(props) {
   const {
-    img,
+    imageHeroBg,
     imageHero,
     title,
-    subheading,
+    subHeadingHero,
     heroButton,
   } = props;
 
@@ -16,17 +16,17 @@ export default function Hero(props) {
       <div 
       className='relative flex content-center margin-top-0 margin-left-0'
       >
-        {img?.url ? (
+        {imageHeroBg?.url ? (
           <img
           className='w-full h-full'
-          src={ img }
+          src={ imageHeroBg }
           alt='heroBg'/>
         ) : (
           <GatsbyImage
-          image={ img }
+          image={ imageHeroBg }
           formats={ ['auto', 'webp'] }/>
         )}
-      {(title || subheading || imageHero || heroButton ) && (
+      {(title || subHeadingHero || imageHero || heroButton ) && (
         <div
         className='absolute flex flex-col items-center justify-center w-full h-full gap-2 p-8 top-4 lg:flex-row'
         >
@@ -53,9 +53,9 @@ export default function Hero(props) {
                   { title }
                 </h1>
               )}
-              {subheading && (
+              {subHeadingHero && (
                 <h3 className='text-white sm:text-base md:text-xl'>
-                  { subheading }
+                  { subHeadingHero }
                 </h3>
               )}
               {heroButton && (
@@ -74,10 +74,10 @@ export default function Hero(props) {
 }
 
 Hero.propTypes = {
-  img: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  imageHeroBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   imageHero: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  subheading: PropTypes.string,
+  subHeadingHero: PropTypes.string,
   heroButton: PropTypes.string
 };
 

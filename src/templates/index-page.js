@@ -6,35 +6,30 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
-import FullWidthImage from "../components/FullWidthImage";
 import Hero from '../components/hero'
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
-  image,
+  imageHeroBg,
   imageHero,
   title,
   heading,
-  subheading,
+  subHeadingHero,
   heroButton,
   mainpitch,
   description,
   intro,
 }) => {
-  const heroImageBg = getImage(image) || image;
+  const heroImageBg = getImage(imageHeroBg) || imageHeroBg;
   const heroImg = getImage(imageHero) || imageHero;
   return (
     <div>
       <Hero
-      img={heroImageBg}
+      imageHeroBg={heroImageBg}
       imageHero={heroImg}
       title={title}
-      subheading={subheading}
+      subHeadingHero={subHeadingHero}
       heroButton={heroButton }/>
-      <FullWidthImage 
-        img={heroImageBg}
-        title={title}
-        subheading={subheading} />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -87,11 +82,11 @@ export const IndexPageTemplate = ({
 };
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  imageHeroBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   imageHero: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
-  subheading: PropTypes.string,
+  subHeadingHero: PropTypes.string,
   heroButton: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
@@ -106,11 +101,11 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
+        imageHeroBg={frontmatter.imageHeroBg}
         imageHero={frontmatter.imageHero}
         title={frontmatter.title}
         heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
+        subHeadingHero={frontmatter.subHeadingHero}
         heroButton={frontmatter.heroButton}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
@@ -135,14 +130,14 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
-        image {
+        imageHeroBg {
           childImageSharp {
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
         imageHero
         heading
-        subheading
+        subHeadingHero
         heroButton
         mainpitch {
           title
