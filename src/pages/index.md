@@ -2,9 +2,11 @@
 templateKey: index-page
 titleHero: Great coffee with suger
 image: /img/heroBg.svg
+title: Great coffee with suger
+imageHeroBg: /img/heroBg.svg
 imageHero: /img/heroImage.svg
 heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+subHeadingHero: Support sustainable farming while enjoying a cup
 heroButton: Info Request
 mainpitch:
   title: Why Kaldi

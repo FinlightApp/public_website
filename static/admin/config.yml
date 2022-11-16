@@ -47,10 +47,10 @@ collections:
               default: "index-page",
             }
           - { label: Title Hero, name: titleHero, widget: string }
-          - { label: Image, name: image, widget: image }
+          - { label: Image Hero Bg, name: imageHeroBg, widget: image }
           - { label: Image Hero, name: imageHero, widget: image }
           - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
+          - { label: Hero Subheading, name: subHeadingHero, widget: string }
           - { label: Hero Button, name: heroButton, widget: string }
           - {
               label: Mainpitch,

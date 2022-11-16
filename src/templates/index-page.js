@@ -11,24 +11,24 @@ import Hero from '../components/hero'
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   titleHero,
-  image,
+  imageHeroBg,
   imageHero,
   heading,
-  subheading,
+  subHeadingHero,
   heroButton,
   mainpitch,
   description,
   intro,
 }) => {
-  const heroImageBg = getImage(image) || image;
+  const heroImageBg = getImage(imageHeroBg) || imageHeroBg;
   const heroImg = getImage(imageHero) || imageHero;
   return (
     <div>
       <Hero
-      img={heroImageBg}
+      imageHeroBg={heroImageBg}
       imageHero={heroImg}
       titleHero={titleHero}
-      subheading={subheading}
+      subHeadingHero={subHeadingHero}
       heroButton={heroButton }/>
       <section className="section section--gradient">
         <div className="container">
@@ -82,11 +82,11 @@ export const IndexPageTemplate = ({
 };
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  imageHeroBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   imageHero: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   titleHero: PropTypes.string,
   heading: PropTypes.string,
-  subheading: PropTypes.string,
+  subHeadingHero: PropTypes.string,
   heroButton: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
@@ -101,11 +101,11 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
+        imageHeroBg={frontmatter.imageHeroBg}
         imageHero={frontmatter.imageHero}
         titleHero={frontmatter.titleHero}
         heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
+        subHeadingHero={frontmatter.subHeadingHero}
         heroButton={frontmatter.heroButton}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
@@ -130,14 +130,14 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         titleHero
-        image {
+        imageHeroBg {
           childImageSharp {
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
         imageHero
         heading
-        subheading
+        subHeadingHero
         heroButton
         mainpitch {
           title
