@@ -10,25 +10,25 @@ import Hero from '../components/hero'
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
-  titleHero,
-  imageHeroBg,
-  imageHero,
-  heading,
-  subHeadingHero,
+  heroImageBg,
+  heroImage,
+  heroTitle,
+  heroSubHeading,
   heroButton,
+  heading,
   mainpitch,
   description,
   intro,
 }) => {
-  const heroImageBg = getImage(imageHeroBg) || imageHeroBg;
-  const heroImg = getImage(imageHero) || imageHero;
+  const heroImgBg = getImage(heroImageBg) || heroImageBg;
+  const heroImg = getImage(heroImage) || heroImage;
   return (
     <div>
       <Hero
-      imageHeroBg={heroImageBg}
-      imageHero={heroImg}
-      titleHero={titleHero}
-      subHeadingHero={subHeadingHero}
+      heroImageBg={heroImgBg}
+      heroImage={heroImg}
+      heroTitle={heroTitle}
+      heroSubHeading={heroSubHeading}
       heroButton={heroButton }/>
       <section className="section section--gradient">
         <div className="container">
@@ -82,12 +82,12 @@ export const IndexPageTemplate = ({
 };
 
 IndexPageTemplate.propTypes = {
-  imageHeroBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  imageHero: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  titleHero: PropTypes.string,
-  heading: PropTypes.string,
-  subHeadingHero: PropTypes.string,
+  heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  heroImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  heroTitle: PropTypes.string,
+  heroSubHeading: PropTypes.string,
   heroButton: PropTypes.string,
+  heading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   intro: PropTypes.shape({
@@ -101,12 +101,12 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        imageHeroBg={frontmatter.imageHeroBg}
-        imageHero={frontmatter.imageHero}
-        titleHero={frontmatter.titleHero}
-        heading={frontmatter.heading}
-        subHeadingHero={frontmatter.subHeadingHero}
+        heroImageBg={frontmatter.heroImageBg}
+        heroImage={frontmatter.heroImage}
+        heroTitle={frontmatter.heroTitle}
+        heroSubHeading={frontmatter.heroSubHeading}
         heroButton={frontmatter.heroButton}
+        heading={frontmatter.heading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -129,16 +129,12 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        titleHero
-        imageHeroBg {
-          childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-          }
-        }
-        imageHero
-        heading
-        subHeadingHero
+        heroImageBg
+        heroImage
+        heroTitle
+        heroSubHeading
         heroButton
+        heading
         mainpitch {
           title
           description
