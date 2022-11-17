@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
-heroImageBg: /img/chemex.jpg
-heroImage: /img/chemex.jpg
+heroImageBg: /img/heroBg.svg
+heroImage: /img/heroImage.svg
 heroTitle: Great coffee with suger
 heroSubHeading: Support sustainable farming while enjoying a cup
 heroButton: Info Request
