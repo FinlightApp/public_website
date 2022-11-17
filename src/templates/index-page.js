@@ -130,11 +130,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         titleHero
-        imageHeroBg {
-          childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-          }
-        }
+        imageHeroBg
         imageHero
         heading
         subHeadingHero
