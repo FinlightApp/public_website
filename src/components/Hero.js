@@ -14,7 +14,12 @@ export default function Hero(props) {
   return (
     <React.Fragment>
       <div
-      className='relative flex content-center margin-top-0 margin-left-0'>
+      className='
+        relative
+        flex 
+        content-center
+        margin-top-0 margin-left-0
+      '>
         { imageBg?.url ? (
           <img
           className='w-full max-h-[500px]'
@@ -29,7 +34,12 @@ export default function Hero(props) {
         ) }
       { ( title || subHeading || image || button ) && (
         <div
-        className='absolute top-0 flex flex-col items-center justify-center w-full h-full lg:flex-row'>
+        className='
+          absolute top-0
+          flex flex-col lg:flex-row
+          items-center justify-center
+          w-full h-full
+        '>
           <div className='flex justify-center flex-1'>
             { image?.url ? (
               <img
@@ -51,7 +61,11 @@ export default function Hero(props) {
               ) }
             </div>
             <div
-            className='flex flex-col flex-1 gap-4 text-center '>
+            className='
+              flex flex-col flex-1
+              gap-4
+              text-center
+            '>
               { title && (
                 <h1 className='text-3xl text-white lg:text-5xl'>
                   { title }
@@ -64,7 +78,13 @@ export default function Hero(props) {
               ) }
               { button && (
                 <button
-                className='self-center w-40 p-2 text-white bg-blue-600 rounded '>
+                className='
+                  self-center
+                  w-40
+                  p-2
+                  text-white bg-blue-600
+                  rounded 
+                '>
                   { button }
                 </button>
               ) }
