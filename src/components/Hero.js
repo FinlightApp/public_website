@@ -38,21 +38,24 @@ export default function Hero(props) {
           absolute top-0
           flex flex-col lg:flex-row
           items-center justify-center
+          p-8
           w-full h-full
         '>
-          <div className='flex justify-center flex-1'>
+          <div className='
+            hidden md:flex lg:flex-row
+            flex-1
+            justify-center
+          '>
             { image?.url ? (
               <img
               className='
-                hidden md:flex lg:flex-row
-                md:h-[250px] md:w-[350px]  
+                md:h-[250px] md:w-[350px]
               '
               src={ image }
               alt='heroImage' />
               ) : (
               <GatsbyImage
               className='
-                hidden md:flex lg:flex-row
                 md:h-[250px] md:w-[350px]
               '
               image={ image }
@@ -63,6 +66,7 @@ export default function Hero(props) {
             <div
             className='
               flex flex-col flex-1
+              justify-center
               gap-4
               text-center
             '>
