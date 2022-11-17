@@ -6,7 +6,7 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
-import Hero from '../components/hero';
+import Hero from '../components/Hero';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -129,8 +129,16 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        heroImageBg
-        heroImage
+        heroImageBg  {
+          childImageSharp {
+            gatsbyImageData(quality: 100)
+          }
+        }
+        heroImage {
+          childImageSharp {
+            gatsbyImageData(quality: 100)
+          }
+        }
         heroTitle
         heroSubHeading
         heroButton
