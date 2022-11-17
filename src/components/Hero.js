@@ -50,7 +50,7 @@ export default function Hero(props) {
             <GatsbyImage
             className='
               hidden md:flex lg:flex-row
-              md:h-[250px] md:w-[300px]'
+              md:h-[250px] md:w-[350px]'
             image={ heroImage }
             formats={ ['auto', 'webp'] } />
             )}
