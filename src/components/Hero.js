@@ -4,33 +4,35 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 export default function Hero(props) {
   const {
-    heroImageBg,
-    heroImage,
-    heroTitle,
-    heroSubHeading,
-    heroButton,
+    imageBg,
+    image,
+    title,
+    subHeading,
+    button,
   } = props;
 
   return (
     <React.Fragment>
       <div 
       className='
-       relative
-       flex
-       content-center 
-       margin-top-0 margin-left-0
+        relative
+        flex
+        content-center 
+        margin-top-0 margin-left-0
       '>
-        {heroImageBg?.url ? (
+        { imageBg?.url ? (
           <img
           className='w-full h-full'
-          src={ heroImageBg }
+          src={ imageBg }
           alt='heroBg' />
         ) : (
           <GatsbyImage
-          image={ heroImageBg }
-          formats={ ['auto', 'webp'] } />
-        )}
-      {(heroTitle || heroSubHeading|| heroImage || heroButton ) && (
+          className='w-full h-full'
+          image={ imageBg }
+          formats={ ['auto', 'webp'] }
+          alt='heroBg' />
+        ) }
+      { ( title || subHeading || image || button ) && (
         <div
         className='
           absolute
@@ -39,60 +41,63 @@ export default function Hero(props) {
           w-full h-full 
           gap-2 p-8 top-4
         '>
-          {heroImage?.url ? (
+          { image?.url ? (
             <img
             className='
-              hidden md:flex
-              md:h-[250px] md:w-[350px]'
-              src={ heroImage }
-              alt='heroImage' />
+              hidden md:flex lg:flex-row
+              md:h-[250px] md:w-[350px]  
+            '
+            src={ image }
+            alt='heroImage' />
             ) : (
             <GatsbyImage
             className='
               hidden md:flex lg:flex-row
-              md:h-[250px] md:w-[350px]'
-            image={ heroImage }
-            formats={ ['auto', 'webp'] } />
-            )}
+              md:h-[250px] md:w-[350px]
+            '
+            image={ image }
+            formats={ ['auto', 'webp'] } 
+            alt='heroImage' />
+            ) }
             <div 
             className='
-              flex flex-col 
+              flex flex-col
               gap-4 px-10 
               text-center
             '>
-              {heroTitle && (
+              { title && (
                 <h1 className='text-3xl text-white lg:text-5xl'>
-                  { heroTitle }
+                  { title }
                 </h1>
-              )}
-              {heroSubHeading&& (
+              ) }
+              { subHeading && (
                 <h3 className='text-white sm:text-base md:text-xl'>
-                  { heroSubHeading }
+                  { subHeading }
                 </h3>
-              )}
-              {heroButton && (
+              ) }
+              { button && (
                 <button
                 className='
                   self-center 
-                  w-40 p-2 
+                  w-40 p-2
                   text-white bg-blue-600 
                   rounded
                 '>
-                  { heroButton }
+                  { button }
                 </button>
-              )}
+              ) }
             </div>
           </div>
-        )}
+      ) }
       </div>
     </React.Fragment>
   );
 }
 
 Hero.propTypes = {
-  heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  heroImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  heroTitle: PropTypes.string,
-  heroSubHeading: PropTypes.string,
-  heroButton: PropTypes.string
+  imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  title: PropTypes.string,
+  subHeading: PropTypes.string,
+  button: PropTypes.string
 };

@@ -6,7 +6,7 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
-import Hero from '../components/hero'
+import Hero from '../components/hero';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -25,11 +25,11 @@ export const IndexPageTemplate = ({
   return (
     <div>
       <Hero
-      heroImageBg={heroImgBg}
-      heroImage={heroImg}
-      heroTitle={heroTitle}
-      heroSubHeading={heroSubHeading}
-      heroButton={heroButton }/>
+      imageBg={ heroImgBg }
+      image={ heroImg }
+      title={ heroTitle }
+      subHeading={ heroSubHeading }
+      button={ heroButton } />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -101,11 +101,11 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        heroImageBg={frontmatter.heroImageBg}
-        heroImage={frontmatter.heroImage}
-        heroTitle={frontmatter.heroTitle}
-        heroSubHeading={frontmatter.heroSubHeading}
-        heroButton={frontmatter.heroButton}
+        heroImageBg={ frontmatter.heroImageBg }
+        heroImage={ frontmatter.heroImage }
+        heroTitle={ frontmatter.heroTitle }
+        heroSubHeading={ frontmatter.heroSubHeading }
+        heroButton={ frontmatter.heroButton }
         heading={frontmatter.heading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}

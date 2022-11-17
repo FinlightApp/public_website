@@ -45,7 +45,7 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - { label: Hero Image Background, name: heroImageBg, widget: image }
+          - { label: Hero Background, name: heroImageBg, widget: image }
           - { label: Hero Image, name: heroImage, widget: image }
           - { label: Hero Title, name: heroTitle, widget: string }
           - { label: Hero Subheading, name: heroSubHeading, widget: string }
