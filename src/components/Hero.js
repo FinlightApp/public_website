@@ -43,14 +43,14 @@ export default function Hero(props) {
             <img
             className='
               hidden md:flex
-              md:h-[250px] md:w-[200px]'
+              md:h-[250px] md:w-[350px]'
               src={ heroImage }
               alt='heroImage' />
             ) : (
             <GatsbyImage
             className='
               hidden md:flex lg:flex-row
-              md:h-[250px] md:w-[200px]'
+              md:h-[250px] md:w-[300px]'
             image={ heroImage }
             formats={ ['auto', 'webp'] } />
             )}
