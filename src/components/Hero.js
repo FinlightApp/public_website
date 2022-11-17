@@ -13,58 +13,45 @@ export default function Hero(props) {
 
   return (
     <React.Fragment>
-      <div 
-      className='
-        relative
-        flex
-        content-center 
-        margin-top-0 margin-left-0
-      '>
+      <div
+      className='relative flex content-center margin-top-0 margin-left-0'>
         { imageBg?.url ? (
           <img
-          className='w-full h-full'
+          className='w-full max-h-[500px]'
           src={ imageBg }
           alt='heroBg' />
         ) : (
           <GatsbyImage
-          className='w-full h-full'
+          className='w-full max-h-[500px]'
           image={ imageBg }
           formats={ ['auto', 'webp'] }
           alt='heroBg' />
         ) }
       { ( title || subHeading || image || button ) && (
         <div
-        className='
-          absolute
-          flex flex-col lg:flex-row
-          items-center justify-center
-          w-full h-full 
-          gap-2 p-8 top-4
-        '>
-          { image?.url ? (
-            <img
-            className='
-              hidden md:flex lg:flex-row
-              md:h-[250px] md:w-[350px]  
-            '
-            src={ image }
-            alt='heroImage' />
-            ) : (
-            <GatsbyImage
-            className='
-              hidden md:flex lg:flex-row
-              md:h-[250px] md:w-[350px]
-            '
-            image={ image }
-            formats={ ['auto', 'webp'] } 
-            alt='heroImage' />
-            ) }
-            <div 
-            className='
-              flex flex-col
-              gap-4 px-10 
-              text-center
-            '>
+        className='absolute top-0 flex flex-col items-center justify-center w-full h-full lg:flex-row'>
+          <div className='flex justify-center flex-1'>
+            { image?.url ? (
+              <img
+              className='
+                hidden md:flex lg:flex-row
+                md:h-[250px] md:w-[350px]  
+              '
+              src={ image }
+              alt='heroImage' />
+              ) : (
+              <GatsbyImage
+              className='
+                hidden md:flex lg:flex-row
+                md:h-[250px] md:w-[350px]
+              '
+              image={ image }
+              formats={ ['auto', 'webp'] } 
+              alt='heroImage' />
+              ) }
+            </div>
+            <div
+            className='flex flex-col flex-1 gap-4 text-center '>
               { title && (
                 <h1 className='text-3xl text-white lg:text-5xl'>
                   { title }
@@ -77,12 +64,7 @@ export default function Hero(props) {
               ) }
               { button && (
                 <button
-                className='
-                  self-center 
-                  w-40 p-2
-                  text-white bg-blue-600 
-                  rounded
-                '>
+                className='self-center w-40 p-2 text-white bg-blue-600 rounded '>
                   { button }
                 </button>
               ) }
