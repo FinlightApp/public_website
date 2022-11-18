@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
-heroImageBg: /img/heroBg.svg
-heroImage: /img/heroImage.svg
+heroImageBg: /img/coffee.png
+heroImage: /img/coffee.png
 heroTitle: Great coffee with suger
 heroSubHeading: Support sustainable farming while enjoying a cup
 heroButton: Info Request
