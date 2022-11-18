@@ -1,9 +1,11 @@
 ---
 templateKey: index-page
-title: Great coffee with suger
-image: /img/home-jumbotron.jpg
+heroImageBg: /img/heroBg.svg
+heroImage: /img/heroImage.svg
+heroTitle: Great coffee with suger
+heroSubHeading: Support sustainable farming while enjoying a cup
+heroButton: Info Request
 heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
 mainpitch:
   title: Why Kaldi
   description: >

@@ -8,10 +8,12 @@ const IndexPagePreview = ({ entry, getAsset }) => {
   if (data) {
     return (
       <IndexPageTemplate
-        image={getAsset(data.image)}
-        title={data.title}
+        heroImageBg={ getAsset(data.heroImageBg) }
+        heroImage={ getAsset(data.heroImage) }
+        heroTitle={ data.heroTitle }
+        heroSubHeading={ data.heroSubHeading }
+        heroButton={ data.heroButton }
         heading={data.heading}
-        subheading={data.subheading}
         description={data.description}
         intro={data.intro || { blurbs: [] }}
         mainpitch={data.mainpitch || {}}

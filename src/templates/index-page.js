@@ -6,23 +6,30 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
-import FullWidthImage from "../components/FullWidthImage";
+import Hero from '../components/Hero';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
-  image,
-  title,
+  heroImageBg,
+  heroImage,
+  heroTitle,
+  heroSubHeading,
+  heroButton,
   heading,
-  subheading,
   mainpitch,
   description,
   intro,
 }) => {
-  const heroImage = getImage(image) || image;
-
+  const heroImgBg = getImage(heroImageBg) || heroImageBg;
+  const heroImg = getImage(heroImage) || heroImage;
   return (
     <div>
-      <FullWidthImage img={heroImage} title={title} subheading={subheading} />
+      <Hero
+      imageBg={ heroImgBg }
+      image={ heroImg }
+      title={ heroTitle }
+      subHeading={ heroSubHeading }
+      button={ heroButton } />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -75,10 +82,12 @@ export const IndexPageTemplate = ({
 };
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
+  heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  heroImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  heroTitle: PropTypes.string,
+  heroSubHeading: PropTypes.string,
+  heroButton: PropTypes.string,
   heading: PropTypes.string,
-  subheading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   intro: PropTypes.shape({
@@ -92,10 +101,12 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
+        heroImageBg={ frontmatter.heroImageBg }
+        heroImage={ frontmatter.heroImage }
+        heroTitle={ frontmatter.heroTitle }
+        heroSubHeading={ frontmatter.heroSubHeading }
+        heroButton={ frontmatter.heroButton }
         heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -118,14 +129,20 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
-        image {
+        heroImageBg  {
           childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            gatsbyImageData(quality: 100)
           }
         }
+        heroImage {
+          childImageSharp {
+            gatsbyImageData(quality: 100)
+          }
+        }
+        heroTitle
+        heroSubHeading
+        heroButton
         heading
-        subheading
         mainpitch {
           title
           description
@@ -147,3 +164,4 @@ export const pageQuery = graphql`
     }
   }
 `;
+

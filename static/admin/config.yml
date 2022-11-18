@@ -32,7 +32,6 @@ collections:
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
-
   - name: "pages"
     label: "Pages"
     files:
@@ -46,10 +45,12 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
+          - { label: Hero Background, name: heroImageBg, widget: image }
+          - { label: Hero Image, name: heroImage, widget: image }
+          - { label: Hero Title, name: heroTitle, widget: string }
+          - { label: Hero Subheading, name: heroSubHeading, widget: string }
+          - { label: Hero Button, name: heroButton, widget: string }
           - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
           - {
               label: Mainpitch,
               name: mainpitch,
