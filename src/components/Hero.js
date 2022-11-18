@@ -16,17 +16,17 @@ export default function Hero(props) {
       <div className='
         relative 
         flex 
-        content-center 
+        justify-center
         margin-top-0 margin-left-0
       '>
         { imageBg?.url ? (
           <img
-          className='w-full max-h-[500px]'
+          className='w-full max-h-[500px] brightness-50'
           src={ imageBg }
           alt='heroBg' />
         ) : (
           <GatsbyImage
-          className='w-full max-h-[500px]'
+          className='w-full max-h-[500px] brightness-50'
           image={ imageBg }
           formats={ ['auto', 'webp'] }
           alt='heroBg' />
@@ -34,7 +34,8 @@ export default function Hero(props) {
         {( title || subHeading || image || button ) && (
           <div
           className='
-            absolute top-0
+            absolute
+            container
             flex flex-col lg:flex-row
             items-center justify-center
             w-full h-full
