@@ -13,11 +13,10 @@ export default function Hero(props) {
 
   return (
     <React.Fragment>
-      <div
-      className='
-        relative
+      <div className='
+        relative 
         flex 
-        content-center
+        content-center 
         margin-top-0 margin-left-0
       '>
         { imageBg?.url ? (
@@ -32,69 +31,69 @@ export default function Hero(props) {
           formats={ ['auto', 'webp'] }
           alt='heroBg' />
         ) }
-      { ( title || subHeading || image || button ) && (
-        <div
-        className='
-          absolute top-0
-          flex flex-col lg:flex-row
-          items-center justify-center
-          p-8
-          w-full h-full
-        '>
-          <div className='
-            hidden md:flex lg:flex-row
-            flex-1
-            justify-center
+        {( title || subHeading || image || button ) && (
+          <div
+          className='
+            absolute top-0
+            flex flex-col lg:flex-row
+            items-center justify-center
+            w-full h-full
+            p-8
           '>
-            { image?.url ? (
-              <img
-              className='
-                md:h-[250px] md:w-[350px]
-              '
-              src={ image }
-              alt='heroImage' />
-              ) : (
-              <GatsbyImage
-              className='
-                md:h-[250px] md:w-[350px]
-              '
-              image={ image }
-              formats={ ['auto', 'webp'] } 
-              alt='heroImage' />
-              ) }
-            </div>
-            <div
-            className='
-              flex flex-col flex-1
+            <div className='
+              hidden md:flex lg:flex-row
+              flex-1
               justify-center
-              gap-4
-              text-center
             '>
-              { title && (
-                <h1 className='text-3xl text-white lg:text-5xl'>
-                  { title }
-                </h1>
-              ) }
-              { subHeading && (
-                <h3 className='text-white sm:text-base md:text-xl'>
-                  { subHeading }
-                </h3>
-              ) }
-              { button && (
-                <button
+              { image?.url ? (
+                <img
                 className='
-                  self-center
-                  w-40
-                  p-2
-                  text-white bg-blue-600
-                  rounded 
-                '>
-                  { button }
-                </button>
-              ) }
+                  md:h-[250px] md:w-[350px]
+                '
+                src={ image }
+                alt='heroImage' />
+                ) : (
+                <GatsbyImage
+                className='
+                  md:h-[250px] md:w-[350px]
+                '
+                image={ image }
+                formats={ ['auto', 'webp'] } 
+                alt='heroImage' />
+                ) }
+              </div>
+              <div
+              className='
+                flex flex-col flex-1
+                justify-center
+                gap-4
+                text-center
+              '>
+                { title && (
+                  <h1 className='text-3xl text-white lg:text-5xl'>
+                    { title }
+                  </h1>
+                ) }
+                { subHeading && (
+                  <h3 className='text-white sm:text-base md:text-xl'>
+                    { subHeading }
+                  </h3>
+                ) }
+                { button && (
+                  <button
+                  className='
+                    self-center
+                    w-40
+                    p-2
+                    text-white bg-blue-600
+                    rounded
+                  '>
+                    { button }
+                  </button>
+                ) }
             </div>
           </div>
-      ) }
+        )}
       </div>
     </React.Fragment>
   );
