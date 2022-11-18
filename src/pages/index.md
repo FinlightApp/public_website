@@ -1,10 +1,12 @@
 ---
 templateKey: index-page
-heroImageBg: /img/coffee.png
-heroImage: /img/coffee.png
-heroTitle: Great coffee with suger
-heroSubHeading: Support sustainable farming while enjoying a cup
-heroButton: Info Request
+heroImageBg: /img/heroBg.svg
+heroImage: /img/heroImage.svg
+heroTitle: We are making VC investing even simpler than public stock investing
+heroSubHeading: We do more than enabling investors to allocate to top decile VCs
+  across vintages, regions and sectors from as low as 10k GBP. We also eliminate
+  the entire admin GPs have to go through to on-board, serve and report to LPs.
+heroButton: Request Info
 heading: Great coffee with a conscience
 mainpitch:
   title: Why Kaldi
