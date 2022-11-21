@@ -122,6 +122,17 @@ collections:
                   },
                 ],
             }
+      - file: 'src/pages/team/index.md'
+        label: 'Team Page'
+        name: 'team'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'team-page',
+            }
+          - { label: Title, name: title, widget: string }
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
