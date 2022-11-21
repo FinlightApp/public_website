@@ -26,8 +26,7 @@ const TeamPage = ({ data }) => {
   return (
     <Layout>
       <TeamPageTemplate
-        title={frontmatter.title}
-      />
+      title={ frontmatter.title } />
     </Layout>
   );
 };
