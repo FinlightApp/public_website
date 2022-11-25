@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
-heroImageBg: /img/herobg.webp
-heroImage: /img/heroimage.webp
+heroImageBg: /img/heroBg.webp
+heroImage: /img/heroImage.webp
 heroTitle: We are making VC investing even simpler than public stock investing
 heroSubHeading: We do more than enabling investors to allocate to top decile VCs
   across vintages, regions and sectors from as low as 10k GBP. We also eliminate
