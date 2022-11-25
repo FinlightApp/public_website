@@ -44,8 +44,7 @@ export default function HeroDark(props) {
             <div className='
               w-full h-0.5
               bg-gradient-to-r from-transparent via-darkHeroBlue to-transparent
-            '>
-            </div>
+            ' />
             { subHeading && (
               <h3 className='sm:text-base md:text-xl text-heroText text-white'>
                 { subHeading }
