@@ -6,12 +6,11 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
-import Hero from '../components/Hero';
+import HeroLight from '../components/HeroLight';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   heroImageBg,
-  heroImage,
   heroTitle,
   heroSubHeading,
   heroButton,
@@ -21,12 +20,10 @@ export const IndexPageTemplate = ({
   intro,
 }) => {
   const heroImgBg = getImage(heroImageBg) || heroImageBg;
-  const heroImg = getImage(heroImage) || heroImage;
   return (
     <div>
-      <Hero
+      <HeroLight
       imageBg={ heroImgBg }
-      image={ heroImg }
       title={ heroTitle }
       subHeading={ heroSubHeading }
       button={ heroButton } />
@@ -83,7 +80,6 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  heroImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   heroTitle: PropTypes.string,
   heroSubHeading: PropTypes.string,
   heroButton: PropTypes.string,
@@ -102,7 +98,6 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         heroImageBg={ frontmatter.heroImageBg }
-        heroImage={ frontmatter.heroImage }
         heroTitle={ frontmatter.heroTitle }
         heroSubHeading={ frontmatter.heroSubHeading }
         heroButton={ frontmatter.heroButton }
@@ -130,11 +125,6 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         heroImageBg  {
-          childImageSharp {
-            gatsbyImageData(quality: 100)
-          }
-        }
-        heroImage {
           childImageSharp {
             gatsbyImageData(quality: 100)
           }

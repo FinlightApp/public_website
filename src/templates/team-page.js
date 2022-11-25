@@ -1,24 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import { getImage } from "gatsby-plugin-image";
 
 import Layout from '../components/Layout';
-import Team from '../components/Team';
+import HeroLight from '../components/HeroLight';
 
 /* eslint-disable */
 export const TeamPageTemplate = ({
-  title
+  heroImageBg,
+  heroTitleHighlight,
+  heroTitle,
+  heroSubHeading
 }) => {
-  return (
-    <div>
-      <Team title={title} />
-      <h2>Here is the page for team page</h2>
-    </div>
-  );
-};
+  const heroImgBg = getImage(heroImageBg) || heroImageBg; {
+    return (
+      <div>
+        <HeroLight
+        imageBg={ heroImgBg }
+        highlight={ heroTitleHighlight }
+        title={ heroTitle }
+        subHeading={ heroSubHeading } />
+      </div>
+    );
+  };
+}
 
 TeamPageTemplate.propTypes = {
-  title: PropTypes.string
+  heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  heroTitleHighlight: PropTypes.string,
+  heroTitle: PropTypes.string,
+  heroSubHeading: PropTypes.string
 };
 
 const TeamPage = ({ data }) => {
@@ -26,7 +38,10 @@ const TeamPage = ({ data }) => {
   return (
     <Layout>
       <TeamPageTemplate
-      title={ frontmatter.title } />
+        heroImageBg={ frontmatter.heroImageBg }
+        heroTitleHighlight={ frontmatter.heroTitleHighlight }
+        heroTitle={ frontmatter.heroTitle }
+        heroSubHeading={ frontmatter.heroSubHeading } />
     </Layout>
   );
 };
@@ -46,7 +61,14 @@ export const teamPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
-        title
+        heroImageBg  {
+          childImageSharp {
+            gatsbyImageData(quality: 100)
+          }
+        }
+        heroTitleHighlight
+        heroTitle
+        heroSubHeading
       }
     }
   }

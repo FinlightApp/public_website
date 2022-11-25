@@ -7,7 +7,10 @@ const TeamPagePreview = ({ entry, getAsset }) => {
 
   if (data) {
     return (
-      <TeamPageTemplate title={data.title} />
+      <TeamPageTemplate 
+      heroImageBg={ getAsset(data.heroImageBg) }
+      heroTitle={ data.heroTitle }
+      heroSubHeading={ data.heroSubHeading } />
     )
   } else {
     return <div>Loading...</div>
