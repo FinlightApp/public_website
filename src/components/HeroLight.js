@@ -16,11 +16,11 @@ export default function HeroLight(props) {
     if (titleEl.current) {
       titleEl.current.innerHTML = text;
       if (toHighlight) {
-        const textSplited =  text.split(toHighlight);
+        const textSplit =  text.split(toHighlight);
         titleEl.current.innerHTML = `
-          ${textSplited[0]}
+          ${textSplit[0]}
           <span class='text-blue-500'>${toHighlight}</span>
-          ${textSplited[1]}
+          ${textSplit[1]}
         `;
       }
     }
@@ -60,6 +60,7 @@ export default function HeroLight(props) {
               <h1
               className='text-3xl lg:text-5xl text-heroTitle text-white'
               ref={titleEl}>
+                { title }
               </h1>
             ) }
             <div className='
