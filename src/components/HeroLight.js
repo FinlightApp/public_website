@@ -2,24 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-export default function HeroDark(props) {
+export default function HeroLight(props) {
   const {
     imageBg,
     title,
+    highlight,
     subHeading,
     button,
   } = props;
+  const titleEl = React.useRef();
 
-  const highlighted = (text, word) => {
-    console.log(word)
-    let result = text.includes(word);
-    if (result) {
-      // style the word and return
-      return(text);
-    }else{
-      console.log('false');
+  const highlighted = (text, toHighlight) => {
+    if (titleEl.current) {
+      titleEl.current.innerHTML = text;
+      if (toHighlight) {
+        const textSplited =  text.split(toHighlight);
+        titleEl.current.innerHTML = `
+          ${textSplited[0]}
+          <span class='text-blue-500'>${toHighlight}</span>
+          ${textSplited[1]}
+        `;
       }
+    }
   }
+
+  React.useEffect(() => {
+    highlighted(title, highlight)
+  });
 
   return (
     <React.Fragment>
@@ -48,8 +57,9 @@ export default function HeroDark(props) {
             bg-whiteHero backdrop-blur-md shadow-lg
           '>
             { title && (
-              <h1 className='text-3xl lg:text-5xl text-heroTitle text-white'>
-                { highlighted(title, 'Finlight') }
+              <h1
+              className='text-3xl lg:text-5xl text-heroTitle text-white'
+              ref={titleEl}>
               </h1>
             ) }
             <div className='
@@ -80,7 +90,7 @@ export default function HeroDark(props) {
   );
 }
 
-HeroDark.propTypes = {
+HeroLight.propTypes = {
   imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   highlight: PropTypes.string,

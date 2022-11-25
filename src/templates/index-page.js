@@ -12,6 +12,7 @@ import HeroLight from '../components/HeroLight';
 export const IndexPageTemplate = ({
   heroImageBg,
   heroTitle,
+  heroHighlight,
   heroSubHeading,
   heroButton,
   heading,
@@ -26,7 +27,8 @@ export const IndexPageTemplate = ({
       imageBg={ heroImgBg }
       title={ heroTitle }
       subHeading={ heroSubHeading }
-      button={ heroButton } />
+      button={ heroButton }
+      highlight={ heroHighlight } />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -99,6 +101,7 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate
         heroImageBg={ frontmatter.heroImageBg }
         heroTitle={ frontmatter.heroTitle }
+        heroHighlight={ frontmatter.heroHighlight }
         heroSubHeading={ frontmatter.heroSubHeading }
         heroButton={ frontmatter.heroButton }
         heading={frontmatter.heading}
@@ -130,6 +133,7 @@ export const pageQuery = graphql`
           }
         }
         heroTitle
+        heroHighlight
         heroSubHeading
         heroButton
         heading
