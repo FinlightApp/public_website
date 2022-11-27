@@ -38,11 +38,11 @@ export default function HeroLight(props) {
         justify-center lg:justify-start
       '>
         { imageBg?.url ? (
-          <img className='w-full h-[700px]'
+          <img className='w-full h-smBgHero md:h-lgBgHero'
           src={ imageBg }
           alt='heroBg' />
         ) : (
-          <GatsbyImage className='w-full h-[700px]'
+          <GatsbyImage className='w-full h-smBgHero md:lgBgHero]'
           image={ imageBg }
           formats={ ['auto', 'webp'] }
           alt='heroBg' />
@@ -52,8 +52,8 @@ export default function HeroLight(props) {
             absolute
             container
             flex flex-col self-center
-            gap-12 p-8 lg:mx-36
-            w-[268px] md:w-[431px] h-auto
+            gap-12 py-12 px-8 lg:mx-36
+            w-smHeroBox md:w-LgHeroBox h-auto
             rounded-2xl text-center
             bg-whiteHero backdrop-blur-sm shadow-box-shadow
           '>
@@ -77,7 +77,7 @@ export default function HeroLight(props) {
               <button className='
                 self-center
                 w-40
-                px-2 py-4
+                px-4 py-2
                 bg-lightHeroYellow
                 rounded text-black font-heroTitle text-xl
               '>

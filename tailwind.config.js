@@ -17,7 +17,13 @@ module.exports = {
         'box-shadow': '0px 0px 32px rgba(74, 74, 74, 0.75)',
       },
       height: {
-        'hrHeight': '3px'
+        'hrHeight': '3px',
+        'smBgHero': '568px',
+        'LgBgHero': '700px'
+      },
+      width: {
+        'LgHeroBox': '431px',
+        'smHeroBox': '268px',
       }
     },
   },
