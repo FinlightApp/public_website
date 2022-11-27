@@ -2,25 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-
-export default function HeroDark(props) {
+export default function HeroLight(props) {
   const {
     imageBg,
     title,
+    highlight,
     subHeading,
     button,
   } = props;
+  const titleEl = React.useRef();
 
-  const highlighted = (text, word) => {
-    console.log(word)
-    let result = text.includes(word);
-    if (result) {
-      // style the word and return
-      return(text);
-    }else{
-      console.log('false');
+  const highlighted = (text, toHighlight) => {
+    if (titleEl.current) {
+      titleEl.current.innerHTML = text;
+      if (toHighlight) {
+        const textSplit =  text.split(toHighlight);
+        titleEl.current.innerHTML = `
+          ${textSplit[0]}
+          <span class='text-darkHeroBlue'>${toHighlight}</span>
+          ${textSplit[1]}
+        `;
       }
+    }
   }
+
+  React.useEffect(() => {
+    highlighted(title, highlight)
+  });
 
   return (
     <React.Fragment>
@@ -50,8 +58,9 @@ export default function HeroDark(props) {
             bg-whiteHero backdrop-blur-sm shadow-box-shadow
           '>
             { title && (
-              <h1 className='text-2xl text-heroTitle text-white'>
-                { highlighted(title, 'Finlight') }
+              <h1 className='text-2xl text-heroTitle text-white'
+              ref={titleEl}>
+                { title }
               </h1>
             ) }
             <div className='
@@ -70,7 +79,7 @@ export default function HeroDark(props) {
                 w-40
                 px-2 py-4
                 bg-darkHeroBlue
-                rounded text-black font-heroTitle text-xl
+                rounded text-white font-heroTitle text-xl
               '>
                 { button }
               </button>
@@ -82,7 +91,7 @@ export default function HeroDark(props) {
   );
 }
 
-HeroDark.propTypes = {
+HeroLight.propTypes = {
   imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   highlight: PropTypes.string,
