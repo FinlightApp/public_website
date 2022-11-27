@@ -2,25 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-
 export default function HeroLight(props) {
   const {
     imageBg,
     title,
+    highlight,
     subHeading,
     button,
   } = props;
+  const titleEl = React.useRef();
 
-  const highlighted = (text, word) => {
-    console.log(word)
-    let result = text.includes(word);
-    if (result) {
-      // style the word and return
-      return(text);
-    }else{
-      console.log('false');
+  const highlighted = (text, toHighlight) => {
+    if (titleEl.current) {
+      titleEl.current.innerHTML = text;
+      if (toHighlight) {
+        const textSplit =  text.split(toHighlight);
+        titleEl.current.innerHTML = `
+          ${textSplit[0]}
+          <span class='text-lightHeroYellow'>${toHighlight}</span>
+          ${textSplit[1]}
+        `;
       }
+    }
   }
+
+  React.useEffect(() => {
+    highlighted(title, highlight)
+  });
 
   return (
     <React.Fragment>
@@ -50,8 +58,9 @@ export default function HeroLight(props) {
             bg-whiteHero backdrop-blur-sm shadow-box-shadow
           '>
             { title && (
-              <h1 className='text-2xl text-heroTitle text-white'>
-                { highlighted(title, 'Finlight') }
+              <h1 className='text-2xl text-heroTitle text-white'
+              ref={titleEl}>
+                { title }
               </h1>
             ) }
             <div className='
