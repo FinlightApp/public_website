@@ -12,8 +12,13 @@ module.exports = {
     extend: {
       colors: {
         'whiteHero': 'rgba(255, 255, 255, 0.25)',
-        'darkHeroBlue': 'rgba(50, 115, 220, 1)',
-        'lightHeroYellow': 'rgba(231, 178, 36, 1)'
+        'darkHeroBlue': '#3273DC',
+        'lightHeroYellow': '#E7B224',
+        'box-shadow': '0px 0px 32px rgba(74, 74, 74, 0.75)',
+        'backdrop': 'blur(7.5px)',
+      },
+      height: {
+        'hrHeight': '3px'
       }
     },
   },

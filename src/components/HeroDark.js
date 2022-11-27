@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
+
 export default function HeroDark(props) {
   const {
     imageBg,
@@ -9,6 +10,17 @@ export default function HeroDark(props) {
     subHeading,
     button,
   } = props;
+
+  const highlighted = (text, word) => {
+    console.log(word)
+    let result = text.includes(word);
+    if (result) {
+      // style the word and return
+      return(text);
+    }else{
+      console.log('false');
+      }
+  }
 
   return (
     <React.Fragment>
@@ -18,11 +30,11 @@ export default function HeroDark(props) {
         justify-center lg:justify-start
       '>
         { imageBg?.url ? (
-          <img className='w-full h-screen'
+          <img className='w-full h-[700px]'
           src={ imageBg }
           alt='heroBg' />
         ) : (
-          <GatsbyImage className='w-full h-screen'
+          <GatsbyImage className='w-full h-[700px]'
           image={ imageBg }
           formats={ ['auto', 'webp'] }
           alt='heroBg' />
@@ -30,23 +42,25 @@ export default function HeroDark(props) {
         {( title || subHeading || button ) && (
           <div className='
             absolute
+            container
             flex flex-col self-center
-            gap-8 p-10 lg:mx-36
-            w-[90%] lg:w-96 md:w-[70%] h-auto
-            rounded-xl  text-center
-            bg-whiteHero backdrop-blur-md shadow-lg
+            gap-12 p-8 lg:mx-36
+            w-[268px] md:w-[431px] h-auto
+            rounded-2xl text-center
+            bg-whiteHero backdrop-blur-sm shadow-box-shadow
           '>
             { title && (
-              <h1 className='text-3xl lg:text-5xl text-heroTitle text-white'>
-                { title }
+              <h1 className='text-2xl text-heroTitle text-white'>
+                { highlighted(title, 'Finlight') }
               </h1>
             ) }
             <div className='
-              w-full h-0.5
+              w-full h-hrHeight
               bg-gradient-to-r from-transparent via-darkHeroBlue to-transparent
-            ' />
+            '>
+            </div>
             { subHeading && (
-              <h3 className='sm:text-base md:text-xl text-heroText text-white'>
+              <h3 className='text-xl text-heroText text-white'>
                 { subHeading }
               </h3>
             ) }
@@ -54,9 +68,9 @@ export default function HeroDark(props) {
               <button className='
                 self-center
                 w-40
-                p-2
+                px-2 py-4
                 bg-darkHeroBlue
-                rounded text-black font-heroTitle
+                rounded text-black font-heroTitle text-xl
               '>
                 { button }
               </button>
@@ -71,6 +85,7 @@ export default function HeroDark(props) {
 HeroDark.propTypes = {
   imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  highlight: PropTypes.string,
   title: PropTypes.string,
   subHeading: PropTypes.string,
   button: PropTypes.string
