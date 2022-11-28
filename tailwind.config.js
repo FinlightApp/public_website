@@ -11,6 +11,10 @@ module.exports = {
       heroTitle: ['Nunito Sans'],
     },
       colors: {
+        'light-gray': '#F6F6F6',
+        'dark-gray': '#242526',
+        'primary': '#E7B224',
+        'secondary': '#3273DC',
         'whiteHero': 'rgba(255, 255, 255, 0.25)',
         'darkHeroBlue': '#3273DC',
         'lightHeroYellow': '#E7B224',

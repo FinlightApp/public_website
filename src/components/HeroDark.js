@@ -18,9 +18,9 @@ export default function HeroDark(props) {
       if (toHighlight) {
         const textSplit =  text.split(toHighlight);
         titleEl.current.innerHTML = `
-          ${textSplit[0]}
+        ${textSplit[0] ? textSplit[0] : ''}
           <span class='text-darkHeroBlue'>${toHighlight}</span>
-          ${textSplit[1]}
+          ${textSplit[1] ? textSplit[1] : ''}
         `;
       }
     }
