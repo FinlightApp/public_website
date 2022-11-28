@@ -38,27 +38,28 @@ export default function HeroLight(props) {
         justify-center lg:justify-start
       '>
         { imageBg?.url ? (
-          <img className='w-full h-smBgHero md:h-lgBgHero'
+          <img className='w-full h-auto lg:h-LgBgHero'
           src={ imageBg }
           alt='heroBg' />
         ) : (
-          <GatsbyImage className='w-full h-smBgHero md:lgBgHero]'
+          <GatsbyImage className='w-full h-auto lg:h-LgBgHero'
           image={ imageBg }
           formats={ ['auto', 'webp'] }
           alt='heroBg' />
         ) }
+       
         {( title || subHeading || button ) && (
           <div className='
             absolute
-            container
             flex flex-col self-center
-            gap-12 py-12 px-8 lg:mx-36
-            w-smHeroBox md:w-LgHeroBox h-auto
+            h-auto lg:w-[30%]
+            m-6 md:mx-[25%] lg:ml-36 py-12 px-8
+            gap-12
             rounded-2xl text-center
             bg-whiteHero backdrop-blur-sm shadow-box-shadow
           '>
             { title && (
-              <h1 className='text-2xl text-heroTitle text-white'
+              <h1 className='text-3xl text-heroTitle text-white'
               ref={titleEl}>
                 { title }
               </h1>

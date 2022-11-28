@@ -42,7 +42,7 @@ export default function HeroDark(props) {
           src={ imageBg }
           alt='heroBg' />
         ) : (
-          <GatsbyImage className='w-full h-smBgHero md:lgBgHero]'
+          <GatsbyImage className='w-full h-smBgHero md:lgBgHero'
           image={ imageBg }
           formats={ ['auto', 'webp'] }
           alt='heroBg' />
@@ -52,8 +52,8 @@ export default function HeroDark(props) {
             absolute
             container
             flex flex-col self-center
-            gap-12 py-12 px-8 lg:mx-36
-            w-smHeroBox md:w-LgHeroBox h-auto
+            mx-6 md:mx-[25%] lg:ml-[10%] py-12 px-8 gap-12
+            lg:w-[30%] h-auto
             rounded-2xl text-center
             bg-whiteHero backdrop-blur-sm shadow-box-shadow
           '>

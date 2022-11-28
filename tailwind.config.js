@@ -5,11 +5,11 @@ module.exports = {
     "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    fontFamily: {
+    extend: {
+      fontFamily: {
       heroText: ['Hind Madurai'],
       heroTitle: ['Nunito Sans'],
     },
-    extend: {
       colors: {
         'whiteHero': 'rgba(255, 255, 255, 0.25)',
         'darkHeroBlue': '#3273DC',
@@ -18,12 +18,19 @@ module.exports = {
       },
       height: {
         'hrHeight': '3px',
-        'smBgHero': '568px',
         'LgBgHero': '700px'
       },
-      width: {
-        'LgHeroBox': '431px',
-        'smHeroBox': '268px',
+      fontSize: {
+        title: {
+          'font-size': '32px',
+          'line-height': '44px',
+          'font-weight': '600',
+        },
+        subheader:{
+          'font-size': '20px',
+          'line-height': '28px',
+          'font-weight': '400'
+        }
       }
     },
   },
