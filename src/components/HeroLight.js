@@ -19,7 +19,7 @@ export default function HeroLight(props) {
         const textSplit =  text.split(toHighlight);
         titleEl.current.innerHTML = `
           ${textSplit[0] ? textSplit[0] : ''}
-          <span class='text-lightHeroYellow'>${toHighlight}</span>
+          <span class='text-primary'>${toHighlight}</span>
           ${textSplit[1] ? textSplit[1] : ''}
         `;
       }

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-export default function HeroDark(props) {
+export default function HeroLight(props) {
   const {
     imageBg,
     title,
@@ -18,8 +18,8 @@ export default function HeroDark(props) {
       if (toHighlight) {
         const textSplit =  text.split(toHighlight);
         titleEl.current.innerHTML = `
-        ${textSplit[0] ? textSplit[0] : ''}
-          <span class='text-darkHeroBlue'>${toHighlight}</span>
+          ${textSplit[0] ? textSplit[0] : ''}
+          <span class='text-secondary'>${toHighlight}</span>
           ${textSplit[1] ? textSplit[1] : ''}
         `;
       }
@@ -32,66 +32,93 @@ export default function HeroDark(props) {
 
   return (
     <React.Fragment>
+      {/* Main wrapper */}
       <div className='
         relative
-        flex
-        justify-center lg:justify-start
+        flex flex-col
+        h-fit md:h-[700px]
       '>
-        { imageBg?.url ? (
-          <img className='w-full h-smBgHero md:h-lgBgHero'
-          src={ imageBg }
-          alt='heroBg' />
-        ) : (
-          <GatsbyImage className='w-full h-smBgHero md:lgBgHero'
-          image={ imageBg }
-          formats={ ['auto', 'webp'] }
-          alt='heroBg' />
-        ) }
-        {( title || subHeading || button ) && (
+        {/* Image wrapper in background */}
+        <div className='absolute inset-0'>
+          { imageBg?.url ? (
+            <img className='h-full w-full object-cover'
+            src={ imageBg }
+            alt='heroBg' />
+          ) : (
+            <GatsbyImage className='h-full w-full object-cover'
+            image={ imageBg }
+            formats={ ['auto', 'webp'] }
+            alt='heroBg' />
+          ) }
+        </div>
+        {/* Content wrapper */}
+        <div className='
+          container flex-1
+          flex flex-row
+          justify-center items-center
+          mx-auto md:p-12
+          p-6
+        '>
+          {/* Left empty space element 10% on tablet and desktop */}
+          <div className='grow-[0] md:grow-[1]' />
+          {/* Text wrapper */}
           <div className='
-            absolute
-            container
-            flex flex-col self-center
-            mx-6 md:mx-[25%] lg:ml-[10%] py-12 px-8 gap-12
-            lg:w-[30%] h-auto
-            rounded-2xl text-center
-            bg-whiteHero backdrop-blur-sm shadow-box-shadow
+            grow-[1] md:grow-[2] lg:grow-[3]
+            flex flex-col
+            justify-center items-center
+            py-12 px-8
+            gap-12
+            h-fit
+            rounded-2xl
+            bg-white/[.15]
+            drop-shadow-[0_0_32px_rgba(75,75,75,0.75)]
+            backdrop-blur-[7.5px]
           '>
             { title && (
-              <h1 className='text-2xl text-heroTitle text-white'
-              ref={titleEl}>
+              <h1 className='
+                min-w-fit w-min
+                text-center
+                text-light-gray font-semibold text-3xl
+                font-sans
+              '
+              ref={ titleEl }>
                 { title }
               </h1>
             ) }
-            <div className='
-              w-full h-hrHeight
-              bg-gradient-to-r from-transparent via-darkHeroBlue to-transparent
-            '>
-            </div>
+            <hr className='
+              h-[3px] w-full
+              border-transparent
+              bg-gradient-to-r from-transparent via-secondary to-transparent
+            ' />
             { subHeading && (
-              <h3 className='text-xl text-heroText text-white'>
+              <p className='
+                min-w-fit w-min
+                text-center
+              text-light-gray font-normal text-xl
+              '>
                 { subHeading }
-              </h3>
+              </p>
             ) }
             { button && (
               <button className='
-                self-center
-                w-40
-                px-4 py-2
-                bg-darkHeroBlue
-                rounded text-black font-heroTitle text-xl
+                py-2 px-4
+                rounded
+                bg-secondary
+                text-dark-gray font-semibold text-xl
               '>
                 { button }
               </button>
             ) }
           </div>
-        ) }
+          {/* Left empty space element 60% on tablet and desktop */}
+          <div className='grow-[0] md:grow-[1] lg:grow-[6]' />
+        </div>
       </div>
     </React.Fragment>
   );
 }
 
-HeroDark.propTypes = {
+HeroLight.propTypes = {
   imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   highlight: PropTypes.string,
