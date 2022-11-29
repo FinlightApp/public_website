@@ -6,13 +6,13 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
-import Hero from '../components/Hero';
+import HeroLight from '../components/HeroLight';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   heroImageBg,
-  heroImage,
   heroTitle,
+  heroHighlight,
   heroSubHeading,
   heroButton,
   heading,
@@ -21,13 +21,12 @@ export const IndexPageTemplate = ({
   intro,
 }) => {
   const heroImgBg = getImage(heroImageBg) || heroImageBg;
-  const heroImg = getImage(heroImage) || heroImage;
   return (
     <div>
-      <Hero
+      <HeroLight
       imageBg={ heroImgBg }
-      image={ heroImg }
       title={ heroTitle }
+      highlight={ heroHighlight }
       subHeading={ heroSubHeading }
       button={ heroButton } />
       <section className="section section--gradient">
@@ -83,8 +82,8 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  heroImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   heroTitle: PropTypes.string,
+  heroHighlight: PropTypes.string,
   heroSubHeading: PropTypes.string,
   heroButton: PropTypes.string,
   heading: PropTypes.string,
@@ -101,16 +100,15 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        heroImageBg={ frontmatter.heroImageBg }
-        heroImage={ frontmatter.heroImage }
-        heroTitle={ frontmatter.heroTitle }
-        heroSubHeading={ frontmatter.heroSubHeading }
-        heroButton={ frontmatter.heroButton }
-        heading={frontmatter.heading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
-      />
+      heroImageBg={ frontmatter.heroImageBg }
+      heroTitle={ frontmatter.heroTitle }
+      heroHighlight={ frontmatter.heroHighlight }
+      heroSubHeading={ frontmatter.heroSubHeading }
+      heroButton={ frontmatter.heroButton }
+      heading={frontmatter.heading}
+      mainpitch={frontmatter.mainpitch}
+      description={frontmatter.description}
+      intro={frontmatter.intro} />
     </Layout>
   );
 };
@@ -131,15 +129,11 @@ export const pageQuery = graphql`
       frontmatter {
         heroImageBg  {
           childImageSharp {
-            gatsbyImageData(quality: 100)
-          }
-        }
-        heroImage {
-          childImageSharp {
-            gatsbyImageData(quality: 100)
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
         heroTitle
+        heroHighlight
         heroSubHeading
         heroButton
         heading

@@ -1,24 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import { getImage } from "gatsby-plugin-image";
 
 import Layout from '../components/Layout';
-import Team from '../components/Team';
+import HeroDark from '../components/HeroDark';
 
 /* eslint-disable */
 export const TeamPageTemplate = ({
-  title
+  heroImageBg,
+  heroTitle,
+  heroHighlight,
+  heroSubHeading
 }) => {
+  const heroImgBg = getImage(heroImageBg) || heroImageBg;
   return (
     <div>
-      <Team title={title} />
-      <h2>Here is the page for team page</h2>
+      <HeroDark
+      imageBg={ heroImgBg }
+      title={ heroTitle }
+      highlight={ heroHighlight }
+      subHeading={ heroSubHeading } />
     </div>
   );
 };
 
 TeamPageTemplate.propTypes = {
-  title: PropTypes.string
+  heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  heroTitle: PropTypes.string,
+  heroHighlight: PropTypes.string,
+  heroSubHeading: PropTypes.string
 };
 
 const TeamPage = ({ data }) => {
@@ -26,7 +37,10 @@ const TeamPage = ({ data }) => {
   return (
     <Layout>
       <TeamPageTemplate
-      title={ frontmatter.title } />
+      heroImageBg={ frontmatter.heroImageBg }
+      heroTitle={ frontmatter.heroTitle }
+      heroHighlight={ frontmatter.heroTitleHighlight }
+      heroSubHeading={ frontmatter.heroSubHeading } />
     </Layout>
   );
 };
@@ -35,8 +49,8 @@ TeamPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
-    }),
-  }),
+    })
+  })
 };
 
 export default TeamPage;
@@ -46,7 +60,14 @@ export const teamPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
-        title
+        heroImageBg  {
+          childImageSharp {
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          }
+        }
+        heroTitle
+        heroHighlight
+        heroSubHeading
       }
     }
   }
