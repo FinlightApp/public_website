@@ -7,6 +7,11 @@ heroSubHeading: We do more than enabling investors to allocate to top decile VCs
   across vintages, regions and sectors from as low as 10k GBP. We also eliminate
   the entire admin GPs have to go through to on-board, serve and report to LPs.
 heroButton: Request Info
+applyPanel:
+  title: Title
+  subHeading: SubHeader
+  button: Button
+  imageBg: /img/heroBg.webp
 heading: Great coffee with a conscience
 mainpitch:
   title: Why Kaldi
