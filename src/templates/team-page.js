@@ -63,7 +63,7 @@ export const teamPageQuery = graphql`
       frontmatter {
         heroImageBg  {
           childImageSharp {
-            gatsbyImageData(quality: 100)
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
         heroTitle

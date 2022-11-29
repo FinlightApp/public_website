@@ -11,8 +11,7 @@ const TeamPagePreview = ({ entry, getAsset }) => {
       heroImageBg={ getAsset(data.heroImageBg) }
       heroTitle={ data.heroTitle }
       heroHighlight={ data.heroHighlight }
-      heroSubHeading={ data.heroSubHeading }
-      heroButton={ data.heroButton } />
+      heroSubHeading={ data.heroSubHeading } />
     )
   } else {
     return <div>Loading...</div>
