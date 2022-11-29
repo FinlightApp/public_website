@@ -71,14 +71,14 @@ export default function HeroLight(props) {
             h-fit
             rounded-2xl
             bg-white/[.15]
-            drop-shadow-[0_0_32px_rgba(75,75,75,0.75)]
+            drop-shadow-[0_0_32px_rgba(74,74,74,0.75)]
             backdrop-blur-[7.5px]
           '>
             { title && (
               <h1 className='
                 min-w-fit w-min
                 text-center
-                text-light-gray font-semibold text-3xl
+                text-black font-semibold text-3xl
                 font-sans
               '
               ref={ titleEl }>
@@ -94,7 +94,7 @@ export default function HeroLight(props) {
               <p className='
                 min-w-fit w-min
                 text-center
-              text-light-gray font-normal text-xl
+              text-light-Black font-normal text-xl
               '>
                 { subHeading }
               </p>
@@ -104,7 +104,7 @@ export default function HeroLight(props) {
                 py-2 px-4
                 rounded
                 bg-secondary
-                text-dark-gray font-semibold text-xl
+                text-white font-semibold text-xl
               '>
                 { button }
               </button>

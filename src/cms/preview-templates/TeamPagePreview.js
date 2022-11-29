@@ -10,7 +10,8 @@ const TeamPagePreview = ({ entry, getAsset }) => {
       <TeamPageTemplate 
       heroImageBg={ getAsset(data.heroImageBg) }
       heroTitle={ data.heroTitle }
-      heroSubHeading={ data.heroSubHeading } />
+      heroSubHeading={ data.heroSubHeading }
+      heroButton={ data.heroButton } />
     )
   } else {
     return <div>Loading...</div>

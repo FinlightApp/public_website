@@ -4,23 +4,25 @@ import { graphql } from 'gatsby';
 import { getImage } from "gatsby-plugin-image";
 
 import Layout from '../components/Layout';
-import HeroLight from '../components/HeroLight';
+import HeroDark from '../components/HeroDark';
 
 /* eslint-disable */
 export const TeamPageTemplate = ({
   heroImageBg,
   heroTitleHighlight,
   heroTitle,
-  heroSubHeading
+  heroSubHeading,
+  heroButton
 }) => {
   const heroImgBg = getImage(heroImageBg) || heroImageBg; {
     return (
       <div>
-        <HeroLight
+        <HeroDark
         imageBg={ heroImgBg }
         highlight={ heroTitleHighlight }
         title={ heroTitle }
-        subHeading={ heroSubHeading } />
+        subHeading={ heroSubHeading }
+        button={ heroButton } />
       </div>
     );
   };
@@ -30,7 +32,8 @@ TeamPageTemplate.propTypes = {
   heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   heroTitleHighlight: PropTypes.string,
   heroTitle: PropTypes.string,
-  heroSubHeading: PropTypes.string
+  heroSubHeading: PropTypes.string,
+  heroButton: PropTypes.string
 };
 
 const TeamPage = ({ data }) => {
@@ -41,7 +44,8 @@ const TeamPage = ({ data }) => {
         heroImageBg={ frontmatter.heroImageBg }
         heroTitleHighlight={ frontmatter.heroTitleHighlight }
         heroTitle={ frontmatter.heroTitle }
-        heroSubHeading={ frontmatter.heroSubHeading } />
+        heroSubHeading={ frontmatter.heroSubHeading }
+        heroButton={ frontmatter.heroButton } />
     </Layout>
   );
 };
@@ -69,6 +73,7 @@ export const teamPageQuery = graphql`
         heroTitleHighlight
         heroTitle
         heroSubHeading
+        heroButton
       }
     }
   }
