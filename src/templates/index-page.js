@@ -7,6 +7,7 @@ import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import Hero from '../components/Hero';
+import Apply from '../components/Apply';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -15,6 +16,9 @@ export const IndexPageTemplate = ({
   heroTitle,
   heroSubHeading,
   heroButton,
+
+  applyPanel,
+
   heading,
   mainpitch,
   description,
@@ -22,6 +26,8 @@ export const IndexPageTemplate = ({
 }) => {
   const heroImgBg = getImage(heroImageBg) || heroImageBg;
   const heroImg = getImage(heroImage) || heroImage;
+  /* const applyImgBg = getImage(applyPanel.imageBg) || applyPanel.imageBg; */
+
   return (
     <div>
       <Hero
@@ -30,6 +36,16 @@ export const IndexPageTemplate = ({
       title={ heroTitle }
       subHeading={ heroSubHeading }
       button={ heroButton } />
+      <Apply
+      darkMode={ applyPanel.darkMode }
+      imageBg={ {
+        image: getImage(applyPanel.imageBg.image) || applyPanel.imageBg.image,
+        alt: applyPanel.imageBg.alt
+      } }
+      title={ applyPanel.title }
+      subHeading={ applyPanel.subHeading }
+      button={ applyPanel.button } />
+
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -87,6 +103,9 @@ IndexPageTemplate.propTypes = {
   heroTitle: PropTypes.string,
   heroSubHeading: PropTypes.string,
   heroButton: PropTypes.string,
+
+  applyPanel: PropTypes.object,
+
   heading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
@@ -106,6 +125,9 @@ const IndexPage = ({ data }) => {
         heroTitle={ frontmatter.heroTitle }
         heroSubHeading={ frontmatter.heroSubHeading }
         heroButton={ frontmatter.heroButton }
+
+        applyPanel={ frontmatter.applyPanel }
+
         heading={frontmatter.heading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
@@ -142,6 +164,20 @@ export const pageQuery = graphql`
         heroTitle
         heroSubHeading
         heroButton
+        applyPanel {
+          darkMode
+          imageBg {
+            image {
+              childImageSharp {
+                gatsbyImageData(quality: 100)
+              }
+            }
+            alt
+          }
+          title
+          subHeading
+          button
+        }
         heading
         mainpitch {
           title
