@@ -23,7 +23,7 @@ export const TeamPageTemplate = ({
       subHeading={ heroSubHeading } />
     </div>
   );
-}
+};
 
 TeamPageTemplate.propTypes = {
   heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
