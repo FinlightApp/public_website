@@ -9,20 +9,18 @@ import HeroDark from '../components/HeroDark';
 /* eslint-disable */
 export const TeamPageTemplate = ({
   heroImageBg,
-  heroTitleHighlight,
   heroTitle,
-  heroSubHeading,
-  heroButton
+  heroHighlight,
+  heroSubHeading
 }) => {
   const heroImgBg = getImage(heroImageBg) || heroImageBg; {
     return (
       <div>
         <HeroDark
         imageBg={ heroImgBg }
-        highlight={ heroTitleHighlight }
         title={ heroTitle }
-        subHeading={ heroSubHeading }
-        button={ heroButton } />
+        highlight={ heroHighlight }
+        subHeading={ heroSubHeading } />
       </div>
     );
   };
@@ -30,10 +28,9 @@ export const TeamPageTemplate = ({
 
 TeamPageTemplate.propTypes = {
   heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  heroTitleHighlight: PropTypes.string,
   heroTitle: PropTypes.string,
-  heroSubHeading: PropTypes.string,
-  heroButton: PropTypes.string
+  heroHighlight: PropTypes.string,
+  heroSubHeading: PropTypes.string
 };
 
 const TeamPage = ({ data }) => {
@@ -42,10 +39,9 @@ const TeamPage = ({ data }) => {
     <Layout>
       <TeamPageTemplate
         heroImageBg={ frontmatter.heroImageBg }
-        heroTitleHighlight={ frontmatter.heroTitleHighlight }
         heroTitle={ frontmatter.heroTitle }
-        heroSubHeading={ frontmatter.heroSubHeading }
-        heroButton={ frontmatter.heroButton } />
+        heroHighlight={ frontmatter.heroTitleHighlight }
+        heroSubHeading={ frontmatter.heroSubHeading } />
     </Layout>
   );
 };
@@ -70,10 +66,9 @@ export const teamPageQuery = graphql`
             gatsbyImageData(quality: 100)
           }
         }
-        heroTitleHighlight
         heroTitle
+        heroHighlight
         heroSubHeading
-        heroButton
       }
     }
   }

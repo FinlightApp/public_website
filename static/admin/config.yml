@@ -47,6 +47,7 @@ collections:
             }
           - { label: Hero Background, name: heroImageBg, widget: image }
           - { label: Hero Title, name: heroTitle, widget: string }
+          - { label: Hero heroHighlight, name: heroHighlight, widget: string }
           - { label: Hero Subheading, name: heroSubHeading, widget: string }
           - { label: Hero Button, name: heroButton, widget: string }
           - { label: Heading, name: heading, widget: string }
@@ -133,9 +134,8 @@ collections:
             }
           - { label: Hero Background, name: heroImageBg, widget: image }
           - { label: Hero Title, name: heroTitle, widget: string }
-          - { label: Hero heroTitleHighlight, name: heroTitleHighlight, widget: string }
+          - { label: Hero heroHighlight, name: heroHighlight, widget: string }
           - { label: Hero Subheading, name: heroSubHeading, widget: string }
-          - { label: Hero Button, name: heroButton, widget: string }
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"

@@ -121,8 +121,8 @@ export default function HeroLight(props) {
 HeroLight.propTypes = {
   imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  highlight: PropTypes.string,
   title: PropTypes.string,
+  highlight: PropTypes.string,
   subHeading: PropTypes.string,
   button: PropTypes.string
 };
