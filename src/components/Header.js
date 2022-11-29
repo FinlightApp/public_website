@@ -5,6 +5,7 @@ export default function Header(props) {
       <div className='
         flex flex-col flex-0
         justify-center items-center
+        w-full
         gap-12
       '>
         <h1 className={`
@@ -18,7 +19,7 @@ export default function Header(props) {
             'bg-gradient-to-r from-blue/0 via-blue to-blue/0' :
             'bg-gradient-to-r from-primary/0 via-primary to-primary/0'
           }
-          w-full max-w-80 h-0.5 
+          w-full max-w-7xl h-0.5
         `} />
       </div>
     </React.Fragment>

@@ -13,14 +13,14 @@ export default function Apply(props) {
     subHeading,
     button,
   } = props;
-  
+
   return (
     <React.Fragment>
       <div className='
         relative
         flex
         justify-center
-        min-h-[500px]
+        md:min-h-[500px]
       '>
         { imageBg?.image?.url ? (
           <img className='
@@ -42,11 +42,17 @@ export default function Apply(props) {
         {( title || subHeading || button ) && (
           <div className='
             container
-            flex flex-1
-            items-center justify-center lg:justify-end
-            p-6 md:px-32
+            grid grid-cols-10
+            items-center
+            px-8 py-12 md:p-0
           '>
-            <Box class='w-full lg:w-1/2 xl:w-1/3 h-fit'>
+            <Box class='
+              col-span-10
+              md:col-start-3 md:col-span-6
+              lg:col-start-6 lg:col-span-4
+              xl:col-start-7 xl:col-span-3
+              h-fit
+            '>
               { title && (
                 <Header darkMode={ darkMode }>
                   { title }
