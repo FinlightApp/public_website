@@ -26,9 +26,9 @@ export const IndexPageTemplate = ({
       <HeroLight
       imageBg={ heroImgBg }
       title={ heroTitle }
+      highlight={ heroHighlight }
       subHeading={ heroSubHeading }
-      button={ heroButton }
-      highlight={ heroHighlight } />
+      button={ heroButton } />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -83,6 +83,7 @@ export const IndexPageTemplate = ({
 IndexPageTemplate.propTypes = {
   heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   heroTitle: PropTypes.string,
+  heroHighlight: PropTypes.string,
   heroSubHeading: PropTypes.string,
   heroButton: PropTypes.string,
   heading: PropTypes.string,
