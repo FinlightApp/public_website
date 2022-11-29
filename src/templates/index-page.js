@@ -117,9 +117,7 @@ const IndexPage = ({ data }) => {
         heroTitle={ frontmatter.heroTitle }
         heroSubHeading={ frontmatter.heroSubHeading }
         heroButton={ frontmatter.heroButton }
-
         applyPanel={ frontmatter.applyPanel }
-
         heading={frontmatter.heading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
