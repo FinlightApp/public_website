@@ -13,7 +13,7 @@ export const TeamPageTemplate = ({
   heroHighlight,
   heroSubHeading
 }) => {
-  const heroImgBg = getImage(heroImageBg) || heroImageBg; {
+  const heroImgBg = getImage(heroImageBg) || heroImageBg;
     return (
       <div>
         <HeroDark
@@ -23,8 +23,7 @@ export const TeamPageTemplate = ({
         subHeading={ heroSubHeading } />
       </div>
     );
-  };
-}
+  }
 
 TeamPageTemplate.propTypes = {
   heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
