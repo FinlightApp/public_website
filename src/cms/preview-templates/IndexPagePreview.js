@@ -23,7 +23,6 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           subHeading: data.applyPanel.subHeading,
           button: data.applyPanel.button
         }}
-
         heading={data.heading}
         description={data.description}
         intro={data.intro || { blurbs: [] }}
