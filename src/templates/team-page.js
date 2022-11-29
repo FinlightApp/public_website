@@ -14,16 +14,16 @@ export const TeamPageTemplate = ({
   heroSubHeading
 }) => {
   const heroImgBg = getImage(heroImageBg) || heroImageBg;
-    return (
-      <div>
-        <HeroDark
-        imageBg={ heroImgBg }
-        title={ heroTitle }
-        highlight={ heroHighlight }
-        subHeading={ heroSubHeading } />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <HeroDark
+      imageBg={ heroImgBg }
+      title={ heroTitle }
+      highlight={ heroHighlight }
+      subHeading={ heroSubHeading } />
+    </div>
+  );
+}
 
 TeamPageTemplate.propTypes = {
   heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -49,8 +49,8 @@ TeamPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
-    }),
-  }),
+    })
+  })
 };
 
 export default TeamPage;
