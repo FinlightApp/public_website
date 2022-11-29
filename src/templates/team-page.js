@@ -37,10 +37,10 @@ const TeamPage = ({ data }) => {
   return (
     <Layout>
       <TeamPageTemplate
-        heroImageBg={ frontmatter.heroImageBg }
-        heroTitle={ frontmatter.heroTitle }
-        heroHighlight={ frontmatter.heroTitleHighlight }
-        heroSubHeading={ frontmatter.heroSubHeading } />
+      heroImageBg={ frontmatter.heroImageBg }
+      heroTitle={ frontmatter.heroTitle }
+      heroHighlight={ frontmatter.heroTitleHighlight }
+      heroSubHeading={ frontmatter.heroSubHeading } />
     </Layout>
   );
 };

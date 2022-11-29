@@ -100,16 +100,15 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        heroImageBg={ frontmatter.heroImageBg }
-        heroTitle={ frontmatter.heroTitle }
-        heroHighlight={ frontmatter.heroHighlight }
-        heroSubHeading={ frontmatter.heroSubHeading }
-        heroButton={ frontmatter.heroButton }
-        heading={frontmatter.heading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
-      />
+      heroImageBg={ frontmatter.heroImageBg }
+      heroTitle={ frontmatter.heroTitle }
+      heroHighlight={ frontmatter.heroHighlight }
+      heroSubHeading={ frontmatter.heroSubHeading }
+      heroButton={ frontmatter.heroButton }
+      heading={frontmatter.heading}
+      mainpitch={frontmatter.mainpitch}
+      description={frontmatter.description}
+      intro={frontmatter.intro} />
     </Layout>
   );
 };
