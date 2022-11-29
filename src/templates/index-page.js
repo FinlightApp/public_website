@@ -16,9 +16,7 @@ export const IndexPageTemplate = ({
   heroTitle,
   heroSubHeading,
   heroButton,
-
   applyPanel,
-
   heading,
   mainpitch,
   description,
@@ -26,8 +24,6 @@ export const IndexPageTemplate = ({
 }) => {
   const heroImgBg = getImage(heroImageBg) || heroImageBg;
   const heroImg = getImage(heroImage) || heroImage;
-  /* const applyImgBg = getImage(applyPanel.imageBg) || applyPanel.imageBg; */
-
   return (
     <div>
       <Hero
@@ -45,7 +41,6 @@ export const IndexPageTemplate = ({
       title={ applyPanel.title }
       subHeading={ applyPanel.subHeading }
       button={ applyPanel.button } />
-
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -103,9 +98,7 @@ IndexPageTemplate.propTypes = {
   heroTitle: PropTypes.string,
   heroSubHeading: PropTypes.string,
   heroButton: PropTypes.string,
-
   applyPanel: PropTypes.object,
-
   heading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
@@ -116,7 +109,6 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-
   return (
     <Layout>
       <IndexPageTemplate

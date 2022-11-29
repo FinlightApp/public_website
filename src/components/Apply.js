@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
-
 import Header from './Header';
 import Button from './Button';
 import Box from './Box';

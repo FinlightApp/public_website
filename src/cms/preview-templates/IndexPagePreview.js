@@ -6,7 +6,6 @@ const IndexPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
 
   if (data) {
-    console.log('data*', data)
     return (
       <IndexPageTemplate
         heroImageBg={ getAsset(data.heroImageBg) }
@@ -14,7 +13,6 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         heroTitle={ data.heroTitle }
         heroSubHeading={ data.heroSubHeading }
         heroButton={ data.heroButton }
-
         applyPanel={{
           darkMode: data.applyPanel.darkMode,
           imageBg: {
