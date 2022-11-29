@@ -20,7 +20,7 @@ export default function Apply(props) {
         relative
         flex
         justify-center
-        md:min-h-[500px]
+        h-fit md:h-[500px]
       '>
         { imageBg?.image?.url ? (
           <img className='
@@ -61,7 +61,7 @@ export default function Apply(props) {
               { subHeading && (
                 <h3 className={`
                   ${ darkMode ? 'text-white' : 'text-black' }
-                  text-xl text-center font-light font-p
+                  text-xl text-center font-light font-paragraph
                 `}>
                   { subHeading }
                 </h3>

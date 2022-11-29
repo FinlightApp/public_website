@@ -10,15 +10,13 @@ export default function Header(props) {
       '>
         <h1 className={`
           ${ props.darkMode ? 'text-white' : 'text-black' }
-          text-3xl text-center font-semibold font-h
+          text-3xl text-center font-semibold font-header
         `}>
           { props.children }
         </h1>
         <div className={`
-          ${ props.darkMode ?
-            'bg-gradient-to-r from-blue/0 via-blue to-blue/0' :
-            'bg-gradient-to-r from-primary/0 via-primary to-primary/0'
-          }
+          ${ props.darkMode ? 'via-blue' : 'via-primary' }
+          bg-gradient-to-r from-transparent to-transparent
           w-full max-w-7xl h-0.5
         `} />
       </div>

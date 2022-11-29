@@ -14,8 +14,8 @@ module.exports = {
         'blue': '#3273DC',
       },
       fontFamily: {
-        'h': 'Nunito Sans',
-        'p': 'Hind Madurai',
+        'header': 'Nunito Sans',
+        'paragraph': 'Hind Madurai',
       },
     },
   },
