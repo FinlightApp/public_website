@@ -32,7 +32,7 @@ export default function Apply(props) {
           alt={ imageBg.alt } />
         ) : (
           <GatsbyImage className='
-            absolute inset-0
+            !absolute inset-0
             brightness-50
           '
           objectFit='fill'

@@ -29,7 +29,7 @@ export default function Hero(props) {
           src={ imageBg.image }
           alt={ imageBg.alt } />
         ) : (
-          <GatsbyImage className='absolute inset-0'
+          <GatsbyImage className='!absolute inset-0'
           objectFit='fill'
           image={ imageBg.image }
           formats={ ['auto', 'webp'] }
