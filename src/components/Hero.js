@@ -67,7 +67,7 @@ export default function Hero(props) {
               ) }
             </Box>
           </div>
-        ) }
+        )}
       </div>
     </React.Fragment>
   );

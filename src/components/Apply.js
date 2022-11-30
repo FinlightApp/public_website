@@ -71,7 +71,7 @@ export default function Apply(props) {
               ) }
             </Box>
           </div>
-        ) }
+        )}
       </div>
     </React.Fragment>
   );
