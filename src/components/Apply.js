@@ -40,7 +40,7 @@ export default function Apply(props) {
           formats={ ['auto', 'webp'] }
           alt={ imageBg.alt } />
         ) }
-        {( title || subHeading || button ) && (
+        { ( title || subHeading || button ) && (
           <div className='
             container
             grid grid-cols-10
@@ -71,7 +71,7 @@ export default function Apply(props) {
               ) }
             </Box>
           </div>
-        )}
+        ) }
       </div>
     </React.Fragment>
   );
