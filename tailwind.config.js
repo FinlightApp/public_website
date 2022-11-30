@@ -11,7 +11,7 @@ module.exports = {
       },
       colors: {
         'primary': '#E7B224',
-        'blue': '#3273DC',
+        'secondary': '#3273DC',
       },
       fontFamily: {
         'header': 'Nunito Sans',
