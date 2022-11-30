@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Header(props) {
+export default function Subeader(props) {
   return (
     <React.Fragment>
       <div className='
@@ -8,12 +8,12 @@ export default function Header(props) {
         w-full
         gap-12
       '>
-        <h1 className={`
+        <h2 className={`
           ${ props.darkMode ? 'text-white' : 'text-black' }
-          text-4xl text-center font-semibold font-header
+          text-3xl text-center font-semibold font-header
         `}>
           { props.children }
-        </h1>
+        </h2>
         <div className={`
           ${ props.darkMode ? 'via-blue' : 'via-primary' }
           bg-gradient-to-r from-transparent to-transparent

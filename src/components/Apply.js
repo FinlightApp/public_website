@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import Header from './Header';
+import Subheader from './Subheader';
+import Paragraph from './Paragraph';
 import Button from './Button';
 import Box from './Box';
 
@@ -54,17 +55,14 @@ export default function Apply(props) {
               h-fit
             '>
               { title && (
-                <Header darkMode={ darkMode }>
+                <Subheader darkMode={ darkMode }>
                   { title }
-                </Header>
+                </Subheader>
               ) }
               { subHeading && (
-                <h3 className={`
-                  ${ darkMode ? 'text-white' : 'text-black' }
-                  text-xl text-center font-light font-paragraph
-                `}>
+                <Paragraph darkMode={ darkMode }>
                   { subHeading }
-                </h3>
+                </Paragraph>
               ) }
               { button && (
                 <Button darkMode={ darkMode }>
