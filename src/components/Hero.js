@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import Header from './Header';
+import Paragraph from './Paragraph';
+import Button from './Button';
+import Box from './Box';
 
 export default function Hero(props) {
   const {
+    darkMode,
     imageBg,
-    image,
     title,
+    titleHighlight,
     subHeading,
     button,
   } = props;
@@ -14,85 +19,53 @@ export default function Hero(props) {
   return (
     <React.Fragment>
       <div className='
-        relative 
-        flex 
+        relative
+        flex
         justify-center
-        margin-top-0 margin-left-0
+        h-fit md:h-[700px]
       '>
-        { imageBg?.url ? (
-          <img
-          className='w-full max-h-[500px] brightness-50'
-          src={ imageBg }
-          alt='heroBg' />
+        { imageBg?.image?.url ? (
+          <img className='absolute inset-0'
+          src={ imageBg.image }
+          alt={ imageBg.alt } />
         ) : (
-          <GatsbyImage
-          className='w-full max-h-[500px] brightness-50'
-          image={ imageBg }
+          <GatsbyImage className='!absolute inset-0'
+          objectFit='fill'
+          image={ imageBg.image }
           formats={ ['auto', 'webp'] }
-          alt='heroBg' />
+          alt={ imageBg.alt } />
         ) }
-        {( title || subHeading || image || button ) && (
-          <div
-          className='
-            absolute
+        { ( title || subHeading || button ) && (
+          <div className='
             container
-            flex flex-col lg:flex-row
-            items-center justify-center
-            w-full h-full
-            p-8
+            grid grid-cols-10
+            items-center
+            px-8 py-12 md:p-0
           '>
-            <div className='
-              hidden md:flex lg:flex-row
-              flex-1
-              justify-center
+            <Box className='
+              col-span-10
+              md:col-start-3 md:col-span-6
+              lg:col-start-3 lg:col-span-4
+              xl:col-start-2 xl:col-span-3
+              h-fit
             '>
-              { image?.url ? (
-                <img
-                className='
-                  md:h-[250px] md:w-[350px]
-                '
-                src={ image }
-                alt='heroImage' />
-                ) : (
-                <GatsbyImage
-                className='
-                  md:h-[250px] md:w-[350px]
-                '
-                image={ image }
-                formats={ ['auto', 'webp'] } 
-                alt='heroImage' />
-                ) }
-              </div>
-              <div
-              className='
-                flex flex-col flex-1
-                justify-center
-                gap-4
-                text-center
-              '>
-                { title && (
-                  <h1 className='text-3xl text-white lg:text-5xl'>
-                    { title }
-                  </h1>
-                ) }
-                { subHeading && (
-                  <h3 className='text-white sm:text-base md:text-xl'>
-                    { subHeading }
-                  </h3>
-                ) }
-                { button && (
-                  <button
-                  className='
-                    self-center
-                    w-40
-                    p-2
-                    text-white bg-secondary-600
-                    rounded
-                  '>
-                    { button }
-                  </button>
-                ) }
-            </div>
+              { title && (
+                <Header darkMode={ darkMode }
+                highlight={ titleHighlight }>
+                  { title }
+                </Header>
+              ) }
+              { subHeading && (
+                <Paragraph darkMode={ darkMode }>
+                  { subHeading }
+                </Paragraph>
+              ) }
+              { button && (
+                <Button darkMode={ darkMode }>
+                  { button }
+                </Button>
+              ) }
+            </Box>
           </div>
         ) }
       </div>
@@ -101,9 +74,10 @@ export default function Hero(props) {
 }
 
 Hero.propTypes = {
+  darkMode: PropTypes.bool,
   imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
+  titleHighlight: PropTypes.string,
   subHeading: PropTypes.string,
   button: PropTypes.string
 };

@@ -8,11 +8,17 @@ const IndexPagePreview = ({ entry, getAsset }) => {
   if (data) {
     return (
       <IndexPageTemplate
-        heroImageBg={ getAsset(data.heroImageBg) }
-        heroTitle={ data.heroTitle }
-        heroHighlight={ data.heroHighlight }
-        heroSubHeading={ data.heroSubHeading }
-        heroButton={ data.heroButton }
+        heroPanel={{
+          darkMode: data.heroPanel.darkMode,
+          imageBg: {
+            image: getAsset(data.heroPanel.imageBg.image),
+            alt: data.heroPanel.imageBg.alt,
+          },
+          title: data.heroPanel.title,
+          titleHighlight: data.heroPanel.titleHighlight,
+          subHeading: data.heroPanel.subHeading,
+          button: data.heroPanel.button
+        }}
         applyPanel={{
           darkMode: data.applyPanel.darkMode,
           imageBg: {

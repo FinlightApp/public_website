@@ -6,31 +6,30 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
-import HeroLight from '../components/HeroLight';
+import Hero from '../components/Hero';
 import Apply from '../components/Apply';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
-  heroImageBg,
-  heroTitle,
-  heroHighlight,
-  heroSubHeading,
-  heroButton,
+  heroPanel,
   applyPanel,
   heading,
   mainpitch,
   description,
   intro,
 }) => {
-  const heroImgBg = getImage(heroImageBg) || heroImageBg;
   return (
     <div>
-      <HeroLight
-      imageBg={ heroImgBg }
-      title={ heroTitle }
-      highlight={ heroHighlight }
-      subHeading={ heroSubHeading }
-      button={ heroButton } />
+      <Hero
+      darkMode={ heroPanel.darkMode }
+      imageBg={ {
+        image: getImage(heroPanel.imageBg.image) || heroPanel.imageBg.image,
+        alt: heroPanel.imageBg.alt
+      } }
+      title={ heroPanel.title }
+      titleHighlight={ heroPanel.titleHighlight }
+      subHeading={ heroPanel.subHeading }
+      button={ heroPanel.button } />
       <Apply
       darkMode={ applyPanel.darkMode }
       imageBg={ {
@@ -92,18 +91,22 @@ export const IndexPageTemplate = ({
 };
 
 IndexPageTemplate.propTypes = {
-  heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  heroTitle: PropTypes.string,
-  heroHighlight: PropTypes.string,
-  heroSubHeading: PropTypes.string,
-  heroButton: PropTypes.string,
+  heroPanel: PropTypes.shape({
+    darkMode: PropTypes.bool,
+    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    title: PropTypes.string,
+    titleHighlight: PropTypes.string,
+    subHeading: PropTypes.string,
+    button: PropTypes.string,
+  }),
   applyPanel: PropTypes.shape({
-    darkMode: PropTypes.string,
+    darkMode: PropTypes.bool,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     subHeading: PropTypes.string,
     button: PropTypes.string,
   }),
+
   heading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
@@ -117,11 +120,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-      heroImageBg={ frontmatter.heroImageBg }
-      heroTitle={ frontmatter.heroTitle }
-      heroHighlight={ frontmatter.heroHighlight }
-      heroSubHeading={ frontmatter.heroSubHeading }
-      heroButton={ frontmatter.heroButton }
+      heroPanel={ frontmatter.heroPanel }
       applyPanel={ frontmatter.applyPanel }
       heading={frontmatter.heading}
       mainpitch={frontmatter.mainpitch}
@@ -145,15 +144,21 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        heroImageBg  {
-          childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        heroPanel {
+          darkMode
+          imageBg {
+            alt
+            image {
+              childImageSharp {
+                gatsbyImageData(quality: 100)
+              }
+            }
           }
+          title
+          titleHighlight
+          subHeading
+          button
         }
-        heroTitle
-        heroHighlight
-        heroSubHeading
-        heroButton
         applyPanel {
           darkMode
           imageBg {

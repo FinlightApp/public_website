@@ -4,32 +4,35 @@ import { graphql } from 'gatsby';
 import { getImage } from "gatsby-plugin-image";
 
 import Layout from '../components/Layout';
-import HeroDark from '../components/HeroDark';
+import Hero from '../components/Hero';
 
 /* eslint-disable */
 export const TeamPageTemplate = ({
-  heroImageBg,
-  heroTitle,
-  heroHighlight,
-  heroSubHeading
+  heroPanel
 }) => {
-  const heroImgBg = getImage(heroImageBg) || heroImageBg;
   return (
     <div>
-      <HeroDark
-      imageBg={ heroImgBg }
-      title={ heroTitle }
-      highlight={ heroHighlight }
-      subHeading={ heroSubHeading } />
+      <Hero
+      darkMode={ heroPanel.darkMode }
+      imageBg={ {
+        image: getImage(heroPanel.imageBg.image) || heroPanel.imageBg.image,
+        alt: heroPanel.imageBg.alt
+      } }
+      title={ heroPanel.title }
+      titleHighlight={ heroPanel.titleHighlight }
+      subHeading={ heroPanel.subHeading } />
     </div>
   );
 };
 
 TeamPageTemplate.propTypes = {
-  heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  heroTitle: PropTypes.string,
-  heroHighlight: PropTypes.string,
-  heroSubHeading: PropTypes.string
+  heroPanel: PropTypes.shape({
+    darkMode: PropTypes.bool,
+    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    title: PropTypes.string,
+    titleHighlight: PropTypes.string,
+    subHeading: PropTypes.string,
+  }),
 };
 
 const TeamPage = ({ data }) => {
@@ -37,10 +40,7 @@ const TeamPage = ({ data }) => {
   return (
     <Layout>
       <TeamPageTemplate
-      heroImageBg={ frontmatter.heroImageBg }
-      heroTitle={ frontmatter.heroTitle }
-      heroHighlight={ frontmatter.heroTitleHighlight }
-      heroSubHeading={ frontmatter.heroSubHeading } />
+      heroPanel={ frontmatter.heroPanel } />
     </Layout>
   );
 };
@@ -60,14 +60,20 @@ export const teamPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
-        heroImageBg  {
-          childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        heroPanel {
+          darkMode
+          imageBg {
+            alt
+            image {
+              childImageSharp {
+                gatsbyImageData(quality: 100)
+              }
+            }
           }
+          title
+          titleHighlight
+          subHeading
         }
-        heroTitle
-        heroHighlight
-        heroSubHeading
       }
     }
   }

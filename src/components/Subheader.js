@@ -15,7 +15,7 @@ export default function Subeader(props) {
           { props.children }
         </h2>
         <div className={`
-          ${ props.darkMode ? 'via-secondary' : 'via-primary' }
+          ${ props.darkMode ? 'via-primary' : 'via-secondary' }
           bg-gradient-to-r from-transparent to-transparent
           w-full max-w-7xl h-0.5
         `} />
