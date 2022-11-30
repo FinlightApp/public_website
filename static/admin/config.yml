@@ -45,11 +45,29 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - { label: Hero Background, name: heroImageBg, widget: image }
-          - { label: Hero Title, name: heroTitle, widget: string }
-          - { label: Hero ToHighlight, name: heroHighlight, widget: string }
-          - { label: Hero Subheading, name: heroSubHeading, widget: string }
-          - { label: Hero Button, name: heroButton, widget: string }
+          - {
+              label: Hero Panel,
+              name: heroPanel,
+              widget: object,
+              fields:
+                [
+                  { label: Dark Mode, name: darkMode, widget: boolean, default: false },
+                  {
+                    label: Background,
+                    name: imageBg,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: SEO - Image Description, name: alt, widget: string },
+                      ],
+                  },
+                  { label: Title, name: title, widget: string },
+                  { label: Title Highlight, name: titleHighlight, widget: string },
+                  { label: Sub-Heading, name: subHeading, widget: string },
+                  { label: Button, name: button, widget: string },
+                ],
+            }
           - {
               label: Apply Panel,
               name: applyPanel,

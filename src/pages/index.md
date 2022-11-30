@@ -1,12 +1,16 @@
 ---
 templateKey: index-page
-heroImageBg: /img/london.jpg
-heroTitle: Simple VC Investing
-heroHighlight: VC Investing
-heroSubHeading: We do more than enabling investors to allocate to top decile VCs
-  across vintages, regions and sectors from as low as 10k GBP. We also eliminate
-  the entire admin GPs have to go through to on-board, serve and report to LPs.
-heroButton: Request Info
+heroPanel:
+  darkMode: true
+  imageBg:
+    alt: Background Alt
+    image: /img/london.jpg
+  title: Simple VC Investing
+  titleHighlight: VC Investing
+  subHeading: We do more than enabling investors to allocate to top decile VCs
+    across vintages, regions and sectors from as low as 10k GBP. We also eliminate
+    the entire admin GPs have to go through to on-board, serve and report to LPs.
+  button: Request Info
 applyPanel:
   darkMode: true
   imageBg:
