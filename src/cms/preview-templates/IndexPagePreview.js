@@ -16,8 +16,8 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         applyPanel={{
           darkMode: data.applyPanel.darkMode,
           imageBg: {
-            image: getAsset(entry.getIn(['data', 'applyPanel', 'imageBg', 'image'])),
-            alt: entry.getIn(['data', 'applyPanel', 'imageBg', 'alt']),
+            image: getAsset(data.applyPanel.imageBg.image),
+            alt: data.applyPanel.imageBg.alt,
           },
           title: data.applyPanel.title,
           subHeading: data.applyPanel.subHeading,
