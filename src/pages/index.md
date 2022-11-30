@@ -8,10 +8,13 @@ heroSubHeading: We do more than enabling investors to allocate to top decile VCs
   the entire admin GPs have to go through to on-board, serve and report to LPs.
 heroButton: Request Info
 applyPanel:
-  title: Title
-  subHeading: SubHeader
-  button: Button
-  imageBg: /img/heroBg.webp
+  darkMode: true
+  imageBg:
+    alt: Background Alt
+    image: /img/heroBg.webp
+  title: Ready to Finlight?
+  subHeading: Asset consolidation processes are always systematically better with Finlight.
+  button: Apply for an account
 heading: Great coffee with a conscience
 mainpitch:
   title: Why Kaldi

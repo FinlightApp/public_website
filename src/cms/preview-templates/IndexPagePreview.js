@@ -13,6 +13,16 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         heroHighlight={ data.heroHighlight }
         heroSubHeading={ data.heroSubHeading }
         heroButton={ data.heroButton }
+        applyPanel={{
+          darkMode: data.applyPanel.darkMode,
+          imageBg: {
+            image: getAsset(data.applyPanel.imageBg.image),
+            alt: data.applyPanel.imageBg.alt,
+          },
+          title: data.applyPanel.title,
+          subHeading: data.applyPanel.subHeading,
+          button: data.applyPanel.button
+        }}
         heading={data.heading}
         description={data.description}
         intro={data.intro || { blurbs: [] }}

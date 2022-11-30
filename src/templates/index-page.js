@@ -7,6 +7,7 @@ import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import HeroLight from '../components/HeroLight';
+import Apply from '../components/Apply';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -15,6 +16,7 @@ export const IndexPageTemplate = ({
   heroHighlight,
   heroSubHeading,
   heroButton,
+  applyPanel,
   heading,
   mainpitch,
   description,
@@ -29,6 +31,15 @@ export const IndexPageTemplate = ({
       highlight={ heroHighlight }
       subHeading={ heroSubHeading }
       button={ heroButton } />
+      <Apply
+      darkMode={ applyPanel.darkMode }
+      imageBg={ {
+        image: getImage(applyPanel.imageBg.image) || applyPanel.imageBg.image,
+        alt: applyPanel.imageBg.alt
+      } }
+      title={ applyPanel.title }
+      subHeading={ applyPanel.subHeading }
+      button={ applyPanel.button } />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -86,6 +97,13 @@ IndexPageTemplate.propTypes = {
   heroHighlight: PropTypes.string,
   heroSubHeading: PropTypes.string,
   heroButton: PropTypes.string,
+  applyPanel: PropTypes.shape({
+    darkMode: PropTypes.string,
+    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    title: PropTypes.string,
+    subHeading: PropTypes.string,
+    button: PropTypes.string,
+  }),
   heading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
@@ -96,7 +114,6 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-
   return (
     <Layout>
       <IndexPageTemplate
@@ -105,6 +122,7 @@ const IndexPage = ({ data }) => {
       heroHighlight={ frontmatter.heroHighlight }
       heroSubHeading={ frontmatter.heroSubHeading }
       heroButton={ frontmatter.heroButton }
+      applyPanel={ frontmatter.applyPanel }
       heading={frontmatter.heading}
       mainpitch={frontmatter.mainpitch}
       description={frontmatter.description}
@@ -136,6 +154,20 @@ export const pageQuery = graphql`
         heroHighlight
         heroSubHeading
         heroButton
+        applyPanel {
+          darkMode
+          imageBg {
+            alt
+            image {
+              childImageSharp {
+                gatsbyImageData(quality: 100)
+              }
+            }
+          }
+          title
+          subHeading
+          button
+        }
         heading
         mainpitch {
           title
