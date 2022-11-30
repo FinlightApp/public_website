@@ -47,7 +47,7 @@ export default function Apply(props) {
             items-center
             px-8 py-12 md:p-0
           '>
-            <Box class='
+            <Box className='
               col-span-10
               md:col-start-3 md:col-span-6
               lg:col-start-6 lg:col-span-4
