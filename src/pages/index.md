@@ -10,8 +10,8 @@ heroButton: Request Info
 applyPanel:
   darkMode: true
   imageBg:
+    alt: Background Alt
     image: /img/heroBg.webp
-    alt: 'background img'
   title: Ready to Finlight?
   subHeading: Asset consolidation processes are always systematically better with Finlight.
   button: Apply for an account

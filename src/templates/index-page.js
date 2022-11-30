@@ -98,7 +98,13 @@ IndexPageTemplate.propTypes = {
   heroTitle: PropTypes.string,
   heroSubHeading: PropTypes.string,
   heroButton: PropTypes.string,
-  applyPanel: PropTypes.object,
+  applyPanel: PropTypes.shape({
+    darkMode: PropTypes.string,
+    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    title: PropTypes.string,
+    subHeading: PropTypes.string,
+    button: PropTypes.string,
+  }),
   heading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
@@ -157,12 +163,12 @@ export const pageQuery = graphql`
         applyPanel {
           darkMode
           imageBg {
+            alt
             image {
               childImageSharp {
                 gatsbyImageData(quality: 100)
               }
             }
-            alt
           }
           title
           subHeading

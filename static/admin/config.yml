@@ -57,7 +57,16 @@ collections:
               fields:
                 [
                   { label: Dark Mode, name: darkMode, widget: boolean, default: false },
-                  { label: Background, name: imageBg, widget: image },
+                  {
+                    label: Background,
+                    name: imageBg,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: SEO - Image Description, name: alt, widget: string },
+                      ],
+                  },
                   { label: Title, name: title, widget: string },
                   { label: Sub-Heading, name: subHeading, widget: string },
                   { label: Button, name: button, widget: string },
