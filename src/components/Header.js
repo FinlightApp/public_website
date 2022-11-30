@@ -15,7 +15,7 @@ export default function Header(props) {
           { props.children }
         </h1>
         <div className={`
-          ${ props.darkMode ? 'via-blue' : 'via-primary' }
+          ${ props.darkMode ? 'via-secondary' : 'via-primary' }
           bg-gradient-to-r from-transparent to-transparent
           w-full max-w-7xl h-0.5
         `} />

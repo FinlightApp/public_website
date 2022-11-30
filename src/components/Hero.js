@@ -86,7 +86,7 @@ export default function Hero(props) {
                     self-center
                     w-40
                     p-2
-                    text-white bg-blue-600
+                    text-white bg-secondary-600
                     rounded
                   '>
                     { button }
