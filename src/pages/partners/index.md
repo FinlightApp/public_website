@@ -17,10 +17,12 @@ partnersPanel:
         alt: Alt
         image: /img/brussels.png
       name: Name
+      link: https://www.google.com
     - partnerImage:
         alt: Alt
         image: /img/brussels.png
       name: Name 02
+      link: https://www.google.com
 applyPanel:
   darkMode: true
   imageBg:

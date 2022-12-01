@@ -118,6 +118,7 @@ export const partnersPageQuery = graphql`
               }
             }
             name
+            link
           }
         }
         applyPanel {
