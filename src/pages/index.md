@@ -18,7 +18,7 @@ serve:
   - image: /img/blog-index.jpg
     title: Investment consultants
     text: We rank S&C as our highest priority. Our servers are in Switzerland, with a FINMA regulated partner. Data, client information and calculation servers are separate. We have a top web security partner and a 2 form authentication process.
-    - image: /img/blog-index.jpg
+  - image: /img/blog-index.jpg
     title: Family Offices
     text: We rank S&C as our highest priority. Our servers are in Switzerland, with a FINMA regulated partner. Data, client information and calculation servers are separate. We have a top web security partner and a 2 form authentication process.
   - image: /img/blog-index.jpg

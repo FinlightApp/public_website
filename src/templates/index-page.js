@@ -173,6 +173,8 @@ export const pageQuery = graphql`
           button
         }
         servePanel {
+          title
+          description
           blurbs {
             image {
               childImageSharp {

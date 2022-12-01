@@ -19,7 +19,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           subHeading: data.heroPanel.subHeading,
           button: data.heroPanel.button
         }}
-         servePanel={{
+        servePanel={{
           serveTitle: data.serveTitle ,
           serveDescription: data.serveDescription ,
           serveCards: data.serve || { blurbs: [] },
