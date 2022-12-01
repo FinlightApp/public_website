@@ -35,7 +35,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/pages/index.md"
+      - file: 'src/pages/index.md'
         label: "Landing Page"
         name: "index"
         fields:
@@ -162,7 +162,7 @@ collections:
                   },
                 ],
             }
-      - file: "src/pages/team/index.md"
+      - file: 'src/pages/team/index.md'
         label: 'Team Page'
         name: 'team'
         fields:
@@ -195,7 +195,7 @@ collections:
                   { label: Button, name: button, widget: string },
                 ],
             }
-      - file: "src/pages/partners/index.md"
+      - file: 'src/pages/partners/index.md'
         label: 'Partners Page'
         name: 'partners'
         fields:
