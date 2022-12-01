@@ -35,7 +35,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/pages/index.md"
+      - file: 'src/pages/index.md'
         label: "Landing Page"
         name: "index"
         fields:
@@ -45,38 +45,70 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - { label: Hero Background, name: heroImageBg, widget: image }
-          - { label: Hero Image, name: heroImage, widget: image }
-          - { label: Hero Title, name: heroTitle, widget: string }
-          - { label: Hero Subheading, name: heroSubHeading, widget: string }
-          - { label: Hero Button, name: heroButton, widget: string }
-          - { label: Feature Title, name: featureTitle, widget: string }
-          - { label: Feature Subheading, name: featureSubHeading, widget: string }
           - {
-            label: feature,
-            name: feature,
-            widget: object,
-            fields:
-              [
-                { 
-                  label: Blurbs,
-                  name: blurbs,
-                  widget: list,
-                  fields: 
-                  [
-                    { label: Image, name: image, widget: image },
-                    { label: TItle, name: title, widget: string},
-                  ],
-                  [
-                    { label: Image, name: image, widget: image },
-                    { label: TItle, name: title, widget: string },
-                  ],
-                  [
-                    { label: Image, name: image, widget: image },
-                    { label: TItle, name: title, widget: string },
-                  ],
-                }
-              ]
+              label: Hero Panel,
+              name: heroPanel,
+              widget: object,
+              fields:
+                [
+                  { label: Dark Mode, name: darkMode, widget: boolean, default: false },
+                  {
+                    label: Background,
+                    name: imageBg,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: SEO - Image Description, name: alt, widget: string },
+                      ],
+                  },
+                  { label: Title, name: title, widget: string },
+                  { label: Title Highlight, name: titleHighlight, widget: string },
+                  { label: Text, name: paragraph, widget: string },
+                  { label: Button, name: button, widget: string },
+                ],
+            }
+          - {
+              label: Apply Panel,
+              name: applyPanel,
+              widget: object,
+              fields:
+                [
+                  { label: Dark Mode, name: darkMode, widget: boolean, default: false },
+                  {
+                    label: Background,
+                    name: imageBg,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: SEO - Image Description, name: alt, widget: string },
+                      ],
+                  },
+                  { label: Title, name: title, widget: string },
+                  { label: Text, name: paragraph, widget: string },
+                  { label: Button, name: button, widget: string },
+                ],
+          }
+          - {
+              label: Feature Panel,
+              name: featurePanel,
+              widget: object,
+              fields:
+                [
+                  { label: Feature Title, name: featureTitle, widget: string },
+                  { label: Feature Subheading, name: featureSubHeading, widget: string },
+                  {
+                    label: Feature Cards,
+                    name: featureCards,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: TItle, name: title, widget: string},
+                      ],
+                  },
+                ],
           }
           - { label: Heading, name: heading, widget: string }
           - {
@@ -148,6 +180,124 @@ collections:
                         { label: Alt, name: alt, widget: string },
                       ],
                   },
+                ],
+            }
+      - file: 'src/pages/team/index.md'
+        label: 'Team Page'
+        name: 'team'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'team-page',
+            }
+          - {
+              label: Hero Panel,
+              name: heroPanel,
+              widget: object,
+              fields:
+                [
+                  { label: Dark Mode, name: darkMode, widget: boolean, default: false },
+                  {
+                    label: Background,
+                    name: imageBg,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: SEO - Image Description, name: alt, widget: string },
+                      ],
+                  },
+                  { label: Title, name: title, widget: string },
+                  { label: Title Highlight, name: titleHighlight, widget: string },
+                  { label: Text, name: paragraph, widget: string },
+                  { label: Button, name: button, widget: string },
+                ],
+            }
+      - file: 'src/pages/partners/index.md'
+        label: 'Partners Page'
+        name: 'partners'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'partners-page',
+            }
+          - {
+              label: Hero Panel,
+              name: heroPanel,
+              widget: object,
+              fields:
+                [
+                  { label: Dark Mode, name: darkMode, widget: boolean, default: false },
+                  {
+                    label: Background,
+                    name: imageBg,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: SEO - Image Description, name: alt, widget: string },
+                      ],
+                  },
+                  { label: Title, name: title, widget: string },
+                  { label: Title Highlight, name: titleHighlight, widget: string },
+                  { label: Text, name: paragraph, widget: string },
+                  { label: Button, name: button, widget: string },
+                ],
+            }
+          - {
+              label: Partners Panel,
+              name: partnersPanel,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Text, name: paragraph, widget: string },
+                  {
+                    label: Partners,
+                    name: partners,
+                    widget: list,
+                    fields:
+                      [
+                        {
+                          label: Logo,
+                          name: partnerImage,
+                          widget: object,
+                          fields:
+                            [
+                              { label: Image, name: image, widget: image },
+                            ],
+                        },
+                        { label: Name, name: name, widget: text },
+                        { label: Link, name: link, widget: string },
+                      ],
+                  },
+
+                ],
+            }
+          - {
+              label: Apply Panel,
+              name: applyPanel,
+              widget: object,
+              fields:
+                [
+                  { label: Dark Mode, name: darkMode, widget: boolean, default: false },
+                  {
+                    label: Background,
+                    name: imageBg,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: SEO - Image Description, name: alt, widget: string },
+                      ],
+                  },
+                  { label: Title, name: title, widget: string },
+                  { label: Text, name: paragraph, widget: string },
+                  { label: Button, name: button, widget: string },
                 ],
             }
       - file: "src/pages/about/index.md"

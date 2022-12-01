@@ -1,14 +1,28 @@
 ---
 templateKey: index-page
-heroImageBg: /img/heroBg.svg
-heroImage: /img/heroImage.svg
-heroTitle: Great coffee with suger
-heroSubHeading: Support sustainable farming while enjoying a cup
-heroButton: Info Request
-featureTitle: Key Features
-featureSubHeading: We help Private allocators, family offices, banks, OCIOs… build high quality VC portfolio from as low as 10k GBP through dedicated EU and UK SPV we maintain on their behalf
-feature:
-  blurbs:
+heroPanel:
+  darkMode: true
+  imageBg:
+    alt: Background Alt
+    image: /img/london.jpg
+  title: Simple VC Investing
+  titleHighlight: VC Investing
+  paragraph: We do more than enabling investors to allocate to top decile VCs
+    across vintages, regions and sectors from as low as 10k GBP. We also eliminate
+    the entire admin GPs have to go through to on-board, serve and report to LPs.
+  button: Request Info
+applyPanel:
+  darkMode: true
+  imageBg:
+    alt: Background Alt - test
+    image: /img/heroBg.webp
+  title: Ready to Finlight?
+  paragraph: Asset consolidation processes are always systematically better with Finlight.
+  button: Apply for an account
+featurePanel:
+  featureTitle: ""
+  featureSubHeading: ""
+  featureCards:
     - image: /img/blog-index.jpg
       title: Investment consultants
     - image: /img/blog-index.jpg

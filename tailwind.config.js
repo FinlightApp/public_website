@@ -6,10 +6,21 @@ module.exports = {
   ],
   theme: {
     extend: {
+      flexBasis: {
+        '1/2-6': 'calc(50% - 1.5rem)',
+        '1/3-8': 'calc(33% - 2rem)',
+      },
+      boxShadow: {
+        'glass': '0px 0px 32px 0px rgba(74, 74, 74, 0.75)',
+        'card': '0px 0px 32px 0px rgba(74, 74, 74, 0.15)',
+      },
       colors: {
-        'black': '#242526',
         'primary': '#E7B224',
-        'blue': '#3273DC',
+        'secondary': '#3273DC',
+      },
+      fontFamily: {
+        'header': 'Nunito Sans',
+        'paragraph': 'Hind Madurai',
       },
     },
   },

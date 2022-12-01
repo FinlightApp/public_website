@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import Header from './Header';
+import Subheader from './Subheader';
 import Paragraph from './Paragraph';
 import Button from './Button';
 import Box from './Box';
 
-export default function Hero(props) {
+export default function Apply(props) {
   const {
     darkMode,
     imageBg,
     title,
-    titleHighlight,
     paragraph,
     button,
   } = props;
@@ -22,14 +21,20 @@ export default function Hero(props) {
         relative
         flex
         justify-center
-        h-fit md:h-[700px]
+        h-fit md:h-[500px]
       '>
         { imageBg?.image?.url ? (
-          <img className='absolute inset-0'
+          <img className='
+            absolute inset-0
+            brightness-50
+          '
           src={ imageBg.image }
           alt={ imageBg.alt } />
         ) : (
-          <GatsbyImage className='!absolute inset-0'
+          <GatsbyImage className='
+            !absolute inset-0
+            brightness-50
+          '
           objectFit='fill'
           image={ imageBg.image }
           formats={ ['auto', 'webp'] }
@@ -45,15 +50,14 @@ export default function Hero(props) {
             <Box className='
               col-span-10
               md:col-start-3 md:col-span-6
-              lg:col-start-2 lg:col-span-4
-              xl:col-start-2 xl:col-span-3
+              lg:col-start-6 lg:col-span-4
+              xl:col-start-7 xl:col-span-3
               h-fit
             '>
               { title && (
-                <Header darkMode={ darkMode }
-                highlight={ titleHighlight }>
+                <Subheader darkMode={ darkMode }>
                   { title }
-                </Header>
+                </Subheader>
               ) }
               { paragraph && (
                 <Paragraph darkMode={ darkMode }>
@@ -73,11 +77,10 @@ export default function Hero(props) {
   );
 }
 
-Hero.propTypes = {
+Apply.propTypes = {
   darkMode: PropTypes.bool,
-  imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  imageBg: PropTypes.object,
   title: PropTypes.string,
-  titleHighlight: PropTypes.string,
   paragraph: PropTypes.string,
   button: PropTypes.string
 };

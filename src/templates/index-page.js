@@ -8,36 +8,43 @@ import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import Hero from '../components/Hero';
 import Feature from '../components/Feature';
+import Apply from '../components/Apply';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
-  heroImageBg,
-  heroImage,
-  heroTitle,
-  heroSubHeading,
-  heroButton,
-  featureTitle,
-  featureSubHeading,
-  feature,
+  heroPanel,
+  applyPanel,
+  featurePanel,
   heading,
   mainpitch,
   description,
   intro,
 }) => {
-  const heroImgBg = getImage(heroImageBg) || heroImageBg;
-  const heroImg = getImage(heroImage) || heroImage;
   return (
     <div>
       <Hero
-      imageBg={ heroImgBg }
-      image={ heroImg }
-      title={ heroTitle }
-      subHeading={ heroSubHeading }
-      button={ heroButton } />
+      darkMode={ heroPanel.darkMode }
+      imageBg={ {
+        image: getImage(heroPanel.imageBg.image) || heroPanel.imageBg.image,
+        alt: heroPanel.imageBg.alt
+      } }
+      title={ heroPanel.title }
+      titleHighlight={ heroPanel.titleHighlight }
+      paragraph={ heroPanel.paragraph }
+      button={ heroPanel.button } />
       <Feature 
-      title={ featureTitle }
-      subHeading={ featureSubHeading } 
-      feature={ feature } />
+      title={ featurePanel.featureTitle }
+      subHeading={ featurePanel.featureSubHeading} 
+      featureCards={ featurePanel.featureCards } />
+      <Apply
+      darkMode={ applyPanel.darkMode }
+      imageBg={ {
+        image: getImage(applyPanel.imageBg.image) || applyPanel.imageBg.image,
+        alt: applyPanel.imageBg.alt
+      } }
+      title={ applyPanel.title }
+      paragraph={ applyPanel.paragraph }
+      button={ applyPanel.button } />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -90,14 +97,26 @@ export const IndexPageTemplate = ({
 };
 
 IndexPageTemplate.propTypes = {
-  heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  heroImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  heroTitle: PropTypes.string,
-  heroSubHeading: PropTypes.string,
-  heroButton: PropTypes.string,
-  featureTitle: PropTypes.string,
-  featureSubHeading: PropTypes.string,
-  feature: PropTypes.array,
+  heroPanel: PropTypes.shape({
+    darkMode: PropTypes.bool,
+    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    title: PropTypes.string,
+    titleHighlight: PropTypes.string,
+    paragraph: PropTypes.string,
+    button: PropTypes.string,
+  }),
+  featurePanel: PropTypes.shape({
+    featureTitle: PropTypes.string,
+    featureSubHeading: PropTypes.string,
+    featureCards: PropTypes.array,
+  }),
+  applyPanel: PropTypes.shape({
+    darkMode: PropTypes.bool,
+    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
+    button: PropTypes.string,
+  }),
   heading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
@@ -108,23 +127,16 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-
   return (
     <Layout>
       <IndexPageTemplate
-        heroImageBg={ frontmatter.heroImageBg }
-        heroImage={ frontmatter.heroImage }
-        heroTitle={ frontmatter.heroTitle }
-        heroSubHeading={ frontmatter.heroSubHeading }
-        heroButton={ frontmatter.heroButton }
-        featureTitle={ frontmatter.featureTitle }
-        featureSubHeading={ frontmatter.featureSubHeading }
-        feature={ frontmatter.feature }
-        heading={frontmatter.heading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
-      />
+      heroPanel={ frontmatter.heroPanel }
+      applyPanel={ frontmatter.applyPanel }
+      featurePanel={ frontmatter.featurePanel }
+      heading={frontmatter.heading}
+      mainpitch={frontmatter.mainpitch}
+      description={frontmatter.description}
+      intro={frontmatter.intro} />
     </Layout>
   );
 };
@@ -143,35 +155,39 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        heroImageBg  {
-          childImageSharp {
-            gatsbyImageData(quality: 100)
-          }
-        }
-        heroImage {
-          childImageSharp {
-            gatsbyImageData(quality: 100)
-          }
-        }
-        heroTitle
-        heroSubHeading
-        heroButton
-        featureTitle
-        featureSubHeading
-        feature {
-          blurbs {
+        heroPanel {
+          darkMode
+          imageBg {
+            alt
             image {
               childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+                gatsbyImageData(quality: 100)
               }
             }
-            title
+          }
+          title
+          titleHighlight
+          paragraph
+          button
+        }
+        applyPanel {
+          darkMode
+          imageBg {
+            alt
             image {
               childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+                gatsbyImageData(quality: 100)
               }
             }
-            title
+          }
+          title
+          paragraph
+          button
+        }
+        featurePanel {
+          featureTitle
+          featureSubHeading
+          featureCards {
             image {
               childImageSharp {
                 gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
