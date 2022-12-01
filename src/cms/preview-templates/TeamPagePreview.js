@@ -8,10 +8,17 @@ const TeamPagePreview = ({ entry, getAsset }) => {
   if (data) {
     return (
       <TeamPageTemplate 
-      heroImageBg={ getAsset(data.heroImageBg) }
-      heroTitle={ data.heroTitle }
-      heroHighlight={ data.heroHighlight }
-      heroSubHeading={ data.heroSubHeading } />
+        heroPanel={{
+          darkMode: data.heroPanel.darkMode,
+          imageBg: {
+            image: getAsset(data.heroPanel.imageBg.image),
+            alt: data.heroPanel.imageBg.alt,
+          },
+          title: data.heroPanel.title,
+          titleHighlight: data.heroPanel.titleHighlight,
+          subHeading: data.heroPanel.subHeading
+        }}
+      />
     )
   } else {
     return <div>Loading...</div>

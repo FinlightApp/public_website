@@ -6,16 +6,14 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
-import HeroLight from '../components/HeroLight';
-import Serve from '../components/Serve';
+import Hero from '../components/Hero';
+import Apply from '../components/Apply';
+import Serve from '../components/Serve'
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
-  heroImageBg,
-  heroTitle,
-  heroHighlight,
-  heroSubHeading,
-  heroButton,
+  heroPanel,
+  applyPanel,
   serveTitle,
   serveDescription,
   serve,
@@ -24,19 +22,31 @@ export const IndexPageTemplate = ({
   description,
   intro,
 }) => {
-  const heroImgBg = getImage(heroImageBg) || heroImageBg;
   return (
     <div>
-      <HeroLight
-      imageBg={ heroImgBg }
-      title={ heroTitle }
-      highlight={ heroHighlight }
-      subHeading={ heroSubHeading }
-      button={ heroButton } />
+      <Hero
+      darkMode={ heroPanel.darkMode }
+      imageBg={ {
+        image: getImage(heroPanel.imageBg.image) || heroPanel.imageBg.image,
+        alt: heroPanel.imageBg.alt
+      } }
+      title={ heroPanel.title }
+      titleHighlight={ heroPanel.titleHighlight }
+      subHeading={ heroPanel.subHeading }
+      button={ heroPanel.button } />
       <Serve
       title={ serveTitle }
       description={ serveDescription }
       serve={ serve } />
+      <Apply
+      darkMode={ applyPanel.darkMode }
+      imageBg={ {
+        image: getImage(applyPanel.imageBg.image) || applyPanel.imageBg.image,
+        alt: applyPanel.imageBg.alt
+      } }
+      title={ applyPanel.title }
+      subHeading={ applyPanel.subHeading }
+      button={ applyPanel.button } />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -89,15 +99,25 @@ export const IndexPageTemplate = ({
 };
 
 IndexPageTemplate.propTypes = {
-  heroImageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  heroTitle: PropTypes.string,
-  heroHighlight: PropTypes.string,
-  heroSubHeading: PropTypes.string,
-  heroButton: PropTypes.string,
+  heroPanel: PropTypes.shape({
+    darkMode: PropTypes.bool,
+    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    title: PropTypes.string,
+    titleHighlight: PropTypes.string,
+    subHeading: PropTypes.string,
+    button: PropTypes.string,
+  }),
   serveTitle: PropTypes.string,
   serveDescription: PropTypes.string,
   serve: PropTypes.shape({
     blurbs: PropTypes.array
+  }),
+  applyPanel: PropTypes.shape({
+    darkMode: PropTypes.bool,
+    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    title: PropTypes.string,
+    subHeading: PropTypes.string,
+    button: PropTypes.string,
   }),
   heading: PropTypes.string,
   mainpitch: PropTypes.object,
@@ -109,18 +129,12 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-
   return (
     <Layout>
       <IndexPageTemplate
-      heroImageBg={ frontmatter.heroImageBg }
-      heroTitle={ frontmatter.heroTitle }
-      heroHighlight={ frontmatter.heroHighlight }
-      heroSubHeading={ frontmatter.heroSubHeading }
-      heroButton={ frontmatter.heroButton }
-      serveTitle={ frontmatter.serveTitle }
-      serveDescription={ frontmatter.serveDescription }
-      serve={frontmatter.serve}
+      heroPanel={ frontmatter.heroPanel }
+      applyPanel={ frontmatter.applyPanel }
+      servePanel={ frontmatter.servePanel }
       heading={frontmatter.heading}
       mainpitch={frontmatter.mainpitch}
       description={frontmatter.description}
@@ -143,18 +157,22 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        heroImageBg  {
-          childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        heroPanel {
+          darkMode
+          imageBg {
+            alt
+            image {
+              childImageSharp {
+                gatsbyImageData(quality: 100)
+              }
+            }
           }
+          title
+          titleHighlight
+          subHeading
+          button
         }
-        heroTitle
-        heroHighlight
-        heroSubHeading
-        heroButton
-        serveTitle
-        serveDescription
-        serve {
+        servePanel {
           blurbs {
             image {
               childImageSharp {
@@ -163,14 +181,21 @@ export const pageQuery = graphql`
             }
             title
             text
+          }
+        }
+        applyPanel {
+          darkMode
+          imageBg {
+            alt
             image {
               childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+                gatsbyImageData(quality: 100)
               }
             }
-            title
-            text
           }
+          title
+          subHeading
+          button
         }
         heading
         mainpitch {

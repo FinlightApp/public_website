@@ -1,30 +1,37 @@
 ---
 templateKey: index-page
-heroImageBg: /img/london.jpg
-heroTitle: Simple VC Investing
-heroHighlight: VC Investing
-heroSubHeading: We do more than enabling investors to allocate to top decile VCs
-  across vintages, regions and sectors from as low as 10k GBP. We also eliminate
-  the entire admin GPs have to go through to on-board, serve and report to LPs.
-heroButton: Request Info
+heroPanel:
+  darkMode: true
+  imageBg:
+    alt: Background Alt
+    image: /img/london.jpg
+  title: Simple VC Investing
+  titleHighlight: VC Investing
+  subHeading: We do more than enabling investors to allocate to top decile VCs
+    across vintages, regions and sectors from as low as 10k GBP. We also eliminate
+    the entire admin GPs have to go through to on-board, serve and report to LPs.
+  button: Request Info
 serveTitle: Who Do We Serve ?
 serveDescription: We help Private allocators, family offices, banks, OCIOs… build high quality VC portfolio from as low as 10k GBP through dedicated EU and UK SPV we maintain on their behalf
 serve:
  blurbs:
+  - image: /img/blog-index.jpg
+    title: Investment consultants
+    text: We rank S&C as our highest priority. Our servers are in Switzerland, with a FINMA regulated partner. Data, client information and calculation servers are separate. We have a top web security partner and a 2 form authentication process.
     - image: /img/blog-index.jpg
-      title: Investment consultants
-      text: We rank S&C as our highest priority. Our servers are in Switzerland, with a FINMA regulated partner. Data, client information and calculation servers are separate. We have a top web security partner and a 2 form authentication process.
-     - image: /img/blog-index.jpg
-      title: Family Offices
-      text: We rank S&C as our highest priority. Our servers are in Switzerland, with a FINMA regulated partner. Data, client information and calculation servers are separate. We have a top web security partner and a 2 form authentication process.
-    - image: /img/blog-index.jpg
-      title: Qualified Investors
-      text: We rank S&C as our highest priority. Our servers are in Switzerland, with a FINMA regulated partner. Data, client information and calculation servers are separate. We have a top web security partner and a 2 form authentication process.
+    title: Family Offices
+    text: We rank S&C as our highest priority. Our servers are in Switzerland, with a FINMA regulated partner. Data, client information and calculation servers are separate. We have a top web security partner and a 2 form authentication process.
+  - image: /img/blog-index.jpg
+    title: Qualified Investors
+    text: We rank S&C as our highest priority. Our servers are in Switzerland, with a FINMA regulated partner. Data, client information and calculation servers are separate. We have a top web security partner and a 2 form authentication process.
 applyPanel:
-  title: Title
-  subHeading: SubHeader
-  button: Button
-  imageBg: /img/heroBg.webp
+  darkMode: true
+  imageBg:
+    alt: Background Alt - test
+    image: /img/heroBg.webp
+  title: Ready to Finlight?
+  subHeading: Asset consolidation processes are always systematically better with Finlight.
+  button: Apply for an account
 heading: Great coffee with a conscience
 mainpitch:
   title: Why Kaldi
