@@ -1,13 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { IndexPageTemplate } from '../../templates/index-page'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { PartnersPageTemplate } from '../../templates/partners-page';
 
-const IndexPagePreview = ({ entry, getAsset }) => {
+const PartnersPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
-
   if (data) {
     return (
-      <IndexPageTemplate
+      <PartnersPageTemplate 
         heroPanel={{
           darkMode: data.heroPanel.darkMode,
           imageBg: {
@@ -16,8 +15,12 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           },
           title: data.heroPanel.title,
           titleHighlight: data.heroPanel.titleHighlight,
-          paragraph: data.heroPanel.paragraph,
-          button: data.heroPanel.button
+          paragraph: data.heroPanel.paragraph
+        }}
+        partnersPanel={{
+          title: data.partnersPanel.title,
+          paragraph: data.partnersPanel.paragraph,
+          partners: data.partnersPanel.partners
         }}
         applyPanel={{
           darkMode: data.applyPanel.darkMode,
@@ -29,10 +32,6 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           paragraph: data.applyPanel.paragraph,
           button: data.applyPanel.button
         }}
-        heading={data.heading}
-        description={data.description}
-        intro={data.intro || { blurbs: [] }}
-        mainpitch={data.mainpitch || {}}
       />
     )
   } else {
@@ -40,11 +39,11 @@ const IndexPagePreview = ({ entry, getAsset }) => {
   }
 }
 
-IndexPagePreview.propTypes = {
+PartnersPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
 }
 
-export default IndexPagePreview
+export default PartnersPagePreview

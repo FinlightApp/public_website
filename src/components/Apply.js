@@ -11,7 +11,7 @@ export default function Apply(props) {
     darkMode,
     imageBg,
     title,
-    subHeading,
+    paragraph,
     button,
   } = props;
 
@@ -40,7 +40,7 @@ export default function Apply(props) {
           formats={ ['auto', 'webp'] }
           alt={ imageBg.alt } />
         ) }
-        { ( title || subHeading || button ) && (
+        { ( title || paragraph || button ) && (
           <div className='
             container
             grid grid-cols-10
@@ -59,9 +59,9 @@ export default function Apply(props) {
                   { title }
                 </Subheader>
               ) }
-              { subHeading && (
+              { paragraph && (
                 <Paragraph darkMode={ darkMode }>
-                  { subHeading }
+                  { paragraph }
                 </Paragraph>
               ) }
               { button && (
@@ -81,6 +81,6 @@ Apply.propTypes = {
   darkMode: PropTypes.bool,
   imageBg: PropTypes.object,
   title: PropTypes.string,
-  subHeading: PropTypes.string,
+  paragraph: PropTypes.string,
   button: PropTypes.string
 };
