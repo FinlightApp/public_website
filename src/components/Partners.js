@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { getImage } from "gatsby-plugin-image";
 
 import Panel from './Panel';
 import PartnersCard from './PartnersCard';
@@ -22,7 +23,7 @@ export default function Partners(props) {
           <Panel
           title={ title }
           paragraph={ paragraph }>
-            { partners && ( 
+            { partners && (
              <div className='
                 flex flex-wrap
                 justify-center
@@ -31,7 +32,9 @@ export default function Partners(props) {
               '>
                 { partners.map((partner, i) => (
                   <PartnersCard key={ i }
-                  partnerImage={ partner.partnerImage }
+                  partnerImage={ {
+                    image : getImage(partner.partnerImage.image) || partner.partnerImage.image
+                  } }
                   name={ partner.name }
                   link={ partner.link } />
                 )) }

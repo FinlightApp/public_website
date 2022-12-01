@@ -3,6 +3,11 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 
 export default function PartnersCard(props) {
+  const {
+    link,
+    name,
+    partnerImage,
+  } = props;
   return (
     <React.Fragment>
       <a className='
@@ -12,22 +17,22 @@ export default function PartnersCard(props) {
         p-6 gap-6
         rounded-2xl shadow-card
       '
-      href={ props.link } target='_blank'
+      href={ link } target='_blank'
       rel='noreferrer noopener' referrerPolicy='no-referrer'
-      aria-label={ props.name }>
-        { props.partnerImage?.image?.url ? (
+      aria-label={ name }>
+        { partnerImage?.image?.url ? (
           <img className='w-48 h-48'
-          src={ props.partnerImage.image }
-          alt={ props.name + ' logo' } />
+          src={ partnerImage.image }
+          alt={ name + ' logo' } />
         ) : (
           <GatsbyImage className='w-48 h-48 border'
           objectFit='fill'
-          image={ props.partnerImage.image }
+          image={ partnerImage.image }
           formats={ ['auto', 'webp'] }
-          alt={ props.name + ' logo' } />
+          alt={ name + ' logo' } />
         ) }
         <p className='font-header font-semibold'>
-          { props.name }
+          { name }
         </p>
       </a>
     </React.Fragment>

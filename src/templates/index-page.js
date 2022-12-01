@@ -106,7 +106,6 @@ IndexPageTemplate.propTypes = {
     paragraph: PropTypes.string,
     button: PropTypes.string,
   }),
-
   heading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,

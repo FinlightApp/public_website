@@ -249,7 +249,6 @@ collections:
                           fields:
                             [
                               { label: Image, name: image, widget: image },
-                              { label: SEO - Image Description, name: alt, widget: string },
                             ],
                         },
                         { label: Name, name: name, widget: text },

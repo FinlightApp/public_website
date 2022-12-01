@@ -110,7 +110,6 @@ export const partnersPageQuery = graphql`
           paragraph
           partners {
             partnerImage {
-              alt
               image {
                 childImageSharp {
                   gatsbyImageData(quality: 100)
