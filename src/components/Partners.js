@@ -23,14 +23,14 @@ export default function Partners(props) {
           title={ title }
           paragraph={ paragraph }>
             { partners && ( 
-             <div class='
+             <div className='
                 flex flex-wrap
                 justify-center
                 w-full
                 p-6 gap-12
               '>
-                { partners.map((partner) => (
-                  <PartnersCard 
+                { partners.map((partner, i) => (
+                  <PartnersCard key={ i }
                   partnerImage={ partner.partnerImage }
                   name={ partner.name }
                   link={ partner.link } />

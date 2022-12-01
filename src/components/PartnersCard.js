@@ -5,7 +5,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 export default function PartnersCard(props) {
   return (
     <React.Fragment>
-      <a class='
+      <a className='
         flex flex-col
         basis-full md:basis-1/2-6 lg:basis-1/3-8
         items-center
@@ -26,7 +26,7 @@ export default function PartnersCard(props) {
           formats={ ['auto', 'webp'] }
           alt={ props.name + ' logo' } />
         ) }
-        <p class='font-header font-semibold'>
+        <p className='font-header font-semibold'>
           { props.name }
         </p>
       </a>
