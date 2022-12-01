@@ -20,9 +20,13 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           button: data.heroPanel.button
         }}
         servePanel={{
-          serveTitle: data.serveTitle ,
-          serveDescription: data.serveDescription ,
-          serveCards: data.serve || { blurbs: [] },
+          title: data.servePanel.title,
+          description: data.servePanel.description,
+          blurbs:{
+            image: getAsset(data.servePanel.blurbs.image),
+            title: data.servePanel.blurbs.title,
+            text: data.servePanel.blurbs.text,
+          },
         }}
         applyPanel={{
           darkMode: data.applyPanel.darkMode,

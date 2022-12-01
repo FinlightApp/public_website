@@ -67,15 +67,15 @@ collections:
                   { label: Sub-Heading, name: subHeading, widget: string },
                   { label: Button, name: button, widget: string },
                 ],
-          }
-          - { label: Serve Title, name: serveTitle, widget: string }
-          - { label: serve Description, name: serveDescription, widget: string }
+           }
           - {
             label: ServePanel,
             name: servePanel,
             widget: object,
             fields:
               [
+                { label: Title, name: title, widget: string },
+                { label: Description, name: description, widget: string },
                 {
                   label: Blurbs,
                   name: blurbs,
@@ -83,8 +83,8 @@ collections:
                   fields:
                     [
                       { label: Image, name: image, widget: image },
-                      { label: title, name: title, widget: string },
-                      { label: text, name: text, widget: text },
+                      { label: Title, name: title, widget: string },
+                      { label: Text, name: text, widget: text },
                     ]
                 },
              ],

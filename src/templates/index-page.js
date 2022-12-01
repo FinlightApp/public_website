@@ -14,9 +14,7 @@ import Serve from '../components/Serve'
 export const IndexPageTemplate = ({
   heroPanel,
   applyPanel,
-  serveTitle,
-  serveDescription,
-  serve,
+  servePanel,
   heading,
   mainpitch,
   description,
@@ -34,10 +32,10 @@ export const IndexPageTemplate = ({
       titleHighlight={ heroPanel.titleHighlight }
       subHeading={ heroPanel.subHeading }
       button={ heroPanel.button } />
-      <Serve
-      title={ serveTitle }
-      description={ serveDescription }
-      serve={ serve } />
+      <Serve 
+      title = { servePanel.title}
+      description ={ servePanel.description }
+      blurbs = { servePanel.blurbs } />
       <Apply
       darkMode={ applyPanel.darkMode }
       imageBg={ {
@@ -107,9 +105,9 @@ IndexPageTemplate.propTypes = {
     subHeading: PropTypes.string,
     button: PropTypes.string,
   }),
-  serveTitle: PropTypes.string,
-  serveDescription: PropTypes.string,
   serve: PropTypes.shape({
+    serveTitle: PropTypes.string,
+    serveDescription: PropTypes.string,
     blurbs: PropTypes.array
   }),
   applyPanel: PropTypes.shape({

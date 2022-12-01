@@ -11,10 +11,10 @@ heroPanel:
     across vintages, regions and sectors from as low as 10k GBP. We also eliminate
     the entire admin GPs have to go through to on-board, serve and report to LPs.
   button: Request Info
-serveTitle: Who Do We Serve ?
-serveDescription: We help Private allocators, family offices, banks, OCIOs… build high quality VC portfolio from as low as 10k GBP through dedicated EU and UK SPV we maintain on their behalf
-serve:
- blurbs:
+servePanel:
+  title: Who Do We Serve ?
+  description: We help Private allocators, family offices, banks, OCIOs… build high quality VC portfolio from as low as 10k GBP through dedicated EU and UK SPV we maintain on their behalf
+  blurbs:
   - image: /img/blog-index.jpg
     title: Investment consultants
     text: We rank S&C as our highest priority. Our servers are in Switzerland, with a FINMA regulated partner. Data, client information and calculation servers are separate. We have a top web security partner and a 2 form authentication process.
