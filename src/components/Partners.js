@@ -16,7 +16,7 @@ export default function Partners(props) {
       <div className='
         flex
         justify-center
-        h-fit md:min-h-[700px]
+        h-fit
       '>
         { ( title || paragraph || partners ) && (
           <div className='
