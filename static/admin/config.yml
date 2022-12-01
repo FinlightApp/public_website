@@ -50,6 +50,34 @@ collections:
           - { label: Hero Title, name: heroTitle, widget: string }
           - { label: Hero Subheading, name: heroSubHeading, widget: string }
           - { label: Hero Button, name: heroButton, widget: string }
+          - { label: Feature Title, name: featureTitle, widget: string }
+          - { label: Feature Subheading, name: featureSubHeading, widget: string }
+          - {
+            label: feature,
+            name: feature,
+            widget: object,
+            fields:
+              [
+                { 
+                  label: Blurbs,
+                  name: blurbs,
+                  widget: list,
+                  fields: 
+                  [
+                    { label: Image, name: image, widget: image },
+                    { label: TItle, name: title, widget: string},
+                  ],
+                  [
+                    { label: Image, name: image, widget: image },
+                    { label: TItle, name: title, widget: string },
+                  ],
+                  [
+                    { label: Image, name: image, widget: image },
+                    { label: TItle, name: title, widget: string },
+                  ],
+                }
+              ]
+          }
           - { label: Heading, name: heading, widget: string }
           - {
               label: Mainpitch,

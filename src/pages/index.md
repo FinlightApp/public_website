@@ -5,6 +5,16 @@ heroImage: /img/heroImage.svg
 heroTitle: Great coffee with suger
 heroSubHeading: Support sustainable farming while enjoying a cup
 heroButton: Info Request
+featureTitle: Key Features
+featureSubHeading: We help Private allocators, family offices, banks, OCIOs… build high quality VC portfolio from as low as 10k GBP through dedicated EU and UK SPV we maintain on their behalf
+feature:
+  blurbs:
+    - image: /img/blog-index.jpg
+      title: Investment consultants
+    - image: /img/blog-index.jpg
+      title: Family offices
+    - image: /img/blog-index.jpg
+      title: Qualified Investors
 heading: Great coffee with a conscience
 mainpitch:
   title: Why Kaldi

@@ -16,6 +16,9 @@ export const IndexPageTemplate = ({
   heroTitle,
   heroSubHeading,
   heroButton,
+  featureTitle,
+  featureSubHeading,
+  feature,
   heading,
   mainpitch,
   description,
@@ -31,7 +34,10 @@ export const IndexPageTemplate = ({
       title={ heroTitle }
       subHeading={ heroSubHeading }
       button={ heroButton } />
-      <Feature />
+      <Feature 
+      title={ featureTitle }
+      subHeading={ featureSubHeading } 
+      feature={ feature } />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -89,6 +95,9 @@ IndexPageTemplate.propTypes = {
   heroTitle: PropTypes.string,
   heroSubHeading: PropTypes.string,
   heroButton: PropTypes.string,
+  featureTitle: PropTypes.string,
+  featureSubHeading: PropTypes.string,
+  feature: PropTypes.array,
   heading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
@@ -108,6 +117,9 @@ const IndexPage = ({ data }) => {
         heroTitle={ frontmatter.heroTitle }
         heroSubHeading={ frontmatter.heroSubHeading }
         heroButton={ frontmatter.heroButton }
+        featureTitle={ frontmatter.featureTitle }
+        featureSubHeading={ frontmatter.featureSubHeading }
+        feature={ frontmatter.feature }
         heading={frontmatter.heading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
@@ -144,6 +156,30 @@ export const pageQuery = graphql`
         heroTitle
         heroSubHeading
         heroButton
+        featureTitle
+        featureSubHeading
+        feature {
+          blurbs {
+            image {
+              childImageSharp {
+                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+              }
+            }
+            title
+            image {
+              childImageSharp {
+                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+              }
+            }
+            title
+            image {
+              childImageSharp {
+                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+              }
+            }
+            title
+          }
+        }
         heading
         mainpitch {
           title
