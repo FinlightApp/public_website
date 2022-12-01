@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { getImage } from "gatsby-plugin-image";
 
 import Panel from './Panel';
-import ValuesCard from './ValuesCard';
+import DataCard from './DataCard';
 
 export default function Values(props) {
   const {
@@ -31,9 +31,10 @@ export default function Values(props) {
                 p-6 gap-12
               '>
                 { values.map((value, i) => (
-                  <ValuesCard key={ i }
+                  <DataCard key={ i }
                   valueImage={ {
-                    image : getImage(value.valueImage.image) || value.valueImage.image
+                    image : getImage(value.valueImage.image) || value.valueImage.image,
+                    alt: value.valueImage.alt
                   } }
                   title={ value.title }
                   paragraph={ value.paragraph } />
