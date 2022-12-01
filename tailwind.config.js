@@ -6,8 +6,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      flexBasis: {
+        '1/2-6': 'calc(50% - 1.5rem)',
+        '1/3-8': 'calc(33% - 2rem)',
+      },
       boxShadow: {
         'glass': '0px 0px 32px 0px rgba(74, 74, 74, 0.75)',
+        'card': '0px 0px 32px 0px rgba(74, 74, 74, 0.15)',
       },
       colors: {
         'primary': '#E7B224',

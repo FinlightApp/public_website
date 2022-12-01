@@ -16,7 +16,17 @@ const TeamPagePreview = ({ entry, getAsset }) => {
           },
           title: data.heroPanel.title,
           titleHighlight: data.heroPanel.titleHighlight,
-          subHeading: data.heroPanel.subHeading
+          paragraph: data.heroPanel.paragraph
+        }}
+        applyPanel={{
+          darkMode: data.applyPanel.darkMode,
+          imageBg: {
+            image: getAsset(data.applyPanel.imageBg.image),
+            alt: data.applyPanel.imageBg.alt,
+          },
+          title: data.applyPanel.title,
+          paragraph: data.applyPanel.paragraph,
+          button: data.applyPanel.button
         }}
       />
     )

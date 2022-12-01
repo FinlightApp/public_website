@@ -28,7 +28,7 @@ export const IndexPageTemplate = ({
       } }
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
-      subHeading={ heroPanel.subHeading }
+      paragraph={ heroPanel.paragraph }
       button={ heroPanel.button } />
       <Apply
       darkMode={ applyPanel.darkMode }
@@ -37,7 +37,7 @@ export const IndexPageTemplate = ({
         alt: applyPanel.imageBg.alt
       } }
       title={ applyPanel.title }
-      subHeading={ applyPanel.subHeading }
+      paragraph={ applyPanel.paragraph }
       button={ applyPanel.button } />
       <section className="section section--gradient">
         <div className="container">
@@ -96,14 +96,14 @@ IndexPageTemplate.propTypes = {
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
-    subHeading: PropTypes.string,
+    paragraph: PropTypes.string,
     button: PropTypes.string,
   }),
   applyPanel: PropTypes.shape({
     darkMode: PropTypes.bool,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
-    subHeading: PropTypes.string,
+    paragraph: PropTypes.string,
     button: PropTypes.string,
   }),
 
@@ -156,7 +156,7 @@ export const pageQuery = graphql`
           }
           title
           titleHighlight
-          subHeading
+          paragraph
           button
         }
         applyPanel {
@@ -170,7 +170,7 @@ export const pageQuery = graphql`
             }
           }
           title
-          subHeading
+          paragraph
           button
         }
         heading
