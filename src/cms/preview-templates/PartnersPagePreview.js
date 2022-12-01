@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { PartnersPageTemplate } from '../../templates/partners-page';
 
 const PartnersPagePreview = ({ entry, getAsset }) => {
-  console.log('entry',entry)
   const data = entry.getIn(['data']).toJS()
   if (data) {
     return (
