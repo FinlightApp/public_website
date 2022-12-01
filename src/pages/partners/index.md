@@ -15,15 +15,15 @@ heroPanel:
     contact us via partners@finlight.com
   button: " "
 partnersPanel:
-  title: ""
+  title:
   paragraph: ""
   partners:
     - partnerImage:
-      image: /img/brussels.png
+        image: /img/brussels.png
       name: Name
       link: https://www.google.com
     - partnerImage:
-      image: /img/brussels.png
+        image: /img/brussels.png
       name: Name 02
       link: https://www.google.com
 applyPanel:
