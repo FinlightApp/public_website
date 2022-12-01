@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 import Panel from './Panel';
 import PartnersCard from './PartnersCard';
-import Subheader from './Subheader';
-import Paragraph from './Paragraph';
 
 export default function Partners(props) {
   const {

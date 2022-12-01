@@ -12,7 +12,9 @@ export default function PartnersCard(props) {
         p-6 gap-6
         rounded-2xl shadow-card
       '
-      href={ props.link } target="_blank">
+      href={ props.link } target='_blank'
+      rel='noreferrer noopener' referrerPolicy='no-referrer'
+      aria-label={ props.name }>
         { props.partnerImage?.image?.url ? (
           <img className='w-48 h-48'
           src={ props.partnerImage.image }

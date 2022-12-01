@@ -8,7 +8,10 @@ heroPanel:
     image: /img/brussels.png
   title: Our Partners
   titleHighlight: Partners
-  paragraph: Our goal is to simplify our clients’ journey to access all the insights they need to serve their clients more efficiently with zero friction. If you believe your offerings can nicely complement or enhance ours, please do contact us via partners@finlight.com
+  paragraph: >
+    Our goal is to simplify our clients’ journey to access all the insights they need to
+    serve their clients more efficiently with zero friction. If you believe your offerings
+    can nicely complement or enhance ours, please do contact us via partners@finlight.com
 partnersPanel:
   title: ''
   paragraph: ''
