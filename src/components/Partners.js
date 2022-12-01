@@ -22,7 +22,7 @@ export default function Partners(props) {
           <Panel
           title={ title }
           paragraph={ paragraph }>
-            { partners && ( 
+            { partners && (
              <div className='
                 flex flex-wrap
                 justify-center
