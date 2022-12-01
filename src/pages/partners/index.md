@@ -1,5 +1,5 @@
 ---
-templateKey: 'partners-page'
+templateKey: partners-page
 path: /partners
 heroPanel:
   darkMode: false
@@ -9,21 +9,15 @@ heroPanel:
   title: Our Partners
   titleHighlight: Partners
   paragraph: >
-    Our goal is to simplify our clients’ journey to access all the insights they need to
-    serve their clients more efficiently with zero friction. If you believe your offerings
-    can nicely complement or enhance ours, please do contact us via partners@finlight.com
+    Our goal is to simplify our clients’ journey to access all the insights they
+    need to serve their clients more efficiently with zero friction. If you
+    believe your offerings can nicely complement or enhance ours, please do
+    contact us via partners@finlight.com
+  button: " "
 partnersPanel:
-  title: ''
-  paragraph: ''
-  partners:
-    - partnerImage:
-        image: /img/brussels.png
-      name: Name
-      link: https://www.google.com
-    - partnerImage:
-        image: /img/brussels.png
-      name: Name 02
-      link: https://www.google.com
+  title: " "
+  paragraph: " "
+  partners: []
 applyPanel:
   darkMode: true
   imageBg:
