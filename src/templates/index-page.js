@@ -7,6 +7,7 @@ import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import HeroLight from '../components/HeroLight';
+import Serve from '../components/Serve';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -15,6 +16,9 @@ export const IndexPageTemplate = ({
   heroHighlight,
   heroSubHeading,
   heroButton,
+  serveTitle,
+  serveDescription,
+  serve,
   heading,
   mainpitch,
   description,
@@ -29,6 +33,10 @@ export const IndexPageTemplate = ({
       highlight={ heroHighlight }
       subHeading={ heroSubHeading }
       button={ heroButton } />
+      <Serve
+      title={ serveTitle }
+      description={ serveDescription }
+      serve={ serve } />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -50,8 +58,8 @@ export const IndexPageTemplate = ({
                       </h3>
                       <p>{description}</p>
                     </div>
-                  </div>
                   <Features gridItems={intro.blurbs} />
+                  </div>
                   <div className="columns">
                     <div className="column is-12 has-text-centered">
                       <Link className="btn" to="/products">
@@ -86,6 +94,11 @@ IndexPageTemplate.propTypes = {
   heroHighlight: PropTypes.string,
   heroSubHeading: PropTypes.string,
   heroButton: PropTypes.string,
+  serveTitle: PropTypes.string,
+  serveDescription: PropTypes.string,
+  serve: PropTypes.shape({
+    blurbs: PropTypes.array
+  }),
   heading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
@@ -105,6 +118,9 @@ const IndexPage = ({ data }) => {
       heroHighlight={ frontmatter.heroHighlight }
       heroSubHeading={ frontmatter.heroSubHeading }
       heroButton={ frontmatter.heroButton }
+      serveTitle={ frontmatter.serveTitle }
+      serveDescription={ frontmatter.serveDescription }
+      serve={frontmatter.serve}
       heading={frontmatter.heading}
       mainpitch={frontmatter.mainpitch}
       description={frontmatter.description}
@@ -136,6 +152,26 @@ export const pageQuery = graphql`
         heroHighlight
         heroSubHeading
         heroButton
+        serveTitle
+        serveDescription
+        serve {
+          blurbs {
+            image {
+              childImageSharp {
+                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+              }
+            }
+            title
+            text
+            image {
+              childImageSharp {
+                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+              }
+            }
+            title
+            text
+          }
+        }
         heading
         mainpitch {
           title
@@ -158,4 +194,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
