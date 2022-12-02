@@ -16,7 +16,7 @@ export default function Serve(props) {
         <div className='
           flex flex-col
           items-center
-          h-auto
+          w-full h-auto
           px-6 py-12 md:p-12 gap-6 lg:gap-12
           bg-[#F6F6F6]
           text-center
@@ -24,13 +24,15 @@ export default function Serve(props) {
           {title && (
             <div className='
               flex flex-col
-              justify-center
-              h-auto w-[50%]
+              content-center items-center
+              w-full h-auto
               gap-12
             '>
-              <p className='text-3xl font-semibold'>{ title }</p>
+              <p className='text-3xl font-semibold text-center'>
+                { title }
+              </p>
               <hr className='
-                h-[3px] w-1/3
+                md:w-[30%] h-[3px]
                 border-transparent
                 bg-gradient-to-r from-transparent via-primary to-transparent
               ' />
@@ -38,15 +40,17 @@ export default function Serve(props) {
           )}
           {description && (
             <div className='h-auto md:w-[80%] lg:w-[50%]'>
-              <p className='text-xl'>{ description }</p>
+              <p className='text-xl'>
+                { description }
+              </p>
             </div>
           )}
           {cards && (
             <div className='
               flex flex-wrap
               justify-center
-              w-full
               p-6 gap-12
+              w-full
             '>
               { cards.map((card, i) => (
                 <Card key={ i }

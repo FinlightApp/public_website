@@ -2,7 +2,6 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-
 export default function Card(props) {
   const {
     image,
