@@ -13,20 +13,32 @@ heroPanel:
   button: Request Info
 servePanel:
   title: Who Do We Serve ?
-  description: We help Private allocators, family offices, banks, OCIOs… build high quality VC portfolio from as low as 10k GBP through dedicated EU and UK SPV we maintain on their behalf
+  description: >
+      We help Private allocators, family offices, banks,
+      OCIOs… build high quality VC portfolio fromas low as
+      10k GBP through dedicated EU and UK SPV we maintain on their behalf
   cards:
     - image: /img/serve.webp
       title: Investment consultants
       text: >
-        We rank S&C as our highest priority. Our servers are in Switzerland, with a FINMA regulated partner. Data, client information and calculation servers are separate. We have a top web security partner and a 2 form authentication process.
+        We rank S&C as our highest priority. Our servers are in Switzerland,
+        with a FINMA regulated partner. Data, client information and calculation
+        servers are separate. We have a top web security partner and a 2 form
+        authentication process.
     - image: /img/serve.webp
       title: Family Offices
       text: >
-        We rank S&C as our highest priority. Our servers are in Switzerland, with a FINMA regulated partner. Data, client information and calculation servers are separate. We have a top web security partner and a 2 form authentication process.
+        We rank S&C as our highest priority. Our servers are in Switzerland,
+        with a FINMA regulated partner. Data, client information and calculation
+        servers are separate. We have a top web security partner and a 2 form
+        authentication process.
     - image: /img/serve.webp
       title: Qualified Investors
       text: >
-        We rank S&C as our highest priority. Our servers are in Switzerland, with a FINMA regulated partner. Data, client information and calculation servers are separate. We have a top web security partner and a 2 form authentication process.
+        We rank S&C as our highest priority. Our servers are in Switzerland,
+        with a FINMA regulated partner. Data, client information and calculation
+        servers are separate. We have a top web security partner and a 2 form
+        authentication process.
 applyPanel:
   darkMode: true
   imageBg:

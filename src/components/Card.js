@@ -11,30 +11,36 @@ export default function Card(props) {
 
   return (
     <React.Fragment>
-      <div className='
-        flex flex-col
-        items-center justify-center
-        p-6 gap-6
-        lg:w-[416px] h-fit w-fit
-        rounded-2xl bg-white shadow-md
-      '>
-        { image?.url ? (
-          <img className='h-44 w-44'
-          src={ image }
-          alt='img' />
-        ) : (
-          <GatsbyImage className='h-44 w-44'
-          image={ image }
-          formats={ ['auto', 'webp'] }
-          alt='img' />
-        ) }
-        <p className='text-xl font-semibold'>
-          { title }
-        </p>
-        <p className='text-base'>
-          { text }
-        </p>
-      </div>
+      { ( title || text || image ) && (
+        <div className='
+          flex flex-col
+          items-center justify-center
+          p-6 gap-6
+          lg:w-[416px] h-fit w-fit
+          rounded-2xl bg-white shadow-md
+        '>
+          { image?.url ? (
+            <img className='h-44 w-44'
+            src={ image }
+            alt='img' />
+          ) : (
+            <GatsbyImage className='h-44 w-44'
+            image={ image }
+            formats={ ['auto', 'webp'] }
+            alt='img' />
+          )}
+          { title && (
+            <p className='text-xl font-semibold'>
+              { title }
+            </p>
+          )}
+          { text && (
+            <p className='text-base'>
+              { text }
+            </p>
+          )}
+        </div>
+      )}
     </React.Fragment>
   );
 }

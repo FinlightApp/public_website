@@ -12,7 +12,7 @@ export default function Serve(props) {
 
   return (
     <React.Fragment>
-      {( title || description || cards ) && (
+      { ( title || description || cards ) && (
         <div className='
           flex flex-col
           items-center
@@ -21,7 +21,7 @@ export default function Serve(props) {
           bg-[#F6F6F6]
           text-center
         '>
-          {title && (
+          { title && (
             <div className='
               flex flex-col
               content-center items-center
@@ -38,14 +38,14 @@ export default function Serve(props) {
               ' />
             </div>
           )}
-          {description && (
+          { description && (
             <div className='h-auto md:w-[80%] lg:w-[50%]'>
               <p className='text-xl'>
                 { description }
               </p>
             </div>
           )}
-          {cards && (
+          { cards && (
             <div className='
               flex flex-wrap
               justify-center
