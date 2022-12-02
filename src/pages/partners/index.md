@@ -13,18 +13,14 @@ heroPanel:
     need to serve their clients more efficiently with zero friction. If you
     believe your offerings can nicely complement or enhance ours, please do
     contact us via partners@finlight.com
-  button: " "
+  button:
 partnersPanel:
   title:
-  paragraph: ""
+  paragraph:
   partners:
     - partnerImage:
         image: /img/brussels.png
       name: Name
-      link: https://www.google.com
-    - partnerImage:
-        image: /img/brussels.png
-      name: Name 02
       link: https://www.google.com
 applyPanel:
   darkMode: true
