@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from './Cards';
+import Card from './Card';
+
 export default function Serve(props) {
   const {
     title,
@@ -10,7 +11,7 @@ export default function Serve(props) {
 
   return (
     <React.Fragment>
-      {( title || title || cards )  && (
+      {( title || description || cards ) && (
         <div className='
           flex flex-col
           items-center
@@ -19,26 +20,31 @@ export default function Serve(props) {
           bg-[#F6F6F6]
           text-center
         '>
-          <div className='h-auto w-[50%]'>
-            {title && (
+          {title && (
+            <div className='
+              flex flex-col
+              justify-center
+              h-auto w-[50%]
+              gap-12
+            '>
               <p className='text-3xl font-semibold'>{ title }</p>
-            )}
-          </div>
-          <hr className='
-            h-[3px] w-1/3
-            border-transparent
-            bg-gradient-to-r from-transparent via-primary to-transparent
-          ' />
-          <div className='h-auto md:w-[80%] lg:w-[50%]'>
-            {description && (
+              <hr className='
+                h-[3px] w-1/3
+                border-transparent
+                bg-gradient-to-r from-transparent via-primary to-transparent
+              ' />
+            </div>
+          )}
+          {description && (
+            <div className='h-auto md:w-[80%] lg:w-[50%]'>
               <p className='text-xl'>{ description }</p>
-            )}
-          </div>
-          <div>
-            {cards && (
+            </div>
+          )}
+          {cards && (
+            <div className='flex flex-col items-center justify-center w-auto gap-12 lg:flex-row md:flex-wrap'>
               <Card gridItems={ cards } />
-            )}
-          </div>
+            </div>
+          )}
         </div>
       )}
     </React.Fragment>
@@ -48,5 +54,5 @@ export default function Serve(props) {
 Serve.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  blurbs: PropTypes.array
+  cards: PropTypes.array
 };

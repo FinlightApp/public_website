@@ -33,9 +33,9 @@ export const IndexPageTemplate = ({
       subHeading={ heroPanel.subHeading }
       button={ heroPanel.button } />
       <Serve 
-      title = { servePanel.title}
-      description ={ servePanel.description }
-      cards = { servePanel.cards } />
+      title={ servePanel.title }
+      description={ servePanel.description }
+      cards={ servePanel.cards } />
       <Apply
       darkMode={ applyPanel.darkMode }
       imageBg={ {
@@ -105,10 +105,10 @@ IndexPageTemplate.propTypes = {
     subHeading: PropTypes.string,
     button: PropTypes.string,
   }),
-  serve: PropTypes.shape({
-    serveTitle: PropTypes.string,
-    serveDescription: PropTypes.string,
-    blurbs: PropTypes.array
+  servePanel: PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string,
+    cards: PropTypes.array
   }),
   applyPanel: PropTypes.shape({
     darkMode: PropTypes.bool,
