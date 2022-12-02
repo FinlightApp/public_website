@@ -61,41 +61,51 @@ collections:
                           label: Header,
                           name: header,
                           widget: select,
-                          options:
-                            - { label: 'Black', value: 'text-black' }
-                            - { label: 'White', value: 'text-white' }
+                          options: 
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
                         },
                         {
                           label: Line,
                           name: line,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'via-primary' }
-                            - { label: 'Secondary', value: 'via-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'via-primary' },
+                              { label: 'Secondary', value: 'via-secondary' }
+                            ]
                         },
                         {
                           label: Highlight,
                           name: highlight,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'text-primary' }
-                            - { label: 'Secondary', value: 'text-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-primary' },
+                              { label: 'Secondary', value: 'text-secondary' }
+                            ]
                         },
                         {
                           label: Paragraph,
                           name: paragraph,
                           widget: select,
-                          options: 
-                            - { label: 'Black', value: 'text-black' }
-                            - { label: 'White', value: 'text-white' }
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
                         },
                         {
                           label: Button,
                           name: button,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'text-black bg-primary' }
-                            - { label: 'Secondary', value: 'text-white bg-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-black bg-primary' },
+                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                            ]
                         },
                       ],
                   },
@@ -160,41 +170,51 @@ collections:
                           label: Header,
                           name: header,
                           widget: select,
-                          options: 
-                            - { label: 'Black', value: 'text-black' },
-                            - { label: 'White', value: 'text-white' }
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
                         },
                         {
                           label: Line,
                           name: line,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'via-primary' },
-                            - { label: 'Secondary', value: 'via-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'via-primary' },
+                              { label: 'Secondary', value: 'via-secondary' }
+                            ]
                         },
                         {
                           label: Highlight,
                           name: highlight,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'text-primary' },
-                            - { label: 'Secondary', value: 'text-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-primary' },
+                              { label: 'Secondary', value: 'text-secondary' }
+                            ]
                         },
                         {
                           label: Paragraph,
                           name: paragraph,
                           widget: select,
-                          options: 
-                            - { label: 'Black', value: 'text-black' },
-                            - { label: 'White', value: 'text-white' }
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
                         },
                         {
                           label: Button,
                           name: button,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'text-black bg-primary' },
-                            - { label: 'Secondary', value: 'text-white bg-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-black bg-primary' },
+                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                            ]
                         },
                       ],
                   },
@@ -285,155 +305,175 @@ collections:
                   },
                 ],
             }
-      - file: 'src/pages/team/index.md'
-        label: 'Team Page'
-        name: 'team'
-        fields:
-          - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'team-page',
-            }
-          - {
-              label: Hero Panel,
-              name: heroPanel,
-              widget: object,
-              fields:
-                [
-                  {
-                    label: Theme,
-                    name: theme,
-                    widget: object,
-                    fields:
-                      [
-                        {
-                          label: Header,
-                          name: header,
-                          widget: select,
-                          options: 
-                            - { label: 'Black', value: 'text-black' },
-                            - { label: 'White', value: 'text-white' }
-                        },
-                        {
-                          label: Line,
-                          name: line,
-                          widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'via-primary' },
-                            - { label: 'Secondary', value: 'via-secondary' }
-                        },
-                        {
-                          label: Highlight,
-                          name: highlight,
-                          widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'text-primary' },
-                            - { label: 'Secondary', value: 'text-secondary' }
-                        },
-                        {
-                          label: Paragraph,
-                          name: paragraph,
-                          widget: select,
-                          options: 
-                            - { label: 'Black', value: 'text-black' },
-                            - { label: 'White', value: 'text-white' }
-                        },
-                        {
-                          label: Button,
-                          name: button,
-                          widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'text-black bg-primary' },
-                            - { label: 'Secondary', value: 'text-white bg-secondary' }
-                        },
-                      ],
-                  },
-                  {
-                    label: Background,
-                    name: imageBg,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: SEO - Image Description, name: alt, widget: string },
-                      ],
-                  },
-                  { label: Title, name: title, widget: string },
-                  { label: Title Highlight, name: titleHighlight, widget: string },
-                  { label: Text, name: paragraph, widget: string },
-                  { label: Button, name: button, widget: string },
-                ],
-            },
-          - {
-              label: Apply Panel,
-              name: applyPanel,
-              widget: object,
-              fields:
-                [
-                  {
-                    label: Theme,
-                    name: theme,
-                    widget: object,
-                    fields:
-                      [
-                        {
-                          label: Header,
-                          name: header,
-                          widget: select,
-                          options: 
-                            - { label: 'Black', value: 'text-black' },
-                            - { label: 'White', value: 'text-white' }
-                        },
-                        {
-                          label: Line,
-                          name: line,
-                          widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'via-primary' },
-                            - { label: 'Secondary', value: 'via-secondary' }
-                        },
-                        {
-                          label: Highlight,
-                          name: highlight,
-                          widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'text-primary' },
-                            - { label: 'Secondary', value: 'text-secondary' }
-                        },
-                        {
-                          label: Paragraph,
-                          name: paragraph,
-                          widget: select,
-                          options: 
-                            - { label: 'Black', value: 'text-black' },
-                            - { label: 'White', value: 'text-white' }
-                        },
-                        {
-                          label: Button,
-                          name: button,
-                          widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'text-black bg-primary' },
-                            - { label: 'Secondary', value: 'text-white bg-secondary' }
-                        },
-                      ],
-                  },
-                  {
-                    label: Background,
-                    name: imageBg,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: SEO - Image Description, name: alt, widget: string },
-                      ],
-                  },
-                  { label: Title, name: title, widget: string },
-                  { label: Text, name: paragraph, widget: string },
-                  { label: Button, name: button, widget: string },
-                ],
-            }
+      # - file: 'src/pages/team/index.md'
+      #   label: 'Team Page'
+      #   name: 'team'
+      #   fields:
+      #     - {
+      #         label: 'Template Key',
+      #         name: 'templateKey',
+      #         widget: 'hidden',
+      #         default: 'team-page',
+      #       }
+      #     - {
+      #         label: Hero Panel,
+      #         name: heroPanel,
+      #         widget: object,
+      #         fields:
+      #           [
+      #             {
+      #               label: Theme,
+      #               name: theme,
+      #               widget: object,
+      #               fields:
+      #                 [
+      #                   {
+      #                     label: Header,
+      #                     name: header,
+      #                     widget: select,
+      #                     options:
+      #                       [
+      #                         { label: 'Black', value: 'text-black' },
+      #                         { label: 'White', value: 'text-white' }
+      #                       ]
+      #                   },
+      #                   {
+      #                     label: Line,
+      #                     name: line,
+      #                     widget: select,
+      #                     options:
+      #                       [
+      #                         { label: 'Primary', value: 'via-primary' },
+      #                         { label: 'Secondary', value: 'via-secondary' }
+      #                       ]
+      #                   },
+      #                   {
+      #                     label: Highlight,
+      #                     name: highlight,
+      #                     widget: select,
+      #                     options:
+      #                       [
+      #                         { label: 'Primary', value: 'text-primary' },
+      #                         { label: 'Secondary', value: 'text-secondary' }
+      #                       ]
+      #                   },
+      #                   {
+      #                     label: Paragraph,
+      #                     name: paragraph,
+      #                     widget: select,
+      #                     options:
+      #                       [
+      #                         { label: 'Black', value: 'text-black' },
+      #                         { label: 'White', value: 'text-white' }
+      #                       ]
+      #                   },
+      #                   {
+      #                     label: Button,
+      #                     name: button,
+      #                     widget: select,
+      #                     options:
+      #                       [
+      #                         { label: 'Primary', value: 'text-black bg-primary' },
+      #                         { label: 'Secondary', value: 'text-white bg-secondary' }
+      #                       ]
+      #                   },
+      #                 ],
+      #             },
+      #             {
+      #               label: Background,
+      #               name: imageBg,
+      #               widget: object,
+      #               fields:
+      #                 [
+      #                   { label: Image, name: image, widget: image },
+      #                   { label: SEO - Image Description, name: alt, widget: string },
+      #                 ],
+      #             },
+      #             { label: Title, name: title, widget: string },
+      #             { label: Title Highlight, name: titleHighlight, widget: string },
+      #             { label: Text, name: paragraph, widget: string },
+      #             { label: Button, name: button, widget: string },
+      #           ],
+      #       },
+      #     - {
+      #         label: Apply Panel,
+      #         name: applyPanel,
+      #         widget: object,
+      #         fields:
+      #           [
+      #             {
+      #               label: Theme,
+      #               name: theme,
+      #               widget: object,
+      #               fields:
+      #                 [
+      #                   {
+      #                     label: Header,
+      #                     name: header,
+      #                     widget: select,
+      #                     options:
+      #                       [
+      #                         { label: 'Black', value: 'text-black' },
+      #                         { label: 'White', value: 'text-white' }
+      #                       ]
+      #                   },
+      #                   {
+      #                     label: Line,
+      #                     name: line,
+      #                     widget: select,
+      #                     options:
+      #                       [
+      #                         { label: 'Primary', value: 'via-primary' },
+      #                         { label: 'Secondary', value: 'via-secondary' }
+      #                       ]
+      #                   },
+      #                   {
+      #                     label: Highlight,
+      #                     name: highlight,
+      #                     widget: select,
+      #                     options:
+      #                       [
+      #                         { label: 'Primary', value: 'text-primary' },
+      #                         { label: 'Secondary', value: 'text-secondary' }
+      #                       ]
+      #                   },
+      #                   {
+      #                     label: Paragraph,
+      #                     name: paragraph,
+      #                     widget: select,
+      #                     options:
+      #                       [
+      #                         { label: 'Black', value: 'text-black' },
+      #                         { label: 'White', value: 'text-white' }
+      #                       ]
+      #                   },
+      #                   {
+      #                     label: Button,
+      #                     name: button,
+      #                     widget: select,
+      #                     options:
+      #                       [
+      #                         { label: 'Primary', value: 'text-black bg-primary' },
+      #                         { label: 'Secondary', value: 'text-white bg-secondary' }
+      #                       ]
+      #                   },
+      #                 ],
+      #             },
+      #             {
+      #               label: Background,
+      #               name: imageBg,
+      #               widget: object,
+      #               fields:
+      #                 [
+      #                   { label: Image, name: image, widget: image },
+      #                   { label: SEO - Image Description, name: alt, widget: string },
+      #                 ],
+      #             },
+      #             { label: Title, name: title, widget: string },
+      #             { label: Text, name: paragraph, widget: string },
+      #             { label: Button, name: button, widget: string },
+      #           ],
+      #       }
       - file: 'src/pages/partners/index.md'
         label: 'Partners Page'
         name: 'partners'
@@ -460,41 +500,51 @@ collections:
                           label: Header,
                           name: header,
                           widget: select,
-                          options: 
-                            - { label: 'Black', value: 'text-black' },
-                            - { label: 'White', value: 'text-white' }
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
                         },
                         {
                           label: Line,
                           name: line,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'via-primary' },
-                            - { label: 'Secondary', value: 'via-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'via-primary' },
+                              { label: 'Secondary', value: 'via-secondary' }
+                            ]
                         },
                         {
                           label: Highlight,
                           name: highlight,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'text-primary' },
-                            - { label: 'Secondary', value: 'text-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-primary' },
+                              { label: 'Secondary', value: 'text-secondary' }
+                            ]
                         },
                         {
                           label: Paragraph,
                           name: paragraph,
                           widget: select,
-                          options: 
-                            - { label: 'Black', value: 'text-black' },
-                            - { label: 'White', value: 'text-white' }
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
                         },
                         {
                           label: Button,
                           name: button,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'text-black bg-primary' },
-                            - { label: 'Secondary', value: 'text-white bg-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-black bg-primary' },
+                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                            ]
                         },
                       ],
                   },
@@ -560,41 +610,51 @@ collections:
                           label: Header,
                           name: header,
                           widget: select,
-                          options: 
-                            - { label: 'Black', value: 'text-black' },
-                            - { label: 'White', value: 'text-white' }
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
                         },
                         {
                           label: Line,
                           name: line,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'via-primary' },
-                            - { label: 'Secondary', value: 'via-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'via-primary' },
+                              { label: 'Secondary', value: 'via-secondary' }
+                            ]
                         },
                         {
                           label: Highlight,
                           name: highlight,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'text-primary' },
-                            - { label: 'Secondary', value: 'text-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-primary' },
+                              { label: 'Secondary', value: 'text-secondary' }
+                            ]
                         },
                         {
                           label: Paragraph,
                           name: paragraph,
                           widget: select,
-                          options: 
-                            - { label: 'Black', value: 'text-black' },
-                            - { label: 'White', value: 'text-white' }
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
                         },
                         {
                           label: Button,
                           name: button,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'text-black bg-primary' },
-                            - { label: 'Secondary', value: 'text-white bg-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-black bg-primary' },
+                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                            ]
                         },
                       ],
                   },
@@ -639,41 +699,51 @@ collections:
                           label: Header,
                           name: header,
                           widget: select,
-                          options: 
-                            - { label: 'Black', value: 'text-black' },
-                            - { label: 'White', value: 'text-white' }
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
                         },
                         {
                           label: Line,
                           name: line,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'via-primary' },
-                            - { label: 'Secondary', value: 'via-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'via-primary' },
+                              { label: 'Secondary', value: 'via-secondary' }
+                            ]
                         },
                         {
                           label: Highlight,
                           name: highlight,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'text-primary' },
-                            - { label: 'Secondary', value: 'text-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-primary' },
+                              { label: 'Secondary', value: 'text-secondary' }
+                            ]
                         },
                         {
                           label: Paragraph,
                           name: paragraph,
                           widget: select,
-                          options: 
-                            - { label: 'Black', value: 'text-black' },
-                            - { label: 'White', value: 'text-white' }
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
                         },
                         {
                           label: Button,
                           name: button,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'text-black bg-primary' },
-                            - { label: 'Secondary', value: 'text-white bg-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-black bg-primary' },
+                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                            ]
                         },
                       ],
                   },
@@ -740,41 +810,51 @@ collections:
                           label: Header,
                           name: header,
                           widget: select,
-                          options: 
-                            - { label: 'Black', value: 'text-black' },
-                            - { label: 'White', value: 'text-white' }
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
                         },
                         {
                           label: Line,
                           name: line,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'via-primary' },
-                            - { label: 'Secondary', value: 'via-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'via-primary' },
+                              { label: 'Secondary', value: 'via-secondary' }
+                            ]
                         },
                         {
                           label: Highlight,
                           name: highlight,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'text-primary' },
-                            - { label: 'Secondary', value: 'text-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-primary' },
+                              { label: 'Secondary', value: 'text-secondary' }
+                            ]
                         },
                         {
                           label: Paragraph,
                           name: paragraph,
                           widget: select,
-                          options: 
-                            - { label: 'Black', value: 'text-black' },
-                            - { label: 'White', value: 'text-white' }
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
                         },
                         {
                           label: Button,
                           name: button,
                           widget: select,
-                          options: 
-                            - { label: 'Primary', value: 'text-black bg-primary' },
-                            - { label: 'Secondary', value: 'text-white bg-secondary' }
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-black bg-primary' },
+                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                            ]
                         },
                       ],
                   },
