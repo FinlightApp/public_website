@@ -4,10 +4,10 @@ import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 const Card = ({ gridItems }) => (
   <div className='
-    flex flex-col lg:flex-row 
-    items-center justify-center md:flex-wrap
-    gap-12 
-    w-auto 
+    flex flex-col lg:flex-row md:flex-wrap
+    items-center justify-center
+    gap-12
+    w-auto
  '>
     {gridItems.map((item) => (
       <div key={item.title} className='
