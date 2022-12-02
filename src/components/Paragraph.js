@@ -3,7 +3,7 @@ export default function Paragraph(props) {
   return (
     <React.Fragment>
       <p className={`
-        ${ props.darkMode ? 'text-white' : 'text-black' }
+        ${ props.theme?.paragraph || 'text-black' }
         text-xl text-center font-paragraph
       `}>
         { props.children }

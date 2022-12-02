@@ -9,13 +9,13 @@ export default function Subeader(props) {
         gap-12
       '>
         <h2 className={`
-          ${ props.darkMode ? 'text-white' : 'text-black' }
+          ${ props.theme?.header || 'text-black' }
           text-3xl text-center font-semibold font-header
         `}>
           { props.children }
         </h2>
         <div className={`
-          ${ props.darkMode ? 'via-primary' : 'via-secondary' }
+          ${ props.theme?.line || 'via-primary' }
           bg-gradient-to-r from-transparent to-transparent
           w-full max-w-sm h-0.5
         `} />

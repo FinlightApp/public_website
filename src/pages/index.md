@@ -1,7 +1,12 @@
 ---
 templateKey: index-page
 heroPanel:
-  darkMode: true
+  theme:
+    header: ''
+    line: ''
+    highlight: ''
+    paragraph: ''
+    button: ''
   imageBg:
     alt: Background Alt
     image: /img/london.jpg
@@ -12,9 +17,14 @@ heroPanel:
     the entire admin GPs have to go through to on-board, serve and report to LPs.
   button: Request Info
 applyPanel:
-  darkMode: true
+  theme:
+    header: ''
+    line: ''
+    highlight: ''
+    paragraph: ''
+    button: ''
   imageBg:
-    alt: Background Alt - test
+    alt: SEO - alt
     image: /img/heroBg.webp
   title: Ready to Finlight?
   paragraph: Asset consolidation processes are always systematically better with Finlight.
@@ -25,11 +35,17 @@ featurePanel:
     We help Private allocators, family offices, banks, OCIOs… build high quality VC portfolio
     from as low as 10k GBP through dedicated EU and UK SPV we maintain on their behalf.
   features:
-    - image: /img/blog-index.jpg
+    - featureImage:
+        alt: SEO - alt
+        image: /img/blog-index.jpg
       title: Investment Consultants
-    - image: /img/blog-index.jpg
+    - featureImage:
+        alt: SEO - alt
+        image: /img/blog-index.jpg
       title: Family offices
-    - image: /img/blog-index.jpg
+    - featureImage:
+        alt: SEO - alt
+        image: /img/blog-index.jpg
       title: Qualified Investors
 heading: Great coffee with a conscience
 mainpitch:

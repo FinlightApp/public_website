@@ -2,7 +2,12 @@
 templateKey: partners-page
 path: /partners
 heroPanel:
-  darkMode: false
+  theme:
+    header: ''
+    line: ''
+    highlight: ''
+    paragraph: ''
+    button: ''
   imageBg:
     alt: Background Alt
     image: /img/brussels.png
@@ -27,7 +32,12 @@ partnersPanel:
       name: Name 02
       link: https://www.google.com
 applyPanel:
-  darkMode: true
+  theme:
+    header: ''
+    line: ''
+    highlight: ''
+    paragraph: ''
+    button: ''
   imageBg:
     alt: Background Alt - test
     image: /img/heroBg.webp

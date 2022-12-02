@@ -8,7 +8,7 @@ import Box from './Box';
 
 export default function Apply(props) {
   const {
-    darkMode,
+    theme,
     imageBg,
     title,
     paragraph,
@@ -55,17 +55,17 @@ export default function Apply(props) {
               h-fit
             '>
               { title && (
-                <Subheader darkMode={ darkMode }>
+                <Subheader theme={ theme }>
                   { title }
                 </Subheader>
               ) }
               { paragraph && (
-                <Paragraph darkMode={ darkMode }>
+                <Paragraph theme={ theme }>
                   { paragraph }
                 </Paragraph>
               ) }
               { button && (
-                <Button darkMode={ darkMode }>
+                <Button theme={ theme }>
                   { button }
                 </Button>
               ) }
@@ -78,7 +78,7 @@ export default function Apply(props) {
 }
 
 Apply.propTypes = {
-  darkMode: PropTypes.bool,
+  theme: PropTypes.object,
   imageBg: PropTypes.object,
   title: PropTypes.string,
   paragraph: PropTypes.string,

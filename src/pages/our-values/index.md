@@ -2,7 +2,12 @@
 templateKey: 'our-values-page'
 path: /our-values
 heroPanel:
-  darkMode: false
+  theme:
+    header: ''
+    line: ''
+    highlight: ''
+    paragraph: ''
+    button: ''
   imageBg:
     alt: Background Alt
     image: /img/brussels.png
@@ -13,7 +18,7 @@ heroPanel:
       gravida at risus. Cras justo quam, convallis et tincidunt id, dapibus non felis.
       Vestibulum at velit egestas, porttitor augue ut, pretium lorem.
 ourValuesPanel:
-  title: ''
+  title: Title
   paragraph: ''
   values:
     - valueImage:
@@ -25,7 +30,12 @@ ourValuesPanel:
         gravida at risus. Cras justo quam, convallis et tincidunt id, dapibus non felis.
         Vestibulum at velit egestas, porttitor augue ut, pretium lorem.
 applyPanel:
-  darkMode: true
+  theme:
+    header: ''
+    line: ''
+    highlight: ''
+    paragraph: ''
+    button: ''
   imageBg:
     alt: Background Alt - test
     image: /img/heroBg.webp

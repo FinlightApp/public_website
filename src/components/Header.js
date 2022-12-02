@@ -9,7 +9,7 @@ export default function Header(props) {
         const textSplit =  text.split(toHighlight);
         titleEl.current.innerHTML = `
           ${textSplit[0] ? textSplit[0] : ''}
-          <span class='${props.darkMode ? 'text-primary' : 'text-secondary' }'>${toHighlight}</span>
+          <span class='${props.theme?.highlight || 'text-primary'}'>${toHighlight}</span>
           ${textSplit[1] ? textSplit[1] : ''}
         `;
       }
@@ -28,14 +28,14 @@ export default function Header(props) {
         gap-12
       '>
         <h1 className={`
-          ${ props.darkMode ? 'text-white' : 'text-black' }
+          ${ props.theme?.header || 'text-black' }
           text-4xl text-center font-semibold font-header
         `}
         ref={ titleEl }>
           { props.children }
         </h1>
         <div className={`
-          ${ props.darkMode ? 'via-primary' : 'via-secondary' }
+          ${ props.theme?.line || 'via-primary' }
           bg-gradient-to-r from-transparent to-transparent
           w-full max-w-sm h-0.5
         `} />
