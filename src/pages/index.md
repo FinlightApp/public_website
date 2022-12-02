@@ -20,11 +20,13 @@ applyPanel:
   paragraph: Asset consolidation processes are always systematically better with Finlight.
   button: Apply for an account
 featurePanel:
-  title: zrgwvwdf
-  subHeading: srgwwrd
-  featureCards:
+  title: Key Features
+  paragraph: >
+    We help Private allocators, family offices, banks, OCIOs… build high quality VC portfolio
+    from as low as 10k GBP through dedicated EU and UK SPV we maintain on their behalf.
+  features:
     - image: /img/blog-index.jpg
-      title: Investment consultants
+      title: Investment Consultants
     - image: /img/blog-index.jpg
       title: Family offices
     - image: /img/blog-index.jpg

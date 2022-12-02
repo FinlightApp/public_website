@@ -34,8 +34,8 @@ export const IndexPageTemplate = ({
       button={ heroPanel.button } />
       <Feature 
       title={ featurePanel.title }
-      subHeading={ featurePanel.subHeading} 
-      featureCards={ featurePanel.featureCards } />
+      paragraph={ featurePanel.paragraph} 
+      features={ featurePanel.features } />
       <Apply
       darkMode={ applyPanel.darkMode }
       imageBg={ {
@@ -107,8 +107,8 @@ IndexPageTemplate.propTypes = {
   }),
   featurePanel: PropTypes.shape({
     title: PropTypes.string,
-    subHeading: PropTypes.string,
-    featureCards: PropTypes.array,
+    paragraph: PropTypes.string,
+    features: PropTypes.array,
   }),
   applyPanel: PropTypes.shape({
     darkMode: PropTypes.bool,
@@ -172,8 +172,8 @@ export const pageQuery = graphql`
         }
         featurePanel {
           title
-          subHeading
-          featureCards {
+          paragraph
+          features {
             image {
               childImageSharp {
                 gatsbyImageData(quality: 100)

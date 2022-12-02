@@ -19,6 +19,14 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           paragraph: data.heroPanel.paragraph,
           button: data.heroPanel.button
         }}
+        featurePanel={{
+          title: data.featurePanel.title,
+          paragraph: data.featurePanel.paragraph,
+          features: {
+            image: getAsset(data.featurePanel.features.image),
+            title: data.featurePanel.features.title,
+          },
+        }}
         applyPanel={{
           darkMode: data.applyPanel.darkMode,
           imageBg: {
@@ -28,14 +36,6 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           title: data.applyPanel.title,
           paragraph: data.applyPanel.paragraph,
           button: data.applyPanel.button
-        }}
-        featurePanel={{
-          title: data.featurePanel.title,
-          subHeading: data.featurePanel.subHeading,
-          featureCards: {
-            image: getAsset(data.featurePanel.featureCards.image),
-            title: data.featurePanel.featureCards.title,
-          },
         }}
         heading={data.heading}
         description={data.description}

@@ -5,8 +5,8 @@ import FeatureCards from './FeatureCards';
 export default function Feature(props) {
   const {
     title,
-    subHeading,
-    featureCards,
+    paragraph,
+    features,
   } = props;
 
   return (
@@ -18,7 +18,7 @@ export default function Feature(props) {
         w-full h-fit
       '>
         
-        {( title || subHeading || featureCards )  && (
+        {( title || paragraph || features )  && (
           <div className='
             container flex-1
             flex flex-col
@@ -42,20 +42,33 @@ export default function Feature(props) {
               </div>
             ) }
             
-            { subHeading && (
+            { paragraph && (
               <p className='
                 lg:w-1/2
                 text-center
                 text-black font-normal text-xl
               '>
-                {subHeading}
+                { paragraph }
               </p>
-            ) }  
-            <div>
-              { featureCards && (
-                <FeatureCards cards={ featureCards } />
-              )}
-            </div>
+            ) }
+
+
+            { features && (
+              <div className='
+                flex-1
+                flex flex-col md:flex-row
+                flex-wrap
+                justify-center items-center
+                gap-12
+              '> 
+                { features.map((feature, i) => (
+                  <FeatureCards key={ i }
+                  cards={ feature } />
+                )) }
+              </div>
+            ) }
+
+
           </div>
         ) }
       </div>
@@ -65,11 +78,6 @@ export default function Feature(props) {
 
 Feature.propTypes = {
   title: PropTypes.string,
-  subHeading: PropTypes.string,
-  cards: PropTypes.arrayOf(
-    PropTypes.shape({
-      image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-      title: PropTypes.string,
-    })
-  ),
+  paragraph: PropTypes.string,
+  cards: PropTypes.array,
 };
