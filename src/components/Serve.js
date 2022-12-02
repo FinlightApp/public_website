@@ -39,7 +39,7 @@ export default function Serve(props) {
             </div>
           )}
           {description && (
-            <div className='h-auto md:w-20 lg:w-12'>
+            <div className='h-auto md:w-[80%] lg:w-[50%]'>
               <p className='text-xl'>
                 { description }
               </p>
