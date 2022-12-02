@@ -236,10 +236,10 @@ collections:
                     name: blurbs,
                     widget: list,
                     fields:
-                    [
-                      { label: Image, name: image, widget: image },
-                      { label: Text, name: text, widget: text },
-                    ],
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Text, name: text, widget: text },
+                      ],
                   },
                 ],
             }
