@@ -19,11 +19,11 @@ export default function Card(props) {
         rounded-2xl bg-white shadow-md
       '>
         { image?.url ? (
-          <img className='h-[180px] w-[180px]'
+          <img className='h-44 w-44'
           src={ image }
           alt='img' />
         ) : (
-          <GatsbyImage className='h-[180px] w-[180px]'
+          <GatsbyImage className='h-44 w-44'
           image={ image }
           formats={ ['auto', 'webp'] }
           alt='img' />
