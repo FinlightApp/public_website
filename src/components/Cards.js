@@ -10,7 +10,7 @@ const Card = ({ gridItems }) => (
         items-center justify-center
         p-6 gap-6
         lg:w-[416px] h-fit w-fit
-        rounded-2xl bg-white shadow-lg
+        rounded-2xl bg-white shadow-md
       '>
         <PreviewCompatibleImage imageInfo={ item.image } />
         <p className='text-xl font-semibold'>{ item.title }</p>
