@@ -300,6 +300,92 @@ collections:
                   { label: Button, name: button, widget: string },
                 ],
             }
+      - file: 'src/pages/our-values/index.md'
+        label: 'Our Values Page'
+        name: 'our-values'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'our-values-page',
+            }
+          - {
+              label: Hero Panel,
+              name: heroPanel,
+              widget: object,
+              fields:
+                [
+                  { label: Dark Mode, name: darkMode, widget: boolean, default: false },
+                  {
+                    label: Background,
+                    name: imageBg,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: SEO - Image Description, name: alt, widget: string },
+                      ],
+                  },
+                  { label: Title, name: title, widget: string },
+                  { label: Title Highlight, name: titleHighlight, widget: string },
+                  { label: Text, name: paragraph, widget: string },
+                  { label: Button, name: button, widget: string },
+                ],
+            }
+          - {
+              label: Our Values Panel,
+              name: ourValuesPanel,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Text, name: paragraph, widget: string },
+                  {
+                    label: Values,
+                    name: values,
+                    widget: list,
+                    fields:
+                      [
+                        {
+                          label: Image,
+                          name: valueImage,
+                          widget: object,
+                          fields:
+                            [
+                              { label: Image, name: image, widget: image },
+                              { label: SEO - Image Description, name: alt, widget: string },
+                            ],
+                        },
+                        { label: Title, name: title, widget: text },
+                        { label: Detail, name: paragraph, widget: string },
+                      ],
+                  },
+
+                ],
+            }
+          - {
+              label: Apply Panel,
+              name: applyPanel,
+              widget: object,
+              fields:
+                [
+                  { label: Dark Mode, name: darkMode, widget: boolean, default: false },
+                  {
+                    label: Background,
+                    name: imageBg,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: SEO - Image Description, name: alt, widget: string },
+                      ],
+                  },
+                  { label: Title, name: title, widget: string },
+                  { label: Text, name: paragraph, widget: string },
+                  { label: Button, name: button, widget: string },
+                ],
+            }
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
