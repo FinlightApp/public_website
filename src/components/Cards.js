@@ -3,7 +3,12 @@ import PropTypes from "prop-types";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 const Card = ({ gridItems }) => (
-  <div className='flex flex-col items-center justify-center w-auto gap-12 lg:flex-row md:flex-wrap'>
+  <div className='
+    flex flex-col lg:flex-row 
+    items-center justify-center md:flex-wrap
+    gap-12 
+    w-auto 
+ '>
     {gridItems.map((item) => (
       <div key={item.title} className='
         flex flex-col
