@@ -32,14 +32,14 @@ export default function Serve(props) {
                 { title }
               </p>
               <hr className='
-                w-[204px] md:w-[367px] h-[3px]
+                w-52 md:w-80 h-[3px]
                 border-transparent
                 bg-gradient-to-r from-transparent via-primary to-transparent
               ' />
             </div>
           )}
           {description && (
-            <div className='h-auto md:w-[80%] lg:w-[50%]'>
+            <div className='h-auto md:w-20 lg:w-12'>
               <p className='text-xl'>
                 { description }
               </p>
