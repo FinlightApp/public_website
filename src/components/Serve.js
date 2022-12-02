@@ -28,11 +28,11 @@ export default function Serve(props) {
               w-full h-auto
               gap-12
             '>
-              <p className='text-3xl font-semibold text-center'>
+              <p className='text-3xl font-semibold'>
                 { title }
               </p>
               <hr className='
-                md:w-[30%] h-[3px]
+                w-[204px] md:w-[367px] h-[3px]
                 border-transparent
                 bg-gradient-to-r from-transparent via-primary to-transparent
               ' />
