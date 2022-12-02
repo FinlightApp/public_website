@@ -35,7 +35,7 @@ export const IndexPageTemplate = ({
       <Serve 
       title = { servePanel.title}
       description ={ servePanel.description }
-      blurbs = { servePanel.blurbs } />
+      cards = { servePanel.cards } />
       <Apply
       darkMode={ applyPanel.darkMode }
       imageBg={ {
@@ -173,7 +173,7 @@ export const pageQuery = graphql`
         servePanel {
           title
           description
-          blurbs {
+          cards {
             image {
               childImageSharp {
                 gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)

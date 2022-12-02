@@ -2,7 +2,7 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
-const Cards = ({ gridItems }) => (
+const Card = ({ gridItems }) => (
   <div className='flex flex-col items-center justify-center w-auto gap-12 lg:flex-row md:flex-wrap'>
     {gridItems.map((item) => (
       <div key={item.title} className='
@@ -20,7 +20,7 @@ const Cards = ({ gridItems }) => (
   </div>
 );
 
-Cards.propTypes = {
+Card.propTypes = {
   gridItems: PropTypes.arrayOf(
     PropTypes.shape({
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -30,4 +30,4 @@ Cards.propTypes = {
   ),
 };
 
-export default Cards;
+export default Card;

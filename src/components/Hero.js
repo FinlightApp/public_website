@@ -36,19 +36,8 @@ export default function Hero(props) {
           alt={ imageBg.alt } />
         ) }
         { ( title || subHeading || button ) && (
-          <div className='
-            container
-            grid grid-cols-10
-            items-center
-            px-8 py-12 md:p-0
-          '>
-            <Box className='
-              col-span-10
-              md:col-start-3 md:col-span-6
-              lg:col-start-3 lg:col-span-4
-              xl:col-start-2 xl:col-span-3
-              h-fit
-            '>
+          <div className='container grid items-center grid-cols-10 px-8 py-12  md:p-0'>
+            <Box className='col-span-10  md:col-start-3 md:col-span-6 lg:col-start-3 lg:col-span-4 xl:col-start-2 xl:col-span-3 h-fit'>
               { title && (
                 <Header darkMode={ darkMode }
                 highlight={ titleHighlight }>
