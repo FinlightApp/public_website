@@ -13,8 +13,8 @@ const Card = ({ gridItems }) => (
         rounded-2xl bg-white shadow-lg
       '>
         <PreviewCompatibleImage imageInfo={ item.image } />
-        <p className='text-sm font-semibold'>{ item.title }</p>
-        <p className='text-xs'>{ item.text }</p>
+        <p className='text-xl font-semibold'>{ item.title }</p>
+        <p className='text-base'>{ item.text }</p>
       </div>
     ))}
   </div>

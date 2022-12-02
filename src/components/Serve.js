@@ -21,7 +21,7 @@ export default function Serve(props) {
         '>
           <div className='h-auto w-[50%]'>
             {title && (
-              <p className='text-2xl font-semibold'>{ title }</p>
+              <p className='text-3xl font-semibold'>{ title }</p>
             )}
           </div>
           <hr className='
@@ -31,7 +31,7 @@ export default function Serve(props) {
           ' />
           <div className='h-auto md:w-[80%] lg:w-[50%]'>
             {description && (
-              <p className='text-xs'>{ description }</p>
+              <p className='text-xl'>{ description }</p>
             )}
           </div>
           <div>
