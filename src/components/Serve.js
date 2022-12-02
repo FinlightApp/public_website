@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { getImage } from "gatsby-plugin-image";
 import Card from './Card';
 
 export default function Serve(props) {
@@ -41,8 +42,18 @@ export default function Serve(props) {
             </div>
           )}
           {cards && (
-            <div className='flex flex-col items-center justify-center w-auto gap-12 lg:flex-row md:flex-wrap'>
-              <Card gridItems={ cards } />
+            <div className='
+              flex flex-wrap
+              justify-center
+              w-full
+              p-6 gap-12
+            '>
+              { cards.map((card, i) => (
+                <Card key={ i }
+                image={ getImage(card.image) || card.image }
+                title={ card.title }
+                text={ card.text } />
+              )) }
             </div>
           )}
         </div>
