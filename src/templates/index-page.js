@@ -33,8 +33,8 @@ export const IndexPageTemplate = ({
       paragraph={ heroPanel.paragraph }
       button={ heroPanel.button } />
       <Feature 
-      title={ featurePanel.featureTitle }
-      subHeading={ featurePanel.featureSubHeading} 
+      title={ featurePanel.title }
+      subHeading={ featurePanel.subHeading} 
       featureCards={ featurePanel.featureCards } />
       <Apply
       darkMode={ applyPanel.darkMode }
@@ -106,8 +106,8 @@ IndexPageTemplate.propTypes = {
     button: PropTypes.string,
   }),
   featurePanel: PropTypes.shape({
-    featureTitle: PropTypes.string,
-    featureSubHeading: PropTypes.string,
+    title: PropTypes.string,
+    subHeading: PropTypes.string,
     featureCards: PropTypes.array,
   }),
   applyPanel: PropTypes.shape({
@@ -131,8 +131,8 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
       heroPanel={ frontmatter.heroPanel }
-      applyPanel={ frontmatter.applyPanel }
       featurePanel={ frontmatter.featurePanel }
+      applyPanel={ frontmatter.applyPanel }
       heading={frontmatter.heading}
       mainpitch={frontmatter.mainpitch}
       description={frontmatter.description}
@@ -170,6 +170,18 @@ export const pageQuery = graphql`
           paragraph
           button
         }
+        featurePanel {
+          title
+          subHeading
+          featureCards {
+            image {
+              childImageSharp {
+                gatsbyImageData(quality: 100)
+              }
+            }
+            title
+          }
+        }
         applyPanel {
           darkMode
           imageBg {
@@ -183,18 +195,6 @@ export const pageQuery = graphql`
           title
           paragraph
           button
-        }
-        featurePanel {
-          featureTitle
-          featureSubHeading
-          featureCards {
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
-              }
-            }
-            title
-          }
         }
         heading
         mainpitch {

@@ -30,12 +30,12 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           button: data.applyPanel.button
         }}
         featurePanel={{
+          title: data.featurePanel.title,
+          subHeading: data.featurePanel.subHeading,
           featureCards: {
             image: getAsset(data.featurePanel.featureCards.image),
             title: data.featurePanel.featureCards.title,
           },
-          featureTitle: data.featurePanel.featureTitle,
-          featureSubHeading: data.featurePanel.featureSubHeading
         }}
         heading={data.heading}
         description={data.description}

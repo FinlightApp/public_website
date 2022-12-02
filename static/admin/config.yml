@@ -96,8 +96,8 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Feature Title, name: featureTitle, widget: string },
-                  { label: Feature Subheading, name: featureSubHeading, widget: string },
+                  { label: Feature Title, name: title, widget: string },
+                  { label: Feature Subheading, name: subHeading, widget: string },
                   {
                     label: Feature Cards,
                     name: featureCards,

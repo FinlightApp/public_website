@@ -20,8 +20,8 @@ applyPanel:
   paragraph: Asset consolidation processes are always systematically better with Finlight.
   button: Apply for an account
 featurePanel:
-  featureTitle: ""
-  featureSubHeading: ""
+  title: zrgwvwdf
+  subHeading: srgwwrd
   featureCards:
     - image: /img/blog-index.jpg
       title: Investment consultants
