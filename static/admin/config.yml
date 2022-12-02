@@ -67,7 +67,7 @@ collections:
                   { label: Sub-Heading, name: subHeading, widget: string },
                   { label: Button, name: button, widget: string },
                 ],
-           }
+          }
           - {
             label: ServePanel,
             name: servePanel,

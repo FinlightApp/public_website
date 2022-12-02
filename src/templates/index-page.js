@@ -66,8 +66,7 @@ export const IndexPageTemplate = ({
                       </h3>
                       <p>{description}</p>
                     </div>
-                  </div>
-                  <Features gridItems={intro.blurbs} />
+                    <Features gridItems={intro.blurbs} />
                   </div>
                   <div className="columns">
                     <div className="column is-12 has-text-centered">
@@ -219,4 +218,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+ `;
