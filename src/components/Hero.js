@@ -25,15 +25,23 @@ export default function Hero(props) {
         h-fit md:h-[700px]
       '>
         { imageBg?.image?.url ? (
-          <img className='absolute inset-0'
+          <img className='
+            absolute inset-0
+            select-none
+          '
           src={ imageBg.image }
-          alt={ imageBg.alt } />
+          alt={ imageBg.alt }
+          draggable='false' />
         ) : (
-          <GatsbyImage className='!absolute inset-0'
+          <GatsbyImage className='
+            !absolute inset-0
+            select-none
+          '
           objectFit='fill'
           image={ imageBg.image }
           formats={ ['auto', 'webp'] }
-          alt={ imageBg.alt } />
+          alt={ imageBg.alt }
+          draggable={ false } />
         ) }
         { ( title || paragraph || button ) && (
           <div className='

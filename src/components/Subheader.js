@@ -9,7 +9,7 @@ export default function Subeader(props) {
         gap-12
       '>
         <h2 className={`
-          ${ props.darkMode ? 'text-white' : 'text-black' }
+          ${ props.darkMode ? 'text-grey-light' : 'text-black' }
           text-3xl text-center font-semibold font-header
         `}>
           { props.children }

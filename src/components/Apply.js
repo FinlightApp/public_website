@@ -29,16 +29,19 @@ export default function Apply(props) {
             brightness-50
           '
           src={ imageBg.image }
-          alt={ imageBg.alt } />
+          alt={ imageBg.alt }
+          draggable='false' />
         ) : (
           <GatsbyImage className='
             !absolute inset-0
             brightness-50
+            select-none
           '
           objectFit='fill'
           image={ imageBg.image }
           formats={ ['auto', 'webp'] }
-          alt={ imageBg.alt } />
+          alt={ imageBg.alt }
+          draggable={ false }  />
         ) }
         { ( title || paragraph || button ) && (
           <div className='

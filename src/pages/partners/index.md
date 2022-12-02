@@ -15,7 +15,7 @@ heroPanel:
     contact us via partners@finlight.com
   button: " "
 partnersPanel:
-  title:
+  title: ""
   paragraph: ""
   partners:
     - partnerImage:

@@ -28,7 +28,7 @@ export default function Header(props) {
         gap-12
       '>
         <h1 className={`
-          ${ props.darkMode ? 'text-white' : 'text-black' }
+          ${ props.darkMode ? 'text-grey-light' : 'text-black' }
           text-4xl text-center font-semibold font-header
         `}
         ref={ titleEl }>
