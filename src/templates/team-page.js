@@ -6,11 +6,13 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Apply from '../components/Apply';
+import Directors from '../components/Directors';
 
 /* eslint-disable */
 export const TeamPageTemplate = ({
   heroPanel,
-  applyPanel
+  directorsPanel,
+  applyPanel,
 }) => {
   return (
     <div>
@@ -23,6 +25,9 @@ export const TeamPageTemplate = ({
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph } />
+      <Directors
+      title={ directorsPanel.title }
+      directors={ directorsPanel.directors } />
       <Apply
       theme={ applyPanel.theme }
       imageBg={ {
@@ -44,6 +49,10 @@ TeamPageTemplate.propTypes = {
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
   }),
+  directorsPanel: PropTypes.shape({
+    title: PropTypes.string,
+    directors: PropTypes.array,
+  }),
   applyPanel: PropTypes.shape({
     theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -59,6 +68,7 @@ const TeamPage = ({ data }) => {
     <Layout>
       <TeamPageTemplate
       heroPanel={ frontmatter.heroPanel }
+      directorsPanel={ frontmatter.directorsPanel }
       applyPanel={ frontmatter.applyPanel } />
     </Layout>
   );
@@ -75,7 +85,7 @@ TeamPage.propTypes = {
 export default TeamPage;
 
 export const teamPageQuery = graphql`
- query TeamPage($id: String!) {
+  query TeamPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
@@ -98,6 +108,21 @@ export const teamPageQuery = graphql`
           title
           titleHighlight
           paragraph
+        }
+        directorsPanel {
+          title
+          directors {
+            directorImage {
+              image {
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+              }
+            }
+          }
+            name
+            position
+            link
+          }
         }
         applyPanel {
           theme {
