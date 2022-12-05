@@ -23,7 +23,10 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           title: data.servePanel.title,
           description: data.servePanel.description,
           cards:{
-            image: getAsset(data.servePanel.cards.image),
+            image: {
+            image: getAsset(data.servePanel.cards.image.image),
+            alt: data.servePanel.cards.image.alt,
+          },
             title: data.servePanel.cards.title,
             text: data.servePanel.cards.text,
           },

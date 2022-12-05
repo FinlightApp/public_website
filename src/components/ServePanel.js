@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { getImage } from "gatsby-plugin-image";
 import Card from './Card';
 
-export default function Serve(props) {
+export default function ServePanel(props) {
   const {
     title,
     description,
@@ -37,14 +37,14 @@ export default function Serve(props) {
                 bg-gradient-to-r from-transparent via-primary to-transparent
               ' />
             </div>
-          )}
+          ) }
           { description && (
             <div className='h-auto md:w-[80%] lg:w-[50%]'>
               <p className='text-xl'>
                 { description }
               </p>
             </div>
-          )}
+          ) }
           { cards && (
             <div className='
               flex flex-wrap
@@ -59,14 +59,14 @@ export default function Serve(props) {
                 text={ card.text } />
               )) }
             </div>
-          )}
+          ) }
         </div>
-      )}
+      ) }
     </React.Fragment>
   );
 }
 
-Serve.propTypes = {
+ServePanel.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   cards: PropTypes.array

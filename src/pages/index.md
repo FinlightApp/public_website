@@ -18,22 +18,28 @@ servePanel:
       OCIOs… build high quality VC portfolio fromas low as
       10k GBP through dedicated EU and UK SPV we maintain on their behalf
   cards:
-    - image: /img/serve.webp
+    - image:
+        image: /img/serve.webp
+        alt: img1
       title: Investment consultants
       text: >
         We rank S&C as our highest priority. Our servers are in Switzerland,
         with a FINMA regulated partner. Data, client information and calculation
         servers are separate. We have a top web security partner and a 2 form
         authentication process.
-    - image: /img/serve.webp
-      title: Family Offices
+    - image:
+        image: /img/serve.webp
+        alt: img2
+      title: Investment consultants
       text: >
         We rank S&C as our highest priority. Our servers are in Switzerland,
         with a FINMA regulated partner. Data, client information and calculation
         servers are separate. We have a top web security partner and a 2 form
         authentication process.
-    - image: /img/serve.webp
-      title: Qualified Investors
+    - image:
+        image: /img/serve.webp
+        alt: img3
+      title: Investment consultants
       text: >
         We rank S&C as our highest priority. Our servers are in Switzerland,
         with a FINMA regulated partner. Data, client information and calculation

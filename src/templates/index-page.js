@@ -8,7 +8,7 @@ import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import Hero from '../components/Hero';
 import Apply from '../components/Apply';
-import Serve from '../components/Serve'
+import ServePanel from '../components/ServePanel'
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -32,7 +32,7 @@ export const IndexPageTemplate = ({
       titleHighlight={ heroPanel.titleHighlight }
       subHeading={ heroPanel.subHeading }
       button={ heroPanel.button } />
-      <Serve 
+      <ServePanel 
       title={ servePanel.title }
       description={ servePanel.description }
       cards={ servePanel.cards } />
@@ -175,9 +175,12 @@ export const pageQuery = graphql`
           description
           cards {
             image {
-              childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+             image {
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+                }
               }
+              alt
             }
             title
             text
@@ -207,7 +210,7 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                gatsbyImageData( quality: 100 )
+                gatsbyImageData(quality: 100)
               }
             }
             text
