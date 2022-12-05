@@ -7,7 +7,6 @@ import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Directors from '../components/Directors';
 import Apply from '../components/Apply';
-import Directors from '../components/Directors';
 
 /* eslint-disable */
 export const TeamPageTemplate = ({
