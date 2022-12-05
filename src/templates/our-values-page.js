@@ -24,7 +24,8 @@ export const OurValuesPageTemplate = ({
       } }
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
-      paragraph={ heroPanel.paragraph } />
+      paragraph={ heroPanel.paragraph }
+      button={ heroPanel.button } />
       <Values
       title={ ourValuesPanel.title }
       paragraph={ ourValuesPanel.paragraph }
@@ -49,6 +50,7 @@ OurValuesPageTemplate.propTypes = {
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
+    button: PropTypes.string,
   }),
   ourValuesPanel: PropTypes.shape({
     title: PropTypes.string,
@@ -104,6 +106,7 @@ export const ourValuesPageQuery = graphql`
           title
           titleHighlight
           paragraph
+          button
         }
         ourValuesPanel {
           title
