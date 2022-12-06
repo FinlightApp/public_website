@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Subeader(props) {
+export default function Subheader(props) {
   return (
     <React.Fragment>
       <div className='
@@ -9,13 +9,13 @@ export default function Subeader(props) {
         gap-12
       '>
         <h2 className={`
-          ${ props.theme?.header || 'text-black' }
+          ${ props.headerClass }
           text-3xl text-center font-semibold font-header
         `}>
           { props.children }
         </h2>
         <div className={`
-          ${ props.theme?.line || 'via-primary' }
+          ${ props.lineClass }
           bg-gradient-to-r from-transparent to-transparent
           w-full max-w-sm h-0.5
         `} />

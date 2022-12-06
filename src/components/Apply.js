@@ -55,17 +55,19 @@ export default function Apply(props) {
               h-fit
             '>
               { title && (
-                <Subheader theme={ theme }>
+                <Subheader
+                headerClass={ theme.header }
+                lineClass={ theme.line }>
                   { title }
                 </Subheader>
               ) }
               { paragraph && (
-                <Paragraph theme={ theme }>
+                <Paragraph class={ theme.paragraph }>
                   { paragraph }
                 </Paragraph>
               ) }
               { button && (
-                <Button theme={ theme }>
+                <Button class={ theme.button }>
                   { button }
                 </Button>
               ) }

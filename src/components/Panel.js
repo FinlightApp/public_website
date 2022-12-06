@@ -11,12 +11,14 @@ export default function Panel(props) {
         px-8 py-12 md:p-0 gap-12
       '>
         { props.title && (
-          <Subheader>
+          <Subheader
+          headerClass={ 'text-black' }
+          lineClass={ 'via-primary' }>
             { props.title }
           </Subheader>
         ) }
         { props.paragraph && (
-          <Paragraph>
+          <Paragraph class={ 'via-primary w-1/2' } >
             { props.paragraph }
           </Paragraph>
         ) }

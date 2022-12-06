@@ -3,7 +3,7 @@ export default function Paragraph(props) {
   return (
     <React.Fragment>
       <p className={`
-        ${ props.theme?.paragraph || 'text-black' }
+        ${ props.class }
         text-xl text-center font-paragraph
       `}>
         { props.children }

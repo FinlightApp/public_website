@@ -50,18 +50,21 @@ export default function Hero(props) {
               h-fit
             '>
               { title && (
-                <Header theme={ theme }
+                <Header
+                headerClass={ theme.header }
+                lineClass={ theme.line }
+                highlightClass={ theme.highlight }
                 highlight={ titleHighlight }>
                   { title }
                 </Header>
               ) }
               { paragraph && (
-                <Paragraph theme={ theme }>
+                <Paragraph class={ theme.paragraph }>
                   { paragraph }
                 </Paragraph>
               ) }
               { button && (
-                <Button theme={ theme }>
+                <Button class={ theme.button }>
                   { button }
                 </Button>
               ) }
