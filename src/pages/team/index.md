@@ -13,18 +13,18 @@ heroPanel:
     the Finlight team are on a mission to transform financial services for the end-investor.
     Driven by the desire to use tech to bring transparency and reduce operational tasks, Finlight was born.
   button:
-directorsPanel:
+nonExecutiveDirectorsPanel:
   title: Non-executive Directors
-  directors:
-  - directorImage:
+  nonExecutiveDirectors:
+  - nonExecutiveDirectorImage:
       image: /img/brussels.png
     name: Name
-    position: Position
+    role: Role
     link: https://www.linkedin.com/
-  - directorImage:
+  - nonExecutiveDirectorImage:
       image: /img/brussels.png
     name: Name 02
-    position: Position 02
+    role: Role 02
     link: https://www.linkedin.com/
 applyPanel:
   darkMode: true

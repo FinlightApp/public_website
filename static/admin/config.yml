@@ -196,21 +196,21 @@ collections:
                 ],
             }
             - {
-              label: Directors Panel,
-              name: directorsPanel,
+              label: Non-Executive Directors Panel,
+              name: nonExecutiveDirectorsPanel,
               widget: object,
               fields:
                 [
                   { label: Title, name: title, widget: string },
                   {
-                    label: Directors,
-                    name: directors,
+                    label: Non-Executive Directors,
+                    name: nonExecutiveDirectors,
                     widget: list,
                     fields:
                       [
                         {
-                          label: Director Image,
-                          name: directorImage,
+                          label: Non-Executive Director Image,
+                          name: nonExecutiveDirectorImage,
                           widget: object,
                           fields:
                             [
@@ -218,7 +218,7 @@ collections:
                             ],
                         },
                         { label: Name, name: name, widget: text },
-                        { label: Position, name: position, widget: text },
+                        { label: Role, name: role, widget: text },
                         { label: Link, name: link, widget: string },
                       ],
                   },

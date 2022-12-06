@@ -5,13 +5,13 @@ import { getImage } from "gatsby-plugin-image";
 
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
-import Directors from '../components/Directors';
+import NonExecutiveDirectors from '../components/NonExecutiveDirectors';
 import Apply from '../components/Apply';
 
 /* eslint-disable */
 export const TeamPageTemplate = ({
   heroPanel,
-  directorsPanel,
+  nonExecutiveDirectorsPanel,
   applyPanel
 }) => {
   return (
@@ -25,9 +25,9 @@ export const TeamPageTemplate = ({
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph } />
-      <Directors
-      title={ directorsPanel.title }
-      directors={ directorsPanel.directors } />
+      <NonExecutiveDirectors
+      title={ nonExecutiveDirectorsPanel.title }
+      nonExecutiveDirectors={ nonExecutiveDirectorsPanel.nonExecutiveDirectors } />
       <Apply
       darkMode={ applyPanel.darkMode }
       imageBg={ {
@@ -49,9 +49,9 @@ TeamPageTemplate.propTypes = {
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
   }),
-  directorsPanel: PropTypes.shape({
+  nonExecutivedirectorsPanel: PropTypes.shape({
     title: PropTypes.string,
-    directors: PropTypes.array,
+    nonExecutiveDirectors: PropTypes.array,
   }),
   applyPanel: PropTypes.shape({
     darkMode: PropTypes.bool,
@@ -68,7 +68,7 @@ const TeamPage = ({ data }) => {
     <Layout>
       <TeamPageTemplate
       heroPanel={ frontmatter.heroPanel }
-      directorsPanel={ frontmatter.directorsPanel }
+      nonExecutiveDirectorsPanel={ frontmatter.nonExecutiveDirectorsPanel }
       applyPanel={ frontmatter.applyPanel } />
     </Layout>
   );
@@ -103,10 +103,10 @@ export const teamPageQuery = graphql`
           titleHighlight
           paragraph
         }
-        directorsPanel {
+        nonExecutiveDirectorsPanel {
           title
-          directors {
-            directorImage {
+          nonExecutiveDirectors {
+            nonExecutiveDirectorImage {
               image {
                 childImageSharp {
                   gatsbyImageData(quality: 100)
@@ -114,7 +114,7 @@ export const teamPageQuery = graphql`
               }
             }
             name
-            position
+            role
             link
           }
         } 
