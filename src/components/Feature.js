@@ -3,23 +3,24 @@ import PropTypes from 'prop-types';
 import { getImage } from "gatsby-plugin-image";
 
 import Panel from './Panel';
-import PartnersCard from './PartnersCard';
+import DataCard from './DataCard';
 
-export default function Partners(props) {
+export default function Feature(props) {
   const {
     title,
     paragraph,
-    partners,
+    features,
   } = props;
 
   return (
     <React.Fragment>
       <div className='
-        flex
-        justify-center
-        h-fit
+        test
+        flex flex-col
+        justify-center items-center
+        w-full h-fit
       '>
-        { ( title || paragraph || partners ) && (
+        {( title || paragraph || features )  && (
           <div className='
             flex
             justify-center
@@ -29,20 +30,21 @@ export default function Partners(props) {
             <Panel
             title={ title }
             paragraph={ paragraph }>
-              { partners && (
-              <div className='
+              { features && (
+                <div className='
                   flex flex-wrap
                   justify-center
                   w-full
                   gap-12
-                '>
-                  { partners.map((partner, i) => (
-                    <PartnersCard key={ i }
-                    partnerImage={ {
-                      image : getImage(partner.partnerImage.image) || partner.partnerImage.image
+                '> 
+                  { features.map((feature, i) => (
+                    <DataCard key={ i }
+                    cardImage={ {
+                      image : getImage(feature.featureImage.image) || feature.featureImage.image,
+                      alt: feature.featureImage.alt
                     } }
-                    name={ partner.name }
-                    link={ partner.link } />
+                    title={ feature.title }
+                    paragraph={ feature.paragraph } />
                   )) }
                 </div>
               ) }
@@ -54,8 +56,8 @@ export default function Partners(props) {
   );
 }
 
-Partners.propTypes = {
+Feature.propTypes = {
   title: PropTypes.string,
   paragraph: PropTypes.string,
-  partners: PropTypes.array
+  cards: PropTypes.array,
 };

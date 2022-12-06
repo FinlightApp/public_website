@@ -17,7 +17,7 @@ export const OurValuesPageTemplate = ({
   return (
     <div>
       <Hero
-      darkMode={ heroPanel.darkMode }
+      theme={ heroPanel.theme }
       imageBg={ {
         image: getImage(heroPanel.imageBg.image) || heroPanel.imageBg.image,
         alt: heroPanel.imageBg.alt
@@ -31,7 +31,7 @@ export const OurValuesPageTemplate = ({
       paragraph={ ourValuesPanel.paragraph }
       values={ ourValuesPanel.values } />
       <Apply
-      darkMode={ applyPanel.darkMode }
+      theme={ applyPanel.theme }
       imageBg={ {
         image: getImage(applyPanel.imageBg.image) || applyPanel.imageBg.image,
         alt: applyPanel.imageBg.alt
@@ -45,7 +45,7 @@ export const OurValuesPageTemplate = ({
 
 OurValuesPageTemplate.propTypes = {
   heroPanel: PropTypes.shape({
-    darkMode: PropTypes.bool,
+    theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
@@ -58,7 +58,7 @@ OurValuesPageTemplate.propTypes = {
     values: PropTypes.array,
   }),
   applyPanel: PropTypes.shape({
-    darkMode: PropTypes.bool,
+    theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     paragraph: PropTypes.string,
@@ -94,7 +94,13 @@ export const ourValuesPageQuery = graphql`
       html
       frontmatter {
         heroPanel {
-          darkMode
+          theme {
+            header
+            line
+            highlight
+            paragraph
+            button
+          }
           imageBg {
             alt
             image {
@@ -125,7 +131,13 @@ export const ourValuesPageQuery = graphql`
           }
         }
         applyPanel {
-          darkMode
+          theme {
+            header
+            line
+            highlight
+            paragraph
+            button
+          }
           imageBg {
             alt
             image {

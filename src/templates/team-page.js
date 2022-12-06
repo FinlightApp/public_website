@@ -15,7 +15,7 @@ export const TeamPageTemplate = ({
   return (
     <div>
       <Hero
-      darkMode={ heroPanel.darkMode }
+      theme={ heroPanel.theme }
       imageBg={ {
         image: getImage(heroPanel.imageBg.image) || heroPanel.imageBg.image,
         alt: heroPanel.imageBg.alt
@@ -24,7 +24,7 @@ export const TeamPageTemplate = ({
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph } />
       <Apply
-      darkMode={ applyPanel.darkMode }
+      theme={ applyPanel.theme }
       imageBg={ {
         image: getImage(applyPanel.imageBg.image) || applyPanel.imageBg.image,
         alt: applyPanel.imageBg.alt
@@ -38,14 +38,14 @@ export const TeamPageTemplate = ({
 
 TeamPageTemplate.propTypes = {
   heroPanel: PropTypes.shape({
-    darkMode: PropTypes.bool,
+    theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
   }),
   applyPanel: PropTypes.shape({
-    darkMode: PropTypes.bool,
+    theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     paragraph: PropTypes.string,
@@ -80,7 +80,13 @@ export const teamPageQuery = graphql`
       html
       frontmatter {
         heroPanel {
-          darkMode
+          theme {
+            header
+            line
+            highlight
+            paragraph
+            button
+          }
           imageBg {
             alt
             image {
@@ -94,7 +100,13 @@ export const teamPageQuery = graphql`
           paragraph
         }
         applyPanel {
-          darkMode
+          theme {
+            header
+            line
+            highlight
+            paragraph
+            button
+          }
           imageBg {
             alt
             image {

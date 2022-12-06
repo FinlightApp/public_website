@@ -4,6 +4,16 @@ module.exports = {
     "./src/pages/**/*.{js,jsx,ts,tsx}",
     "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
+  safelist: [
+    'text-black',
+    'text-white',
+    'text-primary',
+    'text-secondary',
+    'bg-primary',
+    'bg-secondary',
+    'via-primary',
+    'via-secondary',
+  ],
   theme: {
     extend: {
       flexBasis: {

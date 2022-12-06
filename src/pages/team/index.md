@@ -2,7 +2,11 @@
 templateKey: 'team-page'
 path: /team
 heroPanel:
-  darkMode: false
+  theme:
+    header: 'text-black'
+    line: 'via-secondary'
+    highlight: 'text-secondary'
+    paragraph: 'text-black'
   imageBg:
     alt: Background Alt
     image: /img/brussels.png
@@ -14,7 +18,12 @@ heroPanel:
     Driven by the desire to use tech to bring transparency and reduce operational tasks, Finlight was born.
   button:
 applyPanel:
-  darkMode: true
+  theme:
+    header: 'text-white'
+    line: 'via-primary'
+    highlight: 'text-primary'
+    paragraph: 'text-white'
+    button: 'text-black bg-primary'
   imageBg:
     alt: Background Alt - test
     image: /img/heroBg.webp
