@@ -34,11 +34,11 @@ export const IndexPageTemplate = ({
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph }
       button={ heroPanel.button } />
-      <Feature 
+      <Feature
       title={ featurePanel.title }
       paragraph={ featurePanel.paragraph} 
       features={ featurePanel.features } />
-      <Serve 
+      <Serve
       title={ servePanel.title }
       paragraph={ servePanel.paragraph }
       cards={ servePanel.cards } />
