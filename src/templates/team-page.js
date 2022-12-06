@@ -5,11 +5,13 @@ import { getImage } from "gatsby-plugin-image";
 
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
+import Directors from '../components/Directors';
 import Apply from '../components/Apply';
 
 /* eslint-disable */
 export const TeamPageTemplate = ({
   heroPanel,
+  directorsPanel,
   applyPanel
 }) => {
   return (
@@ -23,6 +25,9 @@ export const TeamPageTemplate = ({
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph } />
+      <Directors
+      title={ directorsPanel.title }
+      directors={ directorsPanel.directors } />
       <Apply
       darkMode={ applyPanel.darkMode }
       imageBg={ {
@@ -44,6 +49,10 @@ TeamPageTemplate.propTypes = {
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
   }),
+  directorsPanel: PropTypes.shape({
+    title: PropTypes.string,
+    directors: PropTypes.array,
+  }),
   applyPanel: PropTypes.shape({
     darkMode: PropTypes.bool,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -59,6 +68,7 @@ const TeamPage = ({ data }) => {
     <Layout>
       <TeamPageTemplate
       heroPanel={ frontmatter.heroPanel }
+      directorsPanel={ frontmatter.directorsPanel }
       applyPanel={ frontmatter.applyPanel } />
     </Layout>
   );
@@ -93,6 +103,21 @@ export const teamPageQuery = graphql`
           titleHighlight
           paragraph
         }
+        directorsPanel {
+          title
+          directors {
+            directorImage {
+              image {
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+                }
+              }
+            }
+            name
+            position
+            link
+          }
+        } 
         applyPanel {
           darkMode
           imageBg {
