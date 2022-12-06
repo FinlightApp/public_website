@@ -1,13 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { IndexPageTemplate } from '../../templates/index-page'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { OurValuesPageTemplate } from '../../templates/our-values-page';
 
-const IndexPagePreview = ({ entry, getAsset }) => {
+const OurValuesPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
-
   if (data) {
     return (
-      <IndexPageTemplate
+      <OurValuesPageTemplate 
         heroPanel={{
           darkMode: data.heroPanel.darkMode,
           imageBg: {
@@ -16,20 +15,12 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           },
           title: data.heroPanel.title,
           titleHighlight: data.heroPanel.titleHighlight,
-          paragraph: data.heroPanel.paragraph,
-          button: data.heroPanel.button
+          paragraph: data.heroPanel.paragraph
         }}
-        servePanel={{
-          title: data.servePanel.title,
-          description: data.servePanel.description,
-          cards:{
-            image: {
-            image: getAsset(data.servePanel.cards.image.image),
-            alt: data.servePanel.cards.image.alt,
-          },
-            title: data.servePanel.cards.title,
-            text: data.servePanel.cards.text,
-          },
+        ourValuesPanel={{
+          title: data.ourValuesPanel.title,
+          paragraph: data.ourValuesPanel.paragraph,
+          values: data.ourValuesPanel.values
         }}
         applyPanel={{
           darkMode: data.applyPanel.darkMode,
@@ -41,10 +32,6 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           paragraph: data.applyPanel.paragraph,
           button: data.applyPanel.button
         }}
-        heading={data.heading}
-        description={data.description}
-        intro={data.intro || { blurbs: [] }}
-        mainpitch={data.mainpitch || {}}
       />
     )
   } else {
@@ -52,11 +39,11 @@ const IndexPagePreview = ({ entry, getAsset }) => {
   }
 }
 
-IndexPagePreview.propTypes = {
+OurValuesPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
 }
 
-export default IndexPagePreview
+export default OurValuesPagePreview

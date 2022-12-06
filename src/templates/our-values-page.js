@@ -6,11 +6,13 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Apply from '../components/Apply';
+import Values from '../components/Values';
 
 /* eslint-disable */
-export const TeamPageTemplate = ({
+export const OurValuesPageTemplate = ({
   heroPanel,
-  applyPanel
+  applyPanel,
+  ourValuesPanel,
 }) => {
   return (
     <div>
@@ -22,7 +24,12 @@ export const TeamPageTemplate = ({
       } }
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
-      paragraph={ heroPanel.paragraph } />
+      paragraph={ heroPanel.paragraph }
+      button={ heroPanel.button } />
+      <Values
+      title={ ourValuesPanel.title }
+      paragraph={ ourValuesPanel.paragraph }
+      values={ ourValuesPanel.values } />
       <Apply
       darkMode={ applyPanel.darkMode }
       imageBg={ {
@@ -36,13 +43,19 @@ export const TeamPageTemplate = ({
   );
 };
 
-TeamPageTemplate.propTypes = {
+OurValuesPageTemplate.propTypes = {
   heroPanel: PropTypes.shape({
     darkMode: PropTypes.bool,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
+    button: PropTypes.string,
+  }),
+  ourValuesPanel: PropTypes.shape({
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
+    values: PropTypes.array,
   }),
   applyPanel: PropTypes.shape({
     darkMode: PropTypes.bool,
@@ -53,18 +66,19 @@ TeamPageTemplate.propTypes = {
   }),
 };
 
-const TeamPage = ({ data }) => {
+const OurValuesPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   return (
     <Layout>
-      <TeamPageTemplate
+      <OurValuesPageTemplate
       heroPanel={ frontmatter.heroPanel }
+      ourValuesPanel={ frontmatter.ourValuesPanel }
       applyPanel={ frontmatter.applyPanel } />
     </Layout>
   );
 };
 
-TeamPage.propTypes = {
+OurValuesPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -72,10 +86,10 @@ TeamPage.propTypes = {
   })
 };
 
-export default TeamPage;
+export default OurValuesPage;
 
-export const teamPageQuery = graphql`
- query TeamPage($id: String!) {
+export const ourValuesPageQuery = graphql`
+ query OurValuesPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
@@ -92,6 +106,23 @@ export const teamPageQuery = graphql`
           title
           titleHighlight
           paragraph
+          button
+        }
+        ourValuesPanel {
+          title
+          paragraph
+          values {
+            valueImage {
+              alt
+              image {
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+                }
+              }
+            }
+            title
+            paragraph
+          }
         }
         applyPanel {
           darkMode

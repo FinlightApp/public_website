@@ -12,7 +12,7 @@ export default function Hero(props) {
     imageBg,
     title,
     titleHighlight,
-    subHeading,
+    paragraph,
     button,
   } = props;
 
@@ -35,7 +35,7 @@ export default function Hero(props) {
           formats={ ['auto', 'webp'] }
           alt={ imageBg.alt } />
         ) }
-        { ( title || subHeading || button ) && (
+        { ( title || paragraph || button ) && (
           <div className='
             container
             grid grid-cols-10
@@ -45,7 +45,7 @@ export default function Hero(props) {
             <Box className='
               col-span-10
               md:col-start-3 md:col-span-6
-              lg:col-start-3 lg:col-span-4
+              lg:col-start-2 lg:col-span-4
               xl:col-start-2 xl:col-span-3
               h-fit
             '>
@@ -55,9 +55,9 @@ export default function Hero(props) {
                   { title }
                 </Header>
               ) }
-              { subHeading && (
+              { paragraph && (
                 <Paragraph darkMode={ darkMode }>
-                  { subHeading }
+                  { paragraph }
                 </Paragraph>
               ) }
               { button && (
@@ -78,6 +78,6 @@ Hero.propTypes = {
   imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   titleHighlight: PropTypes.string,
-  subHeading: PropTypes.string,
+  paragraph: PropTypes.string,
   button: PropTypes.string
 };
