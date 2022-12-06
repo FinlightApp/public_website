@@ -9,7 +9,7 @@ import BlogRoll from "../components/BlogRoll";
 import Hero from '../components/Hero';
 import Feature from '../components/Feature';
 import Apply from '../components/Apply';
-import ServePanel from '../components/ServePanel'
+import ServePanel from '../components/Serve'
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -34,14 +34,14 @@ export const IndexPageTemplate = ({
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph }
       button={ heroPanel.button } />
-      <ServePanel 
-      title={ servePanel.title }
-      description={ servePanel.description }
-      cards={ servePanel.cards } />
       <Feature 
       title={ featurePanel.title }
       paragraph={ featurePanel.paragraph} 
       features={ featurePanel.features } />
+      <ServePanel 
+      title={ servePanel.title }
+      paragraph={ servePanel.paragraph }
+      cards={ servePanel.cards } />
       <Apply
       theme={ applyPanel.theme }
       imageBg={ {
@@ -113,7 +113,7 @@ IndexPageTemplate.propTypes = {
   }),
   servePanel: PropTypes.shape({
     title: PropTypes.string,
-    description: PropTypes.string,
+    paragraph: PropTypes.string,
     cards: PropTypes.array
   }),
   featurePanel: PropTypes.shape({
@@ -190,18 +190,18 @@ export const pageQuery = graphql`
         }
         servePanel {
           title
-          description
+          paragraph
           cards {
-            image {
-             image {
-              childImageSharp {
-                gatsbyImageData(quality: 100)
+            cardImage {
+              image {
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+                }
               }
-            }
               alt
             }
             title
-            text
+            paragraph
           }
         }
         featurePanel {

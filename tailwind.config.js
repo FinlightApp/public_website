@@ -25,6 +25,9 @@ module.exports = {
         'card': '0px 0px 32px 0px rgba(74, 74, 74, 0.15)',
       },
       colors: {
+        'grey': {
+          'light': '#F6F6F6',
+        },
         'primary': '#E7B224',
         'secondary': '#3273DC',
       },
