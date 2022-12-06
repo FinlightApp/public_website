@@ -1,14 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 
-import Layout from "../components/Layout";
+import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Apply from '../components/Apply';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
+  seo,
   heroPanel,
   applyPanel,
 }) => {
@@ -38,6 +39,12 @@ export const IndexPageTemplate = ({
 };
 
 IndexPageTemplate.propTypes = {
+  seo: PropTypes.shape({
+    author: PropTypes.string,
+    description: PropTypes.string,
+    keywords: PropTypes.string,
+    title: PropTypes.string,
+  }),
   heroPanel: PropTypes.shape({
     darkMode: PropTypes.bool,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -58,7 +65,7 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   return (
-    <Layout>
+    <Layout seo={ frontmatter.seo }>
       <IndexPageTemplate
       heroPanel={ frontmatter.heroPanel }
       applyPanel={ frontmatter.applyPanel } />
@@ -80,6 +87,12 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
+        seo {
+          author
+          description
+          keywords
+          title
+        }
         heroPanel {
           darkMode
           imageBg {

@@ -1,6 +1,11 @@
 ---
 templateKey: 'team-page'
 path: /team
+seo:
+ author: Finlight
+ description: Team page
+ keywords: Finlight
+ title: Finlight - Team page
 heroPanel:
   darkMode: false
   imageBg:

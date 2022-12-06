@@ -1,5 +1,10 @@
 ---
 templateKey: index-page
+seo:
+ author: Finlight
+ description: Landing page
+ keywords: Finlight
+ title: Finlight - Landing page
 heroPanel:
   darkMode: true
   imageBg:

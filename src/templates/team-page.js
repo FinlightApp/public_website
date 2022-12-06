@@ -9,6 +9,7 @@ import Apply from '../components/Apply';
 
 /* eslint-disable */
 export const TeamPageTemplate = ({
+  seo,
   heroPanel,
   applyPanel
 }) => {
@@ -37,6 +38,12 @@ export const TeamPageTemplate = ({
 };
 
 TeamPageTemplate.propTypes = {
+  seo: PropTypes.shape({
+    author: PropTypes.string,
+    description: PropTypes.string,
+    keywords: PropTypes.string,
+    title: PropTypes.string,
+  }),
   heroPanel: PropTypes.shape({
     darkMode: PropTypes.bool,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -56,7 +63,7 @@ TeamPageTemplate.propTypes = {
 const TeamPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   return (
-    <Layout>
+    <Layout seo={ frontmatter.seo }>
       <TeamPageTemplate
       heroPanel={ frontmatter.heroPanel }
       applyPanel={ frontmatter.applyPanel } />
@@ -79,6 +86,12 @@ export const teamPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
+        seo {
+          author
+          description
+          keywords
+          title
+        }
         heroPanel {
           darkMode
           imageBg {

@@ -46,6 +46,18 @@ collections:
               default: "index-page",
             }
           - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Author, name: author, widget: string },
+                  { label: Description, name: description, widget: string },
+                  { label: Keywords, name: keywords, widget: string },
+                  { label: Title, name: title, widget: string },
+                ]
+            }
+          - {
               label: Hero Panel,
               name: heroPanel,
               widget: object,
@@ -101,6 +113,18 @@ collections:
               default: 'team-page',
             }
           - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Author, name: author, widget: string },
+                  { label: Description, name: description, widget: string },
+                  { label: Keywords, name: keywords, widget: string },
+                  { label: Title, name: title, widget: string },
+                ]
+            }
+          - {
               label: Hero Panel,
               name: heroPanel,
               widget: object,
@@ -132,6 +156,18 @@ collections:
               name: 'templateKey',
               widget: 'hidden',
               default: 'partners-page',
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Author, name: author, widget: string },
+                  { label: Description, name: description, widget: string },
+                  { label: Keywords, name: keywords, widget: string },
+                  { label: Title, name: title, widget: string },
+                ]
             }
           - {
               label: Hero Panel,
@@ -217,6 +253,18 @@ collections:
               name: 'templateKey',
               widget: 'hidden',
               default: 'our-values-page',
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Author, name: author, widget: string },
+                  { label: Description, name: description, widget: string },
+                  { label: Keywords, name: keywords, widget: string },
+                  { label: Title, name: title, widget: string },
+                ]
             }
           - {
               label: Hero Panel,
