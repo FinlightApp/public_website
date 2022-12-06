@@ -5,10 +5,14 @@ import "./all.css";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 
-const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata();
+const TemplateWrapper = (props) => {
+  const {
+    title,
+    description,
+    children,
+  } = props;
   return (
-    <div>
+    <>
       <html lang="en" />
       <title>{title}</title>
       <meta name="description" content={description} />
@@ -46,9 +50,9 @@ const TemplateWrapper = ({ children }) => {
         content={`${withPrefix("/")}img/og-image.jpg`}
       />
       <Navbar />
-      <div>{children}</div>
+      {children}
       <Footer />
-    </div>
+    </>
   );
 };
 

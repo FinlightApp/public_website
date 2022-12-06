@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 
+import Layout from "../components/Layout";
 import Hero from '../components/Hero';
 import Apply from '../components/Apply';
 
@@ -57,9 +58,11 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   return (
-    <IndexPageTemplate
-    heroPanel={ frontmatter.heroPanel }
-    applyPanel={ frontmatter.applyPanel } />
+    <Layout>
+      <IndexPageTemplate
+      heroPanel={ frontmatter.heroPanel }
+      applyPanel={ frontmatter.applyPanel } />
+    </Layout>
   );
 };
 
