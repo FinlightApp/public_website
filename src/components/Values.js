@@ -20,28 +20,35 @@ export default function Values(props) {
         h-fit
       '>
         { ( title || paragraph || values ) && (
-          <Panel
-          title={ title }
-          paragraph={ paragraph }>
-            { values && ( 
-             <div className='
-                flex flex-wrap
-                justify-center
-                w-full
-                p-6 gap-12
-              '>
-                { values.map((value, i) => (
-                  <DataCard key={ i }
-                  valueImage={ {
-                    image : getImage(value.valueImage.image) || value.valueImage.image,
-                    alt: value.valueImage.alt
-                  } }
-                  title={ value.title }
-                  paragraph={ value.paragraph } />
-                )) }
-              </div>
-            ) }
-          </Panel>
+          <div className='
+            flex
+            justify-center
+            w-full
+            p-12
+          '>
+            <Panel
+            title={ title }
+            paragraph={ paragraph }>
+              { values && ( 
+              <div className='
+                  flex flex-wrap
+                  justify-center
+                  w-full
+                  gap-12
+                '>
+                  { values.map((value, i) => (
+                    <DataCard key={ i }
+                    cardImage={ {
+                      image : getImage(value.valueImage.image) || value.valueImage.image,
+                      alt: value.valueImage.alt
+                    } }
+                    title={ value.title }
+                    paragraph={ value.paragraph } />
+                  )) }
+                </div>
+              ) }
+            </Panel>
+          </div>
         ) }
       </div>
     </React.Fragment>

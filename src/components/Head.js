@@ -8,16 +8,16 @@ export default function Head(props) {
 
   return (
     <>
-        <meta name='author' content={ seo.author } />
-        <meta name='description' content={ seo.description } />
-        <meta name='keywords' content={ seo.keywords } />
-        <title>{ seo.title }</title>
+        <meta name='author' content={ seo?.author || 'Finlight' } />
+        <meta name='description' content={ seo?.description || 'Description' } />
+        <meta name='keywords' content={ seo?.keywords || '' } />
+        <title>{ seo?.title || 'Finlight' }</title>
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta name='robots' content='index,follow' />
         <meta name='googlebot' content='notranslate' />
         <meta charSet='utf-8' />
         <meta property='og:type' content='business.business' />
-        <meta property='og:title' content={ seo.title } />
+        <meta property='og:title' content={ seo?.title || 'Finlight' } />
         <meta name='theme-color' content='#fff' />
     </>
   );

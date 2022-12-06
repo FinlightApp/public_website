@@ -7,7 +7,11 @@ seo:
  keywords: Finlight
  title: Finlight - Our Values page
 heroPanel:
-  darkMode: false
+  theme:
+    header: 'text-black'
+    line: 'via-secondary'
+    highlight: 'text-secondary'
+    paragraph: 'text-black'
   imageBg:
     alt: Background Alt
     image: /img/brussels.png
@@ -31,7 +35,12 @@ ourValuesPanel:
         gravida at risus. Cras justo quam, convallis et tincidunt id, dapibus non felis.
         Vestibulum at velit egestas, porttitor augue ut, pretium lorem.
 applyPanel:
-  darkMode: true
+  theme:
+    header: 'text-white'
+    line: 'via-primary'
+    highlight: 'text-primary'
+    paragraph: 'text-white'
+    button: 'text-black bg-primary'
   imageBg:
     alt: Background Alt - test
     image: /img/heroBg.webp

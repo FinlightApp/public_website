@@ -3,7 +3,7 @@ export default function Button(props) {
   return (
     <React.Fragment>
       <button className={`
-        ${ props.darkMode ? 'text-black bg-primary' : 'text-white bg-secondary' }
+        ${ props.class }
         px-4 py-2
         rounded
         text-xl font-medium font-paragraph

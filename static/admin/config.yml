@@ -63,7 +63,69 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Dark Mode, name: darkMode, widget: boolean, default: false },
+                  {
+                    label: Theme,
+                    name: theme,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Header,
+                          name: header,
+                          widget: select,
+                          options: 
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ],
+                          default: { label: 'White', value: 'text-white' }
+                        },
+                        {
+                          label: Line,
+                          name: line,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: '' },
+                              { label: 'Secondary', value: 'via-secondary' }
+                            ],
+                          default: { label: 'Primary', value: 'via-primary' }
+                        },
+                        {
+                          label: Highlight,
+                          name: highlight,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-primary' },
+                              { label: 'Secondary', value: 'text-secondary' }
+                            ],
+                          default: { label: 'Primary', value: 'text-primary' }
+                        },
+                        {
+                          label: Paragraph,
+                          name: paragraph,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ],
+                          default: { label: 'White', value: 'text-white' }
+                        },
+                        {
+                          label: Button,
+                          name: button,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-black bg-primary' },
+                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                            ],
+                          default: { label: 'Primary', value: 'text-black bg-primary' }
+                        },
+                      ],
+                  },
                   {
                     label: Background,
                     name: imageBg,
@@ -81,12 +143,103 @@ collections:
                 ],
             }
           - {
+              label: Feature Panel,
+              name: featurePanel,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Text, name: paragraph, widget: string },
+                  {
+                    label: Features,
+                    name: features,
+                    widget: list,
+                    fields:
+                      [
+                        {
+                          label: Image,
+                          name: featureImage,
+                          widget: object,
+                          fields:
+                            [
+                              { label: Image, name: image, widget: image },
+                              { label: SEO - Image Description, name: alt, widget: string },
+                            ],
+                        },
+                        { label: Title, name: title, widget: string},
+                      ],
+                  },
+                ],
+            }
+          - {
               label: Apply Panel,
               name: applyPanel,
               widget: object,
               fields:
                 [
-                  { label: Dark Mode, name: darkMode, widget: boolean, default: false },
+                  {
+                    label: Theme,
+                    name: theme,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Header,
+                          name: header,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ],
+                          default: { label: 'White', value: 'text-white' }
+                        },
+                        {
+                          label: Line,
+                          name: line,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'via-primary' },
+                              { label: 'Secondary', value: 'via-secondary' }
+                            ],
+                          default: { label: 'Primary', value: 'via-primary' }
+                        },
+                        {
+                          label: Highlight,
+                          name: highlight,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-primary' },
+                              { label: 'Secondary', value: 'text-secondary' }
+                            ],
+                          default: { label: 'Primary', value: 'text-primary' }
+                        },
+                        {
+                          label: Paragraph,
+                          name: paragraph,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ],
+                          default: { label: 'White', value: 'text-white' }
+                        },
+                        {
+                          label: Button,
+                          name: button,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-black bg-primary' },
+                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                            ],
+                          default: { label: 'Primary', value: 'text-black bg-primary' }
+                        },
+                      ],
+                  },
                   {
                     label: Background,
                     name: imageBg,
@@ -130,7 +283,54 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Dark Mode, name: darkMode, widget: boolean, default: false },
+                  {
+                    label: Theme,
+                    name: theme,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Header,
+                          name: header,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
+                        },
+                        {
+                          label: Line,
+                          name: line,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'via-primary' },
+                              { label: 'Secondary', value: 'via-secondary' }
+                            ]
+                        },
+                        {
+                          label: Highlight,
+                          name: highlight,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-primary' },
+                              { label: 'Secondary', value: 'text-secondary' }
+                            ]
+                        },
+                        {
+                          label: Paragraph,
+                          name: paragraph,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
+                        },
+                      ],
+                  },
                   {
                     label: Background,
                     name: imageBg,
@@ -143,6 +343,85 @@ collections:
                   },
                   { label: Title, name: title, widget: string },
                   { label: Title Highlight, name: titleHighlight, widget: string },
+                  { label: Text, name: paragraph, widget: string },
+                  { label: Button, name: button, widget: string },
+                ],
+            },
+          - {
+              label: Apply Panel,
+              name: applyPanel,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Theme,
+                    name: theme,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Header,
+                          name: header,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
+                        },
+                        {
+                          label: Line,
+                          name: line,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'via-primary' },
+                              { label: 'Secondary', value: 'via-secondary' }
+                            ]
+                        },
+                        {
+                          label: Highlight,
+                          name: highlight,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-primary' },
+                              { label: 'Secondary', value: 'text-secondary' }
+                            ]
+                        },
+                        {
+                          label: Paragraph,
+                          name: paragraph,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
+                        },
+                        {
+                          label: Button,
+                          name: button,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-black bg-primary' },
+                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                            ]
+                        },
+                      ],
+                  },
+                  {
+                    label: Background,
+                    name: imageBg,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: SEO - Image Description, name: alt, widget: string },
+                      ],
+                  },
+                  { label: Title, name: title, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
                 ],
@@ -175,7 +454,58 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Dark Mode, name: darkMode, widget: boolean, default: false },
+                  {
+                    label: Theme,
+                    name: theme,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Header,
+                          name: header,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ],
+                          default: { label: 'Black', value: 'text-black' }
+                        },
+                        {
+                          label: Line,
+                          name: line,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'via-primary' },
+                              { label: 'Secondary', value: 'via-secondary' }
+                            ],
+                          default: { label: 'Secondary', value: 'via-secondary' }
+                        },
+                        {
+                          label: Highlight,
+                          name: highlight,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-primary' },
+                              { label: 'Secondary', value: 'text-secondary' }
+                            ],
+                          default: { label: 'Secondary', value: 'text-secondary' }
+                        },
+                        {
+                          label: Paragraph,
+                          name: paragraph,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ],
+                          default: { label: 'Black', value: 'text-black' }
+                        },
+                      ],
+                  },
                   {
                     label: Background,
                     name: imageBg,
@@ -228,7 +558,69 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Dark Mode, name: darkMode, widget: boolean, default: false },
+                  {
+                    label: Theme,
+                    name: theme,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Header,
+                          name: header,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ],
+                          default: { label: 'White', value: 'text-white' }
+                        },
+                        {
+                          label: Line,
+                          name: line,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'via-primary' },
+                              { label: 'Secondary', value: 'via-secondary' }
+                            ],
+                          default: { label: 'Primary', value: 'via-primary' }
+                        },
+                        {
+                          label: Highlight,
+                          name: highlight,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-primary' },
+                              { label: 'Secondary', value: 'text-secondary' }
+                            ],
+                          default: { label: 'Primary', value: 'text-primary' }
+                        },
+                        {
+                          label: Paragraph,
+                          name: paragraph,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ],
+                          default: { label: 'White', value: 'text-white' }
+                        },
+                        {
+                          label: Button,
+                          name: button,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-black bg-primary' },
+                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                            ],
+                          default: { label: 'Primary', value: 'text-black bg-primary' }
+                        },
+                      ],
+                  },
                   {
                     label: Background,
                     name: imageBg,
@@ -272,7 +664,58 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Dark Mode, name: darkMode, widget: boolean, default: false },
+                  {
+                    label: Theme,
+                    name: theme,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Header,
+                          name: header,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ],
+                          default: { label: 'White', value: 'text-white' }
+                        },
+                        {
+                          label: Line,
+                          name: line,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'via-primary' },
+                              { label: 'Secondary', value: 'via-secondary' }
+                            ],
+                          default: { label: 'Secondary', value: 'via-secondary' }
+                        },
+                        {
+                          label: Highlight,
+                          name: highlight,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-primary' },
+                              { label: 'Secondary', value: 'text-secondary' }
+                            ],
+                          default: { label: 'Secondary', value: 'text-secondary' }
+                        },
+                        {
+                          label: Paragraph,
+                          name: paragraph,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ],
+                          default: { label: 'Black', value: 'text-black' }
+                        },
+                      ],
+                  },
                   {
                     label: Background,
                     name: imageBg,
@@ -326,7 +769,69 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Dark Mode, name: darkMode, widget: boolean, default: false },
+                  {
+                    label: Theme,
+                    name: theme,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Header,
+                          name: header,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ],
+                          default: { label: 'White', value: 'text-white' }
+                        },
+                        {
+                          label: Line,
+                          name: line,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'via-primary' },
+                              { label: 'Secondary', value: 'via-secondary' }
+                            ],
+                          default: { label: 'Primary', value: 'via-primary' }
+                        },
+                        {
+                          label: Highlight,
+                          name: highlight,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-primary' },
+                              { label: 'Secondary', value: 'text-secondary' }
+                            ],
+                          default: { label: 'Primary', value: 'text-primary' }
+                        },
+                        {
+                          label: Paragraph,
+                          name: paragraph,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ],
+                          default: { label: 'White', value: 'text-white' }
+                        },
+                        {
+                          label: Button,
+                          name: button,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-black bg-primary' },
+                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                            ],
+                          default: { label: 'Primary', value: 'text-black bg-primary' }
+                        },
+                      ],
+                  },
                   {
                     label: Background,
                     name: imageBg,

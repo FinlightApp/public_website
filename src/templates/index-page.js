@@ -5,18 +5,20 @@ import { getImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
+import Feature from '../components/Feature';
 import Apply from '../components/Apply';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   seo,
   heroPanel,
+  featurePanel,
   applyPanel,
 }) => {
   return (
     <div>
       <Hero
-      darkMode={ heroPanel.darkMode }
+      theme={ heroPanel.theme }
       imageBg={ {
         image: getImage(heroPanel.imageBg.image) || heroPanel.imageBg.image,
         alt: heroPanel.imageBg.alt
@@ -25,8 +27,12 @@ export const IndexPageTemplate = ({
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph }
       button={ heroPanel.button } />
+      <Feature 
+      title={ featurePanel.title }
+      paragraph={ featurePanel.paragraph} 
+      features={ featurePanel.features } />
       <Apply
-      darkMode={ applyPanel.darkMode }
+      theme={ applyPanel.theme }
       imageBg={ {
         image: getImage(applyPanel.imageBg.image) || applyPanel.imageBg.image,
         alt: applyPanel.imageBg.alt
@@ -46,15 +52,20 @@ IndexPageTemplate.propTypes = {
     title: PropTypes.string,
   }),
   heroPanel: PropTypes.shape({
-    darkMode: PropTypes.bool,
+    theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
   }),
+  featurePanel: PropTypes.shape({
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
+    features: PropTypes.array,
+  }),
   applyPanel: PropTypes.shape({
-    darkMode: PropTypes.bool,
+    theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     paragraph: PropTypes.string,
@@ -68,6 +79,7 @@ const IndexPage = ({ data }) => {
     <Layout seo={ frontmatter.seo }>
       <IndexPageTemplate
       heroPanel={ frontmatter.heroPanel }
+      featurePanel={ frontmatter.featurePanel }
       applyPanel={ frontmatter.applyPanel } />
     </Layout>
   );
@@ -94,7 +106,13 @@ export const pageQuery = graphql`
           title
         }
         heroPanel {
-          darkMode
+          theme {
+            header
+            line
+            highlight
+            paragraph
+            button
+          }
           imageBg {
             alt
             image {
@@ -108,8 +126,29 @@ export const pageQuery = graphql`
           paragraph
           button
         }
+        featurePanel {
+          title
+          paragraph
+          features {
+            featureImage {
+              alt
+              image {
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+                }
+              }
+            }
+            title
+          }
+        }
         applyPanel {
-          darkMode
+          theme {
+            header
+            line
+            highlight
+            paragraph
+            button
+          }
           imageBg {
             alt
             image {
