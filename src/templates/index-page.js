@@ -9,7 +9,7 @@ import BlogRoll from "../components/BlogRoll";
 import Hero from '../components/Hero';
 import Feature from '../components/Feature';
 import Apply from '../components/Apply';
-import ServePanel from '../components/Serve'
+import Serve from '../components/Serve'
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -38,7 +38,7 @@ export const IndexPageTemplate = ({
       title={ featurePanel.title }
       paragraph={ featurePanel.paragraph} 
       features={ featurePanel.features } />
-      <ServePanel 
+      <Serve 
       title={ servePanel.title }
       paragraph={ servePanel.paragraph }
       cards={ servePanel.cards } />

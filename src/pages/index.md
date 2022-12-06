@@ -17,7 +17,7 @@ heroPanel:
     the entire admin GPs have to go through to on-board, serve and report to LPs.
   button: Request Info
 servePanel:
-  title: Who Do We Serve ?
+  title: Who Do We Serve?
   paragraph: >
       We help Private allocators, family offices, banks,
       OCIOs… build high quality VC portfolio fromas low as
