@@ -8,7 +8,7 @@ import Box from './Box';
 
 export default function Hero(props) {
   const {
-    darkMode,
+    theme,
     imageBg,
     title,
     titleHighlight,
@@ -50,18 +50,21 @@ export default function Hero(props) {
               h-fit
             '>
               { title && (
-                <Header darkMode={ darkMode }
+                <Header
+                headerClass={ theme.header }
+                lineClass={ theme.line }
+                highlightClass={ theme.highlight }
                 highlight={ titleHighlight }>
                   { title }
                 </Header>
               ) }
               { paragraph && (
-                <Paragraph darkMode={ darkMode }>
+                <Paragraph class={ theme.paragraph }>
                   { paragraph }
                 </Paragraph>
               ) }
               { button && (
-                <Button darkMode={ darkMode }>
+                <Button class={ theme.button }>
                   { button }
                 </Button>
               ) }
@@ -74,7 +77,7 @@ export default function Hero(props) {
 }
 
 Hero.propTypes = {
-  darkMode: PropTypes.bool,
+  theme: PropTypes.object,
   imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   titleHighlight: PropTypes.string,

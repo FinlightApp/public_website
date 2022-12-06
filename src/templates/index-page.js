@@ -7,6 +7,7 @@ import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import Hero from '../components/Hero';
+import Feature from '../components/Feature';
 import Apply from '../components/Apply';
 import ServePanel from '../components/ServePanel'
 
@@ -15,6 +16,7 @@ export const IndexPageTemplate = ({
   heroPanel,
   applyPanel,
   servePanel,
+  featurePanel,
   heading,
   mainpitch,
   description,
@@ -23,7 +25,7 @@ export const IndexPageTemplate = ({
   return (
     <div>
       <Hero
-      darkMode={ heroPanel.darkMode }
+      theme={ heroPanel.theme }
       imageBg={ {
         image: getImage(heroPanel.imageBg.image) || heroPanel.imageBg.image,
         alt: heroPanel.imageBg.alt
@@ -36,8 +38,12 @@ export const IndexPageTemplate = ({
       title={ servePanel.title }
       description={ servePanel.description }
       cards={ servePanel.cards } />
+      <Feature 
+      title={ featurePanel.title }
+      paragraph={ featurePanel.paragraph} 
+      features={ featurePanel.features } />
       <Apply
-      darkMode={ applyPanel.darkMode }
+      theme={ applyPanel.theme }
       imageBg={ {
         image: getImage(applyPanel.imageBg.image) || applyPanel.imageBg.image,
         alt: applyPanel.imageBg.alt
@@ -98,7 +104,7 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   heroPanel: PropTypes.shape({
-    darkMode: PropTypes.bool,
+    theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
@@ -110,8 +116,13 @@ IndexPageTemplate.propTypes = {
     description: PropTypes.string,
     cards: PropTypes.array
   }),
+  featurePanel: PropTypes.shape({
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
+    features: PropTypes.array,
+  }),
   applyPanel: PropTypes.shape({
-    darkMode: PropTypes.bool,
+    theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     paragraph: PropTypes.string,
@@ -131,6 +142,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
       heroPanel={ frontmatter.heroPanel }
+      featurePanel={ frontmatter.featurePanel }
       applyPanel={ frontmatter.applyPanel }
       servePanel={ frontmatter.servePanel }
       heading={frontmatter.heading}
@@ -156,7 +168,13 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         heroPanel {
-          darkMode
+          theme {
+            header
+            line
+            highlight
+            paragraph
+            button
+          }
           imageBg {
             alt
             image {
@@ -176,18 +194,39 @@ export const pageQuery = graphql`
           cards {
             image {
              image {
-                childImageSharp {
-                  gatsbyImageData(quality: 100)
-                }
+              childImageSharp {
+                gatsbyImageData(quality: 100)
               }
+            }
               alt
             }
             title
             text
           }
         }
+        featurePanel {
+          title
+          paragraph
+          features {
+            featureImage {
+              alt
+              image {
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+                }
+              }
+            }
+            title
+          }
+        }
         applyPanel {
-          darkMode
+          theme {
+            header
+            line
+            highlight
+            paragraph
+            button
+          }
           imageBg {
             alt
             image {
