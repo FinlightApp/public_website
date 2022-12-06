@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
-import github from "../img/github-icon.svg";
 import logo from "../img/finlight_logo.svg";
 
 const Navbar = () => {
@@ -11,9 +10,11 @@ const Navbar = () => {
     { pageName:'Team', link: '/team' },
     { pageName:'Partners', link: '/partners' },
     { pageName:'Values', link: '/our-values' },
-    { pageName:'Spotlight', link: '/spotlight' },
+    /* { pageName:'Spotlight', link: '/spotlight' }, */
     { pageName:'Contact', link: '/contact' }
   ]
+
+  let url = window.location.href;
 
   return (
     <nav
@@ -40,7 +41,7 @@ const Navbar = () => {
             min-h-10 h-10 w-fit
           '
           title="Logo">
-            <img className='' src={logo} alt="Kaldi" />
+            <img className='' src={logo} alt="logo" />
           </Link>
           <button //Hamburger menu
             className={`
@@ -67,10 +68,14 @@ const Navbar = () => {
           gap-8 z-10
         `}>
           { navItems.map((navItem, i) => (
-            <li className='
+            <li className={`
+              ${console.log(navItem.link,
+                 url.slice(url.lastIndexOf("/")) === navItem.link
+              )}
+              ${(url.slice(url.lastIndexOf("/")) === navItem.link) ? 'bg-primary' : ''}
               navbar-item
               font-header text-xl text-white
-            '
+            `}
             key={ i }>
               <Link className="navbar-item" to={ navItem.link }>
                 { navItem.pageName }
