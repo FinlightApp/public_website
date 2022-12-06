@@ -46,6 +46,30 @@ partnersPanel:
       name: BearingPoint
       partnerImage:
         image: /img/bearingpoint.jpg
+    - link: https://www.bloomberg.com/
+      name: Bloomberg
+      partnerImage:
+        image: /img/bloomberg.jpg
+    - link: http://www.daaimon.com/
+      name: daaimon
+      partnerImage:
+        image: /img/daaimon.jpg
+    - link: https://www.edmiston.com
+      name: Edmiston
+      partnerImage:
+        image: /img/edmiston.jpg
+    - link: http://www.familyofficecircle.foundation/
+      name: The Family Office Circle Foundation
+      partnerImage:
+        image: /img/focf.jpg
+    - link: https://www.gamasec.com/
+      name: GamaSec
+      partnerImage:
+        image: /img/gama.jpg
+    - link: https://www.ldspartners.com/
+      name: LDS Partners
+      partnerImage:
+        image: /img/ldspartners.jpg
 applyPanel:
   theme:
     header: text-white
