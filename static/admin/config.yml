@@ -65,7 +65,8 @@ collections:
                             [
                               { label: 'Black', value: 'text-black' },
                               { label: 'White', value: 'text-white' }
-                            ]
+                            ],
+                          default: { label: 'White', value: 'text-white' }
                         },
                         {
                           label: Line,
@@ -73,9 +74,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'via-primary' },
+                              { label: 'Primary', value: '' },
                               { label: 'Secondary', value: 'via-secondary' }
-                            ]
+                            ],
+                          default: { label: 'Primary', value: 'via-primary' }
                         },
                         {
                           label: Highlight,
@@ -85,7 +87,8 @@ collections:
                             [
                               { label: 'Primary', value: 'text-primary' },
                               { label: 'Secondary', value: 'text-secondary' }
-                            ]
+                            ],
+                          default: { label: 'Primary', value: 'text-primary' }
                         },
                         {
                           label: Paragraph,
@@ -95,7 +98,8 @@ collections:
                             [
                               { label: 'Black', value: 'text-black' },
                               { label: 'White', value: 'text-white' }
-                            ]
+                            ],
+                          default: { label: 'White', value: 'text-white' }
                         },
                         {
                           label: Button,
@@ -105,7 +109,8 @@ collections:
                             [
                               { label: 'Primary', value: 'text-black bg-primary' },
                               { label: 'Secondary', value: 'text-white bg-secondary' }
-                            ]
+                            ],
+                          default: { label: 'Primary', value: 'text-black bg-primary' }
                         },
                       ],
                   },
@@ -174,7 +179,8 @@ collections:
                             [
                               { label: 'Black', value: 'text-black' },
                               { label: 'White', value: 'text-white' }
-                            ]
+                            ],
+                          default: { label: 'White', value: 'text-white' }
                         },
                         {
                           label: Line,
@@ -184,7 +190,8 @@ collections:
                             [
                               { label: 'Primary', value: 'via-primary' },
                               { label: 'Secondary', value: 'via-secondary' }
-                            ]
+                            ],
+                          default: { label: 'Primary', value: 'via-primary' }
                         },
                         {
                           label: Highlight,
@@ -194,7 +201,8 @@ collections:
                             [
                               { label: 'Primary', value: 'text-primary' },
                               { label: 'Secondary', value: 'text-secondary' }
-                            ]
+                            ],
+                          default: { label: 'Primary', value: 'text-primary' }
                         },
                         {
                           label: Paragraph,
@@ -204,7 +212,8 @@ collections:
                             [
                               { label: 'Black', value: 'text-black' },
                               { label: 'White', value: 'text-white' }
-                            ]
+                            ],
+                          default: { label: 'White', value: 'text-white' }
                         },
                         {
                           label: Button,
@@ -214,7 +223,8 @@ collections:
                             [
                               { label: 'Primary', value: 'text-black bg-primary' },
                               { label: 'Secondary', value: 'text-white bg-secondary' }
-                            ]
+                            ],
+                          default: { label: 'Primary', value: 'text-black bg-primary' }
                         },
                       ],
                   },
@@ -494,7 +504,8 @@ collections:
                             [
                               { label: 'Black', value: 'text-black' },
                               { label: 'White', value: 'text-white' }
-                            ]
+                            ],
+                          default: { label: 'Black', value: 'text-black' }
                         },
                         {
                           label: Line,
@@ -504,7 +515,8 @@ collections:
                             [
                               { label: 'Primary', value: 'via-primary' },
                               { label: 'Secondary', value: 'via-secondary' }
-                            ]
+                            ],
+                          default: { label: 'Secondary', value: 'via-secondary' }
                         },
                         {
                           label: Highlight,
@@ -514,7 +526,8 @@ collections:
                             [
                               { label: 'Primary', value: 'text-primary' },
                               { label: 'Secondary', value: 'text-secondary' }
-                            ]
+                            ],
+                          default: { label: 'Secondary', value: 'text-secondary' }
                         },
                         {
                           label: Paragraph,
@@ -524,7 +537,8 @@ collections:
                             [
                               { label: 'Black', value: 'text-black' },
                               { label: 'White', value: 'text-white' }
-                            ]
+                            ],
+                          default: { label: 'Black', value: 'text-black' }
                         },
                       ],
                   },
@@ -594,7 +608,8 @@ collections:
                             [
                               { label: 'Black', value: 'text-black' },
                               { label: 'White', value: 'text-white' }
-                            ]
+                            ],
+                          default: { label: 'White', value: 'text-white' }
                         },
                         {
                           label: Line,
@@ -604,7 +619,8 @@ collections:
                             [
                               { label: 'Primary', value: 'via-primary' },
                               { label: 'Secondary', value: 'via-secondary' }
-                            ]
+                            ],
+                          default: { label: 'Primary', value: 'via-primary' }
                         },
                         {
                           label: Highlight,
@@ -614,7 +630,8 @@ collections:
                             [
                               { label: 'Primary', value: 'text-primary' },
                               { label: 'Secondary', value: 'text-secondary' }
-                            ]
+                            ],
+                          default: { label: 'Primary', value: 'text-primary' }
                         },
                         {
                           label: Paragraph,
@@ -624,7 +641,8 @@ collections:
                             [
                               { label: 'Black', value: 'text-black' },
                               { label: 'White', value: 'text-white' }
-                            ]
+                            ],
+                          default: { label: 'White', value: 'text-white' }
                         },
                         {
                           label: Button,
@@ -634,7 +652,8 @@ collections:
                             [
                               { label: 'Primary', value: 'text-black bg-primary' },
                               { label: 'Secondary', value: 'text-white bg-secondary' }
-                            ]
+                            ],
+                          default: { label: 'Primary', value: 'text-black bg-primary' }
                         },
                       ],
                   },
@@ -683,7 +702,8 @@ collections:
                             [
                               { label: 'Black', value: 'text-black' },
                               { label: 'White', value: 'text-white' }
-                            ]
+                            ],
+                          default: { label: 'White', value: 'text-white' }
                         },
                         {
                           label: Line,
@@ -693,7 +713,8 @@ collections:
                             [
                               { label: 'Primary', value: 'via-primary' },
                               { label: 'Secondary', value: 'via-secondary' }
-                            ]
+                            ],
+                          default: { label: 'Secondary', value: 'via-secondary' }
                         },
                         {
                           label: Highlight,
@@ -703,7 +724,8 @@ collections:
                             [
                               { label: 'Primary', value: 'text-primary' },
                               { label: 'Secondary', value: 'text-secondary' }
-                            ]
+                            ],
+                          default: { label: 'Secondary', value: 'text-secondary' }
                         },
                         {
                           label: Paragraph,
@@ -713,7 +735,8 @@ collections:
                             [
                               { label: 'Black', value: 'text-black' },
                               { label: 'White', value: 'text-white' }
-                            ]
+                            ],
+                          default: { label: 'Black', value: 'text-black' }
                         },
                       ],
                   },
@@ -784,7 +807,8 @@ collections:
                             [
                               { label: 'Black', value: 'text-black' },
                               { label: 'White', value: 'text-white' }
-                            ]
+                            ],
+                          default: { label: 'White', value: 'text-white' }
                         },
                         {
                           label: Line,
@@ -794,7 +818,8 @@ collections:
                             [
                               { label: 'Primary', value: 'via-primary' },
                               { label: 'Secondary', value: 'via-secondary' }
-                            ]
+                            ],
+                          default: { label: 'Primary', value: 'via-primary' }
                         },
                         {
                           label: Highlight,
@@ -804,7 +829,8 @@ collections:
                             [
                               { label: 'Primary', value: 'text-primary' },
                               { label: 'Secondary', value: 'text-secondary' }
-                            ]
+                            ],
+                          default: { label: 'Primary', value: 'text-primary' }
                         },
                         {
                           label: Paragraph,
@@ -814,7 +840,8 @@ collections:
                             [
                               { label: 'Black', value: 'text-black' },
                               { label: 'White', value: 'text-white' }
-                            ]
+                            ],
+                          default: { label: 'White', value: 'text-white' }
                         },
                         {
                           label: Button,
@@ -824,7 +851,8 @@ collections:
                             [
                               { label: 'Primary', value: 'text-black bg-primary' },
                               { label: 'Secondary', value: 'text-white bg-secondary' }
-                            ]
+                            ],
+                          default: { label: 'Primary', value: 'text-black bg-primary' }
                         },
                       ],
                   },

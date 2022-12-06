@@ -3,10 +3,10 @@ templateKey: partners-page
 path: /partners
 heroPanel:
   theme:
-    header: ''
+    header: 'text-black'
     line: 'via-secondary'
     highlight: 'text-secondary'
-    paragraph: ''
+    paragraph: 'text-black'
   imageBg:
     alt: Background Alt
     image: /img/brussels.png
@@ -29,10 +29,10 @@ partnersPanel:
 applyPanel:
   theme:
     header: 'text-white'
-    line: ''
-    highlight: ''
+    line: 'via-primary'
+    highlight: 'text-primary'
     paragraph: 'text-white'
-    button: ''
+    button: 'text-black bg-primary'
   imageBg:
     alt: Background Alt - test
     image: /img/heroBg.webp

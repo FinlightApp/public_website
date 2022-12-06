@@ -3,10 +3,10 @@ templateKey: 'team-page'
 path: /team
 heroPanel:
   theme:
-    header: ''
+    header: 'text-black'
     line: 'via-secondary'
     highlight: 'text-secondary'
-    paragraph: ''
+    paragraph: 'text-black'
   imageBg:
     alt: Background Alt
     image: /img/brussels.png
@@ -20,10 +20,10 @@ heroPanel:
 applyPanel:
   theme:
     header: 'text-white'
-    line: ''
-    highlight: ''
+    line: 'via-primary'
+    highlight: 'text-primary'
     paragraph: 'text-white'
-    button: ''
+    button: 'text-black bg-primary'
   imageBg:
     alt: Background Alt - test
     image: /img/heroBg.webp

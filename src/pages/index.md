@@ -3,10 +3,10 @@ templateKey: index-page
 heroPanel:
   theme:
     header: 'text-white'
-    line: ''
-    highlight: ''
+    line: 'via-primary'
+    highlight: 'text-primary'
     paragraph: 'text-white'
-    button: ''
+    button: 'text-black bg-primary'
   imageBg:
     alt: Background Alt
     image: /img/london.jpg
@@ -37,10 +37,10 @@ featurePanel:
 applyPanel:
   theme:
     header: 'text-white'
-    line: ''
-    highlight: ''
+    line: 'via-primary'
+    highlight: 'text-primary'
     paragraph: 'text-white'
-    button: ''
+    button: 'text-black bg-primary'
   imageBg:
     alt: SEO - alt
     image: /img/heroBg.webp
