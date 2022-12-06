@@ -70,6 +70,26 @@ partnersPanel:
       name: LDS Partners
       partnerImage:
         image: /img/ldspartners.jpg
+    - link: https://linksanalytics.com/
+      name: LINKS Analytics
+      partnerImage:
+        image: /img/links.jpg
+    - link: https://www.monexeurope.com/
+      name: Monex Europe
+      partnerImage:
+        image: /img/monexeurope.jpg
+    - link: https://sharingalpha.com/
+      name: SharingAlpha
+      partnerImage:
+        image: /img/sharingalpha.jpg
+    - link: https://www.suttonwinson.com/
+      name: Sutton Winson
+      partnerImage:
+        image: /img/suttonwinson.jpg
+    - link: https://www.performance-watcher.ch/
+      name: Performance Watcher
+      partnerImage:
+        image: /img/wperformancewatcher.jpg
 applyPanel:
   theme:
     header: text-white
