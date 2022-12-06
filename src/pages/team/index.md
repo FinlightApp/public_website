@@ -19,8 +19,8 @@ heroPanel:
     Driven by the desire to use tech to bring transparency and reduce operational tasks, Finlight was born.
   button:
 directorsPanel:
- title: Non-executive Directors
- directors:
+  title: Non-executive Directors
+  directors:
   - directorImage:
       image: /img/brussels.png
     name: Name
