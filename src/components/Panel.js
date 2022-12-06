@@ -8,7 +8,7 @@ export default function Panel(props) {
         container
         flex flex-col
         items-center
-        px-8 py-12 md:p-0 gap-12
+        gap-12
       '>
         { props.title && (
           <Subheader
