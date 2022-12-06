@@ -78,6 +78,18 @@ module.exports = {
       options: {
         develop: true, // Activates purging in npm run develop
         tailwind: true,
+        purgeCSSOptions: {
+          safelist: [
+            'text-black',
+            'text-white',
+            'text-primary',
+            'text-secondary',
+            'bg-primary',
+            'bg-secondary',
+            'via-primary',
+            'via-secondary',
+          ],
+        },
       },
     }, // must be after other CSS plugins
     "gatsby-plugin-netlify", // make sure to keep it last in the array

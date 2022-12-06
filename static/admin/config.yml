@@ -367,16 +367,6 @@ collections:
       #                         { label: 'White', value: 'text-white' }
       #                       ]
       #                   },
-      #                   {
-      #                     label: Button,
-      #                     name: button,
-      #                     widget: select,
-      #                     options:
-      #                       [
-      #                         { label: 'Primary', value: 'text-black bg-primary' },
-      #                         { label: 'Secondary', value: 'text-white bg-secondary' }
-      #                       ]
-      #                   },
       #                 ],
       #             },
       #             {
@@ -534,16 +524,6 @@ collections:
                             [
                               { label: 'Black', value: 'text-black' },
                               { label: 'White', value: 'text-white' }
-                            ]
-                        },
-                        {
-                          label: Button,
-                          name: button,
-                          widget: select,
-                          options:
-                            [
-                              { label: 'Primary', value: 'text-black bg-primary' },
-                              { label: 'Secondary', value: 'text-white bg-secondary' }
                             ]
                         },
                       ],
@@ -733,16 +713,6 @@ collections:
                             [
                               { label: 'Black', value: 'text-black' },
                               { label: 'White', value: 'text-white' }
-                            ]
-                        },
-                        {
-                          label: Button,
-                          name: button,
-                          widget: select,
-                          options:
-                            [
-                              { label: 'Primary', value: 'text-black bg-primary' },
-                              { label: 'Secondary', value: 'text-white bg-secondary' }
                             ]
                         },
                       ],

@@ -4,10 +4,9 @@ path: /partners
 heroPanel:
   theme:
     header: ''
-    line: ''
-    highlight: ''
+    line: 'via-secondary'
+    highlight: 'text-secondary'
     paragraph: ''
-    button: ''
   imageBg:
     alt: Background Alt
     image: /img/brussels.png
@@ -33,10 +32,10 @@ partnersPanel:
       link: https://www.google.com
 applyPanel:
   theme:
-    header: ''
+    header: 'text-white'
     line: ''
     highlight: ''
-    paragraph: ''
+    paragraph: 'text-white'
     button: ''
   imageBg:
     alt: Background Alt - test

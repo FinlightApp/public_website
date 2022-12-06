@@ -4,10 +4,9 @@ path: /our-values
 heroPanel:
   theme:
     header: ''
-    line: ''
-    highlight: ''
+    line: 'via-secondary'
+    highlight: 'text-secondary'
     paragraph: ''
-    button: ''
   imageBg:
     alt: Background Alt
     image: /img/brussels.png
@@ -31,10 +30,10 @@ ourValuesPanel:
         Vestibulum at velit egestas, porttitor augue ut, pretium lorem.
 applyPanel:
   theme:
-    header: ''
+    header: 'text-white'
     line: ''
     highlight: ''
-    paragraph: ''
+    paragraph: 'text-white'
     button: ''
   imageBg:
     alt: Background Alt - test

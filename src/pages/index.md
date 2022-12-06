@@ -2,10 +2,10 @@
 templateKey: index-page
 heroPanel:
   theme:
-    header: ''
+    header: 'text-white'
     line: ''
     highlight: ''
-    paragraph: ''
+    paragraph: 'text-white'
     button: ''
   imageBg:
     alt: Background Alt
@@ -16,19 +16,6 @@ heroPanel:
     across vintages, regions and sectors from as low as 10k GBP. We also eliminate
     the entire admin GPs have to go through to on-board, serve and report to LPs.
   button: Request Info
-applyPanel:
-  theme:
-    header: ''
-    line: ''
-    highlight: ''
-    paragraph: ''
-    button: ''
-  imageBg:
-    alt: SEO - alt
-    image: /img/heroBg.webp
-  title: Ready to Finlight?
-  paragraph: Asset consolidation processes are always systematically better with Finlight.
-  button: Apply for an account
 featurePanel:
   title: Key Features
   paragraph: >
@@ -47,6 +34,19 @@ featurePanel:
         alt: SEO - alt
         image: /img/blog-index.jpg
       title: Qualified Investors
+applyPanel:
+  theme:
+    header: 'text-white'
+    line: ''
+    highlight: ''
+    paragraph: 'text-white'
+    button: ''
+  imageBg:
+    alt: SEO - alt
+    image: /img/heroBg.webp
+  title: Ready to Finlight?
+  paragraph: Asset consolidation processes are always systematically better with Finlight.
+  button: Apply for an account
 heading: Great coffee with a conscience
 mainpitch:
   title: Why Kaldi
