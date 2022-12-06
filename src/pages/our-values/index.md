@@ -20,7 +20,7 @@ ourValuesPanel:
   values:
     - valueImage:
         alt: Lock icon
-        image: /img/lock.png
+        image: /img/lock.webp
       title: Security & Confidentiality
       paragraph: We rank S&C as our highest priority. Our servers are in Switzerland,
         with a FINMA regulated partner. Data, client information and calculation
