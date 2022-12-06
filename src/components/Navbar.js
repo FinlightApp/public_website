@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Link } from "gatsby";
-import logo from "../img/finlight_logo.svg";
+import React, { useState } from 'react';
+import { Link } from 'gatsby';
+import logo from '../img/finlight_logo.svg';
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
@@ -20,8 +20,8 @@ const Navbar = () => {
         navbar
         bg-black
       '
-      role="navigation"
-      aria-label="main-navigation"
+      role='navigation'
+      aria-label='main-navigation'
     >
       <div className='
         container relative
@@ -34,16 +34,16 @@ const Navbar = () => {
           navbar-brand
           flex
         '>
-          <Link to="/" className='
+          <Link to='/' className='
             navbar-item
             min-h-10 h-10 w-fit
           '
-          title="Logo">
-            <img className='' src={logo} alt="logo" />
+          title='Logo'>
+            <img className='' src={logo} alt='logo' />
           </Link>
           <button //Hamburger menu
             className={`
-              ${isActive && "is-active"}
+              ${isActive && 'is-active'}
               navbar-burger burger
               flex md:hidden flex-col
               w-16 h-16
@@ -57,8 +57,7 @@ const Navbar = () => {
             <hr className='w-full bg-white border border-white' />
           </button>
         </div>
-
-        <ul id="navMenu" className={`
+        <ul id='navMenu' className={`
           ${isActive ? 'flex md:hidden' : 'hidden' }
           navbar-start navbar-menu
           absolute top-full
@@ -66,19 +65,18 @@ const Navbar = () => {
           gap-8 z-10
         `}>
           { navItems.map((navItem, i) => (
-            <Link className="navbar-item font-header text-xl text-white" activeClassName="bg-primary" to={ navItem.link } key={ i }>
+            <Link className='navbar-item font-header text-xl text-white' activeClassName='bg-primary' to={ navItem.link } key={ i }>
               { navItem.pageName }
             </Link>
           )) }
         </ul>
-
-        <ul id="navMenu" className={`
+        <ul id='navMenu' className={`
           navbar-start navbar-menu
           flex-1 hidden md:flex
           gap-8
         `}>
           { navItems.map((navItem, i) => (
-            <Link className="navbar-item font-header text-xl text-white" activeClassName="bg-primary"  to={ navItem.link } key={ i }>
+            <Link className='navbar-item font-header text-xl text-white' activeClassName='bg-primary'  to={ navItem.link } key={ i }>
               { navItem.pageName }
             </Link>
           )) }
