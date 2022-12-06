@@ -94,13 +94,65 @@ exports.createSchemaCustomization = ({ actions }) => {
     type MarkdownRemark implements Node {
       frontmatter: Frontmatter
     }
+
+    type SEO_ImageEl {
+      alt: String!
+      image: File! @fileByRelativePath
+    }
+    type ImageEl {
+      image: File! @fileByRelativePath
+    }
+
+    type Frontmatter implements Node {
+      heroPanel: HeroPanel
+    }
+    type HeroPanel implements Node {
+      darkMode: Boolean!
+      imageBg: SEO_ImageEl!
+      title: String!
+      titleHighlight: String
+      paragraph: String
+      button: String
+    }
+
+    type Frontmatter implements Node {
+      applyPanel: ApplyPanel
+    }
+    type ApplyPanel implements Node {
+      darkMode: Boolean!
+      imageBg: SEO_ImageEl!
+      title: String
+      paragraph: String
+      button: String
+    }
+
+    type Frontmatter implements Node {
+      ourValuesPanel: OurValuesPanel
+    }
+    type OurValuesPanel implements Node {
+      title: String
+      paragraph: String
+      values: [ValueCard]
+    }
+    type ValueCard {
+      valueImage: SEO_ImageEl!
+      title: String!
+      paragraph: String
+    }
+
     type Frontmatter implements Node {
       partnersPanel: PartnersPanel
     }
     type PartnersPanel implements Node {
       title: String
       paragraph: String
+      partners: [PartnerCard]
     }
-  `
+    type PartnerCard {
+      partnerImage: ImageEl!
+      name: String!
+      link: String!
+    }
+    `
   createTypes(typeDefs)
 }
