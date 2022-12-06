@@ -1,11 +1,43 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby + Netlify CMS Starter",
+    siteUrl: "https://demo-finlight.netlify.app",
+    title: "Finlight",
     description:
-      "This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.",
+      "Finlight public website.",
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "Finlight",
+        short_name: "Finlight",
+        description: "Finlight public website.",
+        start_url: "/",
+        background_color: "#f7f0eb",
+        theme_color: "#a2466c",
+        display: "standalone",
+        icon: "src/img/logo.svg",
+        cache_busting_mode: "none",
+        legacy: true,
+      },
+    },
+    {
+       resolve: "gatsby-plugin-offline",
+       options: {
+          workboxConfig: {
+            globPatterns: ["**/icon-path*"],
+            importWorkboxFrom: "cdn",
+          }
+       }
+    },
+    {
+      resolve: "gatsby-plugin-loadable-components-ssr",
+      options: {
+        useHydrate: true,
+        preloadTags: true
+      },
+    },
     {
       resolve: "gatsby-plugin-sass",
       options: {
@@ -36,14 +68,22 @@ module.exports = {
         name: "images",
       },
     },
-    `gatsby-plugin-image`,
-    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaults: {
+          formats: ["auto", "webp"],
+          placeholder: "blurred",
+        }
+      }
+    },
     "gatsby-transformer-sharp",
+    "gatsby-plugin-image",
     {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          'gatsby-remark-relative-images',
+          "gatsby-remark-relative-images",
           {
             resolve: "gatsby-remark-images",
             options: {
@@ -68,7 +108,7 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },{
-      resolve: `gatsby-plugin-postcss`,
+      resolve: "gatsby-plugin-postcss",
       options: {
         postCssPlugins: [require("tailwindcss")],
       },
