@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { getImage } from "gatsby-plugin-image";
 
 import Panel from './Panel';
-import DirectorsCard from "./DirectorsCard";
+import DirectorsCard from './DirectorsCard';
 
 export default function Directors(props) {
   const { 

@@ -20,12 +20,12 @@ directorsPanel:
       image: /img/brussels.png
     name: Name
     position: Position
-    link: https://www.google.com
+    link: https://www.linkedin.com/
   - directorImage:
       image: /img/brussels.png
     name: Name 02
     position: Position 02
-    link: https://www.google.com
+    link: https://www.linkedin.com/
 applyPanel:
   darkMode: true
   imageBg:
