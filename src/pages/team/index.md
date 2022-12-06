@@ -40,4 +40,3 @@ applyPanel:
   title: Ready to Finlight?
   paragraph: Asset consolidation processes are always systematically better with Finlight.
   button: Apply for an account
----

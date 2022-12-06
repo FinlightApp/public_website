@@ -116,9 +116,9 @@ export const teamPageQuery = graphql`
               image {
                 childImageSharp {
                   gatsbyImageData(quality: 100)
+                }
               }
             }
-          }
             name
             position
             link
