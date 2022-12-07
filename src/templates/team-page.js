@@ -26,7 +26,15 @@ export const TeamPageTemplate = ({
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph } />
       <TeamPanel
-      cards={ teamPanel.cards } />
+      cards={ {
+        cardImage:{
+          image : getImage(teamPanel.cards.cardImage.image) || teamPanel.cards.cardImage.image,
+          alt: teamPanel.cards.cardImage.alt
+        },
+        title:{ title },
+        subheading:{ subheading },
+        link:{ link }
+      } } />
       <Apply
       darkMode={ applyPanel.darkMode }
       imageBg={ {

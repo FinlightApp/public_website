@@ -26,7 +26,7 @@ export default function TeamPanel(props) {
             { cards.map((card, i) => (
               <TeamCard key={ i }
               cardImage={ {
-                image : getImage(card.cardImage.image) || card.cardImage.image,
+                image: getImage(card.cardImage.image) || card.cardImage.image,
                 alt: card.cardImage.alt
               } }
               title={ card.title }
@@ -41,5 +41,5 @@ export default function TeamPanel(props) {
 }
 
 TeamPanel.propTypes = {
-  cards: PropTypes.array
+  cards: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
 };
