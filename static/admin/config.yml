@@ -46,6 +46,18 @@ collections:
               default: "index-page",
             }
           - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Author, name: author, widget: string },
+                  { label: Description, name: description, widget: string },
+                  { label: Keywords, name: keywords, widget: string },
+                  { label: Title, name: title, widget: string },
+                ]
+            }
+          - {
               label: Hero Panel,
               name: heroPanel,
               widget: object,
@@ -160,6 +172,36 @@ collections:
                 ],
             }
           - {
+            label: ServePanel,
+            name: servePanel,
+            widget: object,
+            fields:
+              [
+                { label: Title, name: title, widget: string },
+                { label: Text, name: paragraph, widget: string },
+                {
+                  label: Cards,
+                  name: cards,
+                  widget: list,
+                  fields:
+                    [
+                      {
+                        label: Image,
+                        name: cardsImage,
+                        widget: object,
+                        fields:
+                        [
+                          { label: Image, name: image, widget: image },
+                          { label: SEO - Image Description, name: alt, widget: string },
+                        ],
+                      },
+                      { label: Title, name: title, widget: string },
+                      { label: Text, name: paragraph, widget: string },
+                    ]
+                },
+              ],
+            }
+          - {
               label: Apply Panel,
               name: applyPanel,
               widget: object,
@@ -243,237 +285,209 @@ collections:
                   { label: Button, name: button, widget: string },
                 ],
             }
-          - { label: Heading, name: heading, widget: string }
+      - file: 'src/pages/team/index.md'
+        label: 'Team Page'
+        name: 'team'
+        fields:
           - {
-              label: Mainpitch,
-              name: mainpitch,
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'team-page',
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Author, name: author, widget: string },
+                  { label: Description, name: description, widget: string },
+                  { label: Keywords, name: keywords, widget: string },
+                  { label: Title, name: title, widget: string },
+                ]
+            }
+          - {
+              label: Hero Panel,
+              name: heroPanel,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Theme,
+                    name: theme,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Header,
+                          name: header,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
+                        },
+                        {
+                          label: Line,
+                          name: line,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'via-primary' },
+                              { label: 'Secondary', value: 'via-secondary' }
+                            ]
+                        },
+                        {
+                          label: Highlight,
+                          name: highlight,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-primary' },
+                              { label: 'Secondary', value: 'text-secondary' }
+                            ]
+                        },
+                        {
+                          label: Paragraph,
+                          name: paragraph,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
+                        },
+                      ],
+                  },
+                  {
+                    label: Background,
+                    name: imageBg,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: SEO - Image Description, name: alt, widget: string },
+                      ],
+                  },
+                  { label: Title, name: title, widget: string },
+                  { label: Title Highlight, name: titleHighlight, widget: string },
+                  { label: Text, name: paragraph, widget: string },
+                  { label: Button, name: button, widget: string },
+                ],
+            }
+            - {
+              label: Non-Executive Directors Panel,
+              name: nonExecutiveDirectorsPanel,
               widget: object,
               fields:
                 [
                   { label: Title, name: title, widget: string },
-                  { label: Description, name: description, widget: text },
-                ],
-            }
-          - { label: Description, name: description, widget: string }
-          - {
-              label: Intro,
-              name: intro,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
+                  { label: Text, name: paragraph, widget: string },
                   {
-                    label: Blurbs,
-                    name: blurbs,
+                    label: Non-Executive Directors,
+                    name: nonExecutiveDirectors,
                     widget: list,
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
+                        {
+                          label: Non-Executive Director Image,
+                          name: nonExecutiveDirectorImage,
+                          widget: object,
+                          fields:
+                            [
+                              { label: Image, name: image, widget: image },
+                              { label: SEO - Image Description, name: alt, widget: string },
+                            ],
+                        },
+                        { label: Name, name: name, widget: text },
+                        { label: Role, name: role, widget: text },
+                        { label: Link, name: link, widget: string },
                       ],
                   },
                 ],
-            }
+            },
           - {
-              label: Main,
-              name: main,
+              label: Apply Panel,
+              name: applyPanel,
               widget: object,
               fields:
                 [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
                   {
-                    label: Image1,
-                    name: image1,
+                    label: Theme,
+                    name: theme,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Header,
+                          name: header,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
+                        },
+                        {
+                          label: Line,
+                          name: line,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'via-primary' },
+                              { label: 'Secondary', value: 'via-secondary' }
+                            ]
+                        },
+                        {
+                          label: Highlight,
+                          name: highlight,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-primary' },
+                              { label: 'Secondary', value: 'text-secondary' }
+                            ]
+                        },
+                        {
+                          label: Paragraph,
+                          name: paragraph,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Black', value: 'text-black' },
+                              { label: 'White', value: 'text-white' }
+                            ]
+                        },
+                        {
+                          label: Button,
+                          name: button,
+                          widget: select,
+                          options:
+                            [
+                              { label: 'Primary', value: 'text-black bg-primary' },
+                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                            ]
+                        },
+                      ],
+                  },
+                  {
+                    label: Background,
+                    name: imageBg,
                     widget: object,
                     fields:
                       [
                         { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
+                        { label: SEO - Image Description, name: alt, widget: string },
                       ],
                   },
-                  {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
+                  { label: Title, name: title, widget: string },
+                  { label: Text, name: paragraph, widget: string },
+                  { label: Button, name: button, widget: string },
                 ],
             }
-      # - file: 'src/pages/team/index.md'
-      #   label: 'Team Page'
-      #   name: 'team'
-      #   fields:
-      #     - {
-      #         label: 'Template Key',
-      #         name: 'templateKey',
-      #         widget: 'hidden',
-      #         default: 'team-page',
-      #       }
-      #     - {
-      #         label: Hero Panel,
-      #         name: heroPanel,
-      #         widget: object,
-      #         fields:
-      #           [
-      #             {
-      #               label: Theme,
-      #               name: theme,
-      #               widget: object,
-      #               fields:
-      #                 [
-      #                   {
-      #                     label: Header,
-      #                     name: header,
-      #                     widget: select,
-      #                     options:
-      #                       [
-      #                         { label: 'Black', value: 'text-black' },
-      #                         { label: 'White', value: 'text-white' }
-      #                       ]
-      #                   },
-      #                   {
-      #                     label: Line,
-      #                     name: line,
-      #                     widget: select,
-      #                     options:
-      #                       [
-      #                         { label: 'Primary', value: 'via-primary' },
-      #                         { label: 'Secondary', value: 'via-secondary' }
-      #                       ]
-      #                   },
-      #                   {
-      #                     label: Highlight,
-      #                     name: highlight,
-      #                     widget: select,
-      #                     options:
-      #                       [
-      #                         { label: 'Primary', value: 'text-primary' },
-      #                         { label: 'Secondary', value: 'text-secondary' }
-      #                       ]
-      #                   },
-      #                   {
-      #                     label: Paragraph,
-      #                     name: paragraph,
-      #                     widget: select,
-      #                     options:
-      #                       [
-      #                         { label: 'Black', value: 'text-black' },
-      #                         { label: 'White', value: 'text-white' }
-      #                       ]
-      #                   },
-      #                 ],
-      #             },
-      #             {
-      #               label: Background,
-      #               name: imageBg,
-      #               widget: object,
-      #               fields:
-      #                 [
-      #                   { label: Image, name: image, widget: image },
-      #                   { label: SEO - Image Description, name: alt, widget: string },
-      #                 ],
-      #             },
-      #             { label: Title, name: title, widget: string },
-      #             { label: Title Highlight, name: titleHighlight, widget: string },
-      #             { label: Text, name: paragraph, widget: string },
-      #             { label: Button, name: button, widget: string },
-      #           ],
-      #       },
-      #     - {
-      #         label: Apply Panel,
-      #         name: applyPanel,
-      #         widget: object,
-      #         fields:
-      #           [
-      #             {
-      #               label: Theme,
-      #               name: theme,
-      #               widget: object,
-      #               fields:
-      #                 [
-      #                   {
-      #                     label: Header,
-      #                     name: header,
-      #                     widget: select,
-      #                     options:
-      #                       [
-      #                         { label: 'Black', value: 'text-black' },
-      #                         { label: 'White', value: 'text-white' }
-      #                       ]
-      #                   },
-      #                   {
-      #                     label: Line,
-      #                     name: line,
-      #                     widget: select,
-      #                     options:
-      #                       [
-      #                         { label: 'Primary', value: 'via-primary' },
-      #                         { label: 'Secondary', value: 'via-secondary' }
-      #                       ]
-      #                   },
-      #                   {
-      #                     label: Highlight,
-      #                     name: highlight,
-      #                     widget: select,
-      #                     options:
-      #                       [
-      #                         { label: 'Primary', value: 'text-primary' },
-      #                         { label: 'Secondary', value: 'text-secondary' }
-      #                       ]
-      #                   },
-      #                   {
-      #                     label: Paragraph,
-      #                     name: paragraph,
-      #                     widget: select,
-      #                     options:
-      #                       [
-      #                         { label: 'Black', value: 'text-black' },
-      #                         { label: 'White', value: 'text-white' }
-      #                       ]
-      #                   },
-      #                   {
-      #                     label: Button,
-      #                     name: button,
-      #                     widget: select,
-      #                     options:
-      #                       [
-      #                         { label: 'Primary', value: 'text-black bg-primary' },
-      #                         { label: 'Secondary', value: 'text-white bg-secondary' }
-      #                       ]
-      #                   },
-      #                 ],
-      #             },
-      #             {
-      #               label: Background,
-      #               name: imageBg,
-      #               widget: object,
-      #               fields:
-      #                 [
-      #                   { label: Image, name: image, widget: image },
-      #                   { label: SEO - Image Description, name: alt, widget: string },
-      #                 ],
-      #             },
-      #             { label: Title, name: title, widget: string },
-      #             { label: Text, name: paragraph, widget: string },
-      #             { label: Button, name: button, widget: string },
-      #           ],
-      #       }
+
       - file: 'src/pages/partners/index.md'
         label: 'Partners Page'
         name: 'partners'
@@ -483,6 +497,18 @@ collections:
               name: 'templateKey',
               widget: 'hidden',
               default: 'partners-page',
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Author, name: author, widget: string },
+                  { label: Description, name: description, widget: string },
+                  { label: Keywords, name: keywords, widget: string },
+                  { label: Title, name: title, widget: string },
+                ]
             }
           - {
               label: Hero Panel,
@@ -533,6 +559,7 @@ collections:
                           label: Paragraph,
                           name: paragraph,
                           widget: select,
+                          required: false,
                           options:
                             [
                               { label: 'Black', value: 'text-black' },
@@ -553,9 +580,9 @@ collections:
                       ],
                   },
                   { label: Title, name: title, widget: string },
-                  { label: Title Highlight, name: titleHighlight, widget: string },
-                  { label: Text, name: paragraph, widget: string },
-                  { label: Button, name: button, widget: string },
+                  { label: Title Highlight, name: titleHighlight, widget: string, required: false},
+                  { label: Text, name: paragraph, widget: string, required: false},
+                  { label: Button, name: button, widget: string, required: false},
                 ],
             }
           - {
@@ -564,12 +591,13 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Title, name: title, widget: string },
-                  { label: Text, name: paragraph, widget: string },
+                  { label: Title, name: title, widget: string, required: false},
+                  { label: Text, name: paragraph, widget: string, required: false},
                   {
                     label: Partners,
                     name: partners,
                     widget: list,
+                    required: false,
                     fields:
                       [
                         {
@@ -578,14 +606,28 @@ collections:
                           widget: object,
                           fields:
                             [
-                              { label: Image, name: image, widget: image },
+                              {
+                                label: Image,
+                                name: image,
+                                widget: image,
+                                default: /img/default.png
+                              },
                             ],
                         },
-                        { label: Name, name: name, widget: text },
-                        { label: Link, name: link, widget: string },
+                        {
+                          label: Company Name,
+                          name: name,
+                          widget: text,
+                          default: Partner
+                        },
+                        {
+                          label: Company Website,
+                          name: link,
+                          widget: string,
+                          default: https://www.finlight.com
+                        },
                       ],
                   },
-
                 ],
             }
           - {
@@ -683,6 +725,18 @@ collections:
               default: 'our-values-page',
             }
           - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Author, name: author, widget: string },
+                  { label: Description, name: description, widget: string },
+                  { label: Keywords, name: keywords, widget: string },
+                  { label: Title, name: title, widget: string },
+                ]
+            }
+          - {
               label: Hero Panel,
               name: heroPanel,
               widget: object,
@@ -731,6 +785,7 @@ collections:
                           label: Paragraph,
                           name: paragraph,
                           widget: select,
+                          required: false,
                           options:
                             [
                               { label: 'Black', value: 'text-black' },
@@ -751,9 +806,9 @@ collections:
                       ],
                   },
                   { label: Title, name: title, widget: string },
-                  { label: Title Highlight, name: titleHighlight, widget: string },
-                  { label: Text, name: paragraph, widget: string },
-                  { label: Button, name: button, widget: string },
+                  { label: Title Highlight, name: titleHighlight, widget: string, required: false },
+                  { label: Text, name: paragraph, widget: string, required: false },
+                  { label: Button, name: button, widget: string, required: false },
                 ],
             }
           - {
@@ -762,12 +817,13 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Title, name: title, widget: string },
-                  { label: Text, name: paragraph, widget: string },
+                  { label: Title, name: title, widget: string, required: false },
+                  { label: Text, name: paragraph, widget: string, required: false },
                   {
                     label: Values,
                     name: values,
                     widget: list,
+                    required: false,
                     fields:
                       [
                         {
@@ -776,15 +832,34 @@ collections:
                           widget: object,
                           fields:
                             [
-                              { label: Image, name: image, widget: image },
-                              { label: SEO - Image Description, name: alt, widget: string },
+                              {
+                                label: Image,
+                                name: image,
+                                widget: image,
+                                default: /img/default.png
+                              },
+                              {
+                                label: SEO - Image Description,
+                                name: alt,
+                                widget: string,
+                                default: Image Description
+                              },
                             ],
                         },
-                        { label: Title, name: title, widget: text },
-                        { label: Detail, name: paragraph, widget: string },
+                        {
+                          label: Value,
+                          name: title,
+                          widget: text,
+                          default: Value,
+                        },
+                        {
+                          label: Detail,
+                          name: paragraph,
+                          widget: text,
+                          default: Details text,
+                        },
                       ],
                   },
-
                 ],
             }
           - {
@@ -869,128 +944,5 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
-                ],
-            }
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "about-page",
-            }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/pages/products/index.md"
-        label: "Products Page"
-        name: "products"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "product-page",
-            }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Description, name: description, widget: string }
-          - {
-              label: Intro,
-              name: intro,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Blurbs,
-                    name: blurbs,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Main,
-              name: main,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Image1,
-                    name: image1,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Testimonials,
-              name: testimonials,
-              widget: list,
-              fields:
-                [
-                  { label: Quote, name: quote, widget: string },
-                  { label: Author, name: author, widget: string },
-                ],
-            }
-          - { label: Full_image, name: full_image, widget: image }
-          - {
-              label: Pricing,
-              name: pricing,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: string },
-                  {
-                    label: Plans,
-                    name: plans,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Plan, name: plan, widget: string },
-                        { label: Price, name: price, widget: string },
-                        {
-                          label: Description,
-                          name: description,
-                          widget: string,
-                        },
-                        { label: Items, name: items, widget: list },
-                      ],
-                  },
                 ],
             }

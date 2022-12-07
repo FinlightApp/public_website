@@ -10,6 +10,7 @@ import Values from '../components/Values';
 
 /* eslint-disable */
 export const OurValuesPageTemplate = ({
+  seo,
   heroPanel,
   applyPanel,
   ourValuesPanel,
@@ -44,6 +45,12 @@ export const OurValuesPageTemplate = ({
 };
 
 OurValuesPageTemplate.propTypes = {
+  seo: PropTypes.shape({
+    author: PropTypes.string,
+    description: PropTypes.string,
+    keywords: PropTypes.string,
+    title: PropTypes.string,
+  }),
   heroPanel: PropTypes.shape({
     theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -69,7 +76,7 @@ OurValuesPageTemplate.propTypes = {
 const OurValuesPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   return (
-    <Layout>
+    <Layout seo={ frontmatter.seo }>
       <OurValuesPageTemplate
       heroPanel={ frontmatter.heroPanel }
       ourValuesPanel={ frontmatter.ourValuesPanel }
@@ -93,6 +100,12 @@ export const ourValuesPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
+        seo {
+          author
+          description
+          keywords
+          title
+        }
         heroPanel {
           theme {
             header
@@ -105,7 +118,15 @@ export const ourValuesPageQuery = graphql`
             alt
             image {
               childImageSharp {
-                gatsbyImageData(quality: 100)
+                gatsbyImageData(
+                  quality: 100
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                  layout: FULL_WIDTH
+                  transformOptions: {
+                    fit: COVER
+                  }
+                )
               }
             }
           }
@@ -122,7 +143,12 @@ export const ourValuesPageQuery = graphql`
               alt
               image {
                 childImageSharp {
-                  gatsbyImageData(quality: 100)
+                  gatsbyImageData(
+                    quality: 100
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP]
+                    layout: FULL_WIDTH
+                  )
                 }
               }
             }
@@ -142,7 +168,15 @@ export const ourValuesPageQuery = graphql`
             alt
             image {
               childImageSharp {
-                gatsbyImageData(quality: 100)
+                gatsbyImageData(
+                  quality: 100
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                  layout: FULL_WIDTH
+                  transformOptions: {
+                    fit: COVER
+                  }
+                )
               }
             }
           }

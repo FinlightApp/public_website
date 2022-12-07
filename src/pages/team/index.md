@@ -1,6 +1,11 @@
 ---
 templateKey: 'team-page'
 path: /team
+seo:
+ author: Finlight
+ description: Team page
+ keywords: Finlight
+ title: Finlight - Team page
 heroPanel:
   theme:
     header: 'text-black'
@@ -17,6 +22,22 @@ heroPanel:
     the Finlight team are on a mission to transform financial services for the end-investor.
     Driven by the desire to use tech to bring transparency and reduce operational tasks, Finlight was born.
   button:
+nonExecutiveDirectorsPanel:
+  title: Non-executive Directors
+  paragraph: Something
+  nonExecutiveDirectors:
+  - nonExecutiveDirectorImage:
+      image: /img/brussels.png
+      alt: 'profile picture'
+    name: Name
+    role: Role
+    link: https://www.linkedin.com/
+  - nonExecutiveDirectorImage:
+      image: /img/brussels.png
+      alt: 'profile picture'
+    name: Name 02
+    role: Role 02
+    link: https://www.linkedin.com/
 applyPanel:
   theme:
     header: 'text-white'

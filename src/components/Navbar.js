@@ -68,7 +68,6 @@ const Navbar = () => {
               { navItem.pageName }
             </Link>
           )) }
-        </ul>
         {/* Nav End */}
         <div className='
           navbar-end

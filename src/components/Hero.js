@@ -24,25 +24,27 @@ export default function Hero(props) {
         justify-center
         h-fit md:h-[700px]
       '>
-        { imageBg?.image?.url ? (
-          <img className='
-            absolute inset-0
-            select-none
-          '
-          src={ imageBg.image }
-          alt={ imageBg.alt }
-          draggable='false' />
-        ) : (
-          <GatsbyImage className='
-            !absolute inset-0
-            select-none
-          '
-          objectFit='fill'
-          image={ imageBg.image }
-          formats={ ['auto', 'webp'] }
-          alt={ imageBg.alt }
-          draggable={ false } />
-        ) }
+        <div className='absolute inset-0'>
+          { imageBg?.image?.url ? (
+            <img className='
+              w-full h-full
+              select-none
+            '
+            src={ imageBg.image }
+            alt={ imageBg.alt }
+            draggable='false' />
+          ) : (
+            <GatsbyImage className='
+            w-full h-full
+              select-none
+            '
+            objectFit='cover'
+            image={ imageBg.image }
+            formats={ ['auto', 'webp'] }
+            alt={ imageBg.alt }
+            draggable={ false } />
+          ) }
+        </div>
         { ( title || paragraph || button ) && (
           <div className='
             container

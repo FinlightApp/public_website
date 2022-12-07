@@ -8,6 +8,7 @@ export default function PartnersCard(props) {
     name,
     partnerImage,
   } = props;
+
   return (
     <React.Fragment>
       <a className='
@@ -17,21 +18,29 @@ export default function PartnersCard(props) {
         p-6 gap-6
         rounded-2xl shadow-card
       '
-      href={ link } target='_blank'
-      rel='noreferrer noopener' referrerPolicy='no-referrer'
+      href={ link }
+      target='_blank'
+      rel='noreferrer noopener'
+      referrerPolicy='no-referrer'
       aria-label={ name }>
-        { partnerImage?.image?.url ? (
-          <img className='w-48 h-48'
-          src={ partnerImage.image }
-          alt={ name + ' logo' } />
-        ) : (
-          <GatsbyImage className='w-48 h-48 border'
-          objectFit='fill'
-          image={ partnerImage.image }
-          formats={ ['auto', 'webp'] }
-          alt={ name + ' logo' } />
-        ) }
-        <p className='font-header font-semibold'>
+        <div className='
+          flex flex-col
+          justify-center items-center
+          w-48 h-48
+        '>
+          { partnerImage?.image?.url ? (
+            <img className='w-full'
+            src={ partnerImage.image }
+            alt={ `${name} logo` } />
+          ) : (
+            <GatsbyImage className='w-full'
+            objectFit='fill'
+            image={ partnerImage.image }
+            formats={ ['auto', 'webp'] }
+            alt={ `${name} logo` } />
+          ) }
+        </div>
+        <p className='font-header font-semibold text-center'>
           { name }
         </p>
       </a>
