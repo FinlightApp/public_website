@@ -113,15 +113,7 @@ export const teamPageQuery = graphql`
             }
             title
             subheading
-            linkedin {
-              image{
-                childImageSharp {
-                  gatsbyImageData(quality: 100)
-                }
-              }
-              alt
-              link
-            }
+            link
           }
         }
         applyPanel {

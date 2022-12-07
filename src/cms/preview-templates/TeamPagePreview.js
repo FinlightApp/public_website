@@ -22,16 +22,12 @@ const TeamPagePreview = ({ entry, getAsset }) => {
           cards:{
             image: {
               image: getAsset(data.teamPanel.cards.image.image),
-              alt: data.teamPanel.cards.image.alt,
+              alt: data.teamPanel.cards.image.alt
             },
-            title: data.teamPanel.cards.image.title,
-            Subheading: data.teamPanel.cards.image.Subheading,
-            linkedin: {
-              image: getAsset(data.teamPanel.cards.linkedin.image),
-              alt: data.teamPanel.teamCards.linkedin.alt,
-              link: data.teamPanel.teamCards.linkedin.link,
-            },
-          },
+            title: data.teamPanel.cards.title,
+            subheading: data.teamPanel.cards.subheading,
+            link: data.teamPanel.teamCards.link
+          }
         }}
         applyPanel={{
           darkMode: data.applyPanel.darkMode,

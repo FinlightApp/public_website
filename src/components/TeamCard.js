@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import  linkedinIcon from '../img/social/linkedin.svg'
 
 /* eslint-disable */
-export default function Card(props) {
+export default function TeamCard(props) {
   const {
     image,
     title,
     subheading,
-    linkedin
+    link
   } = props;
 
   return (
@@ -16,8 +17,9 @@ export default function Card(props) {
       <div className='
         flex flex-col
         basis-full md:basis-1/2-6 lg:basis-1/3-8
+        bg-white
       '>
-        { ( image || title || subheading || linkedin ) && (
+        { ( image || title || subheading || link ) && (
           <div  className='
             flex flex-col
             items-center
@@ -35,44 +37,24 @@ export default function Card(props) {
               alt={ image.alt } />
             ) }
             { title && (
-              <p className='
-                text-center 
-                font-normal text-sm
-              '>
+              <p className='text-center font-normal text-sm'>
                 { title }
               </p>
             ) }
             { subheading && (
-              <p className='
-                text-center
-                font-light text-xs text-smallText
-              '>
+              <p className='text-center font-light text-xs'>
                 { subheading }
               </p>
             ) }
-            { linkedin?.image?.url ? (
+            { link && (
               <div className='
-                flex 
+                flex
                 justify-center
                 w-full
               '>
-                <a href={ linkedin.link } target='_blank'>
+                <a href={ link } target='_blank' rel='noopener noreferrer'>
                   <img className='h-8 w-8'
-                  src={ linkedin.image }
-                  alt={ linkedin.alt } />
-                </a>
-              </div>
-            ) : (
-              <div className='
-                flex 
-                justify-center
-                w-full
-              '>
-                <a href={ linkedin.link } target='_blank'>
-                  <GatsbyImage className='h-12 w-12'
-                  image={ linkedin.image }
-                  formats={ ['auto', 'webp'] }
-                  alt={ linkedin.alt } />
+                  src={ linkedinIcon } alt='linkedinIcon' />
                 </a>
               </div>
             ) }
@@ -83,9 +65,9 @@ export default function Card(props) {
   );
 }
 
-Card.propTypes = {
+TeamCard.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   subheading: PropTypes.string,
-  linkedin: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  link: PropTypes.string,
 };

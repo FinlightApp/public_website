@@ -20,28 +20,19 @@ teamPanel:
         alt: img1
       title: name
       subheading: profession
-      linkedin:
-        image: /img/linkedin.jpg
-        alt: img2
-        link: https://finlight.com/
+      link: https://finlight.com/
     - image:
         image: /img/brussels.png
         alt: img1
       title: name
       subheading: profession
-      linkedin:
-        image: /img/linkedin.jpg
-        alt: img2
-        link: https://finlight.com/
+      link: https://finlight.com/
     - image:
         image: /img/brussels.png
         alt: img1
       title: name
       subheading: profession
-      linkedin:
-        image: /img/linkedin.jpg
-        alt: img2
-        link: https://finlight.com/
+      link: https://finlight.com/
 applyPanel:
   darkMode: true
   imageBg:

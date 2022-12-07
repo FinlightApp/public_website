@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { getImage } from 'gatsby-plugin-image';
-import Card from './Card';
+import TeamCard from './TeamCard';
 
 export default function TeamPanel(props) {
   const {
@@ -13,40 +13,27 @@ export default function TeamPanel(props) {
       { ( cards ) && (
         <div className='
           flex flex-col
-          justify-center items-center
+          justify-center items-center 
           w-full h-fit
+          p-12
         '>
           { cards && (
             <div className='
-              flex
+              flex flex-wrap
               justify-center
               w-full
-              p-12
-              bg-grey-light
-           '>
-              { cards && (
-                <div className='
-                  flex flex-wrap
-                  justify-center
-                  w-full
-                  gap-12
-                '>
-                  { cards.map((card, i) => (
-                    <Card key={ i }
-                    image={ {
-                      image : getImage(card.image.image) || card.image.image,
-                      alt: card.image.alt
-                    } }
-                    title={ card.title }
-                    subheading={ card.subheading }
-                    linkedin={ {
-                      image: getImage(card.linkedin.image) || card.linkedin.image,
-                      alt: card.linkedin.alt,
-                      link: card.linkedin.link
-                     } } />
-                  )) }
-                </div>
-              ) }
+              gap-12
+            '>
+              { cards.map((card, i) => (
+                <TeamCard key={ i }
+                image={ {
+                  image : getImage(card.image.image) || card.image.image,
+                  alt: card.image.alt
+                } }
+                title={ card.title }
+                subheading={ card.subheading }
+                link={ card.link } />
+              )) }
             </div>
           ) }
         </div>
