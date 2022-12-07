@@ -22,10 +22,7 @@ heroPanel:
     need to serve their clients more efficiently with zero friction. If you
     believe your offerings can nicely complement or enhance ours, please do
     contact us via partners@finlight.com
-  button: " "
 partnersPanel:
-  title: " "
-  paragraph: " "
   partners:
     - partnerImage:
         image: /img/3dinvesting.jpg
