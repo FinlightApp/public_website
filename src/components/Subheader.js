@@ -9,11 +9,7 @@ export default function Subheader(props) {
         gap-12
       '>
         <h2 className={`
-<<<<<<< HEAD
-          ${ props.darkMode ? 'text-grey-light' : 'text-black' }
-=======
           ${ props.headerClass }
->>>>>>> develop
           text-3xl text-center font-semibold font-header
         `}>
           { props.children }
