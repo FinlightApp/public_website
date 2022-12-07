@@ -20,6 +20,7 @@ const TeamPagePreview = ({ entry, getAsset }) => {
         }}
         nonExecutiveDirectorsPanel={{
           title: data.nonExecutiveDirectorsPanel.title,
+          paragraph: data.nonExecutiveDirectorsPanel.paragraph,
           nonExecutiveDirectors: data.nonExecutiveDirectorsPanel.nonExecutiveDirectors
         }}
         applyPanel={{

@@ -202,6 +202,7 @@ collections:
               fields:
                 [
                   { label: Title, name: title, widget: string },
+                  { label: Text, name: paragraph, widget: string },
                   {
                     label: Non-Executive Directors,
                     name: nonExecutiveDirectors,
@@ -215,6 +216,7 @@ collections:
                           fields:
                             [
                               { label: Image, name: image, widget: image },
+                              { label: SEO - Image Description, name: alt, widget: string },
                             ],
                         },
                         { label: Name, name: name, widget: text },

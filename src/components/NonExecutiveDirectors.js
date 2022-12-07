@@ -7,7 +7,8 @@ import NonExecutiveDirectorsCard from './NonExecutiveDirectorsCard';
 
 export default function NonExecutiveDirectors(props) {
   const { 
-    title, 
+    title,
+    paragraph,
     nonExecutiveDirectors,
   } = props;
 
@@ -18,7 +19,7 @@ export default function NonExecutiveDirectors(props) {
         justify-center
         h-fit
       '>
-        { ( title || nonExecutiveDirectors ) && (
+        { ( title ||  paragraph || nonExecutiveDirectors ) && (
           <div className='
             flex
             justify-center
@@ -26,7 +27,8 @@ export default function NonExecutiveDirectors(props) {
             p-12
           '>
             <Panel
-            title={ title }>
+            title={ title }
+            paragraph={ paragraph }>
               { nonExecutiveDirectors && (
               <div className='
                 flex flex-wrap
@@ -37,7 +39,8 @@ export default function NonExecutiveDirectors(props) {
                 { nonExecutiveDirectors.map((nonExecutiveDirector, i) => (
                   <NonExecutiveDirectorsCard key={ i }
                   nonExecutiveDirectorImage={ {
-                    image : getImage(nonExecutiveDirector.nonExecutiveDirectorImage.image) || nonExecutiveDirector.nonExecutiveDirectorImage.image
+                    image : getImage(nonExecutiveDirector.nonExecutiveDirectorImage.image) || nonExecutiveDirector.nonExecutiveDirectorImage.image,
+                    alt: nonExecutiveDirector.nonExecutiveDirectorImage.alt
                   } }
                   name={ nonExecutiveDirector.name }
                   role={ nonExecutiveDirector.role }
@@ -55,5 +58,6 @@ export default function NonExecutiveDirectors(props) {
 
 NonExecutiveDirectors.propTypes = {
   title: PropTypes.string,
+  paragraph: PropTypes.string,
   nonExecutiveDirectors: PropTypes.array
 };

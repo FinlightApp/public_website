@@ -27,6 +27,7 @@ export const TeamPageTemplate = ({
       paragraph={ heroPanel.paragraph } />
       <NonExecutiveDirectors
       title={ nonExecutiveDirectorsPanel.title }
+      paragraph={ nonExecutiveDirectorsPanel.paragraph }
       nonExecutiveDirectors={ nonExecutiveDirectorsPanel.nonExecutiveDirectors } />
       <Apply
       darkMode={ applyPanel.darkMode }
@@ -51,6 +52,7 @@ TeamPageTemplate.propTypes = {
   }),
   nonExecutivedirectorsPanel: PropTypes.shape({
     title: PropTypes.string,
+    paragraph: PropTypes.string,
     nonExecutiveDirectors: PropTypes.array,
   }),
   applyPanel: PropTypes.shape({
@@ -105,6 +107,7 @@ export const teamPageQuery = graphql`
         }
         nonExecutiveDirectorsPanel {
           title
+          paragraph
           nonExecutiveDirectors {
             nonExecutiveDirectorImage {
               image {
@@ -112,6 +115,7 @@ export const teamPageQuery = graphql`
                   gatsbyImageData(quality: 100)
                 }
               }
+              alt
             }
             name
             role

@@ -20,13 +20,13 @@ export default function NonExecutiveDirectorsCard(props) {
         { nonExecutiveDirectorImage?.image?.url ? (
           <img className='w-48 h-48'
           src={ nonExecutiveDirectorImage.image }
-          alt= {`profile picture of ${name} `} />
+          alt={ nonExecutiveDirectorImage.alt } />
         ) : (
           <GatsbyImage className='w-48 h-48 border'
           objectFit='fill'
           image={ nonExecutiveDirectorImage.image }
           formats={ ['auto', 'webp'] }
-          alt= {`profile picture of ${name} `} />
+          alt={ nonExecutiveDirectorImage.alt } />
         ) }
         <p className='font-header font-semibold'>
           { name }
@@ -44,7 +44,7 @@ export default function NonExecutiveDirectorsCard(props) {
             rounded-full
             border-2 border-black
           '
-          src='/images/linkedin-icon.svg'
+          src='/img/brussels.png'
           alt= 'linkedin icon' />
         </a>
       </div>
