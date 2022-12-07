@@ -1,8 +1,17 @@
 ---
 templateKey: 'team-page'
 path: /team
+seo:
+ author: Finlight
+ description: Team page
+ keywords: Finlight
+ title: Finlight - Team page
 heroPanel:
-  darkMode: false
+  theme:
+    header: 'text-black'
+    line: 'via-secondary'
+    highlight: 'text-secondary'
+    paragraph: 'text-black'
   imageBg:
     alt: Background Alt
     image: /img/brussels.png
@@ -30,7 +39,12 @@ nonExecutiveDirectorsPanel:
     role: Role 02
     link: https://www.linkedin.com/
 applyPanel:
-  darkMode: true
+  theme:
+    header: 'text-white'
+    line: 'via-primary'
+    highlight: 'text-primary'
+    paragraph: 'text-white'
+    button: 'text-black bg-primary'
   imageBg:
     alt: Background Alt - test
     image: /img/heroBg.webp

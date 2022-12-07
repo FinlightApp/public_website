@@ -10,6 +10,7 @@ import Apply from '../components/Apply';
 
 /* eslint-disable */
 export const TeamPageTemplate = ({
+  seo,
   heroPanel,
   nonExecutiveDirectorsPanel,
   applyPanel
@@ -17,7 +18,7 @@ export const TeamPageTemplate = ({
   return (
     <div>
       <Hero
-      darkMode={ heroPanel.darkMode }
+      theme={ heroPanel.theme }
       imageBg={ {
         image: getImage(heroPanel.imageBg.image) || heroPanel.imageBg.image,
         alt: heroPanel.imageBg.alt
@@ -30,7 +31,7 @@ export const TeamPageTemplate = ({
       paragraph={ nonExecutiveDirectorsPanel.paragraph }
       nonExecutiveDirectors={ nonExecutiveDirectorsPanel.nonExecutiveDirectors } />
       <Apply
-      darkMode={ applyPanel.darkMode }
+      theme={ applyPanel.theme }
       imageBg={ {
         image: getImage(applyPanel.imageBg.image) || applyPanel.imageBg.image,
         alt: applyPanel.imageBg.alt
@@ -43,8 +44,14 @@ export const TeamPageTemplate = ({
 };
 
 TeamPageTemplate.propTypes = {
+  seo: PropTypes.shape({
+    author: PropTypes.string,
+    description: PropTypes.string,
+    keywords: PropTypes.string,
+    title: PropTypes.string,
+  }),
   heroPanel: PropTypes.shape({
-    darkMode: PropTypes.bool,
+    theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
@@ -56,7 +63,7 @@ TeamPageTemplate.propTypes = {
     nonExecutiveDirectors: PropTypes.array,
   }),
   applyPanel: PropTypes.shape({
-    darkMode: PropTypes.bool,
+    theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     paragraph: PropTypes.string,
@@ -67,7 +74,7 @@ TeamPageTemplate.propTypes = {
 const TeamPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   return (
-    <Layout>
+    <Layout seo={ frontmatter.seo }>
       <TeamPageTemplate
       heroPanel={ frontmatter.heroPanel }
       nonExecutiveDirectorsPanel={ frontmatter.nonExecutiveDirectorsPanel }
@@ -91,8 +98,20 @@ export const teamPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
+        seo {
+          author
+          description
+          keywords
+          title
+        }
         heroPanel {
-          darkMode
+          theme {
+            header
+            line
+            highlight
+            paragraph
+            button
+          }
           imageBg {
             alt
             image {
@@ -123,7 +142,13 @@ export const teamPageQuery = graphql`
           }
         } 
         applyPanel {
-          darkMode
+          theme {
+            header
+            line
+            highlight
+            paragraph
+            button
+          }
           imageBg {
             alt
             image {

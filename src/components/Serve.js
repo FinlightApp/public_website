@@ -3,46 +3,48 @@ import PropTypes from 'prop-types';
 import { getImage } from "gatsby-plugin-image";
 
 import Panel from './Panel';
-import PartnersCard from './PartnersCard';
+import DataCard from './DataCard';
 
-export default function Partners(props) {
+export default function Serve(props) {
   const {
     title,
     paragraph,
-    partners,
+    cards,
   } = props;
 
   return (
     <React.Fragment>
       <div className='
-        flex
-        justify-center
-        h-fit
+        flex flex-col
+        justify-center items-center
+        w-full h-fit
       '>
-        { ( title || paragraph || partners ) && (
+        {( title || paragraph || cards )  && (
           <div className='
             flex
             justify-center
             w-full
             p-12
+            bg-grey-light
           '>
             <Panel
             title={ title }
             paragraph={ paragraph }>
-              { partners && (
-              <div className='
+              { cards && (
+                <div className='
                   flex flex-wrap
                   justify-center
                   w-full
                   gap-12
-                '>
-                  { partners.map((partner, i) => (
-                    <PartnersCard key={ i }
-                    partnerImage={ {
-                      image : getImage(partner.partnerImage.image) || partner.partnerImage.image
+                '> 
+                  { cards.map((card, i) => (
+                    <DataCard key={ i }
+                    cardImage={ {
+                      image : getImage(card.cardImage.image) || card.cardImage.image,
+                      alt: card.cardImage.alt
                     } }
-                    name={ partner.name }
-                    link={ partner.link } />
+                    title={ card.title }
+                    paragraph={ card.paragraph } />
                   )) }
                 </div>
               ) }
@@ -54,8 +56,8 @@ export default function Partners(props) {
   );
 }
 
-Partners.propTypes = {
+Serve.propTypes = {
   title: PropTypes.string,
   paragraph: PropTypes.string,
-  partners: PropTypes.array
+  cards: PropTypes.array,
 };
