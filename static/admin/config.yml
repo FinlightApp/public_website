@@ -208,8 +208,8 @@ collections:
                   fields:
                     [
                       {
-                        label: Image,
-                        name: image,
+                        label: CardImage,
+                        name: cardImage,
                         widget: object,
                         fields:
                         [

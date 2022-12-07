@@ -15,19 +15,19 @@ heroPanel:
   button:
 teamPanel:
   cards:
-    - image:
+    - cardImage:
         image: /img/brussels.png
         alt: img1
       title: name
       subheading: profession
       link: https://finlight.com/
-    - image:
+    - cardImage:
         image: /img/brussels.png
         alt: img1
       title: name
       subheading: profession
       link: https://finlight.com/
-    - image:
+    - cardImage:
         image: /img/brussels.png
         alt: img1
       title: name

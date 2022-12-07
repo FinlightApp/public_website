@@ -6,7 +6,7 @@ import  linkedinIcon from '../img/social/linkedin.svg'
 /* eslint-disable */
 export default function TeamCard(props) {
   const {
-    image,
+    cardImage,
     title,
     subheading,
     link
@@ -19,22 +19,22 @@ export default function TeamCard(props) {
         basis-full md:basis-1/2-6 lg:basis-1/3-8
         bg-white
       '>
-        { ( image || title || subheading || link ) && (
+        { ( cardImage || title || subheading || link ) && (
           <div  className='
             flex flex-col
             items-center
             p-6 gap-6
             bg-white rounded-2xl shadow-card
           '>
-            { image?.image?.url ? (
+            { cardImage?.image?.url ? (
               <img className='w-44 h-44'
-              src={ image.image }
-              alt={ image.alt } />
+              src={ cardImage.image }
+              alt={ cardImage.alt } />
             ) : (
               <GatsbyImage className='w-44 h-44'
-              image={ image.image }
+              image={ cardImage.image }
               formats={ ['auto', 'webp'] }
-              alt={ image.alt } />
+              alt={ cardImage.alt } />
             ) }
             { title && (
               <p className='text-center font-normal text-sm'>
@@ -66,7 +66,7 @@ export default function TeamCard(props) {
 }
 
 TeamCard.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  cardImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   subheading: PropTypes.string,
   link: PropTypes.string,

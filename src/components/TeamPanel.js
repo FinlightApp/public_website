@@ -26,9 +26,9 @@ export default function TeamPanel(props) {
             '>
               { cards.map((card, i) => (
                 <TeamCard key={ i }
-                image={ {
-                  image : getImage(card.image.image) || card.image.image,
-                  alt: card.image.alt
+                cardImage={ {
+                  image : getImage(card.cardImage.image) || card.cardImage.image,
+                  alt: card.cardImage.alt
                 } }
                 title={ card.title }
                 subheading={ card.subheading }

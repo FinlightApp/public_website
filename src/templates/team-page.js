@@ -103,7 +103,7 @@ export const teamPageQuery = graphql`
         }
         teamPanel {
           cards {
-            image {
+            cardImage {
               image {
                 childImageSharp {
                   gatsbyImageData(quality: 100)

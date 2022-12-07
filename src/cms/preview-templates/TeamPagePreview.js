@@ -20,9 +20,9 @@ const TeamPagePreview = ({ entry, getAsset }) => {
         }}
         teamPanel={{
           cards:{
-            image: {
-              image: getAsset(data.teamPanel.cards.image.image),
-              alt: data.teamPanel.cards.image.alt
+            cardImage: {
+              image: getAsset(data.teamPanel.cards.cardImage.image),
+              alt: data.teamPanel.cards.cardImage.alt
             },
             title: data.teamPanel.cards.title,
             subheading: data.teamPanel.cards.subheading,
