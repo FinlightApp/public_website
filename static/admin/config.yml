@@ -375,39 +375,39 @@ collections:
                   { label: Title Highlight, name: titleHighlight, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
-                ],
+                ]
             }
-            - {
-              label: Non-Executive Directors Panel,
-              name: nonExecutiveDirectorsPanel,
-              widget: object,
-              fields:
-                [
-                  { label: Title, name: title, widget: string },
-                  { label: Text, name: paragraph, widget: string },
-                  {
-                    label: Non-Executive Directors,
-                    name: nonExecutiveDirectors,
-                    widget: list,
-                    fields:
-                      [
-                        {
-                          label: Non-Executive Director Image,
-                          name: nonExecutiveDirectorImage,
-                          widget: object,
-                          fields:
-                            [
-                              { label: Image, name: image, widget: image },
-                              { label: SEO - Image Description, name: alt, widget: string },
-                            ],
-                        },
-                        { label: Name, name: name, widget: text },
-                        { label: Role, name: role, widget: text },
-                        { label: Link, name: link, widget: string },
-                      ],
-                  },
-                ],
-            },
+          - {
+            label: Non-Executive Directors Panel,
+            name: nonExecutiveDirectorsPanel,
+            widget: object,
+            fields:
+              [
+                { label: Title, name: title, widget: string },
+                { label: Text, name: paragraph, widget: string },
+                {
+                  label: Non-Executive Directors,
+                  name: nonExecutiveDirectors,
+                  widget: list,
+                  fields:
+                    [
+                      {
+                        label: Non-Executive Director Image,
+                        name: nonExecutiveDirectorImage,
+                        widget: object,
+                        fields:
+                          [
+                            { label: Image, name: image, widget: image },
+                            { label: SEO - Image Description, name: alt, widget: string },
+                          ],
+                      },
+                      { label: Name, name: name, widget: text },
+                      { label: Role, name: role, widget: text },
+                      { label: Link, name: link, widget: string },
+                    ],
+                },
+              ],
+          }
           - {
               label: Apply Panel,
               name: applyPanel,
