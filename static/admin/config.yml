@@ -527,6 +527,7 @@ collections:
                           label: Paragraph,
                           name: paragraph,
                           widget: select,
+                          required: false,
                           options:
                             [
                               { label: 'Black', value: 'text-black' },
@@ -547,8 +548,9 @@ collections:
                       ],
                   },
                   { label: Title, name: title, widget: string },
-                  { label: Title Highlight, name: titleHighlight, widget: string },
-                  { label: Text, name: paragraph, widget: string },
+                  { label: Title Highlight, name: titleHighlight, widget: string, required: false},
+                  { label: Text, name: paragraph, widget: string, required: false},
+                  { label: Button, name: button, widget: string, required: false},
                 ],
             }
           - {
@@ -557,10 +559,13 @@ collections:
               widget: object,
               fields:
                 [
+                  { label: Title, name: title, widget: string, required: false},
+                  { label: Text, name: paragraph, widget: string, required: false},
                   {
                     label: Partners,
                     name: partners,
                     widget: list,
+                    required: false,
                     fields:
                       [
                         {
@@ -569,14 +574,28 @@ collections:
                           widget: object,
                           fields:
                             [
-                              { label: Image, name: image, widget: image },
+                              {
+                                label: Image,
+                                name: image,
+                                widget: image,
+                                default: /img/default.png
+                              },
                             ],
                         },
-                        { label: Name, name: name, widget: text },
-                        { label: Link, name: link, widget: string },
+                        {
+                          label: Company Name,
+                          name: name,
+                          widget: text,
+                          default: Partner
+                        },
+                        {
+                          label: Company Website,
+                          name: link,
+                          widget: string,
+                          default: https://www.finlight.com
+                        },
                       ],
                   },
-
                 ],
             }
           - {
