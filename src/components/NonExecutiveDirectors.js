@@ -29,13 +29,13 @@ export default function NonExecutiveDirectors(props) {
             <Panel
             title={ title }
             paragraph={ paragraph }>
-              { nonExecutiveDirectors && (
-              <div className='
-                flex flex-wrap
-                justify-center
-                w-full
-                gap-12
-              '>
+                { nonExecutiveDirectors && (
+                <div className='
+                  flex flex-wrap
+                  justify-center
+                  w-full
+                  gap-12
+                '>
                 { nonExecutiveDirectors.map((nonExecutiveDirector, i) => (
                   <NonExecutiveDirectorsCard key={ i }
                   nonExecutiveDirectorImage={ {
