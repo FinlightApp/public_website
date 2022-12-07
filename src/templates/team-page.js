@@ -5,11 +5,13 @@ import { getImage } from "gatsby-plugin-image";
 
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
+import TeamPanel from '../components/TeamPanel';
 import Apply from '../components/Apply';
 
 /* eslint-disable */
 export const TeamPageTemplate = ({
   heroPanel,
+  teamPanel,
   applyPanel
 }) => {
   return (
@@ -23,6 +25,8 @@ export const TeamPageTemplate = ({
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph } />
+      <TeamPanel
+      cards={ teamPanel.cards } />
       <Apply
       darkMode={ applyPanel.darkMode }
       imageBg={ {
@@ -44,6 +48,9 @@ TeamPageTemplate.propTypes = {
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
   }),
+  teamPanel: PropTypes.shape({
+    cards: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  }),
   applyPanel: PropTypes.shape({
     darkMode: PropTypes.bool,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -59,6 +66,7 @@ const TeamPage = ({ data }) => {
     <Layout>
       <TeamPageTemplate
       heroPanel={ frontmatter.heroPanel }
+      teamPanel={ frontmatter.teamPanel }
       applyPanel={ frontmatter.applyPanel } />
     </Layout>
   );
@@ -92,6 +100,29 @@ export const teamPageQuery = graphql`
           title
           titleHighlight
           paragraph
+        }
+        teamPanel {
+          cards {
+            image {
+              image {
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+                }
+              }
+              alt
+            }
+            title
+            subheading
+            linkedin {
+              image{
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+                }
+              }
+              alt
+              link
+            }
+          }
         }
         applyPanel {
           darkMode

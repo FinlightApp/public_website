@@ -13,6 +13,35 @@ heroPanel:
     the Finlight team are on a mission to transform financial services for the end-investor.
     Driven by the desire to use tech to bring transparency and reduce operational tasks, Finlight was born.
   button:
+teamPanel:
+  cards:
+    - image:
+        image: /img/brussels.png
+        alt: img1
+      title: name
+      subheading: profession
+      linkedin:
+        image: /img/linkedin.jpg
+        alt: img2
+        link: https://finlight.com/
+    - image:
+        image: /img/brussels.png
+        alt: img1
+      title: name
+      subheading: profession
+      linkedin:
+        image: /img/linkedin.jpg
+        alt: img2
+        link: https://finlight.com/
+    - image:
+        image: /img/brussels.png
+        alt: img1
+      title: name
+      subheading: profession
+      linkedin:
+        image: /img/linkedin.jpg
+        alt: img2
+        link: https://finlight.com/
 applyPanel:
   darkMode: true
   imageBg:

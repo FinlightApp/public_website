@@ -195,6 +195,45 @@ collections:
                   { label: Button, name: button, widget: string },
                 ],
             }
+          - {
+            label: TeamPanel,
+            name: teamPanel,
+            widget: object,
+            fields:
+              [
+                {
+                  label: Cards,
+                  name: cards,
+                  widget: list,
+                  fields:
+                    [
+                      {
+                        label: Image,
+                        name: image,
+                        widget: object,
+                        fields:
+                        [
+                          { label: Image, name: image, widget: image },
+                          { label: Image Name, name: alt, widget: text },
+                        ],
+                      },
+                      { label: Title, name: title, widget: text },
+                      { label: Subheading, name: text, widget: text },
+                      {
+                        label: Linkedin,
+                        name: linkedin,
+                        widget: object,
+                        fields:
+                        [
+                          { label: Image, name: image, widget: image },
+                          { label: Image Name, name: alt, widget: text },
+                          { label: Link, name: link, widget: text },
+                        ],
+                      },
+                    ]
+                 }
+              ]
+            }
       - file: 'src/pages/partners/index.md'
         label: 'Partners Page'
         name: 'partners'

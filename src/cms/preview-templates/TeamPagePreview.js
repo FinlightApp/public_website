@@ -18,6 +18,21 @@ const TeamPagePreview = ({ entry, getAsset }) => {
           titleHighlight: data.heroPanel.titleHighlight,
           paragraph: data.heroPanel.paragraph
         }}
+        teamPanel={{
+          cards:{
+            image: {
+              image: getAsset(data.teamPanel.cards.image.image),
+              alt: data.teamPanel.cards.image.alt,
+            },
+            title: data.teamPanel.cards.image.title,
+            Subheading: data.teamPanel.cards.image.Subheading,
+            linkedin: {
+              image: getAsset(data.teamPanel.cards.linkedin.image),
+              alt: data.teamPanel.teamCards.linkedin.alt,
+              link: data.teamPanel.teamCards.linkedin.link,
+            },
+          },
+        }}
         applyPanel={{
           darkMode: data.applyPanel.darkMode,
           imageBg: {
