@@ -27,11 +27,11 @@ export default function TeamCard(props) {
             bg-white rounded-2xl shadow-card
           '>
             { cardImage?.image?.url ? (
-              <img className='w-44 h-44'
+              <img className='w-44 h-44 rounded-full'
               src={ cardImage.image }
               alt={ cardImage.alt } />
             ) : (
-              <GatsbyImage className='w-44 h-44'
+              <GatsbyImage className='w-44 h-44 rounded-full'
               image={ cardImage.image }
               formats={ ['auto', 'webp'] }
               alt={ cardImage.alt } />
