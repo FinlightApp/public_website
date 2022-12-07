@@ -18,7 +18,7 @@ export default function Hero(props) {
 
   return (
     <React.Fragment>
-      <div className='
+      <header className='
         relative
         flex
         justify-center
@@ -81,7 +81,7 @@ export default function Hero(props) {
             </Box>
           </div>
         ) }
-      </div>
+      </header>
     </React.Fragment>
   );
 }

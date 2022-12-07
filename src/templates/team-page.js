@@ -16,7 +16,7 @@ export const TeamPageTemplate = ({
   applyPanel
 }) => {
   return (
-    <div>
+    <>
       <Hero
       theme={ heroPanel.theme }
       imageBg={ {
@@ -39,7 +39,7 @@ export const TeamPageTemplate = ({
       title={ applyPanel.title }
       paragraph={ applyPanel.paragraph }
       button={ applyPanel.button } />
-    </div>
+    </>
   );
 };
 

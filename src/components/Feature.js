@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getImage } from "gatsby-plugin-image";
+import { getImage } from 'gatsby-plugin-image';
 
 import Panel from './Panel';
 import DataCard from './DataCard';
@@ -44,7 +44,7 @@ export default function Feature(props) {
                     } }
                     title={ feature.title }
                     paragraph={ feature.paragraph } />
-                  )) }
+                  ) ) }
                 </div>
               ) }
             </Panel>

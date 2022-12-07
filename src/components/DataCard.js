@@ -19,7 +19,11 @@ export default function DataCard(props) {
         bg-white rounded-2xl shadow-card
       '>
         { cardImage && (
-          <div className='w-48 h-48'>
+          <div className='
+            flex flex-row
+            justify-center items-center
+            w-48 h-48
+          '>
             { cardImage?.image?.url ? (
               <img className='w-full'
               src={ cardImage.image }

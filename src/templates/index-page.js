@@ -18,7 +18,7 @@ export const IndexPageTemplate = ({
   applyPanel,
 }) => {
   return (
-    <div>
+    <>
       <Hero
       theme={ heroPanel.theme }
       imageBg={ {
@@ -46,7 +46,7 @@ export const IndexPageTemplate = ({
       title={ applyPanel.title }
       paragraph={ applyPanel.paragraph }
       button={ applyPanel.button } />
-    </div>
+    </>
   );
 };
 
