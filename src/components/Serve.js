@@ -5,11 +5,11 @@ import { getImage } from "gatsby-plugin-image";
 import Panel from './Panel';
 import DataCard from './DataCard';
 
-export default function Feature(props) {
+export default function Serve(props) {
   const {
     title,
     paragraph,
-    features,
+    cards,
   } = props;
 
   return (
@@ -19,31 +19,32 @@ export default function Feature(props) {
         justify-center items-center
         w-full h-fit
       '>
-        {( title || paragraph || features )  && (
+        {( title || paragraph || cards )  && (
           <div className='
             flex
             justify-center
             w-full
             p-12
+            bg-grey-light
           '>
             <Panel
             title={ title }
             paragraph={ paragraph }>
-              { features && (
+              { cards && (
                 <div className='
                   flex flex-wrap
                   justify-center
                   w-full
                   gap-12
                 '> 
-                  { features.map((feature, i) => (
+                  { cards.map((card, i) => (
                     <DataCard key={ i }
                     cardImage={ {
-                      image : getImage(feature.featureImage.image) || feature.featureImage.image,
-                      alt: feature.featureImage.alt
+                      image : getImage(card.cardImage.image) || card.cardImage.image,
+                      alt: card.cardImage.alt
                     } }
-                    title={ feature.title }
-                    paragraph={ feature.paragraph } />
+                    title={ card.title }
+                    paragraph={ card.paragraph } />
                   )) }
                 </div>
               ) }
@@ -55,7 +56,7 @@ export default function Feature(props) {
   );
 }
 
-Feature.propTypes = {
+Serve.propTypes = {
   title: PropTypes.string,
   paragraph: PropTypes.string,
   cards: PropTypes.array,

@@ -9,11 +9,13 @@ import BlogRoll from "../components/BlogRoll";
 import Hero from '../components/Hero';
 import Feature from '../components/Feature';
 import Apply from '../components/Apply';
+import Serve from '../components/Serve'
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   heroPanel,
   applyPanel,
+  servePanel,
   featurePanel,
   heading,
   mainpitch,
@@ -32,10 +34,14 @@ export const IndexPageTemplate = ({
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph }
       button={ heroPanel.button } />
-      <Feature 
+      <Feature
       title={ featurePanel.title }
       paragraph={ featurePanel.paragraph} 
       features={ featurePanel.features } />
+      <Serve
+      title={ servePanel.title }
+      paragraph={ servePanel.paragraph }
+      cards={ servePanel.cards } />
       <Apply
       theme={ applyPanel.theme }
       imageBg={ {
@@ -105,6 +111,11 @@ IndexPageTemplate.propTypes = {
     paragraph: PropTypes.string,
     button: PropTypes.string,
   }),
+  servePanel: PropTypes.shape({
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
+    cards: PropTypes.array
+  }),
   featurePanel: PropTypes.shape({
     title: PropTypes.string,
     paragraph: PropTypes.string,
@@ -133,6 +144,7 @@ const IndexPage = ({ data }) => {
       heroPanel={ frontmatter.heroPanel }
       featurePanel={ frontmatter.featurePanel }
       applyPanel={ frontmatter.applyPanel }
+      servePanel={ frontmatter.servePanel }
       heading={frontmatter.heading}
       mainpitch={frontmatter.mainpitch}
       description={frontmatter.description}
@@ -175,6 +187,22 @@ export const pageQuery = graphql`
           titleHighlight
           paragraph
           button
+        }
+        servePanel {
+          title
+          paragraph
+          cards {
+            cardImage {
+              image {
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+                }
+              }
+              alt
+            }
+            title
+            paragraph
+          }
         }
         featurePanel {
           title
@@ -221,7 +249,7 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+                gatsbyImageData(quality: 100)
               }
             }
             text
@@ -232,5 +260,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
-
+ `;
