@@ -27,6 +27,9 @@ module.exports = {
         'header': 'Nunito Sans',
         'paragraph': 'Hind Madurai',
       },
+      container: {
+        center: true
+      }
     },
   },
   plugins: [],
