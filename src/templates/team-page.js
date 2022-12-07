@@ -5,12 +5,14 @@ import { getImage } from "gatsby-plugin-image";
 
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
+import NonExecutiveDirectors from '../components/NonExecutiveDirectors';
 import Apply from '../components/Apply';
 
 /* eslint-disable */
 export const TeamPageTemplate = ({
   seo,
   heroPanel,
+  nonExecutiveDirectorsPanel,
   applyPanel
 }) => {
   return (
@@ -24,6 +26,10 @@ export const TeamPageTemplate = ({
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph } />
+      <NonExecutiveDirectors
+      title={ nonExecutiveDirectorsPanel.title }
+      paragraph={ nonExecutiveDirectorsPanel.paragraph }
+      nonExecutiveDirectors={ nonExecutiveDirectorsPanel.nonExecutiveDirectors } />
       <Apply
       theme={ applyPanel.theme }
       imageBg={ {
@@ -51,6 +57,11 @@ TeamPageTemplate.propTypes = {
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
   }),
+  nonExecutivedirectorsPanel: PropTypes.shape({
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
+    nonExecutiveDirectors: PropTypes.array,
+  }),
   applyPanel: PropTypes.shape({
     theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -66,6 +77,7 @@ const TeamPage = ({ data }) => {
     <Layout seo={ frontmatter.seo }>
       <TeamPageTemplate
       heroPanel={ frontmatter.heroPanel }
+      nonExecutiveDirectorsPanel={ frontmatter.nonExecutiveDirectorsPanel }
       applyPanel={ frontmatter.applyPanel } />
     </Layout>
   );
@@ -82,7 +94,7 @@ TeamPage.propTypes = {
 export default TeamPage;
 
 export const teamPageQuery = graphql`
- query TeamPage($id: String!) {
+  query TeamPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
@@ -112,6 +124,23 @@ export const teamPageQuery = graphql`
           titleHighlight
           paragraph
         }
+        nonExecutiveDirectorsPanel {
+          title
+          paragraph
+          nonExecutiveDirectors {
+            nonExecutiveDirectorImage {
+              image {
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+                }
+              }
+              alt
+            }
+            name
+            role
+            link
+          }
+        } 
         applyPanel {
           theme {
             header
