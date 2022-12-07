@@ -6,18 +6,21 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import TeamPanel from '../components/TeamPanel';
+import NonExecutiveDirectors from '../components/NonExecutiveDirectors';
 import Apply from '../components/Apply';
 
 /* eslint-disable */
 export const TeamPageTemplate = ({
+  seo,
   heroPanel,
   teamPanel,
+  nonExecutiveDirectorsPanel,
   applyPanel
 }) => {
   return (
     <div>
       <Hero
-      darkMode={ heroPanel.darkMode }
+      theme={ heroPanel.theme }
       imageBg={ {
         image: getImage(heroPanel.imageBg.image) || heroPanel.imageBg.image,
         alt: heroPanel.imageBg.alt
@@ -26,17 +29,15 @@ export const TeamPageTemplate = ({
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph } />
       <TeamPanel
-      cards={ {
-        cardImage:{
-          image : getImage(teamPanel.cards.cardImage.image) || teamPanel.cards.cardImage.image,
-          alt: teamPanel.cards.cardImage.alt
-        },
-        title:{ title },
-        subheading:{ subheading },
-        link:{ link }
-      } } />
+      title={ teamPanel.title }
+      paragraph={ teamPanel.paragraph }
+      cards={ teamPanel.cards } />
+      <NonExecutiveDirectors
+      title={ nonExecutiveDirectorsPanel.title }
+      paragraph={ nonExecutiveDirectorsPanel.paragraph }
+      nonExecutiveDirectors={ nonExecutiveDirectorsPanel.nonExecutiveDirectors } />
       <Apply
-      darkMode={ applyPanel.darkMode }
+      theme={ applyPanel.theme }
       imageBg={ {
         image: getImage(applyPanel.imageBg.image) || applyPanel.imageBg.image,
         alt: applyPanel.imageBg.alt
@@ -49,18 +50,31 @@ export const TeamPageTemplate = ({
 };
 
 TeamPageTemplate.propTypes = {
+  seo: PropTypes.shape({
+    author: PropTypes.string,
+    description: PropTypes.string,
+    keywords: PropTypes.string,
+    title: PropTypes.string,
+  }),
   heroPanel: PropTypes.shape({
-    darkMode: PropTypes.bool,
+    theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
   }),
   teamPanel: PropTypes.shape({
-    cards: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
+    cards: PropTypes.array,
+  }),
+  nonExecutivedirectorsPanel: PropTypes.shape({
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
+    nonExecutiveDirectors: PropTypes.array,
   }),
   applyPanel: PropTypes.shape({
-    darkMode: PropTypes.bool,
+    theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     paragraph: PropTypes.string,
@@ -71,10 +85,11 @@ TeamPageTemplate.propTypes = {
 const TeamPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   return (
-    <Layout>
+    <Layout seo={ frontmatter.seo }>
       <TeamPageTemplate
       heroPanel={ frontmatter.heroPanel }
       teamPanel={ frontmatter.teamPanel }
+      nonExecutiveDirectorsPanel={ frontmatter.nonExecutiveDirectorsPanel }
       applyPanel={ frontmatter.applyPanel } />
     </Layout>
   );
@@ -91,12 +106,24 @@ TeamPage.propTypes = {
 export default TeamPage;
 
 export const teamPageQuery = graphql`
- query TeamPage($id: String!) {
+  query TeamPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
+        seo {
+          author
+          description
+          keywords
+          title
+        }
         heroPanel {
-          darkMode
+          theme {
+            header
+            line
+            highlight
+            paragraph
+            button
+          }
           imageBg {
             alt
             image {
@@ -110,6 +137,8 @@ export const teamPageQuery = graphql`
           paragraph
         }
         teamPanel {
+          title
+          paragraph
           cards {
             cardImage {
               image {
@@ -124,8 +153,31 @@ export const teamPageQuery = graphql`
             link
           }
         }
+        nonExecutiveDirectorsPanel {
+          title
+          paragraph
+          nonExecutiveDirectors {
+            nonExecutiveDirectorImage {
+              image {
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+                }
+              }
+              alt
+            }
+            name
+            role
+            link
+          }
+        }
         applyPanel {
-          darkMode
+          theme {
+            header
+            line
+            highlight
+            paragraph
+            button
+          }
           imageBg {
             alt
             image {

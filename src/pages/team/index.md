@@ -1,8 +1,17 @@
 ---
 templateKey: 'team-page'
 path: /team
+seo:
+ author: Finlight
+ description: Team page
+ keywords: Finlight
+ title: Finlight - Team page
 heroPanel:
-  darkMode: false
+  theme:
+    header: 'text-black'
+    line: 'via-secondary'
+    highlight: 'text-secondary'
+    paragraph: 'text-black'
   imageBg:
     alt: Background Alt
     image: /img/brussels.png
@@ -14,6 +23,8 @@ heroPanel:
     Driven by the desire to use tech to bring transparency and reduce operational tasks, Finlight was born.
   button:
 teamPanel:
+  title: Title
+  paragraph: paragraph
   cards:
     - cardImage:
         image: /img/brussels.png
@@ -33,8 +44,29 @@ teamPanel:
       title: name
       subheading: profession
       link: https://finlight.com/
+nonExecutiveDirectorsPanel:
+  title: Non-executive Directors
+  paragraph: Something
+  nonExecutiveDirectors:
+  - nonExecutiveDirectorImage:
+      image: /img/brussels.png
+      alt: 'profile picture'
+    name: Name
+    role: Role
+    link: https://www.linkedin.com/
+  - nonExecutiveDirectorImage:
+      image: /img/brussels.png
+      alt: 'profile picture'
+    name: Name 02
+    role: Role 02
+    link: https://www.linkedin.com/
 applyPanel:
-  darkMode: true
+  theme:
+    header: 'text-white'
+    line: 'via-primary'
+    highlight: 'text-primary'
+    paragraph: 'text-white'
+    button: 'text-black bg-primary'
   imageBg:
     alt: Background Alt - test
     image: /img/heroBg.webp

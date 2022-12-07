@@ -9,7 +9,7 @@ const TeamPagePreview = ({ entry, getAsset }) => {
     return (
       <TeamPageTemplate 
         heroPanel={{
-          darkMode: data.heroPanel.darkMode,
+          theme: data.heroPanel.theme,
           imageBg: {
             image: getAsset(data.heroPanel.imageBg.image),
             alt: data.heroPanel.imageBg.alt,
@@ -19,18 +19,17 @@ const TeamPagePreview = ({ entry, getAsset }) => {
           paragraph: data.heroPanel.paragraph
         }}
         teamPanel={{
-          cards:{
-            cardImage: {
-              image: getAsset(data.teamPanel.cards.cardImage.image),
-              alt: data.teamPanel.cards.cardImage.alt
-            },
-            title: data.teamPanel.cards.title,
-            subheading: data.teamPanel.cards.subheading,
-            link: data.teamPanel.teamCards.link
-          }
+          title: data.teamPanel.title,
+          paragraph: data.teamPanel.paragraph,
+          cards: data.teamPanel.cards,
+        }}
+        nonExecutiveDirectorsPanel={{
+          title: data.nonExecutiveDirectorsPanel.title,
+          paragraph: data.nonExecutiveDirectorsPanel.paragraph,
+          nonExecutiveDirectors: data.nonExecutiveDirectorsPanel.nonExecutiveDirectors
         }}
         applyPanel={{
-          darkMode: data.applyPanel.darkMode,
+          theme: data.applyPanel.theme,
           imageBg: {
             image: getAsset(data.applyPanel.imageBg.image),
             alt: data.applyPanel.imageBg.alt,
