@@ -27,8 +27,6 @@ export const PartnersPageTemplate = ({
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph } />
       <Partners
-      title={ partnersPanel.title }
-      paragraph={ partnersPanel.paragraph }
       partners={ partnersPanel.partners } />
       <Apply
       theme={ applyPanel.theme }
@@ -58,8 +56,6 @@ PartnersPageTemplate.propTypes = {
     paragraph: PropTypes.string,
   }),
   partnersPanel: PropTypes.shape({
-    title: PropTypes.string,
-    paragraph: PropTypes.string,
     partners: PropTypes.array,
   }),
   applyPanel: PropTypes.shape({
@@ -110,13 +106,20 @@ export const partnersPageQuery = graphql`
             line
             highlight
             paragraph
-            button
           }
           imageBg {
             alt
             image {
               childImageSharp {
-                gatsbyImageData(quality: 100)
+                gatsbyImageData(
+                  quality: 100
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                  layout: FULL_WIDTH
+                  transformOptions: {
+                    fit: COVER
+                  }
+                )
               }
             }
           }
@@ -125,13 +128,16 @@ export const partnersPageQuery = graphql`
           paragraph
         }
         partnersPanel {
-          title
-          paragraph
           partners {
             partnerImage {
               image {
                 childImageSharp {
-                  gatsbyImageData(quality: 100)
+                  gatsbyImageData(
+                    quality: 100
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP]
+                    layout: FULL_WIDTH
+                  )
                 }
               }
             }
@@ -151,7 +157,15 @@ export const partnersPageQuery = graphql`
             alt
             image {
               childImageSharp {
-                gatsbyImageData(quality: 100)
+                gatsbyImageData(
+                  quality: 100
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                  layout: FULL_WIDTH
+                  transformOptions: {
+                    fit: COVER
+                  }
+                )
               }
             }
           }

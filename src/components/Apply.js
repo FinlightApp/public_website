@@ -23,22 +23,26 @@ export default function Apply(props) {
         justify-center
         h-fit md:h-[500px]
       '>
-        { imageBg?.image?.url ? (
-          <img className='
-            absolute inset-0
-            brightness-50
-          '
-          src={ imageBg.image }
-          alt={ imageBg.alt } />
-        ) : (
-          <GatsbyImage className='
-            !absolute inset-0
-            brightness-50
-          '
-          objectFit='fill'
-          image={ imageBg.image }
-          formats={ ['auto', 'webp'] }
-          alt={ imageBg.alt } />
+        { ( imageBg &&
+          <div className='absolute inset-0'>
+            { imageBg?.image?.url ? (
+              <img className='
+                w-full h-full
+                brightness-50
+              '
+              src={ imageBg.image }
+              alt={ imageBg.alt } />
+            ) : (
+              <GatsbyImage className='
+                w-full h-full
+                brightness-50
+              '
+              objectFit='cover'
+              image={ imageBg.image }
+              formats={ ['auto', 'webp'] }
+              alt={ imageBg.alt } />
+            ) }
+          </div>
         ) }
         { ( title || paragraph || button ) && (
           <div className='

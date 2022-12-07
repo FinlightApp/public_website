@@ -71,21 +71,24 @@ exports.createSchemaCustomization = ({ actions }) => {
       frontmatter: Frontmatter
     }
 
-    type SEO_ImageEl {
-      alt: String!
-      image: File! @fileByRelativePath
-    }
     type ImageEl {
-      image: File! @fileByRelativePath
+      alt: String
+      image: File @fileByRelativePath
+    }
+    type Theme {
+      header: String
+      line: String
+      highlight: String
+      paragraph: String
     }
 
     type Frontmatter implements Node {
       heroPanel: HeroPanel
     }
     type HeroPanel implements Node {
-      darkMode: Boolean!
-      imageBg: SEO_ImageEl!
-      title: String!
+      theme: Theme
+      imageBg: ImageEl
+      title: String
       titleHighlight: String
       paragraph: String
       button: String
@@ -95,8 +98,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       applyPanel: ApplyPanel
     }
     type ApplyPanel implements Node {
-      darkMode: Boolean!
-      imageBg: SEO_ImageEl!
+      theme: Theme
+      imageBg: ImageEl
       title: String
       paragraph: String
       button: String
@@ -111,8 +114,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       values: [ValueCard]
     }
     type ValueCard {
-      valueImage: SEO_ImageEl!
-      title: String!
+      valueImage: ImageEl
+      title: String
       paragraph: String
     }
 
@@ -125,9 +128,9 @@ exports.createSchemaCustomization = ({ actions }) => {
       partners: [PartnerCard]
     }
     type PartnerCard {
-      partnerImage: ImageEl!
-      name: String!
-      link: String!
+      partnerImage: ImageEl
+      name: String
+      link: String
     }
     `
   createTypes(typeDefs)
