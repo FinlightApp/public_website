@@ -41,7 +41,8 @@ const Navbar = () => {
         <div className='
           flex-1 lg:flex-none flex
         '>
-          <Link to='/' className='min-h-10 h-8 lg:h-10 w-fit'
+          <Link className='min-h-10 h-8 lg:h-10 w-fit'
+          to='/'
           title='Logo'>
             <img className='flex h-full' src={logo} alt='logo' />
           </Link>
@@ -57,7 +58,8 @@ const Navbar = () => {
               font-header text-sm lg:text-base text-white
             '
             activeClassName='border-b border-b-primary'
-            to={ navItem.link } key={ i }>
+            to={ navItem.link }
+            key={ i }>
               { navItem.pageName }
             </Link>
           )) }
@@ -115,7 +117,8 @@ const Navbar = () => {
               font-header text-white text-lg font-medium
             '
             activeClassName='border-b border-b-primary'
-            to={ navItem.link } key={ i }>
+            to={ navItem.link }
+            key={ i }>
               { navItem.pageName }
             </Link>
           )) }
