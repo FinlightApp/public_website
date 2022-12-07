@@ -17,11 +17,11 @@ heroPanel:
     image: /img/brussels.png
   title: Our Values
   titleHighlight: Values
-  paragraph: " "
-  button: " "
+  paragraph:
+  button:
 ourValuesPanel:
-  title: " "
-  paragraph: " "
+  title:
+  paragraph:
   values:
     - valueImage:
         alt: Lock icon

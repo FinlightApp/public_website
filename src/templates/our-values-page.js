@@ -118,7 +118,15 @@ export const ourValuesPageQuery = graphql`
             alt
             image {
               childImageSharp {
-                gatsbyImageData(quality: 100)
+                gatsbyImageData(
+                  quality: 100
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                  layout: FULL_WIDTH
+                  transformOptions: {
+                    fit: COVER
+                  }
+                )
               }
             }
           }
@@ -135,7 +143,12 @@ export const ourValuesPageQuery = graphql`
               alt
               image {
                 childImageSharp {
-                  gatsbyImageData(quality: 100)
+                  gatsbyImageData(
+                    quality: 100
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP]
+                    layout: FULL_WIDTH
+                  )
                 }
               }
             }
@@ -155,7 +168,15 @@ export const ourValuesPageQuery = graphql`
             alt
             image {
               childImageSharp {
-                gatsbyImageData(quality: 100)
+                gatsbyImageData(
+                  quality: 100
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                  layout: FULL_WIDTH
+                  transformOptions: {
+                    fit: COVER
+                  }
+                )
               }
             }
           }

@@ -734,6 +734,7 @@ collections:
                           label: Paragraph,
                           name: paragraph,
                           widget: select,
+                          required: false,
                           options:
                             [
                               { label: 'Black', value: 'text-black' },
@@ -754,7 +755,9 @@ collections:
                       ],
                   },
                   { label: Title, name: title, widget: string },
-                  { label: Title Highlight, name: titleHighlight, widget: string },
+                  { label: Title Highlight, name: titleHighlight, widget: string, required: false },
+                  { label: Text, name: paragraph, widget: string, required: false },
+                  { label: Button, name: button, widget: string, required: false },
                 ],
             }
           - {
@@ -763,8 +766,8 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Title, name: title, widget: string },
-                  { label: Text, name: paragraph, widget: string },
+                  { label: Title, name: title, widget: string, required: false },
+                  { label: Text, name: paragraph, widget: string, required: false },
                   {
                     label: Values,
                     name: values,
@@ -782,6 +785,7 @@ collections:
                                 label: Image,
                                 name: image,
                                 widget: image,
+                                default: /img/default.png
                               },
                               {
                                 label: SEO - Image Description,
@@ -801,7 +805,7 @@ collections:
                           label: Detail,
                           name: paragraph,
                           widget: text,
-                          default: Details,
+                          default: Details text,
                         },
                       ],
                   },

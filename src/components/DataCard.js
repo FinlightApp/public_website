@@ -18,16 +18,20 @@ export default function DataCard(props) {
         p-6 gap-6
         bg-white rounded-2xl shadow-card
       '>
-        { cardImage?.image?.url ? (
-          <img className='w-48 h-48'
-          src={ cardImage.image }
-          alt={ cardImage.alt } />
-        ) : (
-          <GatsbyImage className='w-48 h-48'
-          objectFit='fill'
-          image={ cardImage.image }
-          formats={ ['auto', 'webp'] }
-          alt={ cardImage.alt } />
+        { cardImage && (
+          <div className='w-48 h-48'>
+            { cardImage?.image?.url ? (
+              <img className='w-full'
+              src={ cardImage.image }
+              alt={ cardImage.alt } />
+            ) : (
+              <GatsbyImage className='w-full'
+              objectFit='fill'
+              image={ cardImage.image }
+              formats={ ['auto', 'webp'] }
+              alt={ cardImage.alt } />
+            ) }
+          </div>
         ) }
         { title && (
           <p className='font-header font-semibold'>
