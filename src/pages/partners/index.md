@@ -1,6 +1,11 @@
 ---
 templateKey: partners-page
 path: /partners
+seo:
+ author: Finlight
+ description: Partners page
+ keywords: Finlight
+ title: Finlight - Partners page
 heroPanel:
   theme:
     header: text-black

@@ -10,6 +10,7 @@ import Partners from '../components/Partners';
 
 /* eslint-disable */
 export const PartnersPageTemplate = ({
+  seo,
   heroPanel,
   applyPanel,
   partnersPanel,
@@ -43,6 +44,12 @@ export const PartnersPageTemplate = ({
 };
 
 PartnersPageTemplate.propTypes = {
+  seo: PropTypes.shape({
+    author: PropTypes.string,
+    description: PropTypes.string,
+    keywords: PropTypes.string,
+    title: PropTypes.string,
+  }),
   heroPanel: PropTypes.shape({
     theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -67,7 +74,7 @@ PartnersPageTemplate.propTypes = {
 const PartnersPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   return (
-    <Layout>
+    <Layout seo={ frontmatter.seo }>
       <PartnersPageTemplate
       heroPanel={ frontmatter.heroPanel }
       partnersPanel={ frontmatter.partnersPanel }
@@ -91,6 +98,12 @@ export const partnersPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
+        seo {
+          author
+          description
+          keywords
+          title
+        }
         heroPanel {
           theme {
             header

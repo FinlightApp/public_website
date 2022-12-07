@@ -1,6 +1,11 @@
 ---
 templateKey: our-values-page
 path: /our-values
+seo:
+ author: Finlight
+ description: Our Values page
+ keywords: Finlight
+ title: Finlight - Our Values page
 heroPanel:
   theme:
     header: text-black
