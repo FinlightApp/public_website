@@ -137,14 +137,15 @@ const Navbar = () => {
             Sign In
           </a>
         </div>
-        <div className='
+        <button className='
           flex flex-col
           gap-4
           justify-center items-center
           h-12 w-full
-        ' onClick={() => setIsActive(!isActive)}>
+        '
+        onClick={() => setIsActive(!isActive)}>
           <img className='h-4 w-4' src={chevronIcon} alt='close' />
-        </div>
+        </button>
       </ul>
     </nav>
   );
