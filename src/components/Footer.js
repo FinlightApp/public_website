@@ -17,10 +17,12 @@ const Footer = () => {
       <img className='h-12'
       src={finlight_logo} alt="logo" />
       <div class='flex gap-8 md:gap-16'>
-        <Link to="/" className="text-white">
+        <Link className="text-white"
+        to="/">
           Contact
         </Link>
-        <Link to="/" className="text-white">
+        <Link className="text-white"
+        to="/">
           Privacy
         </Link>
       </div>
