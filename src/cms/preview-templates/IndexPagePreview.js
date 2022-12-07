@@ -9,7 +9,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
     return (
       <IndexPageTemplate
         heroPanel={{
-          darkMode: data.heroPanel.darkMode,
+          theme: data.heroPanel.theme,
           imageBg: {
             image: getAsset(data.heroPanel.imageBg.image),
             alt: data.heroPanel.imageBg.alt,
@@ -19,8 +19,13 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           paragraph: data.heroPanel.paragraph,
           button: data.heroPanel.button
         }}
+        featurePanel={{
+          title: data.featurePanel.title,
+          paragraph: data.featurePanel.paragraph,
+          features: data.featurePanel.features,
+        }}
         applyPanel={{
-          darkMode: data.applyPanel.darkMode,
+          theme: data.applyPanel.theme,
           imageBg: {
             image: getAsset(data.applyPanel.imageBg.image),
             alt: data.applyPanel.imageBg.alt,

@@ -8,7 +8,7 @@ const OurValuesPagePreview = ({ entry, getAsset }) => {
     return (
       <OurValuesPageTemplate 
         heroPanel={{
-          darkMode: data.heroPanel.darkMode,
+          theme: data.heroPanel.theme,
           imageBg: {
             image: getAsset(data.heroPanel.imageBg.image),
             alt: data.heroPanel.imageBg.alt,
@@ -23,7 +23,7 @@ const OurValuesPagePreview = ({ entry, getAsset }) => {
           values: data.ourValuesPanel.values
         }}
         applyPanel={{
-          darkMode: data.applyPanel.darkMode,
+          theme: data.applyPanel.theme,
           imageBg: {
             image: getAsset(data.applyPanel.imageBg.image),
             alt: data.applyPanel.imageBg.alt,
