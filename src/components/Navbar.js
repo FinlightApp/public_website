@@ -24,7 +24,6 @@ const Navbar = () => {
   }, [isActive]);
   return (
     <nav className='
-      navbar
       sticky top-0
       z-10
       bg-black
@@ -40,26 +39,20 @@ const Navbar = () => {
       '>
         {/* Nav Start - Logo */}
         <div className='
-          navbar-brand
           flex-1 lg:flex-none flex
         '>
-          <Link to='/' className='
-            navbar-item
-            min-h-10 h-8 lg:h-10 w-fit
-          '
+          <Link to='/' className='min-h-10 h-8 lg:h-10 w-fit'
           title='Logo'>
             <img className='flex h-full' src={logo} alt='logo' />
           </Link>
         </div>
         {/* Nav Menu */}
         <ul className={`
-          navbar-start navbar-menu
           flex-1 hidden md:flex
           gap-4 lg:gap-8
         `}>
           { navItems.map((navItem, i) => (
             <Link className='
-              navbar-item
               px-2
               font-header text-sm lg:text-base text-white
             '
@@ -71,14 +64,12 @@ const Navbar = () => {
         </ul>
         {/* Nav End */}
         <div className='
-          navbar-end
           flex-1 lg:flex-none flex
           justify-end
         '>
           {/* Hamburger Toggle */}
           <button className={`
             ${isActive && 'is-active'}
-            navbar-burger burger
             flex md:hidden flex-col
             justify-between
             w-8 h-6
@@ -92,7 +83,6 @@ const Navbar = () => {
           {/* Sign-In */}
           <a href='https://app.finlight.com'
           className='
-            navbar-item
             hidden md:flex
             px-4
             font-header text-sm lg:text-base text-primary
@@ -104,7 +94,6 @@ const Navbar = () => {
       {/* Hamburger Menu */}
       <ul id='navMenu' className={`
         ${isActive ? 'flex md:hidden' : 'hidden' }
-        navbar-start navbar-menu
         fixed inset-0 top-16 z-10
         flex-col
         items-center justify-between
@@ -119,7 +108,6 @@ const Navbar = () => {
         '>
           { navItems.map((navItem, i) => (
             <Link className='
-              navbar-item
               flex
               justify-center
               w-full
@@ -140,7 +128,6 @@ const Navbar = () => {
           </div>
           <a href='https://app.finlight.com'
           className='
-            navbar-item
             flex
             justify-center
             w-full
