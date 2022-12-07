@@ -172,6 +172,36 @@ collections:
                 ],
             }
           - {
+            label: ServePanel,
+            name: servePanel,
+            widget: object,
+            fields:
+              [
+                { label: Title, name: title, widget: string },
+                { label: Text, name: paragraph, widget: string },
+                {
+                  label: Cards,
+                  name: cards,
+                  widget: list,
+                  fields:
+                    [
+                      {
+                        label: Image,
+                        name: cardsImage,
+                        widget: object,
+                        fields:
+                        [
+                          { label: Image, name: image, widget: image },
+                          { label: SEO - Image Description, name: alt, widget: string },
+                        ],
+                      },
+                      { label: Title, name: title, widget: string },
+                      { label: Text, name: paragraph, widget: string },
+                    ]
+                },
+              ],
+            }
+          - {
               label: Apply Panel,
               name: applyPanel,
               widget: object,

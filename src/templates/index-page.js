@@ -7,11 +7,13 @@ import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Feature from '../components/Feature';
 import Apply from '../components/Apply';
+import Serve from '../components/Serve'
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   seo,
   heroPanel,
+  servePanel,
   featurePanel,
   applyPanel,
 }) => {
@@ -27,10 +29,14 @@ export const IndexPageTemplate = ({
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph }
       button={ heroPanel.button } />
-      <Feature 
+      <Feature
       title={ featurePanel.title }
       paragraph={ featurePanel.paragraph} 
       features={ featurePanel.features } />
+      <Serve
+      title={ servePanel.title }
+      paragraph={ servePanel.paragraph }
+      cards={ servePanel.cards } />
       <Apply
       theme={ applyPanel.theme }
       imageBg={ {
@@ -59,6 +65,11 @@ IndexPageTemplate.propTypes = {
     paragraph: PropTypes.string,
     button: PropTypes.string,
   }),
+  servePanel: PropTypes.shape({
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
+    cards: PropTypes.array
+  }),
   featurePanel: PropTypes.shape({
     title: PropTypes.string,
     paragraph: PropTypes.string,
@@ -80,6 +91,7 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate
       heroPanel={ frontmatter.heroPanel }
       featurePanel={ frontmatter.featurePanel }
+      servePanel={ frontmatter.servePanel }
       applyPanel={ frontmatter.applyPanel } />
     </Layout>
   );
@@ -126,6 +138,22 @@ export const pageQuery = graphql`
           paragraph
           button
         }
+        servePanel {
+          title
+          paragraph
+          cards {
+            cardImage {
+              image {
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+                }
+              }
+              alt
+            }
+            title
+            paragraph
+          }
+        }
         featurePanel {
           title
           paragraph
@@ -164,5 +192,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
-
+ `;

@@ -19,6 +19,11 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           paragraph: data.heroPanel.paragraph,
           button: data.heroPanel.button
         }}
+        servePanel={{
+          title: data.servePanel.title,
+          paragraph: data.servePanel.paragraph,
+          cards: data.servePanel.cards
+        }}
         featurePanel={{
           title: data.featurePanel.title,
           paragraph: data.featurePanel.paragraph,
