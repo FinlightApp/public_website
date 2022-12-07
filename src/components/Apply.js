@@ -23,7 +23,7 @@ export default function Apply(props) {
         justify-center
         h-fit md:h-[500px]
       '>
-        { ( imageBg &&
+        { imageBg && (
           <div className='absolute inset-0'>
             { imageBg?.image?.url ? (
               <img className='

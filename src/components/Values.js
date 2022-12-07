@@ -30,7 +30,7 @@ export default function Values(props) {
             title={ title }
             paragraph={ paragraph }>
               { values && ( 
-              <div className='
+                <div className='
                   flex flex-wrap
                   justify-center
                   w-full
@@ -44,7 +44,7 @@ export default function Values(props) {
                     } }
                     title={ value.title }
                     paragraph={ value.paragraph } />
-                  )) }
+                  ) ) }
                 </div>
               ) }
             </Panel>

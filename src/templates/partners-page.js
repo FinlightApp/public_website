@@ -25,8 +25,11 @@ export const PartnersPageTemplate = ({
       } }
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
-      paragraph={ heroPanel.paragraph } />
+      paragraph={ heroPanel.paragraph }
+      button={ heroPanel.button } />
       <Partners
+      title={ partnersPanel.title }
+      paragraph={ partnersPanel.paragraph }
       partners={ partnersPanel.partners } />
       <Apply
       theme={ applyPanel.theme }
@@ -54,8 +57,11 @@ PartnersPageTemplate.propTypes = {
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
+    button: PropTypes.string,
   }),
   partnersPanel: PropTypes.shape({
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
     partners: PropTypes.array,
   }),
   applyPanel: PropTypes.shape({
@@ -126,8 +132,11 @@ export const partnersPageQuery = graphql`
           title
           titleHighlight
           paragraph
+          button
         }
         partnersPanel {
+          title
+          paragraph
           partners {
             partnerImage {
               image {
