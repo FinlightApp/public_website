@@ -14,10 +14,10 @@ public_folder: /img
 
 collections:
   - name: blog
-    label: Blog
+    label: Spotlight
     folder: src/pages/blog
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - {
           label: Template Key,
@@ -28,10 +28,8 @@ collections:
       - { label: Title, name: title, widget: string }
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Description, name: description, widget: text }
-      - { label: Featured Post, name: featuredpost, widget: boolean }
-      - { label: Featured Image, name: featuredimage, widget: image }
+      - { label: Featured Image, name: image, widget: image }
       - { label: Body, name: body, widget: markdown }
-      - { label: Tags, name: tags, widget: list }
   - name: pages
     label: Pages
     files:
@@ -1046,5 +1044,186 @@ collections:
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
                   { label: Modal Content, name: modalContent, widget: code },
+                ],
+            }
+      - file: src/pages/spotlight/index.md
+        label: Spotlight Page
+        name: spotlight
+        fields:
+          - {
+              label: Template Key,
+              name: templateKey,
+              widget: hidden,
+              default: spotlight-page,
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Author, name: author, widget: string },
+                  { label: Description, name: description, widget: string },
+                  { label: Keywords, name: keywords, widget: string },
+                  { label: Title, name: title, widget: string },
+                ]
+            }
+          - {
+              label: Hero Panel,
+              name: heroPanel,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Theme,
+                    name: theme,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Header,
+                          name: header,
+                          widget: select,
+                          options:
+                            [
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
+                            ],
+                          default: { label: White, value: text-white }
+                        },
+                        {
+                          label: Line,
+                          name: line,
+                          widget: select,
+                          options:
+                            [
+                              { label: Primary, value: via-primary },
+                              { label: Secondary, value: via-secondary }
+                            ],
+                          default: { label: Secondary, value: via-secondary }
+                        },
+                        {
+                          label: Highlight,
+                          name: highlight,
+                          widget: select,
+                          options:
+                            [
+                              { label: Primary, value: text-primary },
+                              { label: Secondary, value: text-secondary }
+                            ],
+                          default: { label: Secondary, value: text-secondary }
+                        },
+                        {
+                          label: Paragraph,
+                          name: paragraph,
+                          widget: select,
+                          required: false,
+                          options:
+                            [
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
+                            ],
+                          default: { label: Black, value: text-black }
+                        },
+                      ],
+                  },
+                  {
+                    label: Background,
+                    name: imageBg,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: SEO - Image Description, name: alt, widget: string },
+                      ],
+                  },
+                  { label: Title, name: title, widget: string },
+                  { label: Title Highlight, name: titleHighlight, widget: string, required: false },
+                  { label: Text, name: paragraph, widget: string, required: false },
+                  { label: Button, name: button, widget: string, required: false },
+                ],
+            }
+          - {
+              label: Apply Panel,
+              name: applyPanel,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Theme,
+                    name: theme,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Header,
+                          name: header,
+                          widget: select,
+                          options:
+                            [
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
+                            ],
+                          default: { label: White, value: text-white }
+                        },
+                        {
+                          label: Line,
+                          name: line,
+                          widget: select,
+                          options:
+                            [
+                              { label: Primary, value: via-primary },
+                              { label: Secondary, value: via-secondary }
+                            ],
+                          default: { label: Primary, value: via-primary }
+                        },
+                        {
+                          label: Highlight,
+                          name: highlight,
+                          widget: select,
+                          options:
+                            [
+                              { label: Primary, value: text-primary },
+                              { label: Secondary, value: text-secondary }
+                            ],
+                          default: { label: Primary, value: text-primary }
+                        },
+                        {
+                          label: Paragraph,
+                          name: paragraph,
+                          widget: select,
+                          options:
+                            [
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
+                            ],
+                          default: { label: White, value: text-white }
+                        },
+                        {
+                          label: Button,
+                          name: button,
+                          widget: select,
+                          options:
+                            [
+                              { label: Primary, value: text-black bg-primary },
+                              { label: Secondary, value: text-white bg-secondary }
+                            ],
+                          default: { label: Primary, value: text-black bg-primary }
+                        },
+                      ],
+                  },
+                  {
+                    label: Background,
+                    name: imageBg,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: SEO - Image Description, name: alt, widget: string },
+                      ],
+                  },
+                  { label: Title, name: title, widget: string },
+                  { label: Text, name: paragraph, widget: string },
+                  { label: Button, name: button, widget: string },
                 ],
             }

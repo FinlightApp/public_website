@@ -11,8 +11,8 @@ const Navbar = () => {
     { pageName:'Team', link: '/team' },
     { pageName:'Partners', link: '/partners' },
     { pageName:'Values', link: '/our-values' },
-    /* { pageName:'Spotlight', link: '/spotlight' }, */
-    { pageName:'Contact', link: '/contact' }
+    { pageName:'Spotlight', link: '/spotlight' },
+    // { pageName:'Contact', link: '/contact' }
   ]
 
   React.useEffect(() => {

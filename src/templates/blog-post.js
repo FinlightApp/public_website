@@ -1,51 +1,38 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql, Link } from "gatsby";
-import Layout from "../components/Layout";
-import Content, { HTMLContent } from "../components/Content";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import Hero from '../components/Hero';
+import Content, { HTMLContent } from '../components/Content';
+import { getImage } from 'gatsby-plugin-image';
 
 // eslint-disable-next-line
 export const BlogPostTemplate = ({
   content,
   contentComponent,
   description,
-  tags,
   title,
-  helmet,
+  image,
 }) => {
   const PostContent = contentComponent || Content;
-  const kebabCase = string => string
-    .replace(/([a-z])([A-Z])/g, "$1-$2")
-    .replace(/[\s_]+/g, '-')
-    .toLowerCase();
 
   return (
-    <section className="section">
-      {helmet || ""}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map((tag) => (
-                    <li key={`${tag}tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-          </div>
-        </div>
-      </div>
-    </section>
+    <>
+      <Hero
+      theme={ {
+        header: 'text-black',
+        line: 'via-secondary',
+        highlight: 'text-secondary',
+        paragraph: 'text-black',
+      } }
+      imageBg={ {
+        image: getImage(image) || image,
+        alt: 'lol'
+      } }
+      title={ title }
+      paragraph={ description } />
+      <PostContent content={content} />
+    </>
   );
 };
 
@@ -54,7 +41,7 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  helmet: PropTypes.object,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
 const BlogPost = ({ data }) => {
@@ -66,17 +53,8 @@ const BlogPost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        helmet={
-          <>
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
-          </>
-        }
-        tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        image={post.frontmatter.image}
       />
     </Layout>
   );
@@ -99,7 +77,19 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        tags
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              quality: 100
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+              layout: FULL_WIDTH
+              transformOptions: {
+                fit: COVER
+              }
+            )
+          }
+        }
       }
     }
   }

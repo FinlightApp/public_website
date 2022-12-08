@@ -6,14 +6,13 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Apply from '../components/Apply';
-import Partners from '../components/Partners';
+import SpotlightPanel from '../components/SpotlightPanel';
 
 /* eslint-disable */
-export const PartnersPageTemplate = ({
+export const SpotlightPageTemplate = ({
   seo,
   heroPanel,
   applyPanel,
-  partnersPanel,
 }) => {
   return (
     <>
@@ -26,12 +25,8 @@ export const PartnersPageTemplate = ({
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph }
-      button={ heroPanel.button }
-      modalContent={ heroPanel.modalContent } />
-      <Partners
-      title={ partnersPanel.title }
-      paragraph={ partnersPanel.paragraph }
-      partners={ partnersPanel.partners } />
+      button={ heroPanel.button } />
+      <SpotlightPanel />
       <Apply
       theme={ applyPanel.theme }
       imageBg={ {
@@ -40,13 +35,12 @@ export const PartnersPageTemplate = ({
       } }
       title={ applyPanel.title }
       paragraph={ applyPanel.paragraph }
-      button={ applyPanel.button }
-      modalContent={ applyPanel.modalContent } />
+      button={ applyPanel.button } />
     </>
   );
 };
 
-PartnersPageTemplate.propTypes = {
+SpotlightPageTemplate.propTypes = {
   seo: PropTypes.shape({
     author: PropTypes.string,
     description: PropTypes.string,
@@ -60,12 +54,6 @@ PartnersPageTemplate.propTypes = {
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
-    modalContent: PropTypes.string,
-  }),
-  partnersPanel: PropTypes.shape({
-    title: PropTypes.string,
-    paragraph: PropTypes.string,
-    partners: PropTypes.array,
   }),
   applyPanel: PropTypes.shape({
     theme: PropTypes.object,
@@ -73,23 +61,21 @@ PartnersPageTemplate.propTypes = {
     title: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
-    modalContent: PropTypes.string,
   }),
 };
 
-const PartnersPage = ({ data }) => {
+const SpotlightPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   return (
     <Layout seo={ frontmatter.seo }>
-      <PartnersPageTemplate
+      <SpotlightPageTemplate
       heroPanel={ frontmatter.heroPanel }
-      partnersPanel={ frontmatter.partnersPanel }
       applyPanel={ frontmatter.applyPanel } />
     </Layout>
   );
 };
 
-PartnersPage.propTypes = {
+SpotlightPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -97,10 +83,10 @@ PartnersPage.propTypes = {
   })
 };
 
-export default PartnersPage;
+export default SpotlightPage;
 
-export const partnersPageQuery = graphql`
- query PartnersPage($id: String!) {
+export const spotlightPageQuery = graphql`
+ query SpotlightPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
@@ -138,27 +124,6 @@ export const partnersPageQuery = graphql`
           titleHighlight
           paragraph
           button
-          modalContent
-        }
-        partnersPanel {
-          title
-          paragraph
-          partners {
-            partnerImage {
-              image {
-                childImageSharp {
-                  gatsbyImageData(
-                    quality: 100
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP]
-                    layout: FULL_WIDTH
-                  )
-                }
-              }
-            }
-            name
-            link
-          }
         }
         applyPanel {
           theme {
@@ -187,7 +152,6 @@ export const partnersPageQuery = graphql`
           title
           paragraph
           button
-          modalContent
         }
       }
     }
