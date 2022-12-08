@@ -8,7 +8,7 @@ import Box from './Box';
 
 export default function Apply(props) {
   const {
-    darkMode,
+    theme,
     imageBg,
     title,
     paragraph,
@@ -23,22 +23,26 @@ export default function Apply(props) {
         justify-center
         h-fit md:h-[500px]
       '>
-        { imageBg?.image?.url ? (
-          <img className='
-            absolute inset-0
-            brightness-50
-          '
-          src={ imageBg.image }
-          alt={ imageBg.alt } />
-        ) : (
-          <GatsbyImage className='
-            !absolute inset-0
-            brightness-50
-          '
-          objectFit='fill'
-          image={ imageBg.image }
-          formats={ ['auto', 'webp'] }
-          alt={ imageBg.alt } />
+        { imageBg && (
+          <div className='absolute inset-0'>
+            { imageBg?.image?.url ? (
+              <img className='
+                w-full h-full
+                brightness-50
+              '
+              src={ imageBg.image }
+              alt={ imageBg.alt } />
+            ) : (
+              <GatsbyImage className='
+                w-full h-full
+                brightness-50
+              '
+              objectFit='cover'
+              image={ imageBg.image }
+              formats={ ['auto', 'webp'] }
+              alt={ imageBg.alt } />
+            ) }
+          </div>
         ) }
         { ( title || paragraph || button ) && (
           <div className='
@@ -55,17 +59,19 @@ export default function Apply(props) {
               h-fit
             '>
               { title && (
-                <Subheader darkMode={ darkMode }>
+                <Subheader
+                headerClass={ theme.header }
+                lineClass={ theme.line }>
                   { title }
                 </Subheader>
               ) }
               { paragraph && (
-                <Paragraph darkMode={ darkMode }>
+                <Paragraph class={ theme.paragraph }>
                   { paragraph }
                 </Paragraph>
               ) }
               { button && (
-                <Button darkMode={ darkMode }>
+                <Button class={ theme.button }>
                   { button }
                 </Button>
               ) }
@@ -78,7 +84,7 @@ export default function Apply(props) {
 }
 
 Apply.propTypes = {
-  darkMode: PropTypes.bool,
+  theme: PropTypes.object,
   imageBg: PropTypes.object,
   title: PropTypes.string,
   paragraph: PropTypes.string,

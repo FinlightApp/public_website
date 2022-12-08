@@ -10,6 +10,7 @@ import Values from '../components/Values';
 
 /* eslint-disable */
 export const OurValuesPageTemplate = ({
+  seo,
   heroPanel,
   applyPanel,
   ourValuesPanel,
@@ -17,7 +18,7 @@ export const OurValuesPageTemplate = ({
   return (
     <div>
       <Hero
-      darkMode={ heroPanel.darkMode }
+      theme={ heroPanel.theme }
       imageBg={ {
         image: getImage(heroPanel.imageBg.image) || heroPanel.imageBg.image,
         alt: heroPanel.imageBg.alt
@@ -31,7 +32,7 @@ export const OurValuesPageTemplate = ({
       paragraph={ ourValuesPanel.paragraph }
       values={ ourValuesPanel.values } />
       <Apply
-      darkMode={ applyPanel.darkMode }
+      theme={ applyPanel.theme }
       imageBg={ {
         image: getImage(applyPanel.imageBg.image) || applyPanel.imageBg.image,
         alt: applyPanel.imageBg.alt
@@ -44,8 +45,14 @@ export const OurValuesPageTemplate = ({
 };
 
 OurValuesPageTemplate.propTypes = {
+  seo: PropTypes.shape({
+    author: PropTypes.string,
+    description: PropTypes.string,
+    keywords: PropTypes.string,
+    title: PropTypes.string,
+  }),
   heroPanel: PropTypes.shape({
-    darkMode: PropTypes.bool,
+    theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
@@ -58,7 +65,7 @@ OurValuesPageTemplate.propTypes = {
     values: PropTypes.array,
   }),
   applyPanel: PropTypes.shape({
-    darkMode: PropTypes.bool,
+    theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     paragraph: PropTypes.string,
@@ -69,7 +76,7 @@ OurValuesPageTemplate.propTypes = {
 const OurValuesPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   return (
-    <Layout>
+    <Layout seo={ frontmatter.seo }>
       <OurValuesPageTemplate
       heroPanel={ frontmatter.heroPanel }
       ourValuesPanel={ frontmatter.ourValuesPanel }
@@ -93,13 +100,33 @@ export const ourValuesPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
+        seo {
+          author
+          description
+          keywords
+          title
+        }
         heroPanel {
-          darkMode
+          theme {
+            header
+            line
+            highlight
+            paragraph
+            button
+          }
           imageBg {
             alt
             image {
               childImageSharp {
-                gatsbyImageData(quality: 100)
+                gatsbyImageData(
+                  quality: 100
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                  layout: FULL_WIDTH
+                  transformOptions: {
+                    fit: COVER
+                  }
+                )
               }
             }
           }
@@ -116,7 +143,12 @@ export const ourValuesPageQuery = graphql`
               alt
               image {
                 childImageSharp {
-                  gatsbyImageData(quality: 100)
+                  gatsbyImageData(
+                    quality: 100
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP]
+                    layout: FULL_WIDTH
+                  )
                 }
               }
             }
@@ -125,12 +157,26 @@ export const ourValuesPageQuery = graphql`
           }
         }
         applyPanel {
-          darkMode
+          theme {
+            header
+            line
+            highlight
+            paragraph
+            button
+          }
           imageBg {
             alt
             image {
               childImageSharp {
-                gatsbyImageData(quality: 100)
+                gatsbyImageData(
+                  quality: 100
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                  layout: FULL_WIDTH
+                  transformOptions: {
+                    fit: COVER
+                  }
+                )
               }
             }
           }

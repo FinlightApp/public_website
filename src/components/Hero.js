@@ -8,7 +8,7 @@ import Box from './Box';
 
 export default function Hero(props) {
   const {
-    darkMode,
+    theme,
     imageBg,
     title,
     titleHighlight,
@@ -24,17 +24,27 @@ export default function Hero(props) {
         justify-center
         h-fit md:h-[700px]
       '>
-        { imageBg?.image?.url ? (
-          <img className='absolute inset-0'
-          src={ imageBg.image }
-          alt={ imageBg.alt } />
-        ) : (
-          <GatsbyImage className='!absolute inset-0'
-          objectFit='fill'
-          image={ imageBg.image }
-          formats={ ['auto', 'webp'] }
-          alt={ imageBg.alt } />
-        ) }
+        <div className='absolute inset-0'>
+          { imageBg?.image?.url ? (
+            <img className='
+              w-full h-full
+              select-none
+            '
+            src={ imageBg.image }
+            alt={ imageBg.alt }
+            draggable='false' />
+          ) : (
+            <GatsbyImage className='
+            w-full h-full
+              select-none
+            '
+            objectFit='cover'
+            image={ imageBg.image }
+            formats={ ['auto', 'webp'] }
+            alt={ imageBg.alt }
+            draggable={ false } />
+          ) }
+        </div>
         { ( title || paragraph || button ) && (
           <div className='
             container
@@ -50,18 +60,21 @@ export default function Hero(props) {
               h-fit
             '>
               { title && (
-                <Header darkMode={ darkMode }
+                <Header
+                headerClass={ theme.header }
+                lineClass={ theme.line }
+                highlightClass={ theme.highlight }
                 highlight={ titleHighlight }>
                   { title }
                 </Header>
               ) }
               { paragraph && (
-                <Paragraph darkMode={ darkMode }>
+                <Paragraph class={ theme.paragraph }>
                   { paragraph }
                 </Paragraph>
               ) }
               { button && (
-                <Button darkMode={ darkMode }>
+                <Button class={ theme.button }>
                   { button }
                 </Button>
               ) }
@@ -74,7 +87,7 @@ export default function Hero(props) {
 }
 
 Hero.propTypes = {
-  darkMode: PropTypes.bool,
+  theme: PropTypes.object,
   imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   titleHighlight: PropTypes.string,

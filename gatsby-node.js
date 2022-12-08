@@ -48,30 +48,6 @@ exports.createPages = ({ actions, graphql }) => {
         },
       })
     })
-
-    // Tag pages:
-    let tags = []
-    // Iterate through each post, putting all found tags into `tags`
-    posts.forEach((edge) => {
-      if (edge?.node?.frontmatter?.tags) {
-        tags = tags.concat(edge.node.frontmatter.tags)
-      }
-    })
-    // Eliminate duplicate tags
-    tags = [...new Set(tags)]
-
-    // Make tag pages
-    tags.forEach((tag) => {
-      const tagPath = `/tags/${kebabCase(tag)}/`
-
-      createPage({
-        path: tagPath,
-        component: path.resolve(`src/templates/tags.js`),
-        context: {
-          tag,
-        },
-      })
-    })
   })
 }
 
@@ -95,21 +71,24 @@ exports.createSchemaCustomization = ({ actions }) => {
       frontmatter: Frontmatter
     }
 
-    type SEO_ImageEl {
-      alt: String!
-      image: File! @fileByRelativePath
-    }
     type ImageEl {
-      image: File! @fileByRelativePath
+      alt: String
+      image: File @fileByRelativePath
+    }
+    type Theme {
+      header: String
+      line: String
+      highlight: String
+      paragraph: String
     }
 
     type Frontmatter implements Node {
       heroPanel: HeroPanel
     }
     type HeroPanel implements Node {
-      darkMode: Boolean!
-      imageBg: SEO_ImageEl!
-      title: String!
+      theme: Theme
+      imageBg: ImageEl
+      title: String
       titleHighlight: String
       paragraph: String
       button: String
@@ -119,8 +98,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       applyPanel: ApplyPanel
     }
     type ApplyPanel implements Node {
-      darkMode: Boolean!
-      imageBg: SEO_ImageEl!
+      theme: Theme
+      imageBg: ImageEl
       title: String
       paragraph: String
       button: String
@@ -135,8 +114,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       values: [ValueCard]
     }
     type ValueCard {
-      valueImage: SEO_ImageEl!
-      title: String!
+      valueImage: ImageEl
+      title: String
       paragraph: String
     }
 
@@ -149,9 +128,24 @@ exports.createSchemaCustomization = ({ actions }) => {
       partners: [PartnerCard]
     }
     type PartnerCard {
-      partnerImage: ImageEl!
-      name: String!
-      link: String!
+      partnerImage: ImageEl
+      name: String
+      link: String
+    }
+
+    type Frontmatter implements Node {
+      teamPanel: TeamPanel
+    }
+    type TeamPanel implements Node {
+      title: String
+      paragraph: String
+      cards: [TeamCard]
+    }
+    type TeamCard {
+      partnerImage: ImageEl
+      title: String
+      subheading: String
+      link: String
     }
     `
   createTypes(typeDefs)

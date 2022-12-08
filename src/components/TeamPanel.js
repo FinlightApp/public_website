@@ -2,37 +2,52 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { getImage } from 'gatsby-plugin-image';
 import TeamCard from './TeamCard';
+import Panel from './Panel';
 
 export default function TeamPanel(props) {
   const {
+    title,
+    paragraph,
     cards
   } = props;
 
   return (
     <React.Fragment>
       <div className='
-        flex flex-col
-        justify-center items-center 
-        w-full h-fit
-        p-12
+        flex
+        justify-center
+        h-fit
       '>
-        { cards && (
+        { ( title ||  paragraph || cards ) && (
           <div className='
-            flex flex-wrap
+            flex
             justify-center
             w-full
-            gap-12
+            p-12
           '>
-            { cards.map((card, i) => (
-              <TeamCard key={ i }
-              cardImage={ {
-                image: getImage(card.cardImage.image) || card.cardImage.image,
-                alt: card.cardImage.alt
-              } }
-              title={ card.title }
-              subheading={ card.subheading }
-              link={ card.link } />
-            )) }
+            <Panel
+            title={ title }
+            paragraph={ paragraph }>
+              { cards && (
+                <div className='
+                  flex flex-wrap
+                  justify-center
+                  w-full
+                  gap-12
+                '>
+                { cards.map((card, i) => (
+                  <TeamCard key={ i }
+                  cardImage={ {
+                    image: getImage(card.cardImage.image) || card.cardImage.image,
+                    alt: card.cardImage.alt
+                  } }
+                  title={ card.title }
+                  subheading={ card.subheading }
+                  link={ card.link } />
+                )) }
+              </div>
+              ) }
+            </Panel>
           </div>
         ) }
       </div>
@@ -41,5 +56,7 @@ export default function TeamPanel(props) {
 }
 
 TeamPanel.propTypes = {
-  cards: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+  title: PropTypes.string,
+  paragraph: PropTypes.string,
+  cards: PropTypes.array
 };
