@@ -140,6 +140,7 @@ collections:
                   { label: Title Highlight, name: titleHighlight, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
+                  { label: Modal Content, name: modalContent, widget: code },
                 ],
             }
           - {
@@ -283,6 +284,7 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
+                  { label: Modal Content, name: modalContent, widget: code },
                 ],
             }
       - file: 'src/pages/team/index.md'
@@ -375,6 +377,7 @@ collections:
                   { label: Title Highlight, name: titleHighlight, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
+                  { label: Modal Content, name: modalContent, widget: code },
                 ]
             }
           - {
@@ -485,6 +488,7 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
+                  { label: Modal Content, name: modalContent, widget: code },
                 ],
             }
 
@@ -583,6 +587,7 @@ collections:
                   { label: Title Highlight, name: titleHighlight, widget: string, required: false},
                   { label: Text, name: paragraph, widget: string, required: false},
                   { label: Button, name: button, widget: string, required: false},
+                  { label: Modal Content, name: modalContent, widget: code },
                 ],
             }
           - {
@@ -712,6 +717,7 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
+                  { label: Modal Content, name: modalContent, widget: code },
                 ],
             }
       - file: 'src/pages/our-values/index.md'
@@ -809,6 +815,7 @@ collections:
                   { label: Title Highlight, name: titleHighlight, widget: string, required: false },
                   { label: Text, name: paragraph, widget: string, required: false },
                   { label: Button, name: button, widget: string, required: false },
+                  { label: Modal Content, name: modalContent, widget: code },
                 ],
             }
           - {
@@ -944,5 +951,6 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
+                  { label: Modal Content, name: modalContent, widget: code },
                 ],
             }

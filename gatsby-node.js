@@ -92,6 +92,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       titleHighlight: String
       paragraph: String
       button: String
+      modalContent: String
     }
 
     type Frontmatter implements Node {
@@ -103,6 +104,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       paragraph: String
       button: String
+      modalContent: String
     }
 
     type Frontmatter implements Node {

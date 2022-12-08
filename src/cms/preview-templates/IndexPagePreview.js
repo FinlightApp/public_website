@@ -17,7 +17,8 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           title: data.heroPanel.title,
           titleHighlight: data.heroPanel.titleHighlight,
           paragraph: data.heroPanel.paragraph,
-          button: data.heroPanel.button
+          button: data.heroPanel.button,
+          modalContent: data.heroPanel.modalContent
         }}
         servePanel={{
           title: data.servePanel.title,
@@ -37,7 +38,8 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           },
           title: data.applyPanel.title,
           paragraph: data.applyPanel.paragraph,
-          button: data.applyPanel.button
+          button: data.applyPanel.button,
+          modalContent: data.applyPanel.modalContent
         }}
         heading={data.heading}
         description={data.description}

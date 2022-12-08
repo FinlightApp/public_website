@@ -21,6 +21,10 @@ heroPanel:
     across vintages, regions and sectors from as low as 10k GBP. We also eliminate
     the entire admin GPs have to go through to on-board, serve and report to LPs.
   button: Request Info
+  modalContent: >
+    <p style=height:100px;width:150px;>
+      Hero Content
+    </p>
 servePanel:
   title: Who Do We Serve?
   paragraph: >
@@ -77,4 +81,8 @@ applyPanel:
   title: Ready to Finlight?
   paragraph: Asset consolidation processes are always systematically better with Finlight.
   button: Apply for an account
+  modalContent: >
+    <p style=height:100px;width:150px;>
+      Apply Content
+    </p>
 ---

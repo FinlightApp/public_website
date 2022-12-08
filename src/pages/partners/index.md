@@ -23,6 +23,7 @@ heroPanel:
     believe your offerings can nicely complement or enhance ours, please do
     contact us via partners@finlight.com
   button:
+  modalContent:
 partnersPanel:
   title:
   paragraph:
@@ -108,4 +109,8 @@ applyPanel:
   title: Ready to Finlight?
   paragraph: Asset consolidation processes are always systematically better with Finlight.
   button: Apply for an account
+  modalContent: >
+    <p style=height:100px;width:150px;>
+      Apply Content
+    </p>
 ---

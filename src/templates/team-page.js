@@ -25,7 +25,8 @@ export const TeamPageTemplate = ({
       } }
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
-      paragraph={ heroPanel.paragraph } />
+      paragraph={ heroPanel.paragraph }
+      modalContent={ heroPanel.modalContent } />
       <NonExecutiveDirectors
       title={ nonExecutiveDirectorsPanel.title }
       paragraph={ nonExecutiveDirectorsPanel.paragraph }
@@ -38,7 +39,8 @@ export const TeamPageTemplate = ({
       } }
       title={ applyPanel.title }
       paragraph={ applyPanel.paragraph }
-      button={ applyPanel.button } />
+      button={ applyPanel.button }
+      modalContent={ applyPanel.modalContent } />
     </div>
   );
 };
@@ -56,6 +58,7 @@ TeamPageTemplate.propTypes = {
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
+    modalContent: PropTypes.string,
   }),
   nonExecutivedirectorsPanel: PropTypes.shape({
     title: PropTypes.string,
@@ -68,6 +71,7 @@ TeamPageTemplate.propTypes = {
     title: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
+    modalContent: PropTypes.string,
   }),
 };
 
@@ -123,6 +127,8 @@ export const teamPageQuery = graphql`
           title
           titleHighlight
           paragraph
+          button
+          modalContent
         }
         nonExecutiveDirectorsPanel {
           title
@@ -160,6 +166,7 @@ export const teamPageQuery = graphql`
           title
           paragraph
           button
+          modalContent
         }
       }
     }
