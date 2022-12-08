@@ -122,7 +122,6 @@ export const teamPageQuery = graphql`
             line
             highlight
             paragraph
-            button
           }
           imageBg {
             alt
