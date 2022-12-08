@@ -52,14 +52,14 @@ const SpotlightPanelTemplate = (props) => {
                         '>
                           { post.frontmatter?.image?.url ? (
                             <img className='w-full'
-                            src={ getImage(post.frontmatter.image) || post.frontmatter.image }
-                            alt={ post.fields.slug } />
+                            src={ getImage(post.frontmatter.image.src) || post.frontmatter.image.src }
+                            alt={ post.frontmatter.image.alt } />
                           ) : (
                             <GatsbyImage className='w-full'
                             objectFit='fill'
-                            image={ getImage(post.frontmatter.image) || post.frontmatter.image }
+                            image={ getImage(post.frontmatter.image.src) || post.frontmatter.image.src }
                             formats={ ['auto', 'webp'] }
-                            alt={ post.fields.slug } />
+                            alt={ post.frontmatter.image.alt } />
                           ) }
                         </div>
                       ) }
@@ -123,21 +123,25 @@ export default function SpotlightPanel(props) {
                   slug
                 }
                 frontmatter {
+                  keywords
                   title
                   templateKey
                   date(formatString: "MMMM DD, YYYY")
                   image {
-                    childImageSharp {
-                      gatsbyImageData(
-                        quality: 100
-                        placeholder: BLURRED
-                        formats: [AUTO, WEBP]
-                        layout: FULL_WIDTH
-                        transformOptions: {
-                          fit: COVER
-                        }
-                      )
+                    src {
+                      childImageSharp {
+                        gatsbyImageData(
+                          quality: 100
+                          placeholder: BLURRED
+                          formats: [AUTO, WEBP]
+                          layout: FULL_WIDTH
+                          transformOptions: {
+                            fit: COVER
+                          }
+                        )
+                      }
                     }
+                    alt
                   }
                 }
               }

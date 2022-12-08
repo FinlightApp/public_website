@@ -26,8 +26,8 @@ export const BlogPostTemplate = ({
         paragraph: 'text-black',
       } }
       imageBg={ {
-        image: getImage(image) || image,
-        alt: 'lol'
+        image: getImage(image.src) || image.src,
+        alt: image.alt,
       } }
       title={ title }
       paragraph={ description } />
@@ -41,7 +41,8 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  image: PropTypes.object,
+  keywords: PropTypes.string,
 };
 
 const BlogPost = ({ data }) => {
@@ -55,6 +56,7 @@ const BlogPost = ({ data }) => {
         description={post.frontmatter.description}
         title={post.frontmatter.title}
         image={post.frontmatter.image}
+        keywords={post.frontmatter.keywords}
       />
     </Layout>
   );
@@ -74,21 +76,25 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
+        keywords
         date(formatString: "MMMM DD, YYYY")
         title
         description
         image {
-          childImageSharp {
-            gatsbyImageData(
-              quality: 100
-              placeholder: BLURRED
-              formats: [AUTO, WEBP]
-              layout: FULL_WIDTH
-              transformOptions: {
-                fit: COVER
-              }
-            )
+          src {
+            childImageSharp {
+              gatsbyImageData(
+                quality: 100
+                placeholder: BLURRED
+                formats: [AUTO, WEBP]
+                layout: FULL_WIDTH
+                transformOptions: {
+                  fit: COVER
+                }
+              )
+            }
           }
+          alt
         }
       }
     }
