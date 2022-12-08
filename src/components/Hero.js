@@ -86,15 +86,11 @@ export default function Hero(props) {
             </Box>
           </div>
         ) }
-<<<<<<< HEAD
-      </div>
+      </header>
       <Modal
       content={ modalContent || '' }
       active={ modalActive }
       onClose={ () => setModalActive(false) } />
-=======
-      </header>
->>>>>>> develop
     </React.Fragment>
   );
 }
