@@ -207,7 +207,7 @@ collections:
                     [
                       {
                         label: Image,
-                        name: cardsImage,
+                        name: cardImage,
                         widget: object,
                         fields:
                         [
