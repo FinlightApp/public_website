@@ -132,6 +132,21 @@ exports.createSchemaCustomization = ({ actions }) => {
       name: String
       link: String
     }
+
+    type Frontmatter implements Node {
+      teamPanel: TeamPanel
+    }
+    type TeamPanel implements Node {
+      title: String
+      paragraph: String
+      cards: [TeamCard]
+    }
+    type TeamCard {
+      partnerImage: ImageEl
+      title: String
+      subheading: String
+      link: String
+    }
     `
   createTypes(typeDefs)
 }

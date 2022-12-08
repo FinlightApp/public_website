@@ -343,6 +343,7 @@ collections:
                           label: Highlight,
                           name: highlight,
                           widget: select,
+                          required: false,
                           options:
                             [
                               { label: 'Primary', value: 'text-primary' },
@@ -353,6 +354,7 @@ collections:
                           label: Paragraph,
                           name: paragraph,
                           widget: select,
+                          required: false,
                           options:
                             [
                               { label: 'Black', value: 'text-black' },
@@ -372,23 +374,66 @@ collections:
                       ],
                   },
                   { label: Title, name: title, widget: string },
-                  { label: Title Highlight, name: titleHighlight, widget: string },
-                  { label: Text, name: paragraph, widget: string },
-                  { label: Button, name: button, widget: string },
+                  { label: Title Highlight, name: titleHighlight, widget: string, required: false},
+                  { label: Text, name: paragraph, widget: string, required: false},
+                  { label: Button, name: button, widget: string, required: false},
                 ]
-            }
+             }
+          - {
+            label: TeamPanel,
+            name: teamPanel,
+            widget: object,
+            fields:
+              [
+                { label: Title, name: title, widget: string, required: false },
+                { label: Paragraph, name: paragraph, widget: text, required: false} ,
+                {
+                  label: Cards,
+                  name: cards,
+                  widget: list,
+                  required: false,
+                  fields:
+                    [
+                      {
+                        label: Card Image,
+                        name: cardImage,
+                        widget: object,
+                        fields:
+                        [
+                          {
+                            label: Image,
+                            name: image,
+                            widget: image,
+                            default: /img/default.png
+                          },
+                          {
+                            label: Image Name,
+                            name: alt,
+                            widget: text,
+                            default: Image Description
+                          },
+                        ],
+                      },
+                      { label: Name, name: title, widget: string, default: Name },
+                      { label: Role, name: text, widget: string, default: Role },
+                      { label: LinkedIn Profile, name: link, widget: text, default: https://www.finlight.com },
+                    ]
+                 }
+              ]
+           }
           - {
             label: Non-Executive Directors Panel,
             name: nonExecutiveDirectorsPanel,
             widget: object,
             fields:
               [
-                { label: Title, name: title, widget: string },
-                { label: Text, name: paragraph, widget: string },
+                { label: Title, name: title, widget: string, required: false},
+                { label: Text, name: paragraph, widget: string, required: false},
                 {
                   label: Non-Executive Directors,
                   name: nonExecutiveDirectors,
                   widget: list,
+                  required: false,
                   fields:
                     [
                       {
@@ -397,13 +442,23 @@ collections:
                         widget: object,
                         fields:
                           [
-                            { label: Image, name: image, widget: image },
-                            { label: SEO - Image Description, name: alt, widget: string },
+                            {
+                              label: Image,
+                              name: image,
+                              widget: image,
+                              default: /img/default.png
+                            },
+                            {
+                              label: SEO - Image Description,
+                              name: alt,
+                              widget: string,
+                              default: Image Description
+                            },
                           ],
                       },
-                      { label: Name, name: name, widget: text },
-                      { label: Role, name: role, widget: text },
-                      { label: Link, name: link, widget: string },
+                      { label: Name, name: name, widget: text, default: Name },
+                      { label: Role, name: role, widget: text, default: Role },
+                      { label: LinkedIn Profile, name: link, widget: string, default: https://www.finlight.com },
                     ],
                 },
               ],
@@ -487,7 +542,6 @@ collections:
                   { label: Button, name: button, widget: string },
                 ],
             }
-
       - file: 'src/pages/partners/index.md'
         label: 'Partners Page'
         name: 'partners'
