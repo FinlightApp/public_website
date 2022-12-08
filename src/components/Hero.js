@@ -21,7 +21,7 @@ export default function Hero(props) {
 
   return (
     <React.Fragment>
-      <div className='
+      <header className='
         relative
         flex
         justify-center
@@ -86,11 +86,15 @@ export default function Hero(props) {
             </Box>
           </div>
         ) }
+<<<<<<< HEAD
       </div>
       <Modal
       content={ modalContent || '' }
       active={ modalActive }
       onClose={ () => setModalActive(false) } />
+=======
+      </header>
+>>>>>>> develop
     </React.Fragment>
   );
 }

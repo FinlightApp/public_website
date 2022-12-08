@@ -16,7 +16,7 @@ export const PartnersPageTemplate = ({
   partnersPanel,
 }) => {
   return (
-    <div>
+    <>
       <Hero
       theme={ heroPanel.theme }
       imageBg={ {
@@ -42,7 +42,7 @@ export const PartnersPageTemplate = ({
       paragraph={ applyPanel.paragraph }
       button={ applyPanel.button }
       modalContent={ applyPanel.modalContent } />
-    </div>
+    </>
   );
 };
 

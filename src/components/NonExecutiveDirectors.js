@@ -6,7 +6,7 @@ import Panel from './Panel';
 import NonExecutiveDirectorsCard from './NonExecutiveDirectorsCard';
 
 export default function NonExecutiveDirectors(props) {
-  const { 
+  const {
     title,
     paragraph,
     nonExecutiveDirectors,
@@ -29,7 +29,7 @@ export default function NonExecutiveDirectors(props) {
             <Panel
             title={ title }
             paragraph={ paragraph }>
-                { nonExecutiveDirectors && (
+              { nonExecutiveDirectors && (
                 <div className='
                   flex flex-wrap
                   justify-center

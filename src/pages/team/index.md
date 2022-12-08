@@ -23,6 +23,28 @@ heroPanel:
     Driven by the desire to use tech to bring transparency and reduce operational tasks, Finlight was born.
   button:
   modalContent:
+teamPanel:
+  title:
+  paragraph:
+  cards:
+    - cardImage:
+        image: /img/brussels.png
+        alt: img1
+      title: name
+      subheading: profession
+      link: https://finlight.com/
+    - cardImage:
+        image: /img/brussels.png
+        alt: img1
+      title: name
+      subheading: profession
+      link: https://finlight.com/
+    - cardImage:
+        image: /img/brussels.png
+        alt: img1
+      title: name
+      subheading: profession
+      link: https://finlight.com/
 nonExecutiveDirectorsPanel:
   title: Non-executive Directors
   paragraph: Something

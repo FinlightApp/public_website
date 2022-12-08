@@ -2,9 +2,9 @@ backend:
   name: git-gateway
   branch: develop
   commit_messages:
-    create: "Create {{collection}} “{{slug}}”"
-    update: "Update {{collection}} “{{slug}}”"
-    delete: "Delete {{collection}} “{{slug}}”"
+    create: Create {{collection}} “{{slug}}”
+    update: Update {{collection}} “{{slug}}”
+    delete: Delete {{collection}} “{{slug}}”
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
@@ -13,37 +13,37 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
+  - name: blog
+    label: Blog
+    folder: src/pages/blog
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "blog-post",
+          label: Template Key,
+          name: templateKey,
+          widget: hidden,
+          default: blog-post,
         }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
-      - { label: "Featured Image", name: "featuredimage", widget: image }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
-  - name: "pages"
-    label: "Pages"
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Description, name: description, widget: text }
+      - { label: Featured Post, name: featuredpost, widget: boolean }
+      - { label: Featured Image, name: featuredimage, widget: image }
+      - { label: Body, name: body, widget: markdown }
+      - { label: Tags, name: tags, widget: list }
+  - name: pages
+    label: Pages
     files:
-      - file: 'src/pages/index.md'
-        label: "Landing Page"
-        name: "index"
+      - file: src/pages/index.md
+        label: Landing Page
+        name: index
         fields:
           - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "index-page",
+              label: Template Key,
+              name: templateKey,
+              widget: hidden,
+              default: index-page,
             }
           - {
               label: SEO,
@@ -75,10 +75,10 @@ collections:
                           widget: select,
                           options: 
                             [
-                              { label: 'Black', value: 'text-black' },
-                              { label: 'White', value: 'text-white' }
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
                             ],
-                          default: { label: 'White', value: 'text-white' }
+                          default: { label: White, value: text-white }
                         },
                         {
                           label: Line,
@@ -86,43 +86,46 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: '' },
-                              { label: 'Secondary', value: 'via-secondary' }
+                              { label: Primary, value: "" },
+                              { label: Secondary, value: via-secondary }
                             ],
-                          default: { label: 'Primary', value: 'via-primary' }
+                          default: { label: Primary, value: via-primary }
                         },
                         {
                           label: Highlight,
                           name: highlight,
                           widget: select,
+                          required: false,
                           options:
                             [
-                              { label: 'Primary', value: 'text-primary' },
-                              { label: 'Secondary', value: 'text-secondary' }
+                              { label: Primary, value: text-primary },
+                              { label: Secondary, value: text-secondary }
                             ],
-                          default: { label: 'Primary', value: 'text-primary' }
+                          default: { label: Primary, value: text-primary }
                         },
                         {
                           label: Paragraph,
                           name: paragraph,
                           widget: select,
+                          required: false,
                           options:
                             [
-                              { label: 'Black', value: 'text-black' },
-                              { label: 'White', value: 'text-white' }
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
                             ],
-                          default: { label: 'White', value: 'text-white' }
+                          default: { label: White, value: text-white }
                         },
                         {
                           label: Button,
                           name: button,
                           widget: select,
+                          required: false,
                           options:
                             [
-                              { label: 'Primary', value: 'text-black bg-primary' },
-                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                              { label: Primary, value: text-black bg-primary },
+                              { label: Secondary, value: text-white bg-secondary }
                             ],
-                          default: { label: 'Primary', value: 'text-black bg-primary' }
+                          default: { label: Primary, value: text-black bg-primary }
                         },
                       ],
                   },
@@ -137,24 +140,25 @@ collections:
                       ],
                   },
                   { label: Title, name: title, widget: string },
-                  { label: Title Highlight, name: titleHighlight, widget: string },
-                  { label: Text, name: paragraph, widget: string },
-                  { label: Button, name: button, widget: string },
-                  { label: Modal Content, name: modalContent, widget: code },
+                  { label: Title Highlight, name: titleHighlight, widget: string, required: false },
+                  { label: Text, name: paragraph, widget: string, required: false },
+                  { label: Button, name: button, widget: string, required: false },
+                  { label: Modal Content, name: modalContent, widget: code, required: false },
                 ],
             }
           - {
-              label: Feature Panel,
+              label: Key Features Panel,
               name: featurePanel,
               widget: object,
               fields:
                 [
-                  { label: Title, name: title, widget: string },
-                  { label: Text, name: paragraph, widget: string },
+                  { label: Title, name: title, widget: string, required: false },
+                  { label: Text, name: paragraph, widget: string, required: false },
                   {
                     label: Features,
                     name: features,
                     widget: list,
+                    required: false,
                     fields:
                       [
                         {
@@ -163,41 +167,77 @@ collections:
                           widget: object,
                           fields:
                             [
-                              { label: Image, name: image, widget: image },
-                              { label: SEO - Image Description, name: alt, widget: string },
+                              {
+                                label: Image,
+                                name: image,
+                                widget: image,
+                                default: /img/default.png
+                              },
+                              {
+                                label: SEO - Image Description,
+                                name: alt,
+                                widget: string,
+                                default: Image description
+                              },
                             ],
                         },
-                        { label: Title, name: title, widget: string},
+                        {
+                          label: Title,
+                          name: title,
+                          widget: string,
+                          default: Feature
+                        },
                       ],
                   },
                 ],
             }
           - {
-            label: ServePanel,
+            label: Who Do We Serve Panel,
             name: servePanel,
             widget: object,
             fields:
               [
-                { label: Title, name: title, widget: string },
-                { label: Text, name: paragraph, widget: string },
+                { label: Title, name: title, widget: string, required: false},
+                { label: Text, name: paragraph, widget: string, required: false},
                 {
                   label: Cards,
                   name: cards,
                   widget: list,
+                  required: false,
                   fields:
                     [
                       {
                         label: Image,
-                        name: cardsImage,
+                        name: cardImage,
                         widget: object,
                         fields:
                         [
-                          { label: Image, name: image, widget: image },
-                          { label: SEO - Image Description, name: alt, widget: string },
+                          {
+                            label: Image,
+                            name: image,
+                            widget: image,
+                            default: /img/default.png
+                          },
+                          {
+                            label: SEO - Image Description,
+                            name: alt,
+                            widget: string,
+                            default: Image description
+                          },
                         ],
                       },
-                      { label: Title, name: title, widget: string },
-                      { label: Text, name: paragraph, widget: string },
+                      {
+                        label: Title,
+                        name: title,
+                        widget: string,
+                        default: Title
+                      },
+                      {
+                        label: Text,
+                        name: paragraph,
+                        widget: text,
+                        default: Text
+                      },
                     ]
                 },
               ],
@@ -220,10 +260,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Black', value: 'text-black' },
-                              { label: 'White', value: 'text-white' }
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
                             ],
-                          default: { label: 'White', value: 'text-white' }
+                          default: { label: White, value: text-white }
                         },
                         {
                           label: Line,
@@ -231,10 +271,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'via-primary' },
-                              { label: 'Secondary', value: 'via-secondary' }
+                              { label: Primary, value: via-primary },
+                              { label: Secondary, value: via-secondary }
                             ],
-                          default: { label: 'Primary', value: 'via-primary' }
+                          default: { label: Primary, value: via-primary }
                         },
                         {
                           label: Highlight,
@@ -242,10 +282,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'text-primary' },
-                              { label: 'Secondary', value: 'text-secondary' }
+                              { label: Primary, value: text-primary },
+                              { label: Secondary, value: text-secondary }
                             ],
-                          default: { label: 'Primary', value: 'text-primary' }
+                          default: { label: Primary, value: text-primary }
                         },
                         {
                           label: Paragraph,
@@ -253,10 +293,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Black', value: 'text-black' },
-                              { label: 'White', value: 'text-white' }
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
                             ],
-                          default: { label: 'White', value: 'text-white' }
+                          default: { label: White, value: text-white }
                         },
                         {
                           label: Button,
@@ -264,10 +304,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'text-black bg-primary' },
-                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                              { label: Primary, value: text-black bg-primary },
+                              { label: Secondary, value: text-white bg-secondary }
                             ],
-                          default: { label: 'Primary', value: 'text-black bg-primary' }
+                          default: { label: Primary, value: text-black bg-primary }
                         },
                       ],
                   },
@@ -287,15 +327,15 @@ collections:
                   { label: Modal Content, name: modalContent, widget: code },
                 ],
             }
-      - file: 'src/pages/team/index.md'
-        label: 'Team Page'
-        name: 'team'
+      - file: src/pages/team/index.md
+        label: Team Page
+        name: team
         fields:
           - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'team-page',
+              label: Template Key,
+              name: templateKey,
+              widget: hidden,
+              default: team-page,
             }
           - {
               label: SEO,
@@ -327,8 +367,8 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Black', value: 'text-black' },
-                              { label: 'White', value: 'text-white' }
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
                             ]
                         },
                         {
@@ -337,28 +377,30 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'via-primary' },
-                              { label: 'Secondary', value: 'via-secondary' }
+                              { label: Primary, value: via-primary },
+                              { label: Secondary, value: via-secondary }
                             ]
                         },
                         {
                           label: Highlight,
                           name: highlight,
                           widget: select,
+                          required: false,
                           options:
                             [
-                              { label: 'Primary', value: 'text-primary' },
-                              { label: 'Secondary', value: 'text-secondary' }
+                              { label: Primary, value: text-primary },
+                              { label: Secondary, value: text-secondary }
                             ]
                         },
                         {
                           label: Paragraph,
                           name: paragraph,
                           widget: select,
+                          required: false,
                           options:
                             [
-                              { label: 'Black', value: 'text-black' },
-                              { label: 'White', value: 'text-white' }
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
                             ]
                         },
                       ],
@@ -374,24 +416,67 @@ collections:
                       ],
                   },
                   { label: Title, name: title, widget: string },
-                  { label: Title Highlight, name: titleHighlight, widget: string },
-                  { label: Text, name: paragraph, widget: string },
-                  { label: Button, name: button, widget: string },
-                  { label: Modal Content, name: modalContent, widget: code },
+                  { label: Title Highlight, name: titleHighlight, widget: string, required: false},
+                  { label: Text, name: paragraph, widget: string, required: false},
+                  { label: Button, name: button, widget: string, required: false},
+                  { label: Modal Content, name: modalContent, widget: code, required: false},
                 ]
             }
+          - {
+            label: TeamPanel,
+            name: teamPanel,
+            widget: object,
+            fields:
+              [
+                { label: Title, name: title, widget: string, required: false },
+                { label: Paragraph, name: paragraph, widget: text, required: false} ,
+                {
+                  label: Cards,
+                  name: cards,
+                  widget: list,
+                  required: false,
+                  fields:
+                    [
+                      {
+                        label: Card Image,
+                        name: cardImage,
+                        widget: object,
+                        fields:
+                        [
+                          {
+                            label: Image,
+                            name: image,
+                            widget: image,
+                            default: /img/default.png
+                          },
+                          {
+                            label: Image Name,
+                            name: alt,
+                            widget: text,
+                            default: Image Description
+                          },
+                        ],
+                      },
+                      { label: Name, name: title, widget: string, default: Name },
+                      { label: Role, name: text, widget: string, default: Role },
+                      { label: LinkedIn Profile, name: link, widget: text, default: https://www.finlight.com },
+                    ]
+                 }
+              ]
+           }
           - {
             label: Non-Executive Directors Panel,
             name: nonExecutiveDirectorsPanel,
             widget: object,
             fields:
               [
-                { label: Title, name: title, widget: string },
-                { label: Text, name: paragraph, widget: string },
+                { label: Title, name: title, widget: string, required: false},
+                { label: Text, name: paragraph, widget: string, required: false},
                 {
                   label: Non-Executive Directors,
                   name: nonExecutiveDirectors,
                   widget: list,
+                  required: false,
                   fields:
                     [
                       {
@@ -400,13 +485,23 @@ collections:
                         widget: object,
                         fields:
                           [
-                            { label: Image, name: image, widget: image },
-                            { label: SEO - Image Description, name: alt, widget: string },
+                            {
+                              label: Image,
+                              name: image,
+                              widget: image,
+                              default: /img/default.png
+                            },
+                            {
+                              label: SEO - Image Description,
+                              name: alt,
+                              widget: string,
+                              default: Image Description
+                            },
                           ],
                       },
-                      { label: Name, name: name, widget: text },
-                      { label: Role, name: role, widget: text },
-                      { label: Link, name: link, widget: string },
+                      { label: Name, name: name, widget: text, default: Name },
+                      { label: Role, name: role, widget: text, default: Role },
+                      { label: LinkedIn Profile, name: link, widget: string, default: https://www.finlight.com },
                     ],
                 },
               ],
@@ -429,8 +524,8 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Black', value: 'text-black' },
-                              { label: 'White', value: 'text-white' }
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
                             ]
                         },
                         {
@@ -439,8 +534,8 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'via-primary' },
-                              { label: 'Secondary', value: 'via-secondary' }
+                              { label: Primary, value: via-primary },
+                              { label: Secondary, value: via-secondary }
                             ]
                         },
                         {
@@ -449,8 +544,8 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'text-primary' },
-                              { label: 'Secondary', value: 'text-secondary' }
+                              { label: Primary, value: text-primary },
+                              { label: Secondary, value: text-secondary }
                             ]
                         },
                         {
@@ -459,8 +554,8 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Black', value: 'text-black' },
-                              { label: 'White', value: 'text-white' }
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
                             ]
                         },
                         {
@@ -469,8 +564,8 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'text-black bg-primary' },
-                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                              { label: Primary, value: text-black bg-primary },
+                              { label: Secondary, value: text-white bg-secondary }
                             ]
                         },
                       ],
@@ -491,16 +586,15 @@ collections:
                   { label: Modal Content, name: modalContent, widget: code },
                 ],
             }
-
-      - file: 'src/pages/partners/index.md'
-        label: 'Partners Page'
-        name: 'partners'
+      - file: src/pages/partners/index.md
+        label: Partners Page
+        name: partners
         fields:
           - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'partners-page',
+              label: Template Key,
+              name: templateKey,
+              widget: hidden,
+              default: partners-page,
             }
           - {
               label: SEO,
@@ -532,10 +626,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Black', value: 'text-black' },
-                              { label: 'White', value: 'text-white' }
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
                             ],
-                          default: { label: 'Black', value: 'text-black' }
+                          default: { label: Black, value: text-black }
                         },
                         {
                           label: Line,
@@ -543,10 +637,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'via-primary' },
-                              { label: 'Secondary', value: 'via-secondary' }
+                              { label: Primary, value: via-primary },
+                              { label: Secondary, value: via-secondary }
                             ],
-                          default: { label: 'Secondary', value: 'via-secondary' }
+                          default: { label: Secondary, value: via-secondary }
                         },
                         {
                           label: Highlight,
@@ -554,10 +648,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'text-primary' },
-                              { label: 'Secondary', value: 'text-secondary' }
+                              { label: Primary, value: text-primary },
+                              { label: Secondary, value: text-secondary }
                             ],
-                          default: { label: 'Secondary', value: 'text-secondary' }
+                          default: { label: Secondary, value: text-secondary }
                         },
                         {
                           label: Paragraph,
@@ -566,10 +660,10 @@ collections:
                           required: false,
                           options:
                             [
-                              { label: 'Black', value: 'text-black' },
-                              { label: 'White', value: 'text-white' }
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
                             ],
-                          default: { label: 'Black', value: 'text-black' }
+                          default: { label: Black, value: text-black }
                         },
                       ],
                   },
@@ -653,10 +747,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Black', value: 'text-black' },
-                              { label: 'White', value: 'text-white' }
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
                             ],
-                          default: { label: 'White', value: 'text-white' }
+                          default: { label: White, value: text-white }
                         },
                         {
                           label: Line,
@@ -664,10 +758,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'via-primary' },
-                              { label: 'Secondary', value: 'via-secondary' }
+                              { label: Primary, value: via-primary },
+                              { label: Secondary, value: via-secondary }
                             ],
-                          default: { label: 'Primary', value: 'via-primary' }
+                          default: { label: Primary, value: via-primary }
                         },
                         {
                           label: Highlight,
@@ -675,10 +769,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'text-primary' },
-                              { label: 'Secondary', value: 'text-secondary' }
+                              { label: Primary, value: text-primary },
+                              { label: Secondary, value: text-secondary }
                             ],
-                          default: { label: 'Primary', value: 'text-primary' }
+                          default: { label: Primary, value: text-primary }
                         },
                         {
                           label: Paragraph,
@@ -686,10 +780,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Black', value: 'text-black' },
-                              { label: 'White', value: 'text-white' }
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
                             ],
-                          default: { label: 'White', value: 'text-white' }
+                          default: { label: White, value: text-white }
                         },
                         {
                           label: Button,
@@ -697,10 +791,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'text-black bg-primary' },
-                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                              { label: Primary, value: text-black bg-primary },
+                              { label: Secondary, value: text-white bg-secondary }
                             ],
-                          default: { label: 'Primary', value: 'text-black bg-primary' }
+                          default: { label: Primary, value: text-black bg-primary }
                         },
                       ],
                   },
@@ -720,15 +814,15 @@ collections:
                   { label: Modal Content, name: modalContent, widget: code },
                 ],
             }
-      - file: 'src/pages/our-values/index.md'
-        label: 'Our Values Page'
-        name: 'our-values'
+      - file: src/pages/our-values/index.md
+        label: Our Values Page
+        name: our-values
         fields:
           - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'our-values-page',
+              label: Template Key,
+              name: templateKey,
+              widget: hidden,
+              default: our-values-page,
             }
           - {
               label: SEO,
@@ -760,10 +854,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Black', value: 'text-black' },
-                              { label: 'White', value: 'text-white' }
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
                             ],
-                          default: { label: 'White', value: 'text-white' }
+                          default: { label: White, value: text-white }
                         },
                         {
                           label: Line,
@@ -771,10 +865,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'via-primary' },
-                              { label: 'Secondary', value: 'via-secondary' }
+                              { label: Primary, value: via-primary },
+                              { label: Secondary, value: via-secondary }
                             ],
-                          default: { label: 'Secondary', value: 'via-secondary' }
+                          default: { label: Secondary, value: via-secondary }
                         },
                         {
                           label: Highlight,
@@ -782,10 +876,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'text-primary' },
-                              { label: 'Secondary', value: 'text-secondary' }
+                              { label: Primary, value: text-primary },
+                              { label: Secondary, value: text-secondary }
                             ],
-                          default: { label: 'Secondary', value: 'text-secondary' }
+                          default: { label: Secondary, value: text-secondary }
                         },
                         {
                           label: Paragraph,
@@ -794,10 +888,10 @@ collections:
                           required: false,
                           options:
                             [
-                              { label: 'Black', value: 'text-black' },
-                              { label: 'White', value: 'text-white' }
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
                             ],
-                          default: { label: 'Black', value: 'text-black' }
+                          default: { label: Black, value: text-black }
                         },
                       ],
                   },
@@ -887,10 +981,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Black', value: 'text-black' },
-                              { label: 'White', value: 'text-white' }
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
                             ],
-                          default: { label: 'White', value: 'text-white' }
+                          default: { label: White, value: text-white }
                         },
                         {
                           label: Line,
@@ -898,10 +992,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'via-primary' },
-                              { label: 'Secondary', value: 'via-secondary' }
+                              { label: Primary, value: via-primary },
+                              { label: Secondary, value: via-secondary }
                             ],
-                          default: { label: 'Primary', value: 'via-primary' }
+                          default: { label: Primary, value: via-primary }
                         },
                         {
                           label: Highlight,
@@ -909,10 +1003,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'text-primary' },
-                              { label: 'Secondary', value: 'text-secondary' }
+                              { label: Primary, value: text-primary },
+                              { label: Secondary, value: text-secondary }
                             ],
-                          default: { label: 'Primary', value: 'text-primary' }
+                          default: { label: Primary, value: text-primary }
                         },
                         {
                           label: Paragraph,
@@ -920,10 +1014,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Black', value: 'text-black' },
-                              { label: 'White', value: 'text-white' }
+                              { label: Black, value: text-black },
+                              { label: White, value: text-white }
                             ],
-                          default: { label: 'White', value: 'text-white' }
+                          default: { label: White, value: text-white }
                         },
                         {
                           label: Button,
@@ -931,10 +1025,10 @@ collections:
                           widget: select,
                           options:
                             [
-                              { label: 'Primary', value: 'text-black bg-primary' },
-                              { label: 'Secondary', value: 'text-white bg-secondary' }
+                              { label: Primary, value: text-black bg-primary },
+                              { label: Secondary, value: text-white bg-secondary }
                             ],
-                          default: { label: 'Primary', value: 'text-black bg-primary' }
+                          default: { label: Primary, value: text-black bg-primary }
                         },
                       ],
                   },

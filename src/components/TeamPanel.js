@@ -1,25 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { getImage } from 'gatsby-plugin-image';
-
+import TeamCard from './TeamCard';
 import Panel from './Panel';
-import DataCard from './DataCard';
 
-export default function Feature(props) {
+export default function TeamPanel(props) {
   const {
     title,
     paragraph,
-    features,
+    cards
   } = props;
 
   return (
     <React.Fragment>
       <div className='
-        flex flex-col
-        justify-center items-center
-        w-full h-fit
+        flex
+        justify-center
+        h-fit
       '>
-        {( title || paragraph || features )  && (
+        { ( title ||  paragraph || cards ) && (
           <div className='
             flex
             justify-center
@@ -29,23 +28,24 @@ export default function Feature(props) {
             <Panel
             title={ title }
             paragraph={ paragraph }>
-              { features && (
+              { cards && (
                 <div className='
                   flex flex-wrap
                   justify-center
                   w-full
                   gap-12
-                '> 
-                  { features.map((feature, i) => (
-                    <DataCard key={ i }
-                    cardImage={ {
-                      image : getImage(feature.featureImage.image) || feature.featureImage.image,
-                      alt: feature.featureImage.alt
-                    } }
-                    title={ feature.title }
-                    paragraph={ feature.paragraph } />
-                  ) ) }
-                </div>
+                '>
+                { cards.map((card, i) => (
+                  <TeamCard key={ i }
+                  cardImage={ {
+                    image: getImage(card.cardImage.image) || card.cardImage.image,
+                    alt: card.cardImage.alt
+                  } }
+                  title={ card.title }
+                  subheading={ card.subheading }
+                  link={ card.link } />
+                )) }
+              </div>
               ) }
             </Panel>
           </div>
@@ -55,8 +55,8 @@ export default function Feature(props) {
   );
 }
 
-Feature.propTypes = {
+TeamPanel.propTypes = {
   title: PropTypes.string,
   paragraph: PropTypes.string,
-  cards: PropTypes.array,
+  cards: PropTypes.array
 };

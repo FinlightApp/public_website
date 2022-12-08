@@ -45,7 +45,7 @@ export default function Serve(props) {
                     } }
                     title={ card.title }
                     paragraph={ card.paragraph } />
-                  )) }
+                  ) ) }
                 </div>
               ) }
             </Panel>

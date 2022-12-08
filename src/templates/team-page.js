@@ -5,6 +5,7 @@ import { getImage } from "gatsby-plugin-image";
 
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
+import TeamPanel from '../components/TeamPanel';
 import NonExecutiveDirectors from '../components/NonExecutiveDirectors';
 import Apply from '../components/Apply';
 
@@ -12,11 +13,12 @@ import Apply from '../components/Apply';
 export const TeamPageTemplate = ({
   seo,
   heroPanel,
+  teamPanel,
   nonExecutiveDirectorsPanel,
   applyPanel
 }) => {
   return (
-    <div>
+    <>
       <Hero
       theme={ heroPanel.theme }
       imageBg={ {
@@ -27,6 +29,10 @@ export const TeamPageTemplate = ({
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph }
       modalContent={ heroPanel.modalContent } />
+      <TeamPanel
+      title={ teamPanel.title }
+      paragraph={ teamPanel.paragraph }
+      cards={ teamPanel.cards } />
       <NonExecutiveDirectors
       title={ nonExecutiveDirectorsPanel.title }
       paragraph={ nonExecutiveDirectorsPanel.paragraph }
@@ -41,7 +47,7 @@ export const TeamPageTemplate = ({
       paragraph={ applyPanel.paragraph }
       button={ applyPanel.button }
       modalContent={ applyPanel.modalContent } />
-    </div>
+    </>
   );
 };
 
@@ -59,6 +65,11 @@ TeamPageTemplate.propTypes = {
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
     modalContent: PropTypes.string,
+  }),
+  teamPanel: PropTypes.shape({
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
+    cards: PropTypes.array,
   }),
   nonExecutivedirectorsPanel: PropTypes.shape({
     title: PropTypes.string,
@@ -81,6 +92,7 @@ const TeamPage = ({ data }) => {
     <Layout seo={ frontmatter.seo }>
       <TeamPageTemplate
       heroPanel={ frontmatter.heroPanel }
+      teamPanel={ frontmatter.teamPanel }
       nonExecutiveDirectorsPanel={ frontmatter.nonExecutiveDirectorsPanel }
       applyPanel={ frontmatter.applyPanel } />
     </Layout>
@@ -114,7 +126,6 @@ export const teamPageQuery = graphql`
             line
             highlight
             paragraph
-            button
           }
           imageBg {
             alt
@@ -129,6 +140,23 @@ export const teamPageQuery = graphql`
           paragraph
           button
           modalContent
+        }
+        teamPanel {
+          title
+          paragraph
+          cards {
+            cardImage {
+              image {
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+                }
+              }
+              alt
+            }
+            title
+            subheading
+            link
+          }
         }
         nonExecutiveDirectorsPanel {
           title
@@ -146,7 +174,7 @@ export const teamPageQuery = graphql`
             role
             link
           }
-        } 
+        }
         applyPanel {
           theme {
             header
