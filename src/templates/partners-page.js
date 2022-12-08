@@ -26,7 +26,8 @@ export const PartnersPageTemplate = ({
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph }
-      button={ heroPanel.button } />
+      button={ heroPanel.button }
+      modalContent={ heroPanel.modalContent } />
       <Partners
       title={ partnersPanel.title }
       paragraph={ partnersPanel.paragraph }
@@ -39,7 +40,8 @@ export const PartnersPageTemplate = ({
       } }
       title={ applyPanel.title }
       paragraph={ applyPanel.paragraph }
-      button={ applyPanel.button } />
+      button={ applyPanel.button }
+      modalContent={ applyPanel.modalContent } />
     </>
   );
 };
@@ -58,6 +60,7 @@ PartnersPageTemplate.propTypes = {
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
+    modalContent: PropTypes.string,
   }),
   partnersPanel: PropTypes.shape({
     title: PropTypes.string,
@@ -70,6 +73,7 @@ PartnersPageTemplate.propTypes = {
     title: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
+    modalContent: PropTypes.string,
   }),
 };
 
@@ -133,6 +137,7 @@ export const partnersPageQuery = graphql`
           titleHighlight
           paragraph
           button
+          modalContent
         }
         partnersPanel {
           title
@@ -181,6 +186,7 @@ export const partnersPageQuery = graphql`
           title
           paragraph
           button
+          modalContent
         }
       }
     }

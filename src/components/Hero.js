@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Header from './Header';
 import Paragraph from './Paragraph';
 import Button from './Button';
 import Box from './Box';
+import Modal from './Modal';
 
 export default function Hero(props) {
   const {
@@ -14,7 +15,9 @@ export default function Hero(props) {
     titleHighlight,
     paragraph,
     button,
+    modalContent,
   } = props;
+  const [modalActive, setModalActive] = useState(false);
 
   return (
     <React.Fragment>
@@ -57,7 +60,8 @@ export default function Hero(props) {
               md:col-start-3 md:col-span-6
               lg:col-start-2 lg:col-span-4
               xl:col-start-2 xl:col-span-3
-              h-fit
+              justify-center items-center
+              px-8 py-12 gap-12
             '>
               { title && (
                 <Header
@@ -74,7 +78,8 @@ export default function Hero(props) {
                 </Paragraph>
               ) }
               { button && (
-                <Button class={ theme.button }>
+                <Button class={ theme.button }
+                onClick={() => setModalActive(!modalActive)}>
                   { button }
                 </Button>
               ) }
@@ -82,6 +87,10 @@ export default function Hero(props) {
           </div>
         ) }
       </header>
+      <Modal
+      content={ modalContent || '' }
+      active={ modalActive }
+      onClose={ () => setModalActive(false) } />
     </React.Fragment>
   );
 }
@@ -92,5 +101,6 @@ Hero.propTypes = {
   title: PropTypes.string,
   titleHighlight: PropTypes.string,
   paragraph: PropTypes.string,
-  button: PropTypes.string
+  button: PropTypes.string,
+  modalContent: PropTypes.string
 };

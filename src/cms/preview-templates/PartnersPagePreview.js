@@ -30,7 +30,8 @@ const PartnersPagePreview = ({ entry, getAsset }) => {
           },
           title: data.applyPanel.title,
           paragraph: data.applyPanel.paragraph,
-          button: data.applyPanel.button
+          button: data.applyPanel.button,
+          modalContent: data.applyPanel.modalContent
         }}
       />
     )

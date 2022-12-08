@@ -28,7 +28,8 @@ export const IndexPageTemplate = ({
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph }
-      button={ heroPanel.button } />
+      button={ heroPanel.button }
+      modalContent={ heroPanel.modalContent } />
       <Feature
       title={ featurePanel.title }
       paragraph={ featurePanel.paragraph} 
@@ -45,7 +46,8 @@ export const IndexPageTemplate = ({
       } }
       title={ applyPanel.title }
       paragraph={ applyPanel.paragraph }
-      button={ applyPanel.button } />
+      button={ applyPanel.button }
+      modalContent={ applyPanel.modalContent } />
     </>
   );
 };
@@ -64,6 +66,7 @@ IndexPageTemplate.propTypes = {
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
+    modalContent: PropTypes.string,
   }),
   servePanel: PropTypes.shape({
     title: PropTypes.string,
@@ -81,6 +84,7 @@ IndexPageTemplate.propTypes = {
     title: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
+    modalContent: PropTypes.string,
   })
 };
 
@@ -137,6 +141,7 @@ export const pageQuery = graphql`
           titleHighlight
           paragraph
           button
+          modalContent
         }
         servePanel {
           title
@@ -188,6 +193,7 @@ export const pageQuery = graphql`
           title
           paragraph
           button
+          modalContent
         }
       }
     }

@@ -22,6 +22,7 @@ heroPanel:
     the Finlight team are on a mission to transform financial services for the end-investor.
     Driven by the desire to use tech to bring transparency and reduce operational tasks, Finlight was born.
   button:
+  modalContent:
 teamPanel:
   title:
   paragraph:
@@ -73,4 +74,8 @@ applyPanel:
   title: Ready to Finlight?
   paragraph: Asset consolidation processes are always systematically better with Finlight.
   button: Apply for an account
+  modalContent: >
+    <p style=height:100px;width:150px;>
+      Apply Content
+    </p>
 ---

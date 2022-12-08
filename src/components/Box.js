@@ -4,9 +4,7 @@ export default function Box(props) {
     <React.Fragment>
       <div className={`
         ${ props.className }
-        flex flex-col flex-0
-        justify-center items-center
-        px-8 py-12 gap-12
+        flex flex-col
         bg-white/25 backdrop-blur-md rounded-2xl shadow-glass
       `}>
         { props.children }

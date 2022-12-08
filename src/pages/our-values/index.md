@@ -19,6 +19,7 @@ heroPanel:
   titleHighlight: Values
   paragraph:
   button:
+  modalContent:
 ourValuesPanel:
   title:
   paragraph:
@@ -70,4 +71,8 @@ applyPanel:
   paragraph: >
     Asset consolidation processes are always systematically better with Finlight.
   button: Apply for an account
+  modalContent: >
+    <p style=height:100px;width:150px;>
+      Apply Content
+    </p>
 ---

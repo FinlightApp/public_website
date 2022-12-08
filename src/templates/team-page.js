@@ -27,7 +27,8 @@ export const TeamPageTemplate = ({
       } }
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
-      paragraph={ heroPanel.paragraph } />
+      paragraph={ heroPanel.paragraph }
+      modalContent={ heroPanel.modalContent } />
       <TeamPanel
       title={ teamPanel.title }
       paragraph={ teamPanel.paragraph }
@@ -44,7 +45,8 @@ export const TeamPageTemplate = ({
       } }
       title={ applyPanel.title }
       paragraph={ applyPanel.paragraph }
-      button={ applyPanel.button } />
+      button={ applyPanel.button }
+      modalContent={ applyPanel.modalContent } />
     </>
   );
 };
@@ -62,6 +64,7 @@ TeamPageTemplate.propTypes = {
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
+    modalContent: PropTypes.string,
   }),
   teamPanel: PropTypes.shape({
     title: PropTypes.string,
@@ -79,6 +82,7 @@ TeamPageTemplate.propTypes = {
     title: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
+    modalContent: PropTypes.string,
   }),
 };
 
@@ -134,6 +138,8 @@ export const teamPageQuery = graphql`
           title
           titleHighlight
           paragraph
+          button
+          modalContent
         }
         teamPanel {
           title
@@ -188,6 +194,7 @@ export const teamPageQuery = graphql`
           title
           paragraph
           button
+          modalContent
         }
       }
     }

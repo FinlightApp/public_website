@@ -26,7 +26,8 @@ export const OurValuesPageTemplate = ({
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph }
-      button={ heroPanel.button } />
+      button={ heroPanel.button }
+      modalContent={ heroPanel.modalContent } />
       <Values
       title={ ourValuesPanel.title }
       paragraph={ ourValuesPanel.paragraph }
@@ -39,7 +40,8 @@ export const OurValuesPageTemplate = ({
       } }
       title={ applyPanel.title }
       paragraph={ applyPanel.paragraph }
-      button={ applyPanel.button } />
+      button={ applyPanel.button }
+      modalContent={ applyPanel.modalContent } />
     </>
   );
 };
@@ -58,6 +60,7 @@ OurValuesPageTemplate.propTypes = {
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
+    modalContent: PropTypes.string,
   }),
   ourValuesPanel: PropTypes.shape({
     title: PropTypes.string,
@@ -70,6 +73,7 @@ OurValuesPageTemplate.propTypes = {
     title: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
+    modalContent: PropTypes.string,
   }),
 };
 
@@ -134,6 +138,7 @@ export const ourValuesPageQuery = graphql`
           titleHighlight
           paragraph
           button
+          modalContent
         }
         ourValuesPanel {
           title
@@ -183,6 +188,7 @@ export const ourValuesPageQuery = graphql`
           title
           paragraph
           button
+          modalContent
         }
       }
     }
