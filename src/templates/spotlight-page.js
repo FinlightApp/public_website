@@ -6,7 +6,7 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Apply from '../components/Apply';
-import BlogRoll from '../components/BlogRoll';
+import SpotlightPanel from '../components/SpotlightPanel';
 
 /* eslint-disable */
 export const SpotlightPageTemplate = ({
@@ -26,7 +26,7 @@ export const SpotlightPageTemplate = ({
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph }
       button={ heroPanel.button } />
-      <BlogRoll />
+      <SpotlightPanel />
       <Apply
       theme={ applyPanel.theme }
       imageBg={ {
