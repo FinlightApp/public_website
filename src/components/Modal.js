@@ -4,10 +4,10 @@ import closeIcon from '../img/close_24.svg';
 
 export default function Modal(props) {
   const contentEl = React.useRef();
-  const content = new DOMParser().parseFromString(props.content, 'text/html').body.firstChild;
 
   React.useEffect(() => {
-    if(content) {
+    if(props?.content) {
+      const content = new DOMParser().parseFromString(props.content, 'text/html').body.firstChild;
       contentEl.current.replaceChildren(content);
     }
   })
