@@ -7,7 +7,8 @@ import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Feature from '../components/Feature';
 import Apply from '../components/Apply';
-import Serve from '../components/Serve'
+import Serve from '../components/Serve';
+import BlogRoll from '../components/BlogRoll';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -37,6 +38,8 @@ export const IndexPageTemplate = ({
       title={ servePanel.title }
       paragraph={ servePanel.paragraph }
       cards={ servePanel.cards } />
+      <BlogRoll
+      limit={ 3 } />
       <Apply
       theme={ applyPanel.theme }
       imageBg={ {

@@ -6,14 +6,13 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Apply from '../components/Apply';
-import Partners from '../components/Partners';
+import BlogRoll from '../components/BlogRoll';
 
 /* eslint-disable */
-export const PartnersPageTemplate = ({
+export const SpotlightPageTemplate = ({
   seo,
   heroPanel,
   applyPanel,
-  partnersPanel,
 }) => {
   return (
     <>
@@ -27,10 +26,7 @@ export const PartnersPageTemplate = ({
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph }
       button={ heroPanel.button } />
-      <Partners
-      title={ partnersPanel.title }
-      paragraph={ partnersPanel.paragraph }
-      partners={ partnersPanel.partners } />
+      <BlogRoll />
       <Apply
       theme={ applyPanel.theme }
       imageBg={ {
@@ -44,7 +40,7 @@ export const PartnersPageTemplate = ({
   );
 };
 
-PartnersPageTemplate.propTypes = {
+SpotlightPageTemplate.propTypes = {
   seo: PropTypes.shape({
     author: PropTypes.string,
     description: PropTypes.string,
@@ -59,11 +55,6 @@ PartnersPageTemplate.propTypes = {
     paragraph: PropTypes.string,
     button: PropTypes.string,
   }),
-  partnersPanel: PropTypes.shape({
-    title: PropTypes.string,
-    paragraph: PropTypes.string,
-    partners: PropTypes.array,
-  }),
   applyPanel: PropTypes.shape({
     theme: PropTypes.object,
     imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -73,19 +64,18 @@ PartnersPageTemplate.propTypes = {
   }),
 };
 
-const PartnersPage = ({ data }) => {
+const SpotlightPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   return (
     <Layout seo={ frontmatter.seo }>
-      <PartnersPageTemplate
+      <SpotlightPageTemplate
       heroPanel={ frontmatter.heroPanel }
-      partnersPanel={ frontmatter.partnersPanel }
       applyPanel={ frontmatter.applyPanel } />
     </Layout>
   );
 };
 
-PartnersPage.propTypes = {
+SpotlightPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -93,10 +83,10 @@ PartnersPage.propTypes = {
   })
 };
 
-export default PartnersPage;
+export default SpotlightPage;
 
-export const partnersPageQuery = graphql`
- query PartnersPage($id: String!) {
+export const spotlightPageQuery = graphql`
+ query SpotlightPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
@@ -134,26 +124,6 @@ export const partnersPageQuery = graphql`
           titleHighlight
           paragraph
           button
-        }
-        partnersPanel {
-          title
-          paragraph
-          partners {
-            partnerImage {
-              image {
-                childImageSharp {
-                  gatsbyImageData(
-                    quality: 100
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP]
-                    layout: FULL_WIDTH
-                  )
-                }
-              }
-            }
-            name
-            link
-          }
         }
         applyPanel {
           theme {
