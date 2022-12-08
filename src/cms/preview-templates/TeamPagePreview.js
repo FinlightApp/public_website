@@ -18,6 +18,11 @@ const TeamPagePreview = ({ entry, getAsset }) => {
           titleHighlight: data.heroPanel.titleHighlight,
           paragraph: data.heroPanel.paragraph
         }}
+        teamPanel={{
+          title: data.teamPanel.title,
+          paragraph: data.teamPanel.paragraph,
+          cards: data.teamPanel.cards,
+        }}
         nonExecutiveDirectorsPanel={{
           title: data.nonExecutiveDirectorsPanel.title,
           paragraph: data.nonExecutiveDirectorsPanel.paragraph,

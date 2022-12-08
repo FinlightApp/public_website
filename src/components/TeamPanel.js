@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { getImage } from 'gatsby-plugin-image';
-
+import TeamCard from './TeamCard';
 import Panel from './Panel';
-import NonExecutiveDirectorsCard from './NonExecutiveDirectorsCard';
 
-export default function NonExecutiveDirectors(props) {
+export default function TeamPanel(props) {
   const {
     title,
     paragraph,
-    nonExecutiveDirectors,
+    cards
   } = props;
 
   return (
@@ -19,7 +18,7 @@ export default function NonExecutiveDirectors(props) {
         justify-center
         h-fit
       '>
-        { ( title ||  paragraph || nonExecutiveDirectors ) && (
+        { ( title ||  paragraph || cards ) && (
           <div className='
             flex
             justify-center
@@ -29,22 +28,22 @@ export default function NonExecutiveDirectors(props) {
             <Panel
             title={ title }
             paragraph={ paragraph }>
-              { nonExecutiveDirectors && (
+              { cards && (
                 <div className='
                   flex flex-wrap
                   justify-center
                   w-full
                   gap-12
                 '>
-                { nonExecutiveDirectors.map((nonExecutiveDirector, i) => (
-                  <NonExecutiveDirectorsCard key={ i }
-                  nonExecutiveDirectorImage={ {
-                    image : getImage(nonExecutiveDirector.nonExecutiveDirectorImage.image) || nonExecutiveDirector.nonExecutiveDirectorImage.image,
-                    alt: nonExecutiveDirector.nonExecutiveDirectorImage.alt
+                { cards.map((card, i) => (
+                  <TeamCard key={ i }
+                  cardImage={ {
+                    image: getImage(card.cardImage.image) || card.cardImage.image,
+                    alt: card.cardImage.alt
                   } }
-                  name={ nonExecutiveDirector.name }
-                  role={ nonExecutiveDirector.role }
-                  link={ nonExecutiveDirector.link } />
+                  title={ card.title }
+                  subheading={ card.subheading }
+                  link={ card.link } />
                 )) }
               </div>
               ) }
@@ -56,8 +55,8 @@ export default function NonExecutiveDirectors(props) {
   );
 }
 
-NonExecutiveDirectors.propTypes = {
+TeamPanel.propTypes = {
   title: PropTypes.string,
   paragraph: PropTypes.string,
-  nonExecutiveDirectors: PropTypes.array
+  cards: PropTypes.array
 };
