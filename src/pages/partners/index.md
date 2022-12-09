@@ -2,10 +2,10 @@
 templateKey: partners-page
 path: /partners
 seo:
- author: Finlight
- description: Partners page
- keywords: Finlight
- title: Finlight - Partners page
+  author: Finlight
+  description: Partners page
+  keywords: Finlight
+  title: Finlight - Partners page
 heroPanel:
   theme:
     header: text-black
@@ -13,8 +13,8 @@ heroPanel:
     highlight: text-secondary
     paragraph: text-black
   backgroundImg:
-    src: /img/brussels.png
-    alt: Background Alt
+    src: /img/paris.webp
+    alt: Paris
   title: Our Partners
   titleHighlight: Partners
   paragraph: >
@@ -22,11 +22,11 @@ heroPanel:
     need to serve their clients more efficiently with zero friction. If you
     believe your offerings can nicely complement or enhance ours, please do
     contact us via partners@finlight.com
-  button:
-  modalContent:
+  button: null
+  modalContent: to remove
 partnersPanel:
-  title:
-  paragraph:
+  title: null
+  paragraph: null
   cards:
     - image:
         src: /img/3dinvesting.jpg
@@ -109,7 +109,7 @@ applyPanel:
   title: Ready to Finlight?
   paragraph: Asset consolidation processes are always systematically better with Finlight.
   button: Apply for an account
-  modalContent: >
+  modalContent: |
     <p style=height:100px;width:150px;>
       Apply Content
     </p>
