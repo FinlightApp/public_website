@@ -5,7 +5,7 @@ export default function Box(props) {
       <div className={`
         ${ props.className }
         flex flex-col
-        bg-white/25 backdrop-blur-md rounded-2xl shadow-glass
+        bg-white/25 backdrop-blur-xl rounded-2xl shadow-glass
       `}>
         { props.children }
       </div>

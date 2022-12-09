@@ -27,35 +27,6 @@ heroPanel:
       Hero Content
     </p>
 featurePanel:
-  title: Who Do We Serve
-  paragraph: We help Private allocators, family offices, banks, OCIOs… build high
-    quality VC portfolio from as low as 10k GBP through dedicated EU and UK SPV
-    we maintain on their behalf
-  cards:
-    - image:
-        src: /img/blog-index.jpg
-        alt: SEO - alt
-      title: Investment consultants
-      paragraph: null
-    - image:
-        src: /img/blog-index.jpg
-        alt: SEO - alt
-      title: Family offices
-      paragraph: null
-    - image:
-        src: /img/blog-index.jpg
-        alt: SEO - alt
-      title: Qualified investors
-      paragraph: null
-    - image:
-        src: /img/default.png
-        alt: Image description
-      title: Wealth managers
-    - image:
-        src: /img/default.png
-        alt: Image description
-      title: Private banks
-servePanel:
   title: Key Features
   paragraph: We provide a wide range of features to help you manage all assets and
     liabilities from one location.
@@ -90,6 +61,35 @@ servePanel:
       paragraph: Understand how your aggregate portfolio performance compares against
         your community of peers, adjusted to your risk level thanks to our
         integration with IBO
+servePanel:
+  title: Who Do We Serve
+  paragraph: We help Private allocators, family offices, banks, OCIOs… build high
+    quality VC portfolio from as low as 10k GBP through dedicated EU and UK SPV
+    we maintain on their behalf
+  cards:
+    - image:
+        src: /img/blog-index.jpg
+        alt: SEO - alt
+      title: Investment consultants
+      paragraph: null
+    - image:
+        src: /img/blog-index.jpg
+        alt: SEO - alt
+      title: Family offices
+      paragraph: null
+    - image:
+        src: /img/blog-index.jpg
+        alt: SEO - alt
+      title: Qualified investors
+      paragraph: null
+    - image:
+        src: /img/default.png
+        alt: Image description
+      title: Wealth managers
+    - image:
+        src: /img/default.png
+        alt: Image description
+      title: Private banks
 applyPanel:
   theme:
     header: text-white
