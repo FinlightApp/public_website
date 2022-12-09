@@ -22,7 +22,7 @@ const Footer = () => {
           Contact
         </Link>
         <Link className='text-white'
-        to='/'>
+        to='/privacy'>
           Privacy
         </Link>
       </div>
