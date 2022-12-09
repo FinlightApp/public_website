@@ -215,7 +215,7 @@ collections:
                   { label: Title Highlight, name: titleHighlight, widget: string, required: false },
                   { label: Text, name: paragraph, widget: string, required: false },
                   { label: Button, name: button, widget: string, required: false },
-                  # { label: Modal Content, name: modalContent, widget: code, required: false },
+                  { label: Modal Content, name: modalContent, widget: text, required: false },
                 ],
             }
           - {
@@ -396,7 +396,7 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
-                  # { label: Modal Content, name: modalContent, widget: code },
+                  { label: Modal Content, name: modalContent, widget: text },
                 ],
             }
       - file: src/pages/team/index.md
@@ -491,7 +491,7 @@ collections:
                   { label: Title Highlight, name: titleHighlight, widget: string, required: false},
                   { label: Text, name: paragraph, widget: string, required: false},
                   { label: Button, name: button, widget: string, required: false},
-                  # { label: Modal Content, name: modalContent, widget: code, required: false},
+                  { label: Modal Content, name: modalContent, widget: text, required: false},
                 ]
             }
           - {
@@ -655,7 +655,7 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
-                  # { label: Modal Content, name: modalContent, widget: code },
+                  { label: Modal Content, name: modalContent, widget: text },
                 ],
             }
       - file: src/pages/partners/index.md
@@ -753,7 +753,7 @@ collections:
                   { label: Title Highlight, name: titleHighlight, widget: string, required: false},
                   { label: Text, name: paragraph, widget: string, required: false},
                   { label: Button, name: button, widget: string, required: false},
-                  # { label: Modal Content, name: modalContent, widget: code },
+                  { label: Modal Content, name: modalContent, widget: text },
                 ],
             }
           - {
@@ -883,7 +883,7 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
-                  # { label: Modal Content, name: modalContent, widget: code },
+                  { label: Modal Content, name: modalContent, widget: text },
                 ],
             }
       - file: src/pages/our-values/index.md
@@ -981,7 +981,7 @@ collections:
                   { label: Title Highlight, name: titleHighlight, widget: string, required: false },
                   { label: Text, name: paragraph, widget: string, required: false },
                   { label: Button, name: button, widget: string, required: false },
-                  # { label: Modal Content, name: modalContent, widget: code },
+                  { label: Modal Content, name: modalContent, widget: text },
                 ],
             }
           - {
@@ -1117,7 +1117,7 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
-                  # { label: Modal Content, name: modalContent, widget: code },
+                  { label: Modal Content, name: modalContent, widget: text },
                 ],
             }
       - file: src/pages/spotlight/index.md
