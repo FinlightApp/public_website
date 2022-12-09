@@ -13,6 +13,7 @@ export const BlogPostTemplate = ({
   description,
   title,
   image,
+  theme
 }) => {
   const PostContent = contentComponent || Content;
 
@@ -20,14 +21,14 @@ export const BlogPostTemplate = ({
     <>
       <Hero
       theme={ {
-        header: 'text-black',
-        line: 'via-secondary',
-        highlight: 'text-secondary',
-        paragraph: 'text-black',
+        header: theme.header,
+        line: theme.line,
+        highlight: theme.highlight,
+        paragraph: theme.paragraph,
       } }
       backgroundImg={ {
-        src: getImage(image) || image,
-        alt: 'lol'
+        image: getImage(image.src) || image.src,
+        alt: image.alt,
       } }
       title={ title }
       paragraph={ description } />
@@ -41,20 +42,28 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  image: PropTypes.object,
+  keywords: PropTypes.string,
+  theme: PropTypes.object,
 };
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout>
+    <Layout
+    seo={ {
+      keywords: post.frontmatter.keywords,
+      title: `Finlight - ${post.frontmatter.title}`,
+      description: post.frontmatter.description,
+    } }>
       <BlogPostTemplate
+        theme={post.frontmatter.theme}
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        image={post.frontmatter.image}
         content={post.html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.description}
-        title={post.frontmatter.title}
-        image={post.frontmatter.image}
       />
     </Layout>
   );
@@ -74,21 +83,31 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        keywords
+        theme {
+          header
+          line
+          highlight
+          paragraph
+        }
+        date(formatString: "DD MMMM, YYYY")
         title
         description
         image {
-          childImageSharp {
-            gatsbyImageData(
-              quality: 100
-              placeholder: BLURRED
-              formats: [AUTO, WEBP]
-              layout: FULL_WIDTH
-              transformOptions: {
-                fit: COVER
-              }
-            )
+          src {
+            childImageSharp {
+              gatsbyImageData(
+                quality: 100
+                placeholder: BLURRED
+                formats: [AUTO, WEBP]
+                layout: FULL_WIDTH
+                transformOptions: {
+                  fit: COVER
+                }
+              )
+            }
           }
+          alt
         }
       }
     }
