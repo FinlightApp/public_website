@@ -65,8 +65,8 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type ImageEl {
+      src: File @fileByRelativePath
       alt: String
-      image: File @fileByRelativePath
     }
     type Theme {
       header: String
@@ -74,13 +74,29 @@ exports.createSchemaCustomization = ({ actions }) => {
       highlight: String
       paragraph: String
     }
+    type DataCard {
+      image: ImageEl
+      title: String
+      paragraph: String
+    }
+    type ProfileCard {
+      image: ImageEl
+      title: String
+      subheading: String
+      link: String
+    }
+    type PartnerCard {
+      image: ImageEl
+      title: String
+      link: String
+    }
 
     type Frontmatter implements Node {
       heroPanel: HeroPanel
     }
     type HeroPanel implements Node {
       theme: Theme
-      imageBg: ImageEl
+      backgroundImg: ImageEl
       title: String
       titleHighlight: String
       paragraph: String
@@ -93,7 +109,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type ApplyPanel implements Node {
       theme: Theme
-      imageBg: ImageEl
+      backgroundImg: ImageEl
       title: String
       paragraph: String
       button: String
@@ -101,31 +117,21 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type Frontmatter implements Node {
-      ourValuesPanel: OurValuesPanel
+      featurePanel: FeaturePanel
     }
-    type OurValuesPanel implements Node {
+    type FeaturePanel implements Node {
       title: String
       paragraph: String
-      values: [ValueCard]
-    }
-    type ValueCard {
-      valueImage: ImageEl
-      title: String
-      paragraph: String
+      cards: [DataCard]
     }
 
     type Frontmatter implements Node {
-      partnersPanel: PartnersPanel
+      servePanel: ServePanel
     }
-    type PartnersPanel implements Node {
+    type ServePanel implements Node {
       title: String
       paragraph: String
-      partners: [PartnerCard]
-    }
-    type PartnerCard {
-      partnerImage: ImageEl
-      name: String
-      link: String
+      cards: [DataCard]
     }
 
     type Frontmatter implements Node {
@@ -134,14 +140,35 @@ exports.createSchemaCustomization = ({ actions }) => {
     type TeamPanel implements Node {
       title: String
       paragraph: String
-      cards: [TeamCard]
+      cards: [ProfileCard]
     }
-    type TeamCard {
-      partnerImage: ImageEl
+
+    type Frontmatter implements Node {
+      nonExecutiveDirectorsPanel: NonExecutiveDirectorsPanel
+    }
+    type NonExecutiveDirectorsPanel implements Node {
       title: String
-      subheading: String
-      link: String
+      paragraph: String
+      cards: [ProfileCard]
     }
-    `
+
+    type Frontmatter implements Node {
+      partnersPanel: PartnersPanel
+    }
+    type PartnersPanel implements Node {
+      title: String
+      paragraph: String
+      cards: [PartnerCard]
+    }
+
+    type Frontmatter implements Node {
+      ourValuesPanel: OurValuesPanel
+    }
+    type OurValuesPanel implements Node {
+      title: String
+      paragraph: String
+      cards: [DataCard]
+    }
+  `
   createTypes(typeDefs)
 }

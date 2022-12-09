@@ -10,9 +10,9 @@ const TeamPagePreview = ({ entry, getAsset }) => {
       <TeamPageTemplate 
         heroPanel={{
           theme: data.heroPanel.theme,
-          imageBg: {
-            image: getAsset(data.heroPanel.imageBg.image),
-            alt: data.heroPanel.imageBg.alt,
+          backgroundImg: {
+            src: getAsset(data.heroPanel.backgroundImg.image),
+            alt: data.heroPanel.backgroundImg.alt,
           },
           title: data.heroPanel.title,
           titleHighlight: data.heroPanel.titleHighlight,
@@ -26,13 +26,13 @@ const TeamPagePreview = ({ entry, getAsset }) => {
         nonExecutiveDirectorsPanel={{
           title: data.nonExecutiveDirectorsPanel.title,
           paragraph: data.nonExecutiveDirectorsPanel.paragraph,
-          nonExecutiveDirectors: data.nonExecutiveDirectorsPanel.nonExecutiveDirectors
+          cards: data.nonExecutiveDirectorsPanel.cards
         }}
         applyPanel={{
           theme: data.applyPanel.theme,
-          imageBg: {
-            image: getAsset(data.applyPanel.imageBg.image),
-            alt: data.applyPanel.imageBg.alt,
+          backgroundImg: {
+            src: getAsset(data.applyPanel.backgroundImg.src),
+            alt: data.applyPanel.backgroundImg.alt,
           },
           title: data.applyPanel.title,
           paragraph: data.applyPanel.paragraph,

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { getImage } from 'gatsby-plugin-image';
-import TeamCard from './TeamCard';
+import ProfileCard from './ProfileCard';
 import Panel from './Panel';
 
 export default function TeamPanel(props) {
@@ -35,17 +35,17 @@ export default function TeamPanel(props) {
                   w-full
                   gap-12
                 '>
-                { cards.map((card, i) => (
-                  <TeamCard key={ i }
-                  cardImage={ {
-                    image: getImage(card.cardImage.image) || card.cardImage.image,
-                    alt: card.cardImage.alt
-                  } }
-                  title={ card.title }
-                  subheading={ card.subheading }
-                  link={ card.link } />
-                )) }
-              </div>
+                  { cards.map((card, i) => (
+                    <ProfileCard key={ i }
+                    image={ {
+                      src: getImage(card.image.src) || card.image.src,
+                      alt: card.image.alt
+                    } }
+                    title={ card.title }
+                    subheading={ card.subheading }
+                    link={ card.link } />
+                  )) }
+                </div>
               ) }
             </Panel>
           </div>

@@ -12,16 +12,16 @@ import Partners from '../components/Partners';
 export const PartnersPageTemplate = ({
   seo,
   heroPanel,
-  applyPanel,
   partnersPanel,
+  applyPanel,
 }) => {
   return (
     <>
       <Hero
       theme={ heroPanel.theme }
-      imageBg={ {
-        image: getImage(heroPanel.imageBg.image) || heroPanel.imageBg.image,
-        alt: heroPanel.imageBg.alt
+      backgroundImg={ {
+        src: getImage(heroPanel.backgroundImg.src) || heroPanel.backgroundImg.src,
+        alt: heroPanel.backgroundImg.alt
       } }
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
@@ -31,12 +31,12 @@ export const PartnersPageTemplate = ({
       <Partners
       title={ partnersPanel.title }
       paragraph={ partnersPanel.paragraph }
-      partners={ partnersPanel.partners } />
+      cards={ partnersPanel.cards } />
       <Apply
       theme={ applyPanel.theme }
-      imageBg={ {
-        image: getImage(applyPanel.imageBg.image) || applyPanel.imageBg.image,
-        alt: applyPanel.imageBg.alt
+      backgroundImg={ {
+        src: getImage(applyPanel.backgroundImg.src) || applyPanel.backgroundImg.src,
+        alt: applyPanel.backgroundImg.alt
       } }
       title={ applyPanel.title }
       paragraph={ applyPanel.paragraph }
@@ -55,7 +55,7 @@ PartnersPageTemplate.propTypes = {
   }),
   heroPanel: PropTypes.shape({
     theme: PropTypes.object,
-    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    backgroundImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
@@ -65,11 +65,11 @@ PartnersPageTemplate.propTypes = {
   partnersPanel: PropTypes.shape({
     title: PropTypes.string,
     paragraph: PropTypes.string,
-    partners: PropTypes.array,
+    cards: PropTypes.array,
   }),
   applyPanel: PropTypes.shape({
     theme: PropTypes.object,
-    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    backgroundImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
@@ -118,9 +118,8 @@ export const partnersPageQuery = graphql`
             paragraph
             button
           }
-          imageBg {
-            alt
-            image {
+          backgroundImg {
+            src {
               childImageSharp {
                 gatsbyImageData(
                   quality: 100
@@ -133,6 +132,7 @@ export const partnersPageQuery = graphql`
                 )
               }
             }
+            alt
           }
           title
           titleHighlight
@@ -143,9 +143,9 @@ export const partnersPageQuery = graphql`
         partnersPanel {
           title
           paragraph
-          partners {
-            partnerImage {
-              image {
+          cards {
+            image {
+              src {
                 childImageSharp {
                   gatsbyImageData(
                     quality: 100
@@ -156,7 +156,7 @@ export const partnersPageQuery = graphql`
                 }
               }
             }
-            name
+            title
             link
           }
         }
@@ -168,9 +168,8 @@ export const partnersPageQuery = graphql`
             paragraph
             button
           }
-          imageBg {
-            alt
-            image {
+          backgroundImg {
+            src {
               childImageSharp {
                 gatsbyImageData(
                   quality: 100
@@ -183,6 +182,7 @@ export const partnersPageQuery = graphql`
                 )
               }
             }
+            alt
           }
           title
           paragraph
