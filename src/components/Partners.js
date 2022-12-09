@@ -9,7 +9,7 @@ export default function Partners(props) {
   const {
     title,
     paragraph,
-    partners,
+    cards,
   } = props;
 
   return (
@@ -19,7 +19,7 @@ export default function Partners(props) {
         justify-center
         h-fit
       '>
-        { ( title || paragraph || partners ) && (
+        { ( title || paragraph || cards ) && (
           <div className='
             flex
             justify-center
@@ -29,20 +29,20 @@ export default function Partners(props) {
             <Panel
             title={ title }
             paragraph={ paragraph }>
-              { partners && (
+              { cards && (
               <div className='
                   flex flex-wrap
                   justify-center
                   w-full
                   gap-12
                 '>
-                  { partners.map((partner, i) => (
+                  { cards.map((card, i) => (
                     <PartnersCard key={ i }
-                    partnerImage={ {
-                      image : getImage(partner.partnerImage.image) || partner.partnerImage.image
+                    image={ {
+                      src : getImage(card.image.src) || card.image.src
                     } }
-                    name={ partner.name }
-                    link={ partner.link } />
+                    title={ card.title }
+                    link={ card.link } />
                   )) }
                 </div>
               ) }
@@ -57,5 +57,5 @@ export default function Partners(props) {
 Partners.propTypes = {
   title: PropTypes.string,
   paragraph: PropTypes.string,
-  partners: PropTypes.array
+  cards: PropTypes.array
 };

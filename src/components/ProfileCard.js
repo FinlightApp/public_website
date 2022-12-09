@@ -4,9 +4,9 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import  linkedinIcon from '../img/social/linkedin.svg'
 
 /* eslint-disable */
-export default function TeamCard(props) {
+export default function ProfileCard(props) {
   const {
-    cardImage,
+    image,
     title,
     subheading,
     link
@@ -19,22 +19,22 @@ export default function TeamCard(props) {
         basis-full md:basis-1/2-6 lg:basis-1/3-8
         bg-white
       '>
-        { ( cardImage || title || subheading || link ) && (
-          <div  className='
+        {( image || title || subheading || link ) && (
+          <div className='
             flex flex-col
             items-center
             p-6 gap-6
             bg-white rounded-2xl shadow-card
           '>
-            { cardImage?.image?.url ? (
+            { image?.src?.url ? (
               <img className='w-44 h-44 rounded-full'
-              src={ cardImage.image }
-              alt={ cardImage.alt } />
+              src={ image.src }
+              alt={ image.alt } />
             ) : (
               <GatsbyImage className='w-44 h-44 rounded-full'
-              image={ cardImage.image }
+              image={ image.src }
               formats={ ['auto', 'webp'] }
-              alt={ cardImage.alt } />
+              alt={ image.alt } />
             ) }
             { title && (
               <p className='text-center font-normal text-sm'>
@@ -65,8 +65,8 @@ export default function TeamCard(props) {
   );
 }
 
-TeamCard.propTypes = {
-  cardImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+ProfileCard.propTypes = {
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   subheading: PropTypes.string,
   link: PropTypes.string,

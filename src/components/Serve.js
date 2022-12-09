@@ -39,9 +39,9 @@ export default function Serve(props) {
                 '> 
                   { cards.map((card, i) => (
                     <DataCard key={ i }
-                    cardImage={ {
-                      image : getImage(card.cardImage.image) || card.cardImage.image,
-                      alt: card.cardImage.alt
+                    image={ {
+                      src : getImage(card.image.src) || card.iamge.src,
+                      alt: card.image.alt
                     } }
                     title={ card.title }
                     paragraph={ card.paragraph } />

@@ -10,7 +10,7 @@ import Modal from './Modal';
 export default function Apply(props) {
   const {
     theme,
-    imageBg,
+    backgroundImg,
     title,
     paragraph,
     button,
@@ -25,25 +25,26 @@ export default function Apply(props) {
         flex
         justify-center
         h-fit md:h-[500px]
+        bg-black
       '>
-        { imageBg && (
+        { backgroundImg && (
           <div className='absolute inset-0'>
-            { imageBg?.image?.url ? (
+            { backgroundImg?.src?.url ? (
               <img className='
                 w-full h-full
                 brightness-50
               '
-              src={ imageBg.image }
-              alt={ imageBg.alt } />
+              src={ backgroundImg.src }
+              alt={ backgroundImg.alt } />
             ) : (
               <GatsbyImage className='
                 w-full h-full
                 brightness-50
               '
               objectFit='cover'
-              image={ imageBg.image }
+              image={ backgroundImg.src }
               formats={ ['auto', 'webp'] }
-              alt={ imageBg.alt } />
+              alt={ backgroundImg.alt } />
             ) }
           </div>
         ) }
@@ -94,7 +95,7 @@ export default function Apply(props) {
 
 Apply.propTypes = {
   theme: PropTypes.object,
-  imageBg: PropTypes.object,
+  backgroundImg: PropTypes.object,
   title: PropTypes.string,
   paragraph: PropTypes.string,
   button: PropTypes.string,

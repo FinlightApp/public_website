@@ -203,11 +203,11 @@ collections:
                   },
                   {
                     label: Background,
-                    name: imageBg,
+                    name: backgroundImg,
                     widget: object,
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
+                        { label: Image, name: src, widget: image },
                         { label: SEO - Image Description, name: alt, widget: string },
                       ],
                   },
@@ -228,20 +228,20 @@ collections:
                   { label: Text, name: paragraph, widget: string, required: false },
                   {
                     label: Features,
-                    name: features,
+                    name: cards,
                     widget: list,
                     required: false,
                     fields:
                       [
                         {
                           label: Image,
-                          name: featureImage,
+                          name: image,
                           widget: object,
                           fields:
                             [
                               {
                                 label: Image,
-                                name: image,
+                                name: src,
                                 widget: image,
                                 default: /img/default.png
                               },
@@ -280,13 +280,13 @@ collections:
                     [
                       {
                         label: Image,
-                        name: cardImage,
+                        name: image,
                         widget: object,
                         fields:
                         [
                           {
                             label: Image,
-                            name: image,
+                            name: src,
                             widget: image,
                             default: /img/default.png
                           },
@@ -294,7 +294,7 @@ collections:
                             label: SEO - Image Description,
                             name: alt,
                             widget: string,
-                            default: Image description
+                            default: Image Description
                           },
                         ],
                       },
@@ -385,11 +385,11 @@ collections:
                   },
                   {
                     label: Background,
-                    name: imageBg,
+                    name: backgroundImg,
                     widget: object,
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
+                        { label: Image, name: src, widget: image },
                         { label: SEO - Image Description, name: alt, widget: string },
                       ],
                   },
@@ -479,11 +479,11 @@ collections:
                   },
                   {
                     label: Background,
-                    name: imageBg,
+                    name: backgroundImg,
                     widget: object,
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
+                        { label: Image, name: src, widget: image },
                         { label: SEO - Image Description, name: alt, widget: string },
                       ],
                   },
@@ -503,26 +503,26 @@ collections:
                 { label: Title, name: title, widget: string, required: false },
                 { label: Paragraph, name: paragraph, widget: text, required: false} ,
                 {
-                  label: Cards,
+                  label: Team,
                   name: cards,
                   widget: list,
                   required: false,
                   fields:
                     [
                       {
-                        label: Card Image,
-                        name: cardImage,
+                        label: Profile Image,
+                        name: image,
                         widget: object,
                         fields:
                         [
                           {
                             label: Image,
-                            name: image,
+                            name: src,
                             widget: image,
                             default: /img/default.png
                           },
                           {
-                            label: Image Name,
+                            label: SEO - Image Description,
                             name: alt,
                             widget: text,
                             default: Image Description
@@ -530,8 +530,8 @@ collections:
                         ],
                       },
                       { label: Name, name: title, widget: string, default: Name },
-                      { label: Role, name: text, widget: string, default: Role },
-                      { label: LinkedIn Profile, name: link, widget: text, default: https://www.finlight.com },
+                      { label: Role, name: subheading, widget: string, default: Role },
+                      { label: LinkedIn Profile, name: link, widget: string, default: https://www.finlight.com },
                     ]
                  }
               ]
@@ -546,20 +546,20 @@ collections:
                 { label: Text, name: paragraph, widget: string, required: false},
                 {
                   label: Non-Executive Directors,
-                  name: nonExecutiveDirectors,
+                  name: cards,
                   widget: list,
                   required: false,
                   fields:
                     [
                       {
-                        label: Non-Executive Director Image,
-                        name: nonExecutiveDirectorImage,
+                        label: Profile Image,
+                        name: image,
                         widget: object,
                         fields:
                           [
                             {
                               label: Image,
-                              name: image,
+                              name: src,
                               widget: image,
                               default: /img/default.png
                             },
@@ -571,8 +571,8 @@ collections:
                             },
                           ],
                       },
-                      { label: Name, name: name, widget: text, default: Name },
-                      { label: Role, name: role, widget: text, default: Role },
+                      { label: Name, name: title, widget: string, default: Name },
+                      { label: Role, name: subheading, widget: string, default: Role },
                       { label: LinkedIn Profile, name: link, widget: string, default: https://www.finlight.com },
                     ],
                 },
@@ -644,11 +644,11 @@ collections:
                   },
                   {
                     label: Background,
-                    name: imageBg,
+                    name: backgroundImg,
                     widget: object,
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
+                        { label: Image, name: src, widget: image },
                         { label: SEO - Image Description, name: alt, widget: string },
                       ],
                   },
@@ -741,11 +741,11 @@ collections:
                   },
                   {
                     label: Background,
-                    name: imageBg,
+                    name: backgroundImg,
                     widget: object,
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
+                        { label: Image, name: src, widget: image },
                         { label: SEO - Image Description, name: alt, widget: string },
                       ],
                   },
@@ -766,20 +766,20 @@ collections:
                   { label: Text, name: paragraph, widget: string, required: false},
                   {
                     label: Partners,
-                    name: partners,
+                    name: cards,
                     widget: list,
                     required: false,
                     fields:
                       [
                         {
                           label: Logo,
-                          name: partnerImage,
+                          name: image,
                           widget: object,
                           fields:
                             [
                               {
                                 label: Image,
-                                name: image,
+                                name: src,
                                 widget: image,
                                 default: /img/default.png
                               },
@@ -787,7 +787,7 @@ collections:
                         },
                         {
                           label: Company Name,
-                          name: name,
+                          name: title,
                           widget: text,
                           default: Partner
                         },
@@ -872,11 +872,11 @@ collections:
                   },
                   {
                     label: Background,
-                    name: imageBg,
+                    name: backgroundImg,
                     widget: object,
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
+                        { label: Image, name: src, widget: image },
                         { label: SEO - Image Description, name: alt, widget: string },
                       ],
                   },
@@ -969,11 +969,11 @@ collections:
                   },
                   {
                     label: Background,
-                    name: imageBg,
+                    name: backgroundImg,
                     widget: object,
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
+                        { label: Image, name: src, widget: image },
                         { label: SEO - Image Description, name: alt, widget: string },
                       ],
                   },
@@ -994,20 +994,20 @@ collections:
                   { label: Text, name: paragraph, widget: string, required: false },
                   {
                     label: Values,
-                    name: values,
+                    name: cards,
                     widget: list,
                     required: false,
                     fields:
                       [
                         {
                           label: Image,
-                          name: valueImage,
+                          name: image,
                           widget: object,
                           fields:
                             [
                               {
                                 label: Image,
-                                name: image,
+                                name: src,
                                 widget: image,
                                 default: /img/default.png
                               },
@@ -1106,11 +1106,11 @@ collections:
                   },
                   {
                     label: Background,
-                    name: imageBg,
+                    name: backgroundImg,
                     widget: object,
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
+                        { label: Image, name: src, widget: image },
                         { label: SEO - Image Description, name: alt, widget: string },
                       ],
                   },
@@ -1203,11 +1203,11 @@ collections:
                   },
                   {
                     label: Background,
-                    name: imageBg,
+                    name: backgroundImg,
                     widget: object,
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
+                        { label: Image, name: src, widget: image },
                         { label: SEO - Image Description, name: alt, widget: string },
                       ],
                   },
@@ -1288,11 +1288,11 @@ collections:
                   },
                   {
                     label: Background,
-                    name: imageBg,
+                    name: backgroundImg,
                     widget: object,
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
+                        { label: Image, name: src, widget: image },
                         { label: SEO - Image Description, name: alt, widget: string },
                       ],
                   },

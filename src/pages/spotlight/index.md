@@ -12,9 +12,9 @@ heroPanel:
     line: via-secondary
     highlight: text-secondary
     paragraph: text-black
-  imageBg:
+  backgroundImg:
+    src: /img/brussels.png
     alt: Background Alt
-    image: /img/brussels.png
   title: Spotlight
   titleHighlight: Spotlight
   paragraph: >
@@ -30,9 +30,9 @@ applyPanel:
     highlight: text-primary
     paragraph: text-white
     button: text-black bg-primary
-  imageBg:
+  backgroundImg:
+    src: /img/heroBg.webp
     alt: Background Alt - test
-    image: /img/heroBg.webp
   title: Ready to Finlight?
   paragraph: Asset consolidation processes are always systematically better with Finlight.
   button: Apply for an account

@@ -19,9 +19,9 @@ export const OurValuesPageTemplate = ({
     <>
       <Hero
       theme={ heroPanel.theme }
-      imageBg={ {
-        image: getImage(heroPanel.imageBg.image) || heroPanel.imageBg.image,
-        alt: heroPanel.imageBg.alt
+      backgroundImg={ {
+        src: getImage(heroPanel.backgroundImg.src) || heroPanel.backgroundImg.src,
+        alt: heroPanel.backgroundImg.alt
       } }
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
@@ -31,12 +31,12 @@ export const OurValuesPageTemplate = ({
       <Values
       title={ ourValuesPanel.title }
       paragraph={ ourValuesPanel.paragraph }
-      values={ ourValuesPanel.values } />
+      cards={ ourValuesPanel.cards } />
       <Apply
       theme={ applyPanel.theme }
-      imageBg={ {
-        image: getImage(applyPanel.imageBg.image) || applyPanel.imageBg.image,
-        alt: applyPanel.imageBg.alt
+      backgroundImg={ {
+        src: getImage(applyPanel.backgroundImg.src) || applyPanel.backgroundImg.src,
+        alt: applyPanel.backgroundImg.alt
       } }
       title={ applyPanel.title }
       paragraph={ applyPanel.paragraph }
@@ -55,7 +55,7 @@ OurValuesPageTemplate.propTypes = {
   }),
   heroPanel: PropTypes.shape({
     theme: PropTypes.object,
-    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    backgroundImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
@@ -65,11 +65,11 @@ OurValuesPageTemplate.propTypes = {
   ourValuesPanel: PropTypes.shape({
     title: PropTypes.string,
     paragraph: PropTypes.string,
-    values: PropTypes.array,
+    cards: PropTypes.array,
   }),
   applyPanel: PropTypes.shape({
     theme: PropTypes.object,
-    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    backgroundImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
@@ -118,9 +118,8 @@ export const ourValuesPageQuery = graphql`
             paragraph
             button
           }
-          imageBg {
-            alt
-            image {
+          backgroundImg {
+            src {
               childImageSharp {
                 gatsbyImageData(
                   quality: 100
@@ -133,6 +132,7 @@ export const ourValuesPageQuery = graphql`
                 )
               }
             }
+            alt
           }
           title
           titleHighlight
@@ -143,10 +143,9 @@ export const ourValuesPageQuery = graphql`
         ourValuesPanel {
           title
           paragraph
-          values {
-            valueImage {
-              alt
-              image {
+          cards {
+            image {
+              src {
                 childImageSharp {
                   gatsbyImageData(
                     quality: 100
@@ -156,6 +155,7 @@ export const ourValuesPageQuery = graphql`
                   )
                 }
               }
+              alt
             }
             title
             paragraph
@@ -169,9 +169,8 @@ export const ourValuesPageQuery = graphql`
             paragraph
             button
           }
-          imageBg {
-            alt
-            image {
+          backgroundImg {
+            src {
               childImageSharp {
                 gatsbyImageData(
                   quality: 100
@@ -184,6 +183,7 @@ export const ourValuesPageQuery = graphql`
                 )
               }
             }
+            alt
           }
           title
           paragraph

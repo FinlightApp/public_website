@@ -21,9 +21,9 @@ export const TeamPageTemplate = ({
     <>
       <Hero
       theme={ heroPanel.theme }
-      imageBg={ {
-        image: getImage(heroPanel.imageBg.image) || heroPanel.imageBg.image,
-        alt: heroPanel.imageBg.alt
+      backgroundImg={ {
+        src: getImage(heroPanel.backgroundImg.src) || heroPanel.backgroundImg.src,
+        alt: heroPanel.backgroundImg.alt
       } }
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
@@ -36,12 +36,12 @@ export const TeamPageTemplate = ({
       <NonExecutiveDirectors
       title={ nonExecutiveDirectorsPanel.title }
       paragraph={ nonExecutiveDirectorsPanel.paragraph }
-      nonExecutiveDirectors={ nonExecutiveDirectorsPanel.nonExecutiveDirectors } />
+      cards={ nonExecutiveDirectorsPanel.cards } />
       <Apply
       theme={ applyPanel.theme }
-      imageBg={ {
-        image: getImage(applyPanel.imageBg.image) || applyPanel.imageBg.image,
-        alt: applyPanel.imageBg.alt
+      backgroundImg={ {
+        src: getImage(applyPanel.backgroundImg.src) || applyPanel.backgroundImg.src,
+        alt: applyPanel.backgroundImg.alt
       } }
       title={ applyPanel.title }
       paragraph={ applyPanel.paragraph }
@@ -60,7 +60,7 @@ TeamPageTemplate.propTypes = {
   }),
   heroPanel: PropTypes.shape({
     theme: PropTypes.object,
-    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    backgroundImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
@@ -74,11 +74,11 @@ TeamPageTemplate.propTypes = {
   nonExecutivedirectorsPanel: PropTypes.shape({
     title: PropTypes.string,
     paragraph: PropTypes.string,
-    nonExecutiveDirectors: PropTypes.array,
+    cards: PropTypes.array,
   }),
   applyPanel: PropTypes.shape({
     theme: PropTypes.object,
-    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    backgroundImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
@@ -127,13 +127,13 @@ export const teamPageQuery = graphql`
             highlight
             paragraph
           }
-          imageBg {
-            alt
-            image {
+          backgroundImg {
+            src {
               childImageSharp {
                 gatsbyImageData(quality: 100)
               }
             }
+            alt
           }
           title
           titleHighlight
@@ -145,8 +145,8 @@ export const teamPageQuery = graphql`
           title
           paragraph
           cards {
-            cardImage {
-              image {
+            image {
+              src {
                 childImageSharp {
                   gatsbyImageData(quality: 100)
                 }
@@ -161,17 +161,17 @@ export const teamPageQuery = graphql`
         nonExecutiveDirectorsPanel {
           title
           paragraph
-          nonExecutiveDirectors {
-            nonExecutiveDirectorImage {
-              image {
+          cards {
+            image {
+              src {
                 childImageSharp {
                   gatsbyImageData(quality: 100)
                 }
               }
               alt
             }
-            name
-            role
+            title
+            subheading
             link
           }
         }
@@ -183,13 +183,13 @@ export const teamPageQuery = graphql`
             paragraph
             button
           }
-          imageBg {
-            alt
-            image {
+          backgroundImg {
+            src {
               childImageSharp {
                 gatsbyImageData(quality: 100)
               }
             }
+            alt
           }
           title
           paragraph

@@ -23,13 +23,13 @@ module.exports = {
       },
     },
     {
-       resolve: "gatsby-plugin-offline",
-       options: {
-          workboxConfig: {
-            globPatterns: ["**/icon-path*"],
-            importWorkboxFrom: "cdn",
-          }
-       }
+      resolve: "gatsby-plugin-offline",
+      options: {
+        workboxConfig: {
+          globPatterns: ["**/icon-path*"],
+          importWorkboxFrom: "cdn",
+        }
+      }
     },
     {
       resolve: "gatsby-plugin-loadable-components-ssr",

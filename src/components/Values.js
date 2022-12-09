@@ -9,7 +9,7 @@ export default function Values(props) {
   const {
     title,
     paragraph,
-    values,
+    cards,
   } = props;
 
   return (
@@ -19,7 +19,7 @@ export default function Values(props) {
         justify-center
         h-fit
       '>
-        { ( title || paragraph || values ) && (
+        { ( title || paragraph || cards ) && (
           <div className='
             flex
             justify-center
@@ -29,21 +29,21 @@ export default function Values(props) {
             <Panel
             title={ title }
             paragraph={ paragraph }>
-              { values && ( 
+              { cards && ( 
                 <div className='
                   flex flex-wrap
                   justify-center
                   w-full
                   gap-12
                 '>
-                  { values.map((value, i) => (
+                  { cards.map((card, i) => (
                     <DataCard key={ i }
-                    cardImage={ {
-                      image : getImage(value.valueImage.image) || value.valueImage.image,
-                      alt: value.valueImage.alt
+                    image={ {
+                      src : getImage(card.image.src) || card.image.src,
+                      alt: card.image.alt
                     } }
-                    title={ value.title }
-                    paragraph={ value.paragraph } />
+                    title={ card.title }
+                    paragraph={ card.paragraph } />
                   ) ) }
                 </div>
               ) }
@@ -58,5 +58,5 @@ export default function Values(props) {
 Values.propTypes = {
   title: PropTypes.string,
   paragraph: PropTypes.string,
-  values: PropTypes.array
+  cards: PropTypes.array
 };

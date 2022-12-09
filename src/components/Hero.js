@@ -10,7 +10,7 @@ import Modal from './Modal';
 export default function Hero(props) {
   const {
     theme,
-    imageBg,
+    backgroundImg,
     title,
     titleHighlight,
     paragraph,
@@ -28,13 +28,13 @@ export default function Hero(props) {
         h-fit md:h-[700px]
       '>
         <div className='absolute inset-0'>
-          { imageBg?.image?.url ? (
+          { backgroundImg?.src?.url ? (
             <img className='
               w-full h-full
               select-none
             '
-            src={ imageBg.image }
-            alt={ imageBg.alt }
+            src={ backgroundImg.src }
+            alt={ backgroundImg.alt }
             draggable='false' />
           ) : (
             <GatsbyImage className='
@@ -42,9 +42,9 @@ export default function Hero(props) {
               select-none
             '
             objectFit='cover'
-            image={ imageBg.image }
+            image={ backgroundImg.src }
             formats={ ['auto', 'webp'] }
-            alt={ imageBg.alt }
+            alt={ backgroundImg.alt }
             draggable={ false } />
           ) }
         </div>
@@ -97,7 +97,7 @@ export default function Hero(props) {
 
 Hero.propTypes = {
   theme: PropTypes.object,
-  imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  backgroundImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   titleHighlight: PropTypes.string,
   paragraph: PropTypes.string,
