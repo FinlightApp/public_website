@@ -49,7 +49,7 @@ collections:
                 widget: select,
                 options:
                   [
-                    { label: Primary, value: "" },
+                    { label: Primary, value: via-primary },
                     { label: Secondary, value: via-secondary }
                   ],
                 default: { label: Primary, value: via-primary }
@@ -269,8 +269,8 @@ collections:
             widget: object,
             fields:
               [
-                { label: Title, name: title, widget: string, required: false},
-                { label: Text, name: paragraph, widget: string, required: false},
+                { label: Title, name: title, widget: string, required: false },
+                { label: Text, name: paragraph, widget: string, required: false },
                 {
                   label: Cards,
                   name: cards,
@@ -396,7 +396,7 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
-                  { label: Modal Content, name: modalContent, widget: text },
+                  { label: Modal Content, name: modalContent, widget: text , required: false },
                 ],
             }
       - file: src/pages/team/index.md
@@ -441,7 +441,8 @@ collections:
                             [
                               { label: Black, value: text-black },
                               { label: White, value: text-white }
-                            ]
+                            ],
+                          default: { label: White, value: text-white }
                         },
                         {
                           label: Line,
@@ -451,7 +452,8 @@ collections:
                             [
                               { label: Primary, value: via-primary },
                               { label: Secondary, value: via-secondary }
-                            ]
+                            ],
+                          default: { label: Primary, value: via-primary }
                         },
                         {
                           label: Highlight,
@@ -462,7 +464,8 @@ collections:
                             [
                               { label: Primary, value: text-primary },
                               { label: Secondary, value: text-secondary }
-                            ]
+                            ],
+                          default: { label: Primary, value: text-primary }
                         },
                         {
                           label: Paragraph,
@@ -473,7 +476,8 @@ collections:
                             [
                               { label: Black, value: text-black },
                               { label: White, value: text-white }
-                            ]
+                            ],
+                          default: { label: White, value: text-white }
                         },
                       ],
                   },
@@ -488,10 +492,10 @@ collections:
                       ],
                   },
                   { label: Title, name: title, widget: string },
-                  { label: Title Highlight, name: titleHighlight, widget: string, required: false},
-                  { label: Text, name: paragraph, widget: string, required: false},
-                  { label: Button, name: button, widget: string, required: false},
-                  { label: Modal Content, name: modalContent, widget: text, required: false},
+                  { label: Title Highlight, name: titleHighlight, widget: string, required: false },
+                  { label: Text, name: paragraph, widget: string, required: false },
+                  { label: Button, name: button, widget: string, required: false },
+                  { label: Modal Content, name: modalContent, widget: text, required: false },
                 ]
             }
           - {
@@ -501,7 +505,7 @@ collections:
             fields:
               [
                 { label: Title, name: title, widget: string, required: false },
-                { label: Paragraph, name: paragraph, widget: text, required: false} ,
+                { label: Paragraph, name: paragraph, widget: text, required: false },
                 {
                   label: Team,
                   name: cards,
@@ -542,8 +546,8 @@ collections:
             widget: object,
             fields:
               [
-                { label: Title, name: title, widget: string, required: false},
-                { label: Text, name: paragraph, widget: string, required: false},
+                { label: Title, name: title, widget: string, required: false },
+                { label: Text, name: paragraph, widget: string, required: false },
                 {
                   label: Non-Executive Directors,
                   name: cards,
@@ -598,7 +602,8 @@ collections:
                             [
                               { label: Black, value: text-black },
                               { label: White, value: text-white }
-                            ]
+                            ],
+                          default: { label: White, value: text-white }
                         },
                         {
                           label: Line,
@@ -608,7 +613,8 @@ collections:
                             [
                               { label: Primary, value: via-primary },
                               { label: Secondary, value: via-secondary }
-                            ]
+                            ],
+                          default: { label: Primary, value: via-primary }
                         },
                         {
                           label: Highlight,
@@ -618,7 +624,8 @@ collections:
                             [
                               { label: Primary, value: text-primary },
                               { label: Secondary, value: text-secondary }
-                            ]
+                            ],
+                          default: { label: Primary, value: text-primary }
                         },
                         {
                           label: Paragraph,
@@ -628,7 +635,8 @@ collections:
                             [
                               { label: Black, value: text-black },
                               { label: White, value: text-white }
-                            ]
+                            ],
+                          default: { label: White, value: text-white }
                         },
                         {
                           label: Button,
@@ -655,7 +663,7 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
-                  { label: Modal Content, name: modalContent, widget: text },
+                  { label: Modal Content, name: modalContent, widget: text, required: false },
                 ],
             }
       - file: src/pages/partners/index.md
@@ -750,10 +758,10 @@ collections:
                       ],
                   },
                   { label: Title, name: title, widget: string },
-                  { label: Title Highlight, name: titleHighlight, widget: string, required: false},
-                  { label: Text, name: paragraph, widget: string, required: false},
-                  { label: Button, name: button, widget: string, required: false},
-                  { label: Modal Content, name: modalContent, widget: text },
+                  { label: Title Highlight, name: titleHighlight, widget: string, required: false },
+                  { label: Text, name: paragraph, widget: string, required: false },
+                  { label: Button, name: button, widget: string, required: false },
+                  { label: Modal Content, name: modalContent, widget: text, required: false },
                 ],
             }
           - {
@@ -762,8 +770,8 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Title, name: title, widget: string, required: false},
-                  { label: Text, name: paragraph, widget: string, required: false},
+                  { label: Title, name: title, widget: string, required: false },
+                  { label: Text, name: paragraph, widget: string, required: false },
                   {
                     label: Partners,
                     name: cards,
@@ -883,7 +891,7 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
-                  { label: Modal Content, name: modalContent, widget: text },
+                  { label: Modal Content, name: modalContent, widget: text, required: false },
                 ],
             }
       - file: src/pages/our-values/index.md
@@ -981,7 +989,7 @@ collections:
                   { label: Title Highlight, name: titleHighlight, widget: string, required: false },
                   { label: Text, name: paragraph, widget: string, required: false },
                   { label: Button, name: button, widget: string, required: false },
-                  { label: Modal Content, name: modalContent, widget: text },
+                  { label: Modal Content, name: modalContent, widget: text, required: false },
                 ],
             }
           - {
@@ -1117,7 +1125,7 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Text, name: paragraph, widget: string },
                   { label: Button, name: button, widget: string },
-                  { label: Modal Content, name: modalContent, widget: text },
+                  { label: Modal Content, name: modalContent, widget: text, required: false },
                 ],
             }
       - file: src/pages/spotlight/index.md
