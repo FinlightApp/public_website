@@ -32,7 +32,11 @@ export const BlogPostTemplate = ({
       } }
       title={ title }
       paragraph={ description } />
-      <PostContent content={content} />
+      <PostContent className='
+        flex flex-col
+        gap-8
+      '
+      content={content} />
     </>
   );
 };
