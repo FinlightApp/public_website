@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import finlight_logo from '../img/finlight_logo_f6.svg';
 import twitter_logo from '../img/twitter_logo.svg';
-import linkedIn_logo from '../img/linkedin_logo.svg';
+import linkedIn_logo from '../img/linkedin_logo_white.svg';
 
 const Footer = () => {
   return (
@@ -18,7 +18,7 @@ const Footer = () => {
       src={finlight_logo} alt='logo' />
       <div className='flex gap-8 md:gap-16'>
         <Link className='text-white'
-        to='/'>
+        to='/contact'>
           Contact
         </Link>
         <Link className='text-white'
