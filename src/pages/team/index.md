@@ -29,19 +29,19 @@ teamPanel:
   cards:
   - image:
       src: /img/brussels.png
-      alt: 'profile picture'
+      alt: Image Description
     title: Name
     subheading: Role
     link: https://www.linkedin.com/
   - image:
       src: /img/brussels.png
-      alt: 'profile picture'
+      alt: Image Description
     title: Name
     subheading: Role
     link: https://www.linkedin.com/
   - image:
       src: /img/brussels.png
-      alt: 'profile picture'
+      alt: Image Description
     title: Name
     subheading: Role
     link: https://www.linkedin.com/
@@ -51,19 +51,19 @@ nonExecutiveDirectorsPanel:
   cards:
   - image:
       src: /img/brussels.png
-      alt: 'profile picture'
+      alt: Image Description
     title: Name
     subheading: Role
     link: https://www.linkedin.com/
   - image:
       src: /img/brussels.png
-      alt: 'profile picture'
+      alt: Image Description
     title: Name
     subheading: Role
     link: https://www.linkedin.com/
   - image:
       src: /img/brussels.png
-      alt: 'profile picture'
+      alt: Image Description
     title: Name
     subheading: Role
     link: https://www.linkedin.com/
