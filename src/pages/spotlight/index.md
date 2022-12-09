@@ -2,10 +2,10 @@
 templateKey: spotlight-page
 path: /spotlight
 seo:
- author: Finlight
- description: Spotlight page
- keywords: Finlight
- title: Finlight - Spotlight page
+  author: Finlight
+  description: Spotlight page
+  keywords: Finlight
+  title: Finlight - Spotlight page
 heroPanel:
   theme:
     header: text-black
@@ -13,8 +13,8 @@ heroPanel:
     highlight: text-secondary
     paragraph: text-black
   backgroundImg:
-    src: /img/brussels.png
-    alt: Background Alt
+    src: /img/gand.webp
+    alt: Gand
   title: Spotlight
   titleHighlight: Spotlight
   paragraph: >
@@ -22,7 +22,7 @@ heroPanel:
     need to serve their clients more efficiently with zero friction. If you
     believe your offerings can nicely complement or enhance ours, please do
     contact us via partners@finlight.com
-  button:
+  button: null
 applyPanel:
   theme:
     header: text-white
