@@ -13,8 +13,8 @@ heroPanel:
     highlight: text-secondary
     paragraph: text-black
   backgroundImg:
-    src: /img/brussels.png
-    alt: Background Alt
+    src: /img/saint-malo.webp
+    alt: saint malo
   title: Our Values
   titleHighlight: Values
   paragraph: null
