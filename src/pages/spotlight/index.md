@@ -32,7 +32,7 @@ applyPanel:
     button: text-black bg-primary
   backgroundImg:
     src: /img/heroBg.webp
-    alt: Background Alt - test
+    alt: Background Alt
   title: Ready to Finlight?
   paragraph: Asset consolidation processes are always systematically better with Finlight.
   button: Apply for an account
