@@ -9,7 +9,7 @@ export default function Feature(props) {
   const {
     title,
     paragraph,
-    features,
+    cards,
   } = props;
 
   return (
@@ -19,7 +19,7 @@ export default function Feature(props) {
         justify-center items-center
         w-full h-fit
       '>
-        {( title || paragraph || features )  && (
+        {( title || paragraph || cards )  && (
           <div className='
             flex
             justify-center
@@ -29,21 +29,21 @@ export default function Feature(props) {
             <Panel
             title={ title }
             paragraph={ paragraph }>
-              { features && (
+              { cards && (
                 <div className='
                   flex flex-wrap
                   justify-center
                   w-full
                   gap-12
                 '> 
-                  { features.map((feature, i) => (
+                  { cards.map((card, i) => (
                     <DataCard key={ i }
-                    cardImage={ {
-                      image : getImage(feature.featureImage.image) || feature.featureImage.image,
-                      alt: feature.featureImage.alt
+                    image={ {
+                      src : getImage(card.image.src) || card.image.src,
+                      alt: card.image.alt
                     } }
-                    title={ feature.title }
-                    paragraph={ feature.paragraph } />
+                    title={ card.title }
+                    paragraph={ card.paragraph } />
                   ) ) }
                 </div>
               ) }

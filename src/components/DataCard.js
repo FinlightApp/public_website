@@ -4,7 +4,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 export default function DataCard(props) {
   const {
-    cardImage,
+    image,
     title,
     paragraph,
   } = props;
@@ -18,22 +18,22 @@ export default function DataCard(props) {
         p-6 gap-6
         bg-white rounded-2xl shadow-card
       '>
-        { cardImage && (
+        { image && (
           <div className='
             flex flex-row
             justify-center items-center
             w-48 h-48
           '>
-            { cardImage?.image?.url ? (
+            { image?.src?.url ? (
               <img className='w-full'
-              src={ cardImage.image }
-              alt={ cardImage.alt } />
+              src={ image.src }
+              alt={ image.alt } />
             ) : (
               <GatsbyImage className='w-full'
               objectFit='fill'
-              image={ cardImage.image }
+              image={ image.src }
               formats={ ['auto', 'webp'] }
-              alt={ cardImage.alt } />
+              alt={ image.alt } />
             ) }
           </div>
         ) }
@@ -53,7 +53,7 @@ export default function DataCard(props) {
 }
 
 DataCard.propTypes = {
-  cardImage: PropTypes.object,
+  image: PropTypes.object,
   title: PropTypes.string,
   paragraph: PropTypes.string
 };

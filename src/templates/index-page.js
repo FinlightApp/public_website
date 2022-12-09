@@ -22,9 +22,9 @@ export const IndexPageTemplate = ({
     <>
       <Hero
       theme={ heroPanel.theme }
-      imageBg={ {
-        image: getImage(heroPanel.imageBg.image) || heroPanel.imageBg.image,
-        alt: heroPanel.imageBg.alt
+      backgroundImg={ {
+        src: getImage(heroPanel.backgroundImg.src) || heroPanel.backgroundImg.src,
+        alt: heroPanel.backgroundImg.alt
       } }
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
@@ -34,7 +34,7 @@ export const IndexPageTemplate = ({
       <Feature
       title={ featurePanel.title }
       paragraph={ featurePanel.paragraph} 
-      features={ featurePanel.features } />
+      cards={ featurePanel.cards } />
       <Serve
       title={ servePanel.title }
       paragraph={ servePanel.paragraph }
@@ -43,9 +43,9 @@ export const IndexPageTemplate = ({
       limit={ 3 } />
       <Apply
       theme={ applyPanel.theme }
-      imageBg={ {
-        image: getImage(applyPanel.imageBg.image) || applyPanel.imageBg.image,
-        alt: applyPanel.imageBg.alt
+      backgroundImg={ {
+        src: getImage(applyPanel.backgroundImg.src) || applyPanel.backgroundImg.src,
+        alt: applyPanel.backgroundImg.alt
       } }
       title={ applyPanel.title }
       paragraph={ applyPanel.paragraph }
@@ -64,7 +64,7 @@ IndexPageTemplate.propTypes = {
   }),
   heroPanel: PropTypes.shape({
     theme: PropTypes.object,
-    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    backgroundImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
@@ -79,11 +79,11 @@ IndexPageTemplate.propTypes = {
   featurePanel: PropTypes.shape({
     title: PropTypes.string,
     paragraph: PropTypes.string,
-    features: PropTypes.array,
+    cards: PropTypes.array,
   }),
   applyPanel: PropTypes.shape({
     theme: PropTypes.object,
-    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    backgroundImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
@@ -132,13 +132,13 @@ export const pageQuery = graphql`
             paragraph
             button
           }
-          imageBg {
-            alt
-            image {
+          backgroundImg {
+            src {
               childImageSharp {
                 gatsbyImageData(quality: 100)
               }
             }
+            alt
           }
           title
           titleHighlight
@@ -150,8 +150,8 @@ export const pageQuery = graphql`
           title
           paragraph
           cards {
-            cardImage {
-              image {
+            image {
+              src {
                 childImageSharp {
                   gatsbyImageData(quality: 100)
                 }
@@ -165,14 +165,14 @@ export const pageQuery = graphql`
         featurePanel {
           title
           paragraph
-          features {
-            featureImage {
-              alt
-              image {
+          cards {
+            image {
+              src {
                 childImageSharp {
                   gatsbyImageData(quality: 100)
                 }
               }
+              alt
             }
             title
           }
@@ -185,13 +185,13 @@ export const pageQuery = graphql`
             paragraph
             button
           }
-          imageBg {
-            alt
-            image {
+          backgroundImg {
+            src {
               childImageSharp {
                 gatsbyImageData(quality: 100)
               }
             }
+            alt
           }
           title
           paragraph

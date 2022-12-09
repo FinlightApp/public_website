@@ -18,9 +18,9 @@ export const SpotlightPageTemplate = ({
     <>
       <Hero
       theme={ heroPanel.theme }
-      imageBg={ {
-        image: getImage(heroPanel.imageBg.image) || heroPanel.imageBg.image,
-        alt: heroPanel.imageBg.alt
+      backgroundImg={ {
+        src: getImage(heroPanel.backgroundImg.src) || heroPanel.backgroundImg.src,
+        alt: heroPanel.backgroundImg.alt
       } }
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
@@ -29,9 +29,9 @@ export const SpotlightPageTemplate = ({
       <SpotlightPanel />
       <Apply
       theme={ applyPanel.theme }
-      imageBg={ {
-        image: getImage(applyPanel.imageBg.image) || applyPanel.imageBg.image,
-        alt: applyPanel.imageBg.alt
+      backgroundImg={ {
+        src: getImage(applyPanel.backgroundImg.src) || applyPanel.backgroundImg.src,
+        alt: applyPanel.backgroundImg.alt
       } }
       title={ applyPanel.title }
       paragraph={ applyPanel.paragraph }
@@ -49,7 +49,7 @@ SpotlightPageTemplate.propTypes = {
   }),
   heroPanel: PropTypes.shape({
     theme: PropTypes.object,
-    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    backgroundImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
@@ -57,7 +57,7 @@ SpotlightPageTemplate.propTypes = {
   }),
   applyPanel: PropTypes.shape({
     theme: PropTypes.object,
-    imageBg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    backgroundImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
@@ -104,9 +104,8 @@ export const spotlightPageQuery = graphql`
             paragraph
             button
           }
-          imageBg {
-            alt
-            image {
+          backgroundImg {
+            src {
               childImageSharp {
                 gatsbyImageData(
                   quality: 100
@@ -119,6 +118,7 @@ export const spotlightPageQuery = graphql`
                 )
               }
             }
+            alt
           }
           title
           titleHighlight
@@ -133,9 +133,8 @@ export const spotlightPageQuery = graphql`
             paragraph
             button
           }
-          imageBg {
-            alt
-            image {
+          backgroundImg {
+            src {
               childImageSharp {
                 gatsbyImageData(
                   quality: 100
@@ -148,6 +147,7 @@ export const spotlightPageQuery = graphql`
                 )
               }
             }
+            alt
           }
           title
           paragraph

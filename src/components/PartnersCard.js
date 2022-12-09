@@ -1,12 +1,11 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-
 export default function PartnersCard(props) {
   const {
+    image,
+    title,
     link,
-    name,
-    partnerImage,
   } = props;
 
   return (
@@ -22,26 +21,26 @@ export default function PartnersCard(props) {
       target='_blank'
       rel='noreferrer noopener'
       referrerPolicy='no-referrer'
-      aria-label={ name }>
+      aria-label={ title }>
         <div className='
           flex flex-col
           justify-center items-center
           w-48 h-48
         '>
-          { partnerImage?.image?.url ? (
+          { image?.src?.url ? (
             <img className='w-full'
-            src={ partnerImage.image }
-            alt={ `${name} logo` } />
+            src={ image.src }
+            alt={ `${title} logo` } />
           ) : (
             <GatsbyImage className='w-full'
             objectFit='fill'
-            image={ partnerImage.image }
+            image={ image.src }
             formats={ ['auto', 'webp'] }
-            alt={ `${name} logo` } />
+            alt={ `${title} logo` } />
           ) }
         </div>
         <p className='font-header font-semibold text-center'>
-          { name }
+          { title }
         </p>
       </a>
     </React.Fragment>

@@ -25,8 +25,8 @@ export const BlogPostTemplate = ({
         highlight: 'text-secondary',
         paragraph: 'text-black',
       } }
-      imageBg={ {
-        image: getImage(image) || image,
+      backgroundImg={ {
+        src: getImage(image) || image,
         alt: 'lol'
       } }
       title={ title }

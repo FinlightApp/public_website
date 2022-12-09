@@ -12,9 +12,9 @@ heroPanel:
     line: via-secondary
     highlight: text-secondary
     paragraph: text-black
-  imageBg:
+  backgroundImg:
+    src: /img/brussels.png
     alt: Background Alt
-    image: /img/brussels.png
   title: Our Partners
   titleHighlight: Partners
   paragraph: >
@@ -27,75 +27,75 @@ heroPanel:
 partnersPanel:
   title:
   paragraph:
-  partners:
-    - partnerImage:
-        image: /img/3dinvesting.jpg
-      name: 3D Investing
+  cards:
+    - image:
+        src: /img/3dinvesting.jpg
+      title: 3D Investing
       link: https://www.squaremileresearch.com/
-    - partnerImage:
-        image: /img/adan.jpg
-      name: ADAN CORPORATE
+    - image:
+        src: /img/adan.jpg
+      title: ADAN CORPORATE
       link: https://adancorporate.com/
-    - partnerImage:
-        image: /img/aim.jpg
-      name: AiM
+    - image:
+        src: /img/aim.jpg
+      title: AiM
       link: https://www.aim-services.ch
-    - link: https://arkhineo.com
-      name: Arkhineo
-      partnerImage:
-        image: /img/arkhineo.jpg
-    - link: https://arteia.com
-      name: Arteia
-      partnerImage:
-        image: /img/arteia.jpg
-    - link: https://www.bearingpoint.com
-      name: BearingPoint
-      partnerImage:
-        image: /img/bearingpoint.jpg
-    - link: https://www.bloomberg.com/
-      name: Bloomberg
-      partnerImage:
-        image: /img/bloomberg.jpg
-    - link: http://www.daaimon.com/
-      name: daaimon
-      partnerImage:
-        image: /img/daaimon.jpg
-    - link: https://www.edmiston.com
-      name: Edmiston
-      partnerImage:
-        image: /img/edmiston.jpg
-    - link: http://www.familyofficecircle.foundation/
-      name: The Family Office Circle Foundation
-      partnerImage:
-        image: /img/focf.jpg
-    - link: https://www.gamasec.com/
-      name: GamaSec
-      partnerImage:
-        image: /img/gama.jpg
-    - link: https://www.ldspartners.com/
-      name: LDS Partners
-      partnerImage:
-        image: /img/ldspartners.jpg
-    - link: https://linksanalytics.com/
-      name: LINKS Analytics
-      partnerImage:
-        image: /img/links.jpg
-    - link: https://www.monexeurope.com/
-      name: Monex Europe
-      partnerImage:
-        image: /img/monexeurope.jpg
-    - link: https://sharingalpha.com/
-      name: SharingAlpha
-      partnerImage:
-        image: /img/sharingalpha.jpg
-    - link: https://www.suttonwinson.com/
-      name: Sutton Winson
-      partnerImage:
-        image: /img/suttonwinson.jpg
-    - link: https://www.performance-watcher.ch/
-      name: Performance Watcher
-      partnerImage:
-        image: /img/wperformancewatcher.jpg
+    - image:
+        src: /img/arkhineo.jpg
+      title: Arkhineo
+      link: https://arkhineo.com
+    - image:
+        src: /img/arteia.jpg
+      title: Arteia
+      link: https://arteia.com
+    - image:
+        src: /img/bearingpoint.jpg
+      title: BearingPoint
+      link: https://www.bearingpoint.com
+    - image:
+        src: /img/bloomberg.jpg
+      title: Bloomberg
+      link: https://www.bloomberg.com/
+    - image:
+        src: /img/daaimon.jpg
+      title: daaimon
+      link: http://www.daaimon.com/
+    - image:
+        src: /img/edmiston.jpg
+      title: Edmiston
+      link: https://www.edmiston.com
+    - image:
+        src: /img/focf.jpg
+      title: The Family Office Circle Foundation
+      link: http://www.familyofficecircle.foundation/
+    - image:
+        src: /img/gama.jpg
+      title: GamaSec
+      link: https://www.gamasec.com/
+    - image:
+        src: /img/ldspartners.jpg
+      title: LDS Partners
+      link: https://www.ldspartners.com/
+    - image:
+        src: /img/links.jpg
+      title: LINKS Analytics
+      link: https://linksanalytics.com/
+    - image:
+        src: /img/monexeurope.jpg
+      title: Monex Europe
+      link: https://www.monexeurope.com/
+    - image:
+        src: /img/sharingalpha.jpg
+      title: SharingAlpha
+      link: https://sharingalpha.com/
+    - image:
+        src: /img/suttonwinson.jpg
+      title: Sutton Winson
+      link: https://www.suttonwinson.com/
+    - image:
+        src: /img/wperformancewatcher.jpg
+      title: Performance Watcher
+      link: https://www.performance-watcher.ch/
 applyPanel:
   theme:
     header: text-white
@@ -103,9 +103,9 @@ applyPanel:
     highlight: text-primary
     paragraph: text-white
     button: text-black bg-primary
-  imageBg:
+  backgroundImg:
+    src: /img/heroBg.webp
     alt: Background Alt - test
-    image: /img/heroBg.webp
   title: Ready to Finlight?
   paragraph: Asset consolidation processes are always systematically better with Finlight.
   button: Apply for an account
