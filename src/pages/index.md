@@ -33,27 +33,27 @@ featurePanel:
     we maintain on their behalf
   cards:
     - image:
-        src: /img/blog-index.jpg
-        alt: SEO - alt
+        src: /img/investment_consultant.webp
+        alt: Investment consultants
       title: Investment consultants
       paragraph: null
     - image:
-        src: /img/blog-index.jpg
-        alt: SEO - alt
+        src: /img/family_office.webp
+        alt: Family offices
       title: Family offices
       paragraph: null
     - image:
-        src: /img/blog-index.jpg
-        alt: SEO - alt
+        src: /img/asset_management.webp
+        alt: Qualified investors
       title: Qualified investors
       paragraph: null
     - image:
-        src: /img/default.png
-        alt: Image description
+        src: /img/wealth_mangement.webp
+        alt: Wealth managers
       title: Wealth managers
     - image:
-        src: /img/default.png
-        alt: Image description
+        src: /img/private_bank.webp
+        alt: Private banks
       title: Private banks
 servePanel:
   title: Key Features
@@ -61,31 +61,31 @@ servePanel:
     liabilities from one location.
   cards:
     - image:
-        src: /img/serve.webp
-        alt: SEO - alt
+        src: /img/default.webp
+        alt: Finlight logo
       title: VC funds
       paragraph: Your commitments to different VC funds with varying records of
         capital all in one single dashboard
     - image:
-        src: /img/serve.webp
-        alt: SEO - alt
+        src: /img/default.webp
+        alt: Finlight logo
       title: Consolidated overview
       paragraph: All assets and portfolios on one lens
     - image:
-        src: /img/default.png
-        alt: Image Description
+        src: /img/default.webp
+        alt: Finlight logo
       title: Data management
       paragraph: One location to keep tracks of all commitments, capital calls,
         distributions, fees
     - image:
-        src: /img/default.png
-        alt: Image Description
+        src: /img/default.webp
+        alt: Finlight logo
       title: Portfolio reporting
       paragraph: Simplified integration with your existing portfolio management and
         reporting software assets into a 360-degree overview dashboard
     - image:
-        src: /img/default.png
-        alt: Image Description
+        src: /img/default.webp
+        alt: Finlight logo
       title: Enhanced analytics
       paragraph: Understand how your aggregate portfolio performance compares against
         your community of peers, adjusted to your risk level thanks to our
