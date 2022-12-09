@@ -2,10 +2,10 @@
 templateKey: our-values-page
 path: /our-values
 seo:
- author: Finlight
- description: Our Values page
- keywords: Finlight
- title: Finlight - Our Values page
+  author: Finlight
+  description: Our Values page
+  keywords: Finlight
+  title: Finlight - Our Values page
 heroPanel:
   theme:
     header: text-black
@@ -17,12 +17,12 @@ heroPanel:
     alt: Background Alt
   title: Our Values
   titleHighlight: Values
-  paragraph:
-  button:
-  modalContent:
+  paragraph: null
+  button: null
+  modalContent: to remove
 ourValuesPanel:
-  title:
-  paragraph:
+  title: null
+  paragraph: null
   cards:
     - image:
         src: /img/lock.webp
@@ -71,7 +71,7 @@ applyPanel:
   paragraph: >
     Asset consolidation processes are always systematically better with Finlight.
   button: Apply for an account
-  modalContent: >
+  modalContent: |
     <p style=height:100px;width:150px;>
       Apply Content
     </p>
