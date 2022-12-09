@@ -31,14 +31,14 @@ export const IndexPageTemplate = ({
       paragraph={ heroPanel.paragraph }
       button={ heroPanel.button }
       modalContent={ heroPanel.modalContent } />
-      <Feature
-      title={ featurePanel.title }
-      paragraph={ featurePanel.paragraph} 
-      cards={ featurePanel.cards } />
       <Serve
       title={ servePanel.title }
       paragraph={ servePanel.paragraph }
       cards={ servePanel.cards } />
+      <Feature
+      title={ featurePanel.title }
+      paragraph={ featurePanel.paragraph}
+      cards={ featurePanel.cards } />
       <SpotlightPanel
       limit={ 3 } />
       <Apply
@@ -64,7 +64,7 @@ IndexPageTemplate.propTypes = {
   }),
   heroPanel: PropTypes.shape({
     theme: PropTypes.object,
-    backgroundImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    backgroundImg: PropTypes.object,
     title: PropTypes.string,
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
@@ -83,7 +83,7 @@ IndexPageTemplate.propTypes = {
   }),
   applyPanel: PropTypes.shape({
     theme: PropTypes.object,
-    backgroundImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    backgroundImg: PropTypes.object,
     title: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
@@ -97,8 +97,8 @@ const IndexPage = ({ data }) => {
     <Layout seo={ frontmatter.seo }>
       <IndexPageTemplate
       heroPanel={ frontmatter.heroPanel }
-      featurePanel={ frontmatter.featurePanel }
       servePanel={ frontmatter.servePanel }
+      featurePanel={ frontmatter.featurePanel }
       applyPanel={ frontmatter.applyPanel } />
     </Layout>
   );

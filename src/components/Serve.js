@@ -40,7 +40,7 @@ export default function Serve(props) {
                   { cards.map((card, i) => (
                     <DataCard key={ i }
                     image={ {
-                      src : getImage(card.image.src) || card.iamge.src,
+                      src : getImage(card.image.src) || card.image.src,
                       alt: card.image.alt
                     } }
                     title={ card.title }
