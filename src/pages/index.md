@@ -32,31 +32,31 @@ featurePanel:
     liabilities from one location.
   cards:
     - image:
-        src: /img/serve.webp
-        alt: SEO - alt
+        src: /img/default.webp
+        alt: Finlight logo
       title: VC funds
       paragraph: Your commitments to different VC funds with varying records of
         capital all in one single dashboard
     - image:
-        src: /img/serve.webp
-        alt: SEO - alt
+        src: /img/default.webp
+        alt: Finlight logo
       title: Consolidated overview
       paragraph: All assets and portfolios on one lens
     - image:
-        src: /img/default.png
-        alt: Image Description
+        src: /img/default.webp
+        alt: Finlight logo
       title: Data management
       paragraph: One location to keep tracks of all commitments, capital calls,
         distributions, fees
     - image:
-        src: /img/default.png
-        alt: Image Description
+        src: /img/default.webp
+        alt: Finlight logo
       title: Portfolio reporting
       paragraph: Simplified integration with your existing portfolio management and
         reporting software assets into a 360-degree overview dashboard
     - image:
-        src: /img/default.png
-        alt: Image Description
+        src: /img/default.webp
+        alt: Finlight logo
       title: Enhanced analytics
       paragraph: Understand how your aggregate portfolio performance compares against
         your community of peers, adjusted to your risk level thanks to our

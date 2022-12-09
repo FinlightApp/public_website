@@ -29,26 +29,26 @@ teamPanel:
     born.
   cards:
     - image:
-        src: /img/default.png
-        alt: Image Description
+        src: /img/teamjb.webp
+        alt: Jean-Bernard Tanqueray
       title: Jean-Bernard Tanqueray
       subheading: Founder, CEO
       link: https://www.linkedin.com/in/jbtanqueray/
     - image:
-        src: /img/default.png
-        alt: Image Description
+        src: /img/teamclaudiu.webp
+        alt: Claudiu Cornea
       title: Claudiu Cornea
       subheading: Software Engineer, CTO
       link: https://www.linkedin.com/in/ClaudiuCornea/
     - image:
-        src: /img/default.png
-        alt: Image Description
+        src: /img/teammatthew.webp
+        alt: Matthew Harding
       title: Matthew Harding
       subheading: Software Engineer
       link: https://www.linkedin.com/in/matthew-harding-528312179/
     - image:
-        src: /img/default.png
-        alt: Image Description
+        src: /img/teamben.webp
+        alt: Ben Hughes
       title: Ben Hughes
       subheading: Data Scientist
       link: https://www.linkedin.com/in/ben-h-3315aa44/
@@ -57,20 +57,20 @@ nonExecutiveDirectorsPanel:
   paragraph: null
   cards:
     - image:
-        src: /img/default.png
-        alt: Image Description
+        src: /img/teamnatacha.webp
+        alt: Natacha Beaumont
       title: Natacha Beaumont
       subheading: Non-Executive Director
       link: https://www.linkedin.com/in/nbeaumont1/
     - image:
-        src: /img/default.png
-        alt: Image Description
+        src: /img/nedjustin.webp
+        alt: Justin Abbott Chalew
       title: Justin Abbott Chalew
       subheading: Non-Executive Director
       link: https://www.linkedin.com/in/justinabbottchalew/
     - image:
-        src: /img/default.png
-        alt: Image Description
+        src: /img/nedadam.webp
+        alt: Adam Denning
       title: Adam Denning
       subheading: Non-Executive Director
       link: https://www.linkedin.com/in/addenning/
