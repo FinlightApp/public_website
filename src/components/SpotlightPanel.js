@@ -126,7 +126,7 @@ export default function SpotlightPanel(props) {
                   keywords
                   title
                   templateKey
-                  date(formatString: "MMMM DD, YYYY")
+                  date(formatString: "DD MMMM, YYYY")
                   image {
                     src {
                       childImageSharp {
