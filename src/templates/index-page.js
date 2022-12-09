@@ -31,14 +31,14 @@ export const IndexPageTemplate = ({
       paragraph={ heroPanel.paragraph }
       button={ heroPanel.button }
       modalContent={ heroPanel.modalContent } />
-      <Serve
-      title={ servePanel.title }
-      paragraph={ servePanel.paragraph }
-      cards={ servePanel.cards } />
       <Feature
       title={ featurePanel.title }
       paragraph={ featurePanel.paragraph}
       cards={ featurePanel.cards } />
+      <Serve
+      title={ servePanel.title }
+      paragraph={ servePanel.paragraph }
+      cards={ servePanel.cards } />
       <SpotlightPanel
       limit={ 3 } />
       <Apply

@@ -27,12 +27,16 @@ export const BlogPostTemplate = ({
         paragraph: theme.paragraph,
       } }
       backgroundImg={ {
-        image: getImage(image.src) || image.src,
+        src: getImage(image.src) || image.src,
         alt: image.alt,
       } }
       title={ title }
       paragraph={ description } />
-      <PostContent content={content} />
+      <PostContent className='
+        flex flex-col
+        gap-8
+      '
+      content={content} />
     </>
   );
 };
