@@ -68,28 +68,30 @@ servePanel:
     we maintain on their behalf
   cards:
     - image:
-        src: /img/blog-index.jpg
-        alt: SEO - alt
+        src: /img/investment_consultant.webp
+        alt: Investment consultants
       title: Investment consultants
-      paragraph: null
+      paragraph: " "
     - image:
-        src: /img/blog-index.jpg
-        alt: SEO - alt
+        src: /img/family_office.webp
+        alt: Family offices
       title: Family offices
-      paragraph: null
+      paragraph: " "
     - image:
-        src: /img/blog-index.jpg
-        alt: SEO - alt
+        src: /img/asset_management.webp
+        alt: Qualified investors
       title: Qualified investors
-      paragraph: null
+      paragraph: " "
     - image:
-        src: /img/default.png
-        alt: Image description
+        src: /img/wealth_mangement.webp
+        alt: Wealth managers
       title: Wealth managers
+      paragraph: " "
     - image:
-        src: /img/default.png
-        alt: Image description
+        src: /img/private_bank.webp
+        alt: Private banks
       title: Private banks
+      paragraph: " "
 applyPanel:
   theme:
     header: text-white
