@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
-import Content, { HTMLContent } from '../components/Content';
+import Article, { HTMLContent } from '../components/Article';
 import { getImage } from 'gatsby-plugin-image';
 
 // eslint-disable-next-line
@@ -15,11 +15,11 @@ export const BlogPostTemplate = ({
   image,
   theme
 }) => {
-  const PostContent = contentComponent || Content;
+  const PostContent = contentComponent || Article;
 
   return (
     <>
-      <Hero
+      {/* <Hero
       theme={ {
         header: theme.header,
         line: theme.line,
@@ -31,7 +31,7 @@ export const BlogPostTemplate = ({
         alt: image.alt,
       } }
       title={ title }
-      paragraph={ description } />
+      paragraph={ description } /> */}
       <PostContent className='
         flex flex-col
         gap-8
