@@ -19,7 +19,7 @@ export const BlogPostTemplate = ({
 
   return (
     <>
-      <BlogHeader title={ title } description={ description } />
+      <BlogHeader title={ title } />
       <PostContent className='
         flex flex-col
         gap-8
