@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
+import BlogHeader from '../components/BlogHeader'
 import Article, { HTMLContent } from '../components/Article';
+
 
 // eslint-disable-next-line
 export const BlogPostTemplate = ({
@@ -16,6 +18,7 @@ export const BlogPostTemplate = ({
 
   return (
     <>
+      <BlogHeader title={ title } />
       <PostContent className='
         flex flex-col
         gap-8
