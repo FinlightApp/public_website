@@ -1,12 +1,8 @@
 ---
 templateKey: blog-post
 keywords: A transatlantic view
-theme:
-  header: text-black
-  line: via-primary
-  highlight: text-primary
-  paragraph: text-black
 title: A transatlantic view
+author: JB Tanqueray
 date: 2019-02-07T10:45:00.772Z
 image:
   src: /img/atransatlanticview.jpg

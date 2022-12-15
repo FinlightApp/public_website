@@ -1,12 +1,8 @@
 ---
 templateKey: blog-post
 keywords: 8 lessons for investors to learn from the Woodford debacle
-theme:
-  header: text-black
-  line: via-primary
-  highlight: text-primary
-  paragraph: text-black
 title: 8 lessons for investors to learn from the Woodford debacle
+author: JB Tanqueray
 date: 2019-06-14T09:53:41.645Z
 image:
   src: /img/lessonsforinvestors.jpg

@@ -1,9 +1,10 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import image from '../img/close_24.svg';
-import linkedIn from '../img/linkedin_logo.svg';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Panel from './Panel';
+import image from '../img/close_24.svg';
+import linkedIn from '../img/linkedin_logo.svg';
 
 export const HTMLContent = ({ content, className }) => (
   <React.Fragment>
@@ -60,17 +61,19 @@ export const HTMLContent = ({ content, className }) => (
         h-auto
         lg:w-[40%] w-full
       '>
-        <img className='
-          w-full h-auto
-        '
-        src= {image}
-        alt= 'image'
-        draggable='false' />
+        { image?.src?.url ? (
+            <img className='w-full h-auto'
+            src={ image.src }
+            alt={ image.alt } />
+          ) : (
+            <GatsbyImage className='w-full h-auto'
+            formats={ ['auto', 'webp'] } />
+        ) }
         <p className='
           px-6
           text-center
           italic
-        '>
+        '> 
           Every year, over 12 million people in the UK go through the ordeal of tax preparation.
         </p>
       </div>

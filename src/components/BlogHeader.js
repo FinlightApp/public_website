@@ -1,22 +1,23 @@
 import * as React from "react";
+import PropTypes from 'prop-types';
 
-const BlogHeader = (props) => {
+export default function BlogHeader(props){
 
   const {
     title,
     author,
-    info
+    date
   } = props;
 
   return(
     <>
-      { ( title || author || info ) && (
+      { ( title || author || date ) && (
         <div className='
           flex flex-col justify-center
           w-full
           px-8 py-10 lg:p-12
           gap-10 lg:gap-12
-          bg-light
+          bg-[#F6F6F6]
         '>
           { ( title &&
             <p className='
@@ -36,11 +37,9 @@ const BlogHeader = (props) => {
                 { author }
               </p>
             ) }
-            { ( info &&
-              <p className='
-                text-sm
-              '>
-                { info }
+            { ( date &&
+              <p className='text-sm'>
+                { date }
               </p>
             ) }
           </div>
@@ -49,4 +48,8 @@ const BlogHeader = (props) => {
     </>
 )}
 
-export default BlogHeader
+BlogHeader.propTypes = {
+  title: PropTypes.string,
+  author: PropTypes.string,
+  date: PropTypes.object,
+};

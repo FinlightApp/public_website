@@ -1,12 +1,8 @@
 ---
 templateKey: blog-post
 keywords: Top tips for reporting
-theme:
-  header: text-black
-  line: via-secondary
-  highlight: text-primary
-  paragraph: text-black
 title: Top tips for reporting
+author: JB Tanqueray
 date: 2019-01-10T15:46:34.974Z
 description: We understand the recent events are creating extraordinary levels
   of concern and anxiety for website owners.

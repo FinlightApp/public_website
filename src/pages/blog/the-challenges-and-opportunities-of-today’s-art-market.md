@@ -1,12 +1,8 @@
 ---
 templateKey: blog-post
 keywords: The challenges and opportunities of today’s art market
-theme:
-  header: text-black
-  line: via-primary
-  highlight: text-primary
-  paragraph: text-black
 title: The challenges and opportunities of today’s art market
+author: JB Tanqueray
 date: 2019-06-19T09:54:54.360Z
 image:
   src: /img/thechallengesandopprtunities.jpg

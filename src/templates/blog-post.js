@@ -12,6 +12,8 @@ export const BlogPostTemplate = ({
   contentComponent,
   description,
   title,
+  author,
+  date,
   image,
 }) => {
   const PostContent = contentComponent || Article;
@@ -20,8 +22,8 @@ export const BlogPostTemplate = ({
     <>
       <BlogHeader
       title={ title } 
-      author={ 'Finlight' }
-      info={ 'London, 2022' } />
+      author={ author }
+      date={ date } />
       <PostContent className='
         flex flex-col
         gap-8
@@ -36,6 +38,8 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
+  author: PropTypes.string,
+  date: PropTypes.object,
   image: PropTypes.object,
   keywords: PropTypes.string,
   theme: PropTypes.object,
@@ -54,6 +58,8 @@ const BlogPost = ({ data }) => {
       <BlogPostTemplate
         theme={post.frontmatter.theme}
         title={post.frontmatter.title}
+        author={post.frontmatter.author}
+        date={post.frontmatter.date}
         description={post.frontmatter.description}
         image={post.frontmatter.image}
         content={post.html}
@@ -78,14 +84,9 @@ export const pageQuery = graphql`
       html
       frontmatter {
         keywords
-        theme {
-          header
-          line
-          highlight
-          paragraph
-        }
-        date(formatString: "DD MMMM, YYYY")
         title
+        author
+        date(formatString: "DD MMMM, YYYY")
         description
         image {
           src {

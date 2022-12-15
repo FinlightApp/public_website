@@ -1,12 +1,8 @@
 ---
 templateKey: blog-post
 keywords: Why financial engineering is at the heart of what we do
-theme:
-  header: text-black
-  line: via-primary
-  highlight: text-primary
-  paragraph: text-black
 title: Why financial engineering is at the heart of what we do
+author: JB Tanqueray
 date: 2019-02-07T16:22:36.071Z
 image:
   src: /img/whyfinancialengineering.jpg

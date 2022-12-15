@@ -1,12 +1,8 @@
 ---
 templateKey: blog-post
 keywords: "New research: best practice in succession planning"
-theme:
-  header: text-black
-  line: via-primary
-  highlight: text-primary
-  paragraph: text-black
 title: "New research: best practice in succession planning"
+author: JB Tanqueray
 date: 2019-03-07T10:46:59.153Z
 image:
   src: /img/newresearch.jpg

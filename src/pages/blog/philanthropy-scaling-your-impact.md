@@ -1,12 +1,8 @@
 ---
 templateKey: blog-post
 keywords: "Philanthropy: scaling your impact"
-theme:
-  header: text-black
-  line: via-primary
-  highlight: text-primary
-  paragraph: text-black
 title: "Philanthropy: scaling your impact"
+author: JB Tanqueray
 date: 2019-05-09T09:52:31.131Z
 image:
   src: /img/philanthropy.jpg
