@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Hero from '../components/Hero';
+import BlogHeader from '../components/BlogHeader'
 import Article, { HTMLContent } from '../components/Article';
-import { getImage } from 'gatsby-plugin-image';
+
 
 // eslint-disable-next-line
 export const BlogPostTemplate = ({
@@ -19,19 +19,7 @@ export const BlogPostTemplate = ({
 
   return (
     <>
-      {/* <Hero
-      theme={ {
-        header: theme.header,
-        line: theme.line,
-        highlight: theme.highlight,
-        paragraph: theme.paragraph,
-      } }
-      backgroundImg={ {
-        src: getImage(image.src) || image.src,
-        alt: image.alt,
-      } }
-      title={ title }
-      paragraph={ description } /> */}
+      <BlogHeader title={ title } description={ description } />
       <PostContent className='
         flex flex-col
         gap-8
