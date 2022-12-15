@@ -7,9 +7,6 @@ import Panel from './Panel';
 
 export const HTMLContent = ({ content, className }) => (
   <React.Fragment>
-    <div>
-      <p>header</p>
-    </div>
     <div className='
       flex flex-col-reverse lg:flex lg:flex-row
       justify-center items-start
@@ -65,7 +62,6 @@ export const HTMLContent = ({ content, className }) => (
       '>
         <img className='
           w-full h-auto
-          bg-blue-500
         '
         src= {image}
         alt= 'image'
@@ -79,16 +75,6 @@ export const HTMLContent = ({ content, className }) => (
         </p>
       </div>
     </div>
-        {/* <div className='grid grid-cols-10'>
-            <div className='
-                col-span-10
-                xl:col-start-2 xl:col-span-8
-                flex flex-col
-                px-4 md:px-8 py-8 md:py-16 gap-16
-            '>
-                <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
-            </div>
-        </div> */}
 </React.Fragment>
 );
 

@@ -32,10 +32,7 @@ const BlogHeader = (props) => {
             w-full
           '>
             { ( author &&
-              <p className='
-                text-sm
-                text-[rgba(0, 0, 0, 0.77)]
-              '>
+              <p className='text-sm'>
                 { author }
               </p>
             ) }
@@ -48,7 +45,7 @@ const BlogHeader = (props) => {
             ) }
           </div>
         </div>
-     ) }
+      ) }
     </>
 )}
 
