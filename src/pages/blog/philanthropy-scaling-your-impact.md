@@ -4,6 +4,7 @@ keywords: "Philanthropy: scaling your impact"
 title: "Philanthropy: scaling your impact"
 author: JB Tanqueray
 date: 2019-05-09T09:52:31.131Z
+description: Default description
 image:
   src: /img/philanthropy.jpg
   alt: Image description

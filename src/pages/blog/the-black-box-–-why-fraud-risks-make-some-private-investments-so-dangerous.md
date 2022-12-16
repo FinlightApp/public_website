@@ -4,6 +4,7 @@ keywords: The black box – why fraud risks make some private investments so dan
 title: The black box – why fraud risks make some private investments so dangerous
 author: JB Tanqueray
 date: 2019-07-22T09:55:50.968Z
+description: Default description
 image:
   src: /img/theblackbox.jpg
   alt: Image description
