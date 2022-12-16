@@ -4,6 +4,7 @@ keywords: A transatlantic view
 title: A transatlantic view
 author: JB Tanqueray
 date: 2019-02-07T10:45:00.772Z
+description: Default description
 image:
   src: /img/atransatlanticview.jpg
   alt: Image description

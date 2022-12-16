@@ -4,6 +4,7 @@ keywords: The challenges and opportunities of today’s art market
 title: The challenges and opportunities of today’s art market
 author: JB Tanqueray
 date: 2019-06-19T09:54:54.360Z
+description: Default description
 image:
   src: /img/thechallengesandopprtunities.jpg
   alt: Image description

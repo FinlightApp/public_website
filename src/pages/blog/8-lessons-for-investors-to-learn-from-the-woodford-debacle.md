@@ -4,6 +4,7 @@ keywords: 8 lessons for investors to learn from the Woodford debacle
 title: 8 lessons for investors to learn from the Woodford debacle
 author: JB Tanqueray
 date: 2019-06-14T09:53:41.645Z
+description: Default description
 image:
   src: /img/lessonsforinvestors.jpg
   alt: Image description

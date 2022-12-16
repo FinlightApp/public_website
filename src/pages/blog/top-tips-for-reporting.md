@@ -4,8 +4,7 @@ keywords: Top tips for reporting
 title: Top tips for reporting
 author: JB Tanqueray
 date: 2019-01-10T15:46:34.974Z
-description: We understand the recent events are creating extraordinary levels
-  of concern and anxiety for website owners.
+description: Default description
 image:
   src: /img/toptipsforreporting.jpg
   alt: book

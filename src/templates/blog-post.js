@@ -10,10 +10,10 @@ import Article, { HTMLContent } from '../components/Article';
 export const BlogPostTemplate = ({
   content,
   contentComponent,
-  description,
   title,
   author,
   date,
+  description,
   image,
 }) => {
   const PostContent = contentComponent || Article;
@@ -28,21 +28,22 @@ export const BlogPostTemplate = ({
         flex flex-col
         gap-8
       '
-      content={content} />
+      content={content}
+      description={description}
+      image={image} />
     </>
   );
- };
+};
 
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
-  description: PropTypes.string,
   title: PropTypes.string,
   author: PropTypes.string,
   date: PropTypes.object,
+  description: PropTypes.string,
   image: PropTypes.object,
   keywords: PropTypes.string,
-  theme: PropTypes.object,
 };
 
 const BlogPost = ({ data }) => {
@@ -56,7 +57,6 @@ const BlogPost = ({ data }) => {
       description: post.frontmatter.description,
     } }>
       <BlogPostTemplate
-        theme={post.frontmatter.theme}
         title={post.frontmatter.title}
         author={post.frontmatter.author}
         date={post.frontmatter.date}
@@ -93,12 +93,6 @@ export const pageQuery = graphql`
             childImageSharp {
               gatsbyImageData(
                 quality: 100
-                placeholder: BLURRED
-                formats: [AUTO, WEBP]
-                layout: FULL_WIDTH
-                transformOptions: {
-                  fit: COVER
-                }
               )
             }
           }

@@ -4,6 +4,7 @@ keywords: Trends in family office ESG investment
 title: Trends in family office ESG investment
 author: JB Tanqueray
 date: 2019-07-22T10:00:46.878Z
+description: Default description
 image:
   src: /img/trendsinfamilyofficeesginvestment.jpg
   alt: Image description

@@ -4,6 +4,7 @@ keywords: Why hiring for cultural fit doesn’t just apply to large corporates
 title: Why hiring for cultural fit doesn’t just apply to large corporates
 author: JB Tanqueray
 date: 2019-10-10T10:01:57.347Z
+description: Default description
 image:
   src: /img/whyhiringforculturalfitdoesntjustapplytolargecorporates.jpg
   alt: Image description

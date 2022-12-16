@@ -3,12 +3,11 @@ import PropTypes from "prop-types";
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Panel from './Panel';
-import image from '../img/close_24.svg';
 import linkedIn from '../img/social/linkedin.svg';
 import twitter from '../img/social/twitter.svg';
 import share from '../img/social/share.svg';
 
-export const HTMLContent = ({ content, className }) => (
+export const HTMLContent = ({ content, description, image }) => (
   <React.Fragment>
     <div className='
       flex flex-col-reverse lg:flex lg:flex-row
@@ -77,7 +76,7 @@ export const HTMLContent = ({ content, className }) => (
           text-center
           italic
         '> 
-          Every year, over 12 million people in the UK go through the ordeal of tax preparation.
+          { description }
         </p>
       </div>
     </div>
@@ -101,7 +100,8 @@ const Article = ({ content, className }) => (
 
 Article.propTypes = {
   content: PropTypes.node,
-  className: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.object,
 };
 
 HTMLContent.propTypes = Article.propTypes;
