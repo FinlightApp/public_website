@@ -28,9 +28,9 @@ export const BlogPostTemplate = ({
         flex flex-col
         gap-8
       '
-      content={content}
-      description={description}
-      image={image} />
+      content={ content }
+      description={ description }
+      image={ image } />
     </>
   );
 };
@@ -40,9 +40,9 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   title: PropTypes.string,
   author: PropTypes.string,
-  date: PropTypes.object,
+  date: PropTypes.string,
   description: PropTypes.string,
-  image: PropTypes.object,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   keywords: PropTypes.string,
 };
 

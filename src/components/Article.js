@@ -9,77 +9,85 @@ import share from '../img/social/share.svg';
 
 export const HTMLContent = ({ content, description, image }) => (
   <React.Fragment>
-    <div className='
-      flex flex-col-reverse lg:flex lg:flex-row
-      justify-center items-center
-      gap-12
-      h-auto
-      w-full
-    '>
+    {( content || description || image ) && (
       <div className='
-        flex flex-col
-        px-6 py-12 md:p-12
-        gap-6
-        w-full lg:w-[60%]
-      '>
-        <div className='
-          container
-          h-auto lg:h-[500px] w-full
-          lg:overflow-y-scroll
-          text-justify
-        '>
-          <p className='text-sm font-medium' dangerouslySetInnerHTML={{ __html: content }} />  
-        </div>
-        <div className='
-          flex flex-row
-          justify-end
-          gap-12
-        '>
-          <button>
-            <img
-            src={ twitter }
-            alt='LinkedIn' />
-          </button>
-          <button>
-            <img
-            src={ linkedIn }
-            alt='LinkedIn' />
-          </button>
-          <button>
-            <img
-            src={ share }
-            alt='LinkedIn' />
-          </button>
-        </div>
-      </div>
-      <div className='
-        hidden lg:flex
-        h-[600px] w-1
-        bg-[#F0F0F0] rounded-lg '/>
-      <div className='
-        flex flex-col
-        justify-center
-        gap-6
+        flex flex-col-reverse lg:flex lg:flex-row
+        justify-center items-center
+        gap-12
         h-auto
-        lg:w-[40%] w-full
+        w-full
       '>
-        { image?.src?.url ? (
-          <img className='w-full h-auto'
-          src={ image.src }
-          alt={ image.alt } />
-        ) : (
-          <GatsbyImage className='w-full h-auto'
-          formats={ ['auto', 'webp'] } />
-        ) }
-        <p className='
-          px-6
-          text-center
-          italic
-        '> 
-          { description }
-        </p>
+        <div className='
+          flex flex-col
+          px-6 py-12 md:p-12
+          gap-6
+          w-full lg:w-[60%]
+        '>
+          <div className='
+            container
+            h-auto lg:h-[500px] w-full
+            lg:overflow-y-scroll
+            text-justify
+          '>
+            { content && (
+              <p className='text-sm font-medium' dangerouslySetInnerHTML={{ __html: content }} /> 
+            ) } 
+          </div>
+          <div className='
+            flex flex-row
+            justify-end
+            gap-12
+          '>
+            <button>
+              <img
+              src={ twitter }
+              alt='LinkedIn' />
+            </button>
+            <button>
+              <img
+              src={ linkedIn }
+              alt='LinkedIn' />
+            </button>
+            <button>
+              <img
+              src={ share }
+              alt='LinkedIn' />
+            </button>
+          </div>
+        </div>
+        <div className='
+          hidden lg:flex
+          h-[600px] w-1
+          bg-[#F0F0F0] rounded-lg '/>
+        <div className='
+          flex flex-col
+          justify-center
+          gap-6
+          h-auto
+          lg:w-[40%] w-full
+        '>
+          { image?.src?.url ? (
+            <img className='w-full h-auto'
+            src={ image.src }
+            alt={ image.alt } />
+          ) : (
+            <GatsbyImage className='w-full h-auto'
+            formats={ ['auto', 'webp'] }
+            image={ image.src }
+            alt={ image.alt } />
+          ) }
+          { description && (
+            <p className='
+              px-6
+              text-center
+              italic
+            '> 
+              { description }
+            </p>
+          ) }
+        </div>
       </div>
-    </div>
+    )}
   </React.Fragment>
 );
 
@@ -101,9 +109,10 @@ const Article = ({ content, className }) => (
 Article.propTypes = {
   content: PropTypes.node,
   description: PropTypes.string,
-  image: PropTypes.object,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
 HTMLContent.propTypes = Article.propTypes;
 
 export default Article;
+

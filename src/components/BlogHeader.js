@@ -51,5 +51,5 @@ export default function BlogHeader(props){
 BlogHeader.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
-  date: PropTypes.object,
+  date: PropTypes.string,
 };
