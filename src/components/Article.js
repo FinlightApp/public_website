@@ -12,7 +12,7 @@ export const HTMLContent = ({ content, className }) => (
   <React.Fragment>
     <div className='
       flex flex-col-reverse lg:flex lg:flex-row
-      justify-center items-start
+      justify-center items-center
       lg:p-12 p-6
       gap-12
       h-auto
@@ -24,6 +24,7 @@ export const HTMLContent = ({ content, className }) => (
         lg:w-[60%] w-full
       '>
         <div className='
+          container
           h-auto lg:h-[500px]
           w-full
           lg:overflow-y-scroll
@@ -53,6 +54,9 @@ export const HTMLContent = ({ content, className }) => (
           </button>
         </div>
       </div>
+      <div className='
+        h-[600px] w-1
+        bg-[#F0F0F0] rounded-lg '/>
       <div className='
         flex flex-col
         justify-center
