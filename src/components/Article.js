@@ -28,7 +28,7 @@ export const HTMLContent = ({ content, description, image }) => (
           lg:overflow-y-scroll
           text-justify
         '>
-          <p className='text-sm font-medium' dangerouslySetInnerHTML={{ __html: content }} />  
+          <p className='text-sm font-medium' dangerouslySetInnerHTML={{ __html: content }} />
         </div>
         <div className='
           flex flex-row

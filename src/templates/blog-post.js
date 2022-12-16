@@ -21,7 +21,7 @@ export const BlogPostTemplate = ({
   return (
     <>
       <BlogHeader
-      title={ title } 
+      title={ title }
       author={ author }
       date={ date } />
       <PostContent className='
