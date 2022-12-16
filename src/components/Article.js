@@ -13,7 +13,7 @@ export const HTMLContent = ({ content, className }) => (
     <div className='
       flex flex-col-reverse lg:flex lg:flex-row
       justify-center items-center
-      lg:p-12 p-6
+      p-6 lg:p-12
       gap-12
       h-auto
       w-full
@@ -21,12 +21,12 @@ export const HTMLContent = ({ content, className }) => (
       <div className='
         flex flex-col
         gap-6
-        lg:w-[60%] w-full
+        w-full lg:w-[60%]
       '>
         <div className='
           container
-          h-auto lg:h-[500px]
-          w-full
+          p-6 md:p-12
+          h-auto lg:h-[500px] w-full
           lg:overflow-y-scroll
           text-justify
         '>
@@ -55,6 +55,7 @@ export const HTMLContent = ({ content, className }) => (
         </div>
       </div>
       <div className='
+        hidden lg:flex
         h-[600px] w-1
         bg-[#F0F0F0] rounded-lg '/>
       <div className='
