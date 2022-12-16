@@ -60,8 +60,7 @@ export const HTMLContent = ({ content, description, image }) => (
         flex flex-col
         justify-center
         gap-6
-        h-auto
-        lg:w-[40%] w-full
+        w-full h-auto lg:w-[40%]
       '>
         { image?.src?.url ? (
           <img className='w-full h-auto'
