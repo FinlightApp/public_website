@@ -20,12 +20,12 @@ export default function BlogHeader(props){
           bg-[#F6F6F6]
         '>
           { ( title &&
-            <p className='
+            <h1 className='
               lg:w-[60%]
-              text-3xl
+              text-3xl font-semibold
             '>
               { title }
-            </p>
+            </h1>
           ) }
           <div className='
             flex flex-col
@@ -46,7 +46,7 @@ export default function BlogHeader(props){
         </div>
       ) }
     </>
-)}
+  )}
 
 BlogHeader.propTypes = {
   title: PropTypes.string,

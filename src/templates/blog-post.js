@@ -31,7 +31,7 @@ export const BlogPostTemplate = ({
       content={content} />
     </>
   );
-};
+ };
 
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,

@@ -4,7 +4,9 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Panel from './Panel';
 import image from '../img/close_24.svg';
-import linkedIn from '../img/linkedin_logo.svg';
+import linkedIn from '../img/social/linkedin.svg';
+import twitter from '../img/social/twitter.svg';
+import share from '../img/social/share.svg';
 
 export const HTMLContent = ({ content, className }) => (
   <React.Fragment>
@@ -22,36 +24,33 @@ export const HTMLContent = ({ content, className }) => (
         lg:w-[60%] w-full
       '>
         <div className='
-          h-[500px]
+          h-auto lg:h-[500px]
           w-full
-          overflow-y-scroll
+          lg:overflow-y-scroll
           text-justify
         '>
-          <div className={className} dangerouslySetInnerHTML={{ __html: content }} />  
+          <p className='text-sm font-medium' dangerouslySetInnerHTML={{ __html: content }} />  
         </div>
         <div className='
           flex flex-row
           justify-end
           gap-12
-          '>
-            <a href='https://www.linkedin.com/company/finlight' target='_blank'
-              referrerPolicy='no-referrer'
-              rel='noopener noreferrer'>
-              <img src={linkedIn} alt='LinkedIn'
-              className='h-4 w-4' />
-            </a>
-            <a href='https://www.linkedin.com/company/finlight' target='_blank'
-              referrerPolicy='no-referrer'
-              rel='noopener noreferrer'>
-              <img src={linkedIn} alt='LinkedIn'
-              className='h-4 w-4' />
-            </a>
-            <a href='https://www.linkedin.com/company/finlight' target='_blank'
-              referrerPolicy='no-referrer'
-              rel='noopener noreferrer'>
-              <img src={linkedIn} alt='LinkedIn'
-              className='h-4 w-4' />
-            </a>
+        '>
+          <button>
+            <img
+            src={ twitter }
+            alt='LinkedIn' />
+          </button>
+          <button>
+            <img
+            src={ linkedIn }
+            alt='LinkedIn' />
+          </button>
+          <button>
+            <img
+            src={ share }
+            alt='LinkedIn' />
+          </button>
         </div>
       </div>
       <div className='
@@ -62,12 +61,12 @@ export const HTMLContent = ({ content, className }) => (
         lg:w-[40%] w-full
       '>
         { image?.src?.url ? (
-            <img className='w-full h-auto'
-            src={ image.src }
-            alt={ image.alt } />
-          ) : (
-            <GatsbyImage className='w-full h-auto'
-            formats={ ['auto', 'webp'] } />
+          <img className='w-full h-auto'
+          src={ image.src }
+          alt={ image.alt } />
+        ) : (
+          <GatsbyImage className='w-full h-auto'
+          formats={ ['auto', 'webp'] } />
         ) }
         <p className='
           px-6
@@ -78,22 +77,22 @@ export const HTMLContent = ({ content, className }) => (
         </p>
       </div>
     </div>
-</React.Fragment>
+  </React.Fragment>
 );
 
 const Article = ({ content, className }) => (
-    <Panel>
-        <div className='grid grid-cols-10'>
-            <div className='
-                col-span-10
-                xl:col-start-2 xl:col-span-8
-                flex flex-col
-                px-4 md:px-8 py-8 md:py-16 gap-16
-            '>
-                <div className={className}>{content}</div>
-            </div>
-        </div>
-    </Panel>
+  <Panel>
+    <div className='grid grid-cols-10'>
+      <div className='
+        col-span-10
+        xl:col-start-2 xl:col-span-8
+        flex flex-col
+        px-4 md:px-8 py-8 md:py-16 gap-16
+      '>
+        <div className={className}>{content}</div>
+      </div>
+    </div>
+  </Panel>
 );
 
 Article.propTypes = {
