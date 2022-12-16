@@ -13,19 +13,18 @@ export const HTMLContent = ({ content, className }) => (
     <div className='
       flex flex-col-reverse lg:flex lg:flex-row
       justify-center items-center
-      p-6 lg:p-12
       gap-12
       h-auto
       w-full
     '>
       <div className='
         flex flex-col
+        px-6 py-12 md:p-12
         gap-6
         w-full lg:w-[60%]
       '>
         <div className='
           container
-          p-6 md:p-12
           h-auto lg:h-[500px] w-full
           lg:overflow-y-scroll
           text-justify

@@ -15,7 +15,7 @@ export default function BlogHeader(props){
         <div className='
           flex flex-col justify-center
           w-full
-          px-6 py-8 lg:p-12
+          px-6 py-12 md:p-12
           gap-10 lg:gap-12
           bg-[#F6F6F6]
         '>
