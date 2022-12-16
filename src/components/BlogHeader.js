@@ -33,12 +33,12 @@ export default function BlogHeader(props){
             w-full
           '>
             { ( author &&
-              <p className='text-sm'>
+              <p className='text-sm font-extralight'>
                 { author }
               </p>
             ) }
             { ( date &&
-              <p className='text-sm'>
+              <p className='text-sm font-extralight'>
                 { date }
               </p>
             ) }
