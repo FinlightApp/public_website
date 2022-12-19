@@ -1,5 +1,5 @@
-import * as React from "react";
-import {ShareModal} from "./ShareModal";
+import * as React from 'react';
+import {ShareModal} from './ShareModal';
 
 import share from '../img/social/share.svg';
 
@@ -10,18 +10,23 @@ export const ShareButton = (props) => {
   navigator.clipboard.writeText(props.url);
     if (setShowModal) {
       setShowModal(true);
+    }else{
+       setShowModal(false);
     }
   }
-      return (
-        <>
-          <button
-          onClick={ () => copyText() }
-          >
-            <img
-            src={ share }
-            alt='Share' />
-          </button>
-          {showModal ? <ShareModal modal={setShowModal} /> : null}
-        </>
-      )
+  return (
+    <div className='
+      flex
+      gap-2
+    '>
+      <button
+      onClick={ () => copyText() }
+      >
+        <img
+        src={ share }
+        alt='Share' />
+      </button>
+      {showModal ? <ShareModal setShowModal={setShowModal} /> : null}
+    </div>
+  )
 }

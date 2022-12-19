@@ -52,18 +52,7 @@ export const HTMLContent = ({ content, description, image }) => (
               src={ linkedIn }
               alt='LinkedIn' />
             </button>
-            <ShareButton
-            url={ window.location.href }
-            />
-            {/* <button onClick={ () => copyText() }>
-              <img
-              src={ share }
-              alt='Share' />
-            </button>
-            <div
-            ref={ alertBox }
-              >
-            </div> */}
+            <ShareButton url={ window.location.href } />
           </div>
         </div>
         <div className='
