@@ -30,7 +30,7 @@ export const HTMLContent = ({ content, description, image }) => (
             text-justify
           '>
             { content && (
-              <p className='text-sm font-medium' dangerouslySetInnerHTML={{ __html: content }} /> 
+              <p className='text-xl font-medium' dangerouslySetInnerHTML={{ __html: content }} /> 
             ) } 
           </div>
           <div className='
@@ -38,12 +38,16 @@ export const HTMLContent = ({ content, description, image }) => (
             justify-end
             gap-12
           '>
-            <button>
+            <button 
+            onClick={ () =>
+            { window.open(`https://twitter.com/intent/tweet?text=true&url=${window.location.href}`) } }>
               <img
               src={ twitter }
-              alt='LinkedIn' />
+              alt='Twitter' />
             </button>
-            <button>
+            <button
+            onClick={ () =>
+            { window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}`) } }>
               <img
               src={ linkedIn }
               alt='LinkedIn' />
@@ -51,7 +55,7 @@ export const HTMLContent = ({ content, description, image }) => (
             <button>
               <img
               src={ share }
-              alt='LinkedIn' />
+              alt='Share' />
             </button>
           </div>
         </div>
