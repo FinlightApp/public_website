@@ -13,7 +13,6 @@ export const HTMLContent = ({ content, description, image }) => (
       <div className='
         flex flex-col-reverse lg:flex lg:flex-row
         justify-center items-center
-        gap-12
         h-auto
         w-full
       '>
@@ -30,7 +29,8 @@ export const HTMLContent = ({ content, description, image }) => (
             text-justify
           '>
             { content && (
-              <p className='text-xl font-medium' dangerouslySetInnerHTML={{ __html: content }} /> 
+              <p className='
+                font-normal text-base lg:text-xl lg:font-medium' dangerouslySetInnerHTML={{ __html: content }} />
             ) } 
           </div>
           <div className='
@@ -65,8 +65,7 @@ export const HTMLContent = ({ content, description, image }) => (
           bg-[#F0F0F0] rounded-lg '/>
         <div className='
           flex flex-col
-          justify-center
-          gap-6
+          py-12 px-6 md:p-12 gap-6
           h-auto
           lg:w-[40%] w-full
         '>
