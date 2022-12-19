@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import Panel from './Panel';
+import { ShareButton } from "./ShareButton";
 import linkedIn from '../img/social/linkedin.svg';
 import twitter from '../img/social/twitter.svg';
 import share from '../img/social/share.svg';
@@ -52,11 +53,18 @@ export const HTMLContent = ({ content, description, image }) => (
               src={ linkedIn }
               alt='LinkedIn' />
             </button>
-            <button>
+            <ShareButton
+            url={ window.location.href }
+            />
+            {/* <button onClick={ () => copyText() }>
               <img
               src={ share }
               alt='Share' />
             </button>
+            <div
+            ref={ alertBox }
+              >
+            </div> */}
           </div>
         </div>
         <div className='
