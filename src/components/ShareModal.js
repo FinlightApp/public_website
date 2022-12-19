@@ -1,9 +1,8 @@
-import * as React from 'react';
-import { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export const ShareModal = ({ setShowModal }) => { 
-  const [message, setMessage] = React.useState('');
-  const timeoutIdRef = React.useRef();
+  const [message, setMessage] = useState('');
+  const timeoutIdRef = useRef();
   const modalRef = useRef();
 
   useEffect(() => {
