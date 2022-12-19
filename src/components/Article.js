@@ -1,6 +1,6 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import Panel from './Panel';
 import linkedIn from '../img/social/linkedin.svg';
@@ -68,12 +68,12 @@ export const HTMLContent = ({ content, description, image }) => (
         '>
           { image?.src?.url ? (
             <img className='w-full h-auto'
-            src={ image.src }
+            src={ getImage(image.src) || image.src }
             alt={ image.alt } />
           ) : (
             <GatsbyImage className='w-full h-auto'
             formats={ ['auto', 'webp'] }
-            image={ image.src }
+            image={ getImage(image.src) || image.src }
             alt={ image.alt } />
           ) }
           { description && (
