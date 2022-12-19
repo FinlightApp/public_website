@@ -22,7 +22,7 @@ export default function BlogHeader(props){
           { ( title &&
             <h1 className='
               lg:w-[60%]
-              text-3xl font-semibold
+              text-3xl md:text-4xl font-semibold
             '>
               { title }
             </h1>

@@ -29,7 +29,8 @@ export const HTMLContent = ({ content, description, image }) => (
             text-justify
           '>
             { content && (
-              <p className='text-sm font-medium' dangerouslySetInnerHTML={{ __html: content }} /> 
+              <p className='
+                font-normal text-xs lg:text-sm lg:font-medium' dangerouslySetInnerHTML={{ __html: content }} />
             ) } 
           </div>
           <div className='
