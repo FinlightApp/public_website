@@ -6,7 +6,6 @@ import Panel from './Panel';
 import { ShareButton } from "./ShareButton";
 import linkedIn from '../img/social/linkedin.svg';
 import twitter from '../img/social/twitter.svg';
-import share from '../img/social/share.svg';
 
 export const HTMLContent = ({ content, description, image }) => (
   <React.Fragment>
@@ -30,8 +29,8 @@ export const HTMLContent = ({ content, description, image }) => (
             text-justify
           '>
             { content && (
-              <p className='
-                font-normal text-base lg:text-xl lg:font-medium' dangerouslySetInnerHTML={{ __html: content }} />
+              <p className='font-normal text-base lg:text-xl lg:font-medium' 
+              dangerouslySetInnerHTML={{ __html: content }} />
             ) } 
           </div>
           <div className='
