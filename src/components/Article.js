@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import Panel from './Panel';
-import { ShareButton } from "./ShareButton";
 import linkedIn from '../img/social/linkedin.svg';
 import twitter from '../img/social/twitter.svg';
+import email from '../img/social/email.png';
 
 export const HTMLContent = ({ content, description, image }) => (
   <React.Fragment>
     {( content || description || image ) && (
       <div className='
+        container
         flex flex-col-reverse lg:flex lg:flex-row
         justify-center items-center
         h-auto
@@ -23,7 +24,6 @@ export const HTMLContent = ({ content, description, image }) => (
           w-full lg:w-[60%]
         '>
           <div className='
-            container
             h-auto lg:h-[500px] w-full
             lg:overflow-y-scroll
             text-justify
@@ -38,21 +38,22 @@ export const HTMLContent = ({ content, description, image }) => (
             justify-end
             gap-12
           '>
-            <button 
-            onClick={ () =>
-            { window.open(`https://twitter.com/intent/tweet?text=true&url=${window.location.href}`) } }>
+            <button>
               <img
               src={ twitter }
               alt='Twitter' />
             </button>
-            <button
-            onClick={ () =>
-            { window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}`) } }>
+            <button>
               <img
               src={ linkedIn }
               alt='LinkedIn' />
             </button>
-            <ShareButton url={ window.location.href } />
+             <button>
+              <img
+              className='w-6 h-6'
+              src={ email }
+              alt='LinkedIn' />
+            </button>
           </div>
         </div>
         <div className='
