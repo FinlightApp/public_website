@@ -19,7 +19,7 @@ export const BlogPostTemplate = ({
   const PostContent = contentComponent || Article;
 
   return (
-  <>
+  <div className='container'>
     <BlogHeader
     title={ title }
     author={ author }
@@ -31,7 +31,7 @@ export const BlogPostTemplate = ({
     content={ content }
     description={ description }
     image={ image } />
-    </>
+    </div>
   );
 };
 
