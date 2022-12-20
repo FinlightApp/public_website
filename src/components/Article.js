@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Panel from './Panel';
 import linkedIn from '../img/social/linkedin.svg';
 import twitter from '../img/social/twitter.svg';
-import email from '../img/social/email.png';
+import email from '../img/social/email.svg';
 
 export const HTMLContent = ({ content, description, image }) => (
   <React.Fragment>
