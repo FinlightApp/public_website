@@ -39,21 +39,24 @@ export const HTMLContent = ({ content, description, image }) => (
           '>
             <a href='https://twitter.com/intent/tweet/?url=http%3A%2F%2Fdemo.finlight.com&amp;'
             target='_blank'
-            rel='noopener' >
+            rel='noopener' 
+            referrerPolicy='no-referrer' >
               <img
               src={ twitter }
               alt='Twitter' />
             </a>
             <a href='https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fdemo.finlight.com&amp;'
             target='_blank'
-            rel='noopener'>
+            rel='noopener'
+            referrerPolicy='no-referrer' >
               <img
               src={ linkedIn }
               alt='LinkedIn' />
             </a>
             <a href='mailto:?body=http%3A%2F%2Fdemo.finlight.com&amp;'
             target='_blank'
-            rel='noopener' >
+            rel='noopener'
+            referrerPolicy='no-referrer' >
               <img
               className='w-6 h-6'
               src={ email }
