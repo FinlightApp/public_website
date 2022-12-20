@@ -11,7 +11,6 @@ export const HTMLContent = ({ content, description, image }) => (
   <React.Fragment>
     {( content || description || image ) && (
       <div className='
-        container
         flex flex-col-reverse lg:flex lg:flex-row
         justify-center items-center
         h-auto
