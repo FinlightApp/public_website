@@ -7,12 +7,10 @@ import linkedIn from '../img/social/linkedin.svg';
 import twitter from '../img/social/twitter.svg';
 import email from '../img/social/email.svg';
 
-
 export const HTMLContent = ({ content, description, image }) => (
   <React.Fragment>
     {( content || description || image ) && (
       <div className='
-        container
         flex flex-col-reverse lg:flex lg:flex-row
         justify-center items-center
         h-auto
@@ -39,29 +37,23 @@ export const HTMLContent = ({ content, description, image }) => (
             justify-end
             gap-12
           '>
-            <a
-            href='https://twitter.com/intent/tweet/?url=http%3A%2F%2Fdemo.finlight.com&amp;'
-            target='_blank'
-            rel='noreferrer noopener'
-            referrerPolicy='no-referrer'>
+            <a href="https://twitter.com/intent/tweet/?url=current_url"
+            target="_blank"
+            rel="noopener noreferrer" >
               <img
               src={ twitter }
               alt='Twitter' />
             </a>
-            <a
-            href='https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fdemo.finlight.com&amp;'
-            target='_blank'
-            rel='noreferrer noopener'
-            referrerPolicy='no-referrer'>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=current_url"
+            target="_blank"
+            rel="noopener noreferrer">
               <img
               src={ linkedIn }
               alt='LinkedIn' />
             </a>
-            <a
-            href='mailto:?body=http%3A%2F%2Fdemo.finlight.com&amp;'
-            target='_blank'
-            rel='noreferrer noopener'
-            referrerPolicy='no-referrer'>
+            <a href="mailto:?body=http%3A%2F%2Fdemo.finlight.com&amp;"
+            target="_blank"
+            rel="noopener noreferrer" >
               <img
               className='w-6 h-6'
               src={ email }
