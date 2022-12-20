@@ -7,8 +7,6 @@ import linkedIn from '../img/social/linkedin.svg';
 import twitter from '../img/social/twitter.svg';
 import email from '../img/social/email.png';
 
-const url = 'window.location.href';
-
 export const HTMLContent = ({ content, description, image }) => (
   <React.Fragment>
     {( content || description || image ) && (
