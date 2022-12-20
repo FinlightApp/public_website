@@ -19,19 +19,19 @@ export const BlogPostTemplate = ({
   const PostContent = contentComponent || Article;
 
   return (
-    <div className='container'>
-      <BlogHeader
-      title={ title }
-      author={ author }
-      date={ date } />
-      <PostContent className='
-        flex flex-col
-        gap-8
-      '
-      content={ content }
-      description={ description }
-      image={ image } />
-    </div>
+  <>
+    <BlogHeader
+    title={ title }
+    author={ author }
+    date={ date } />
+    <PostContent className='
+      flex flex-col
+      gap-8
+    '
+    content={ content }
+    description={ description }
+    image={ image } />
+    </>
   );
 };
 
