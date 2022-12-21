@@ -4,6 +4,7 @@ keywords: Family office selection
 title: Family office selection
 author: JB Tanqueray
 date: 2020-01-06T23:00:00.000Z
+description: Default description
 image:
   src: /img/familyofficeselection.jpg
   alt: Image description
