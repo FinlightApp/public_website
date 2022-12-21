@@ -3,8 +3,8 @@ templateKey: blog-post
 keywords: Interview with our CEO on IBO partnership
 title: Interview with our CEO on IBO partnership
 author: JB Tanqueray
-date: 2021-03-12T09:53:41.645Z
-description: Default description
+date: 2020-02-26T23:00:00.000Z
+description: ""
 image:
   src: /img/ibo_image.jpeg
   alt: Image description
