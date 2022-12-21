@@ -1,13 +1,13 @@
 ---
 templateKey: blog-post
-keywords: Top tips for reporting
-title: Top tips for reporting
+keywords: How small business owners can protect themselves against hackers during Covid-19
+title: How small business owners can protect themselves against hackers during Covid-19
 author: JB Tanqueray
-date: 2019-01-10T15:46:34.974Z
+date: 2020-04-15T09:53:41.645Z
 description: Default description
 image:
-  src: /img/toptipsforreporting.jpg
-  alt: book
+  src: /img/covid19.jpg
+  alt: Image description
 ---
 We understand the recent events are creating extraordinary levels of concern and anxiety for website owners.
 
@@ -29,4 +29,4 @@ Hackers are turning increasingly to web applications which allow them to circumv
 
 Once you’ve implemented the best security barriers that you can afford, including cloud-based firewalls and application scanners, then it’s time to patch an even bigger vulnerability: your employees. By educating your workforce about the need for smarter passwords, being vigilant against phishing emails and thinking before they click, will bring immense value to your overall security investment.
 
-Avi Bartov GamaSec CEO, GamaSec is a cyber-security company that lowers the risk and strengthens the resilience of businesses from attacks on their websites and web applications, a pre-breach tool designed to prevent cyber attacks.
+Avi Bartov GamaSec CEO, GamaSec is a cyber-security company that lowers the risk and strengthens the resilience of businesses from attacks on their websites and web applications, a pre-breach tool designed to prevent cyber attacks. www.gamasec.com

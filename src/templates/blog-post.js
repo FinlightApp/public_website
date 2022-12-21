@@ -2,41 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Hero from '../components/Hero';
-import Content, { HTMLContent } from '../components/Content';
-import { getImage } from 'gatsby-plugin-image';
+import BlogHeader from '../components/BlogHeader'
+import Article, { HTMLContent } from '../components/Article';
+
 
 // eslint-disable-next-line
 export const BlogPostTemplate = ({
   content,
   contentComponent,
-  description,
   title,
+  author,
+  date,
+  description,
   image,
-  theme
 }) => {
-  const PostContent = contentComponent || Content;
+  const PostContent = contentComponent || Article;
 
   return (
     <>
-      <Hero
-      theme={ {
-        header: theme.header,
-        line: theme.line,
-        highlight: theme.highlight,
-        paragraph: theme.paragraph,
-      } }
-      backgroundImg={ {
-        src: getImage(image.src) || image.src,
-        alt: image.alt,
-      } }
+      <BlogHeader
       title={ title }
-      paragraph={ description } />
-      <PostContent className='
-        flex flex-col
-        gap-8
-      '
-      content={content} />
+      author={ author }
+      date={ date } />
+      <PostContent
+      title={ title }
+      content={ content }
+      description={ description }
+      image={ image } />
     </>
   );
 };
@@ -44,11 +36,12 @@ export const BlogPostTemplate = ({
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
-  description: PropTypes.string,
   title: PropTypes.string,
-  image: PropTypes.object,
+  author: PropTypes.string,
+  date: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   keywords: PropTypes.string,
-  theme: PropTypes.object,
 };
 
 const BlogPost = ({ data }) => {
@@ -62,8 +55,9 @@ const BlogPost = ({ data }) => {
       description: post.frontmatter.description,
     } }>
       <BlogPostTemplate
-        theme={post.frontmatter.theme}
         title={post.frontmatter.title}
+        author={post.frontmatter.author}
+        date={post.frontmatter.date}
         description={post.frontmatter.description}
         image={post.frontmatter.image}
         content={post.html}
@@ -88,14 +82,9 @@ export const pageQuery = graphql`
       html
       frontmatter {
         keywords
-        theme {
-          header
-          line
-          highlight
-          paragraph
-        }
-        date(formatString: "DD MMMM, YYYY")
         title
+        author
+        date(formatString: "DD MMMM, YYYY")
         description
         image {
           src {
@@ -105,9 +94,6 @@ export const pageQuery = graphql`
                 placeholder: BLURRED
                 formats: [AUTO, WEBP]
                 layout: FULL_WIDTH
-                transformOptions: {
-                  fit: COVER
-                }
               )
             }
           }

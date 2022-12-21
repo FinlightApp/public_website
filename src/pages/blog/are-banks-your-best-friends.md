@@ -1,13 +1,10 @@
 ---
 templateKey: blog-post
 keywords: Are banks your best friends?
-theme:
-  header: text-black
-  line: via-primary
-  highlight: text-primary
-  paragraph: text-black
 title: Are banks your best friends?
+author: JB Tanqueray
 date: 2019-04-11T09:49:02.460Z
+description: Default description
 image:
   src: /img/default.png
   alt: Image description
