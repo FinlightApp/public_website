@@ -7,53 +7,64 @@ import linkedIn from '../img/social/linkedin.svg';
 import twitter from '../img/social/twitter.svg';
 import email from '../img/social/email.svg';
 
-export const HTMLContent = ({ content, description, image }) => (
+const articleLink = window.location.href;
+
+export const HTMLContent = ({ content, description, image, title }) => (
   <React.Fragment>
     {( content || description || image ) && (
       <div className='
-        flex flex-col-reverse lg:flex lg:flex-row
-        justify-center items-center
-        h-auto
-        w-full
+        container
+        flex flex-col-reverse lg:flex-row
+        lg:justify-start lg:items-start
       '>
+        {/* Text side */}
         <div className='
+          grow lg:grow-[6]
           flex flex-col
           px-6 py-12 md:p-12
           gap-6
-          w-full lg:w-[60%]
         '>
+          { content && (
+            <div className='
+              flex-1
+              flex flex-col
+              gap-6
+              min-w-fit max-w-min
+              text-justify
+              font-normal text-base lg:text-xl
+            '
+            dangerouslySetInnerHTML={{ __html: content }}
+            />
+          ) }
           <div className='
-            h-auto lg:h-[500px] w-full
-            lg:overflow-y-scroll
-            text-justify
-          '>
-            { content && (
-              <p className='font-normal text-base lg:text-xl lg:font-medium' 
-              dangerouslySetInnerHTML={{ __html: content }} />
-            ) } 
-          </div>
-          <div className='
-            flex flex-row
-            justify-end
+            flex lg:hidden
+            flex-row
+            justify-center
             gap-12
           '>
-            <a href="https://twitter.com/intent/tweet/?url=current_url"
-            target="_blank"
-            rel="noopener noreferrer" >
+            <a
+            href={ `https://twitter.com/intent/tweet/?text=${title}&amp;url=${articleLink}` }
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='Share on Twitter'>
               <img
               src={ twitter }
               alt='Twitter' />
             </a>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=current_url"
-            target="_blank"
-            rel="noopener noreferrer">
+            <a
+            href={ `https://www.linkedin.com/shareArticle?mini=true&amp;url=${articleLink}&amp;title=${title}&amp;summary=${title}&amp;source=${articleLink}` }
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='Share on LinkedIn'>
               <img
               src={ linkedIn }
               alt='LinkedIn' />
             </a>
-            <a href="mailto:?body=http%3A%2F%2Fdemo.finlight.com&amp;"
-            target="_blank"
-            rel="noopener noreferrer" >
+            <a
+            href={ `mailto:?subject=${title}&amp;body=${articleLink}` }
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='Share by E-Mail'>
               <img
               className='w-6 h-6'
               src={ email }
@@ -61,22 +72,20 @@ export const HTMLContent = ({ content, description, image }) => (
             </a>
           </div>
         </div>
+        {/* Image side */}
         <div className='
-          hidden lg:flex
-          h-[600px] w-1
-          bg-[#F0F0F0] rounded-lg '/>
-        <div className='
+          lg:sticky lg:top-20
+          grow lg:grow-[4]
           flex flex-col
-          py-12 px-6 md:p-12 gap-6
-          h-auto
-          lg:w-[40%] w-full
+          gap-6
+          py-12 px-6 md:p-12
         '>
           { image?.src?.url ? (
-            <img className='w-full h-auto'
+            <img className='w-full'
             src={ getImage(image.src) || image.src }
             alt={ image.alt } />
           ) : (
-            <GatsbyImage className='w-full h-auto'
+            <GatsbyImage className='w-full'
             formats={ ['auto', 'webp'] }
             image={ getImage(image.src) || image.src }
             alt={ image.alt } />
@@ -90,6 +99,41 @@ export const HTMLContent = ({ content, description, image }) => (
               { description }
             </p>
           ) }
+          <div className='
+            hidden lg:flex
+            flex-row
+            justify-center
+            gap-12
+          '>
+            <a
+            href={ `https://twitter.com/intent/tweet/?text=${title}&amp;url=${articleLink}` }
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='Share on Twitter'>
+              <img
+              src={ twitter }
+              alt='Twitter' />
+            </a>
+            <a
+            href={ `https://www.linkedin.com/shareArticle?mini=true&amp;url=${articleLink}&amp;title=${title}&amp;summary=${title}&amp;source=${articleLink}` }
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='Share on LinkedIn'>
+              <img
+              src={ linkedIn }
+              alt='LinkedIn' />
+            </a>
+            <a
+            href={ `mailto:?subject=${title}&amp;body=${articleLink}` }
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='Share by E-Mail'>
+              <img
+              className='w-6 h-6'
+              src={ email }
+              alt='Email' />
+            </a>
+          </div>
         </div>
       </div>
     )}

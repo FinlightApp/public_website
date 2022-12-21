@@ -13,35 +13,45 @@ export default function BlogHeader(props){
     <>
       { ( title || author || date ) && (
         <div className='
-          flex flex-col justify-center
-          w-full
-          px-6 py-12 md:p-12
-          gap-10 lg:gap-12
-          bg-[#F6F6F6]
+          relative
+          flex
+          w-full h-fit
         '>
-          { ( title &&
-            <h1 className='
-              lg:w-[60%]
-              text-3xl md:text-4xl font-semibold
-            '>
-              { title }
-            </h1>
-          ) }
+          <div className='absolute inset-0 bg-[#F6F6F6] bg-cover z-0' />
           <div className='
-            flex flex-col
-            justify-center items-end
-            w-full
+            container
+            flex-1
+            flex flex-col justify-center
+            py-12
+            gap-10 lg:gap-12
+            z-10
           '>
-            { ( author &&
-              <p className='text-sm font-extralight'>
-                { author }
-              </p>
+            { ( title &&
+              <h1 className='
+                px-6 md:px-12
+                lg:max-w-[60%]
+                text-left
+                text-3xl md:text-4xl font-semibold
+              '>
+                { title }
+              </h1>
             ) }
-            { ( date &&
-              <p className='text-sm font-extralight'>
-                { date }
-              </p>
-            ) }
+            <div className='
+              px-6 md:px-12
+              flex flex-col
+              justify-center items-end
+            '>
+              { ( author &&
+                <p className='text-sm font-light'>
+                  { author }
+                </p>
+              ) }
+              { ( date &&
+                <p className='text-sm font-extralight'>
+                  { date }
+                </p>
+              ) }
+            </div>
           </div>
         </div>
       ) }

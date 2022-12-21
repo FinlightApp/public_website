@@ -19,19 +19,17 @@ export const BlogPostTemplate = ({
   const PostContent = contentComponent || Article;
 
   return (
-  <div className='container'>
-    <BlogHeader
-    title={ title }
-    author={ author }
-    date={ date } />
-    <PostContent className='
-      flex flex-col
-      gap-8
-    '
-    content={ content }
-    description={ description }
-    image={ image } />
-    </div>
+    <>
+      <BlogHeader
+      title={ title }
+      author={ author }
+      date={ date } />
+      <PostContent
+      title={ title }
+      content={ content }
+      description={ description }
+      image={ image } />
+    </>
   );
 };
 
@@ -93,6 +91,9 @@ export const pageQuery = graphql`
             childImageSharp {
               gatsbyImageData(
                 quality: 100
+                placeholder: BLURRED
+                formats: [AUTO, WEBP]
+                layout: FULL_WIDTH
               )
             }
           }
