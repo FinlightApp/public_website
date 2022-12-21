@@ -7,7 +7,7 @@ import linkedIn from '../img/social/linkedin.svg';
 import twitter from '../img/social/twitter.svg';
 import email from '../img/social/email.svg';
 
-const articleLink = window.location.href;
+const articleLink = typeof window !== 'undefined' && window.location.href;
 
 export const HTMLContent = ({ content, description, image, title }) => (
   <React.Fragment>
