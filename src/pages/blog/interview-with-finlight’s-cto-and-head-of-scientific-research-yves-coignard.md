@@ -3,7 +3,7 @@ templateKey: blog-post
 keywords: Interview with Finlight’s CTO and Head of Scientific Research, Yves Coignard
 title: Interview with Finlight’s CTO and Head of Scientific Research, Yves Coignard
 author: JB Tanqueray
-date: 2022-12-21T14:48:11.432Z
+date: 2020-02-26T23:00:00.000Z
 description: Default description
 image:
   src: /img/yvinterview.jpg
