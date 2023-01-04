@@ -16,6 +16,7 @@ export default function BlogHeader(props){
           relative
           flex
           w-full h-fit
+          z-0
         '>
           <div className='absolute inset-0 bg-[#F6F6F6] bg-cover z-0' />
           <div className='
