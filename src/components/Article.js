@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import Panel from './Panel';
-import linkedIn from '../img/social/linkedin.svg';
-import twitter from '../img/social/twitter.svg';
-import email from '../img/social/email.svg';
+import linkedIn from '../img/linkedin_logo_blue.svg';
+import twitter from '../img/twitter_logo_blue.svg';
+import email from '../img/mail_icon_blue.svg';
 
 const articleLink = typeof window !== 'undefined' && window.location.href;
 
@@ -56,7 +56,7 @@ export const HTMLContent = ({ content, description, image, title }) => (
             target='_blank'
             rel='noopener noreferrer'
             aria-label='Share on LinkedIn'>
-              <img
+              <img className='w-6 h-6'
               src={ linkedIn }
               alt='LinkedIn' />
             </a>
@@ -119,7 +119,7 @@ export const HTMLContent = ({ content, description, image, title }) => (
             target='_blank'
             rel='noopener noreferrer'
             aria-label='Share on LinkedIn'>
-              <img
+              <img className='w-6 h-6'
               src={ linkedIn }
               alt='LinkedIn' />
             </a>

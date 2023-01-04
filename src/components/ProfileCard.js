@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import  linkedinIcon from '../img/social/linkedin.svg'
+import  linkedinIcon from '../img/linkedin_logo_blue.svg';
 
 /* eslint-disable */
 export default function ProfileCard(props) {
