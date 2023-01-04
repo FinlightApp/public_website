@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import finlight_logo from '../img/finlight_logo_f6.svg';
 import twitter_logo from '../img/twitter_logo.svg';
-import linkedIn_logo from '../img/social/linkedin_white.svg';
+import linkedIn_logo from '../img/linkedin_logo_white.svg';
 
 const Footer = () => {
   return (
