@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import Panel from './Panel';
 import ContactCard from './ContactCard';
 
-import location_icon from '../img/location_icon.svg';
-import mail_icon from '../img/mail_icon.svg';
-import linkedIn_logo from '../img/linkedin_logo.svg';
+import location_icon from '../img/location_icon_black.svg';
+import mail_icon from '../img/mail_icon_black.svg';
+import linkedIn_logo from '../img/linkedin_logo_black.svg';
 
 export default function Contact(props) {
   const {

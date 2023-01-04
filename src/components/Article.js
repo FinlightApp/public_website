@@ -4,8 +4,8 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import Panel from './Panel';
 import linkedIn from '../img/linkedin_logo_blue.svg';
-import twitter from '../img/twitter_blue.svg';
-import email from '../img/mail_blue.svg';
+import twitter from '../img/twitter_logo_blue.svg';
+import email from '../img/mail_icon_blue.svg';
 
 const articleLink = typeof window !== 'undefined' && window.location.href;
 
