@@ -60,7 +60,7 @@ const Navbar = () => {
             '
             activeClassName='border-b border-b-primary'
             to={ navItem.link }
-            partiallyActive={ navItem.link === "/" ? false : true }
+            partiallyActive={ navItem.pageName === 'Spotlight' }
             key={ i }>
               { navItem.pageName }
             </Link>
