@@ -23,9 +23,6 @@ const Navbar = () => {
     }
   }, [isActive]);
 
-  const isPartiallyActive = ({ isPartiallyCurrent }) =>
-    isPartiallyCurrent ? { className: 'px-2 font-header text-sm lg:text-base text-white border-b border-b-primary' } : null;
-
   return (
     <nav className='
       sticky top-0
@@ -63,7 +60,7 @@ const Navbar = () => {
             '
             activeClassName='border-b border-b-primary'
             to={ navItem.link }
-            getProps={ navItem.link === "/" ? undefined : isPartiallyActive }
+            partiallyActive={ navItem.link === "/" ? false : true }
             key={ i }>
               { navItem.pageName }
             </Link>
