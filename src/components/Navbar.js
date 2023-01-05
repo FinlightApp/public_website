@@ -55,7 +55,7 @@ const Navbar = () => {
           { navItems.map((navItem, i) => (
             <Link className='
               px-2
-              font-header text-sm lg:text-base text-white
+              text-base font-normal leading-6 text-white
             '
             activeClassName='border-b border-b-primary'
             to={ navItem.link }
@@ -87,7 +87,7 @@ const Navbar = () => {
           className='
             hidden md:flex
             px-4
-            font-header text-sm lg:text-base text-primary
+            text-base font-normal leading-6 text-primary
           '>
             Sign In
           </a>
@@ -114,7 +114,7 @@ const Navbar = () => {
               justify-center
               w-full
               py-2
-              font-header text-white text-lg font-medium
+              text-lg font-medium leading-6 text-white
             '
             activeClassName='border-b border-b-primary'
             to={ navItem.link }
@@ -135,7 +135,7 @@ const Navbar = () => {
             justify-center
             w-full
             py-2
-            font-header text-primary text-lg font-medium
+            text-lg font-medium leading-6 text-primary
           '>
             Sign In
           </a>

@@ -17,11 +17,11 @@ const Footer = () => {
       <img className='h-12'
       src={finlight_logo} alt='logo' />
       <div className='flex gap-8 md:gap-16'>
-        <Link className='text-white'
+        <Link className='text-white text-base font-normal leading-6'
         to='/contact'>
           Contact
         </Link>
-        <Link className='text-white'
+        <Link className='text-white text-base font-normal leading-6'
         to='/privacy'>
           Privacy
         </Link>
@@ -43,7 +43,7 @@ const Footer = () => {
           className='h-4 w-4' />
         </a>
       </div>
-      <p className='font-light text-xs text-white'>
+      <p className='font-light text-xs leading-6 text-white'>
         Ⓒ MONEY-PEASY LTD - FINLIGHT.COMTM 2022
       </p>
     </footer>

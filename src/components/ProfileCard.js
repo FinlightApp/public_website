@@ -15,6 +15,7 @@ export default function ProfileCard(props) {
   return (
     <React.Fragment>
       <div className='
+        max-w-sm
         flex flex-col
         basis-full md:basis-1/2-6 lg:basis-1/3-8
         bg-white
@@ -37,12 +38,12 @@ export default function ProfileCard(props) {
               alt={ image.alt } />
             ) }
             { title && (
-              <p className='text-center font-normal text-sm'>
+              <p className='text-center text-lg font-normal leading-8'>
                 { title }
               </p>
             ) }
             { subheading && (
-              <p className='text-center font-light text-xs'>
+              <p className='text-center text-base font-light leading-4'>
                 { subheading }
               </p>
             ) }

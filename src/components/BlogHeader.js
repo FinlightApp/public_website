@@ -32,7 +32,7 @@ export default function BlogHeader(props){
                 px-6 md:px-12
                 lg:max-w-[60%]
                 text-left
-                text-3xl md:text-4xl font-semibold
+                text-4xl font-bold leading-[48px]
               '>
                 { title }
               </h1>
@@ -43,12 +43,12 @@ export default function BlogHeader(props){
               justify-center items-end
             '>
               { ( author &&
-                <p className='text-sm font-light'>
+                <p className='text-sm font-light leading-6'>
                   { author }
                 </p>
               ) }
               { ( date &&
-                <p className='text-sm font-extralight'>
+                <p className='text-xs font-extralight leading-6'>
                   { date }
                 </p>
               ) }

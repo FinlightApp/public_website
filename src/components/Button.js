@@ -6,7 +6,7 @@ export default function Button(props) {
         ${ props.class }
         px-4 py-2
         rounded
-        text-xl font-medium font-paragraph
+        text-xl font-normal leading-5
       `}
       onClick={ props.onClick }>
         { props.children }
