@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { TwitterShareButton } from 'react-share';
-import { LinkedinShareButton } from 'react-share';
-import { EmailShareButton } from 'react-share';
+import { TwitterShareButton, LinkedinShareButton, EmailShareButton } from 'react-share';
 import PropTypes from 'prop-types';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
