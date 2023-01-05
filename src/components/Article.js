@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { TwitterShareButton, LinkedinShareButton, EmailShareButton } from 'react-share';
 import PropTypes from 'prop-types';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
@@ -42,34 +43,22 @@ export const HTMLContent = ({ content, description, image, title }) => (
             justify-center
             gap-12
           '>
-            <a
-            href={ `https://twitter.com/intent/tweet/?text=${title}&amp;url=${articleLink}` }
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label='Share on Twitter'>
+            <TwitterShareButton url={ articleLink }>
               <img
               src={ twitter }
               alt='Twitter' />
-            </a>
-            <a
-            href={ `https://www.linkedin.com/shareArticle?mini=true&amp;url=${articleLink}&amp;title=${title}&amp;summary=${title}&amp;source=${articleLink}` }
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label='Share on LinkedIn'>
-              <img className='w-6 h-6'
-              src={ linkedIn }
-              alt='LinkedIn' />
-            </a>
-            <a
-            href={ `mailto:?subject=${title}&amp;body=${articleLink}` }
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label='Share by E-Mail'>
+            </TwitterShareButton>
+            <LinkedinShareButton url={ articleLink }>
               <img
-              className='w-6 h-6'
+                className='w-6 h-6'
+                src={ linkedIn }
+                alt='LinkedIn' />
+            </LinkedinShareButton>
+            <EmailShareButton url={ articleLink }>
+              <img
               src={ email }
               alt='Email' />
-            </a>
+            </EmailShareButton>
           </div>
         </div>
         {/* Image side */}
@@ -105,34 +94,22 @@ export const HTMLContent = ({ content, description, image, title }) => (
             justify-center
             gap-12
           '>
-            <a
-            href={ `https://twitter.com/intent/tweet/?text=${title}&amp;url=${articleLink}` }
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label='Share on Twitter'>
+            <TwitterShareButton url={ articleLink } >
               <img
               src={ twitter }
               alt='Twitter' />
-            </a>
-            <a
-            href={ `https://www.linkedin.com/shareArticle?mini=true&amp;url=${articleLink}&amp;title=${title}&amp;summary=${title}&amp;source=${articleLink}` }
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label='Share on LinkedIn'>
-              <img className='w-6 h-6'
-              src={ linkedIn }
-              alt='LinkedIn' />
-            </a>
-            <a
-            href={ `mailto:?subject=${title}&amp;body=${articleLink}` }
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label='Share by E-Mail'>
+            </TwitterShareButton>
+            <LinkedinShareButton url={ articleLink } >
               <img
-              className='w-6 h-6'
+                className='w-6 h-6'
+                src={ linkedIn }
+                alt='LinkedIn' />
+            </LinkedinShareButton>
+            <EmailShareButton url={ articleLink }>
+              <img
               src={ email }
               alt='Email' />
-            </a>
+            </EmailShareButton>
           </div>
         </div>
       </div>
