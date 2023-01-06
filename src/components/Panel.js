@@ -18,7 +18,7 @@ export default function Panel(props) {
           </Subheader>
         ) }
         { props.paragraph && (
-          <Paragraph class={ 'via-primary lg:w-1/2' } >
+          <Paragraph class={ 'lg:w-1/2' } >
             { props.paragraph }
           </Paragraph>
         ) }

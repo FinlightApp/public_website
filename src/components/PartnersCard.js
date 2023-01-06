@@ -11,6 +11,7 @@ export default function PartnersCard(props) {
   return (
     <React.Fragment>
       <a className='
+        max-w-sm
         flex flex-col
         basis-full md:basis-1/2-6 lg:basis-1/3-8
         items-center
@@ -39,7 +40,7 @@ export default function PartnersCard(props) {
             alt={ `${title} logo` } />
           ) }
         </div>
-        <p className='font-header font-semibold text-center'>
+        <p className='text-lg font-normal leading-8 text-center'>
           { title }
         </p>
       </a>

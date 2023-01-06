@@ -71,27 +71,27 @@ servePanel:
         src: /img/investment_consultant.webp
         alt: Investment consultants
       title: Investment consultants
-      paragraph: " "
+      paragraph:
     - image:
         src: /img/family_office.webp
         alt: Family offices
       title: Family offices
-      paragraph: " "
+      paragraph:
     - image:
         src: /img/asset_management.webp
         alt: Qualified investors
       title: Qualified investors
-      paragraph: " "
+      paragraph:
     - image:
         src: /img/wealth_mangement.webp
         alt: Wealth managers
       title: Wealth managers
-      paragraph: " "
+      paragraph:
     - image:
         src: /img/private_bank.webp
         alt: Private banks
       title: Private banks
-      paragraph: " "
+      paragraph:
 applyPanel:
   theme:
     header: text-white
