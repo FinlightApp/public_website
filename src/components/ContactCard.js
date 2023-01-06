@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 export default function ContactCard(props) {
   const {
     image,
     title,
-    paragraph,
-    link
+    paragraph
   } = props;
 
   return (
@@ -20,25 +20,31 @@ export default function ContactCard(props) {
         bg-white rounded-2xl shadow-card
       '>
         { image && (
-          <a className='
+          <div className='
             flex flex-row
             justify-center items-center
-            w-48 h-48
-          '
-          href={ link } target='_blank'
-          referrerPolicy='no-referrer'
-          rel='noopener noreferrer'>
-            <img src={image.src} alt={image.alt}
-            className='w-full h-36' />
-          </a>
+            w-14 h-14
+          '>
+            { image?.src?.url ? (
+              <img className='w-14 h-14'
+              src={image.src}
+              alt={image.alt} />
+            ) : (
+              <GatsbyImage className='w-14 h-14'
+              objectFit='fill'
+              image={image.src}
+              formats={['auto', 'webp']}
+              alt={image.alt} />
+            ) }
+          </div>
         ) }
         { title && (
-          <p className='text-lg font-normal leading-8'>
+          <p className='text-xl font-normal leading-6'>
             { title }
           </p>
         ) }
         { paragraph && (
-          <p className='text-base font-light leading-6 text-center'>
+          <p className='text-xl font-semibold leading-6 text-center'>
             { paragraph }
           </p>
         ) }
@@ -48,8 +54,7 @@ export default function ContactCard(props) {
 }
 
 ContactCard.propTypes = {
-  image: PropTypes.object,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   paragraph: PropTypes.string,
-  link: PropTypes.string
 };

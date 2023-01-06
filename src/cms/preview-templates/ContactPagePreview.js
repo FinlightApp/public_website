@@ -17,6 +17,10 @@ const ContactPagePreview = ({ entry, getAsset }) => {
           titleHighlight: data.heroPanel.titleHighlight,
           paragraph: data.heroPanel.paragraph
         }}
+        contactPanel={{
+          title: data.contacPanelt.title,
+          cards: data.contactPanel.cards,
+        }}
         applyPanel={{
           theme: data.applyPanel.theme,
           backgroundImg: {
