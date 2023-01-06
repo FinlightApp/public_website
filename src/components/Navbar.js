@@ -22,6 +22,7 @@ const Navbar = () => {
       document.body.classList.remove('overflow-y-hidden')
     }
   }, [isActive]);
+
   return (
     <nav className='
       sticky top-0
@@ -59,6 +60,7 @@ const Navbar = () => {
             '
             activeClassName='border-b border-b-primary'
             to={ navItem.link }
+            partiallyActive={ navItem.pageName === 'Spotlight' }
             key={ i }>
               { navItem.pageName }
             </Link>
