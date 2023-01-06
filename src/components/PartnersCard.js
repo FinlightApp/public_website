@@ -16,7 +16,15 @@ export default function PartnersCard(props) {
         basis-full md:basis-1/2-6 lg:basis-1/3-8
         items-center
         p-6 gap-6
-        rounded-2xl shadow-card
+        rounded-2xl
+        shadow-card hover:shadow-card-hover
+        transition transform
+        ease-in-out
+        delay-150
+        hover:-translate-y-2 hover:scale-105
+        duration-300
+        motion-reduce:transition-none motion-reduce:hover:transform-none
+        group/card
       '
       href={ link }
       target='_blank'
@@ -29,11 +37,27 @@ export default function PartnersCard(props) {
           w-48 h-48
         '>
           { image?.src?.url ? (
-            <img className='w-full'
+            <img className='
+              w-full
+              group-hover/card:scale-110
+              transition transform
+              ease-in-out
+              delay-150
+              duration-300
+              motion-reduce:transition-none motion-reduce:hover:transform-none
+            '
             src={ image.src }
             alt={ `${title} logo` } />
           ) : (
-            <GatsbyImage className='w-full'
+            <GatsbyImage className='
+              w-full
+              group-hover/card:scale-110
+              transition transform
+              ease-in-out
+              delay-150
+              duration-300
+              motion-reduce:transition-none motion-reduce:hover:transform-none
+            '
             objectFit='fill'
             image={ image.src }
             formats={ ['auto', 'webp'] }

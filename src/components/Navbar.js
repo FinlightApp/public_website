@@ -56,9 +56,13 @@ const Navbar = () => {
           { navItems.map((navItem, i) => (
             <Link className='
               px-2
-              text-base font-normal leading-6 text-white
+              text-base font-normal leading-6
+              text-white hover:text-primary
             '
-            activeClassName='border-b border-b-primary'
+            activeClassName='
+              border-b border-b-primary
+              text-lg font-medium
+            '
             to={ navItem.link }
             partiallyActive={ navItem.pageName === 'Spotlight' }
             key={ i }>
@@ -107,7 +111,7 @@ const Navbar = () => {
         <div className='
           flex-1 flex flex-col
           w-full
-          gap-12
+          justify-between
           items-center
         '>
           { navItems.map((navItem, i) => (
@@ -116,9 +120,13 @@ const Navbar = () => {
               justify-center
               w-full
               py-2
-              text-lg font-medium leading-6 text-white
+              text-lg font-normal leading-6
+              text-white hover:text-primary
             '
-            activeClassName='border-b border-b-primary'
+            activeClassName='
+              border-b border-b-primary
+              text-lg font-medium
+            '
             to={ navItem.link }
             key={ i }>
               { navItem.pageName }
@@ -137,7 +145,7 @@ const Navbar = () => {
             justify-center
             w-full
             py-2
-            text-lg font-medium leading-6 text-primary
+            text-lg font-normal leading-6 text-primary
           '>
             Sign In
           </a>

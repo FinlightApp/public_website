@@ -25,14 +25,38 @@ export default function ProfileCard(props) {
             flex flex-col
             items-center
             p-6 gap-6
-            bg-white rounded-2xl shadow-card
+            bg-white rounded-2xl
+            shadow-card hover:shadow-card-hover
+            transition transform
+            ease-in-out
+            delay-150
+            hover:-translate-y-2 hover:scale-105
+            duration-300
+            motion-reduce:transition-none motion-reduce:hover:transform-none
+            group/card
           '>
             { image?.src?.url ? (
-              <img className='w-44 h-44 rounded-full'
+              <img className='
+                w-44 h-44 rounded-full
+                group-hover/card:scale-110
+                transition transform
+                ease-in-out
+                delay-150
+                duration-300
+                motion-reduce:transition-none motion-reduce:hover:transform-none
+              '
               src={ image.src }
               alt={ image.alt } />
             ) : (
-              <GatsbyImage className='w-44 h-44 rounded-full'
+              <GatsbyImage className='
+                w-44 h-44 rounded-full
+                group-hover/card:scale-110
+                transition transform
+                ease-in-out
+                delay-150
+                duration-300
+                motion-reduce:transition-none motion-reduce:hover:transform-none
+              '
               image={ image.src }
               formats={ ['auto', 'webp'] }
               alt={ image.alt } />

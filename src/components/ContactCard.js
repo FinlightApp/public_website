@@ -18,6 +18,13 @@ export default function ContactCard(props) {
         items-center
         p-6 gap-6
         bg-white rounded-2xl shadow-card
+        transition transform
+        ease-in-out
+        delay-150
+        hover:-translate-y-2 hover:scale-105
+        duration-300
+        motion-reduce:transition-none motion-reduce:hover:transform-none
+        group/card
       '>
         { image && (
           <a className='
@@ -29,7 +36,15 @@ export default function ContactCard(props) {
           referrerPolicy='no-referrer'
           rel='noopener noreferrer'>
             <img src={image.src} alt={image.alt}
-            className='w-full h-36' />
+            className='
+              w-full h-36
+              group-hover/card:scale-110
+              transition transform
+              ease-in-out
+              delay-150
+              duration-300
+              motion-reduce:transition-none motion-reduce:hover:transform-none
+            ' />
           </a>
         ) }
         { title && (
