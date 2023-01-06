@@ -24,15 +24,39 @@ export default function SpotlightCard(props) {
           <div className='
             flex-1
             flex flex-col
-            bg-white rounded-2xl shadow-card
+            bg-white rounded-2xl
+            shadow-card hover:shadow-card-hover
             overflow-hidden
+            transition transform
+            ease-in-out
+            delay-150
+            hover:-translate-y-2 hover:scale-105
+            duration-300
+            motion-reduce:transition-none motion-reduce:hover:transform-none
+            group/card
           '>
             { image?.src?.url ? (
-              <img className='w-full h-64'
+              <img className='
+                w-full h-64
+                group-hover/card:scale-110
+                transition transform
+                ease-in-out
+                delay-150
+                duration-300
+                motion-reduce:transition-none motion-reduce:hover:transform-none
+              '
               src={ image.src }
               alt={ image.alt } />
             ) : (
-              <GatsbyImage className='w-full h-64'
+              <GatsbyImage className='
+                w-full h-64
+                group-hover/card:scale-110
+                transition transform
+                ease-in-out
+                delay-150
+                duration-300
+                motion-reduce:transition-none motion-reduce:hover:transform-none
+              '
               image={ image.src }
               formats={ ['auto', 'webp'] }
               alt={ image.alt } />

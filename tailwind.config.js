@@ -22,7 +22,14 @@ module.exports = {
       },
       boxShadow: {
         'glass': '0px 0px 32px 0px rgba(74, 74, 74, 0.75)',
-        'card': '0px 0px 32px 0px rgba(74, 74, 74, 0.15)',
+        'card': [
+          '0px 10px 15px -3px rgba(0,0,0,0.1)'
+        ],
+        'card-hover': [
+          '0px 10px 15px -3px rgba(0,0,0,0.1)',
+          '0px 10px 15px -3px rgba(0,0,0,0.1)',
+          '0px 10px 15px -3px rgba(0,0,0,0.1)'
+        ],
       },
       colors: {
         'grey': {
