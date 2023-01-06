@@ -32,8 +32,7 @@ module.exports = {
         'secondary': '#3273DC',
       },
       fontFamily: {
-        'header': 'Nunito Sans',
-        'paragraph': 'Hind Madurai',
+        'body': ['Inter'],
       },
       container: {
         center: true

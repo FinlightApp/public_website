@@ -15,12 +15,14 @@ export default function SpotlightCard(props) {
   return (
     <React.Fragment>
       <div className='
+        max-w-sm
         flex flex-col
         basis-full md:basis-1/2-6 lg:basis-1/3-8
         bg-white
       '>
         {( image || title || date || link ) && (
           <div className='
+            flex-1
             flex flex-col
             bg-white rounded-2xl shadow-card
             overflow-hidden
@@ -36,44 +38,32 @@ export default function SpotlightCard(props) {
               alt={ image.alt } />
             ) }
             <div className='
+              flex-1
               flex flex-col
-              items-center
               p-6 gap-6
             '>
               { title && (
-                <div className='
-                  flex
-                  justify-center items-center
-                  h-8
-                '>
-                  <p className='text-center text-sm'>
-                    { title.length < 65 ? title : title.slice(0,62)+'...' }
-                  </p>
-                </div>
+                <p className='text-lg font-normal leading-8 text-left'>
+                  { title }
+                </p>
               ) }
               { date && (
-                <div className='
-                  flex
-                  justify-center items-center
-                  h-6
-                '>
-                  <p className='text-center font-light text-xs'>
-                    { date }
-                  </p>
-                </div>
+                <p className='text-xs font-light leading-4 text-left'>
+                  { date }
+                </p>
               ) }
               { link && (
-                <Link className='
-                  flex
-                  justify-end items-center
-                  w-full h-8
-                  text-sm
-                '
-                to={link}>
-                  <span>
-                    Keep Reading →
-                  </span>
-                </Link>
+                <div className='flex-1 flex justify-start items-end'>
+                  <Link className='
+                    text-base
+                    font-normal
+                    leading-6
+                    underline
+                  '
+                  to={link}>
+                    Read Full Article
+                  </Link>
+                </div>
               ) }
             </div>
           </div>

@@ -32,7 +32,7 @@ export const HTMLContent = ({ content, description, image, title }) => (
               gap-6
               min-w-fit max-w-min
               text-justify
-              font-normal text-base lg:text-xl
+              text-xl font-normal leading-8
             '
             dangerouslySetInnerHTML={{ __html: content }}
             />
@@ -83,6 +83,7 @@ export const HTMLContent = ({ content, description, image, title }) => (
             <p className='
               px-6
               text-center
+              text-xs font-light leading-4
               italic
             '> 
               { description }

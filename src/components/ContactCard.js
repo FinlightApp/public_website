@@ -12,6 +12,7 @@ export default function ContactCard(props) {
   return (
     <React.Fragment>
       <div className='
+        max-w-sm
         flex flex-col
         basis-full md:basis-1/2-6 lg:basis-1/3-8
         items-center
@@ -32,12 +33,12 @@ export default function ContactCard(props) {
           </a>
         ) }
         { title && (
-          <p className='font-header font-semibold'>
+          <p className='text-lg font-normal leading-8'>
             { title }
           </p>
         ) }
         { paragraph && (
-          <p className='font-paragraph text-center'>
+          <p className='text-base font-light leading-6 text-center'>
             { paragraph }
           </p>
         ) }
