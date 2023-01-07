@@ -20,24 +20,6 @@ heroPanel:
   paragraph: null
   button: null
   modalContent: to remove
-contactPanel:
-  title: Where you can find us
-  cards:
-    - image: 
-        src: /img/email.png
-        alt: Email
-      title: Email us at
-      paragraph: contact@finlight.com
-    - image:
-        src: /img/location.png
-        alt: Location
-      title: Find us in
-      paragraph: 20 St Thomas St, London, SE1 9RS
-    - image:
-        src: /img/linkedin.png
-        alt: LinkedIn
-      title: Follow us on
-      paragraph: linkedin.com/company/finlight
 applyPanel:
   theme:
     header: text-white

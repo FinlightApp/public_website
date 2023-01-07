@@ -6,14 +6,13 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Apply from '../components/Apply';
-import ContactPanel from '../components/ContactPanel';
+import Contact from '../components/Contact';
 
 /* eslint-disable */
 export const ContactPageTemplate = ({
   seo,
   heroPanel,
-  applyPanel,
-  contactPanel
+  applyPanel
 }) => {
   return (
     <>
@@ -28,9 +27,7 @@ export const ContactPageTemplate = ({
       paragraph={ heroPanel.paragraph }
       button={ heroPanel.button }
       modalContent={ heroPanel.modalContent } />
-      <ContactPanel
-      title={ contactPanel.title }
-      cards={ contactPanel.cards } />
+      <Contact />
       <Apply
       theme={ applyPanel.theme }
       backgroundImg={ {
@@ -61,10 +58,6 @@ ContactPageTemplate.propTypes = {
     button: PropTypes.string,
     modalContent: PropTypes.string,
   }),
-  contactPanel: PropTypes.shape({
-    title: PropTypes.string,
-    cards: PropTypes.array,
-  }),
   applyPanel: PropTypes.shape({
     theme: PropTypes.object,
     backgroundImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -81,7 +74,6 @@ const ContactPage = ({ data }) => {
     <Layout seo={ frontmatter.seo }>
       <ContactPageTemplate
       heroPanel={ frontmatter.heroPanel }
-      contactPanel={ frontmatter.contactPanel }
       applyPanel={ frontmatter.applyPanel } />
     </Layout>
   );
@@ -137,21 +129,6 @@ export const contactPageQuery = graphql`
           paragraph
           button
           modalContent
-        }
-        contactPanel {
-          title
-          cards {
-            image {
-              src {
-                childImageSharp {
-                  gatsbyImageData(quality: 100)
-                }
-              }
-              alt
-            }
-            title
-            paragraph
-          }
         }
         applyPanel {
           theme {
