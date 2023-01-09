@@ -11,25 +11,25 @@ export default function ContactCard(props) {
 
   return (
     <React.Fragment>
-      <div className='
+      <a className='
         max-w-sm
         flex flex-col
         basis-full md:basis-1/2-6 lg:basis-1/3-8
         items-center
         p-6 gap-6
         bg-white rounded-2xl shadow-card
-      '>
+      '
+      href={ link } target='_blank'
+      referrerPolicy='no-referrer'
+      rel='noopener noreferrer'>
         { image && (
-          <a className='
+          <div className='
             flex flex-row
             justify-center items-center
             w-14 h-14
-          '
-          href={ link } target='_blank'
-          referrerPolicy='no-referrer'
-          rel='noopener noreferrer'>
+          '>
             <img src={image.src} alt={image.alt} />
-          </a>
+          </div>
         ) }
         { title && (
           <p className='text-xl font-normal leading-6'>
@@ -41,7 +41,7 @@ export default function ContactCard(props) {
             { paragraph }
           </p>
         ) }
-      </div>
+      </a>
     </React.Fragment>
   );
 }

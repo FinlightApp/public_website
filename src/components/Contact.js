@@ -36,14 +36,15 @@ export default function Contact() {
               } }
               title={ 'Email us at' }
               paragraph={ 'contact@finlight.com' }
-              link={ 'mailto: contact@finlight.com' } />
+              link={ 'mailto: {contact@finlight.com}' } />
               <ContactCard
               image={ {
                 src: location_icon,
                 alt: 'Address Icon'
               } }
               title={ 'Find us in' }
-              paragraph={ '20 St Thomas St, London, SE1 9RS' } />
+              paragraph={ '20 St Thomas St, London, SE1 9RS' }
+              link={ 'https://goo.gl/maps/81QG6ygdkBd8es556' } />
               <ContactCard
               image={ {
                 src: linkedIn_logo,
