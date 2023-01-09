@@ -13,7 +13,7 @@ heroPanel:
     highlight: text-secondary
     paragraph: text-black
   backgroundImg:
-    src: /img/brussels.png
+    src: /img/contact.png
     alt: Background Alt
   title: Contact
   titleHighlight:

@@ -51,7 +51,7 @@ export default function Contact() {
                 alt: 'LinkedIn Icon'
               } }
               title={ 'Follow us on' }
-              paragraph={ 'Linkedin' }
+              paragraph={ 'LinkedIn' }
               link={ 'https://www.linkedin.com/company/finlight' } />
             </div>
           </Panel>
