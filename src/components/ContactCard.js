@@ -18,6 +18,13 @@ export default function ContactCard(props) {
         items-center
         p-6 gap-6
         bg-white rounded-2xl shadow-card
+        transition transform
+        ease-in-out
+        delay-150
+        hover:-translate-y-2 hover:scale-105
+        duration-300
+        motion-reduce:transition-none motion-reduce:hover:transform-none
+        group/card
       '
       href={ link } target='_blank'
       referrerPolicy='no-referrer'
@@ -28,7 +35,15 @@ export default function ContactCard(props) {
             justify-center items-center
             w-14 h-14
           '>
-            <img src={image.src} alt={image.alt} />
+            <img src={image.src} alt={image.alt}
+            className='
+              group-hover/card:scale-110
+              transition transform
+              ease-in-out
+              delay-150
+              duration-300
+              motion-reduce:transition-none motion-reduce:hover:transform-none
+            ' />
           </div>
         ) }
         { title && (
