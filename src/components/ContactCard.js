@@ -6,12 +6,12 @@ export default function ContactCard(props) {
     image,
     title,
     paragraph,
-    link
+    link,
   } = props;
 
   return (
     <React.Fragment>
-      <div className='
+      <a className='
         max-w-sm
         flex flex-col
         basis-full md:basis-1/2-6 lg:basis-1/3-8
@@ -25,19 +25,18 @@ export default function ContactCard(props) {
         duration-300
         motion-reduce:transition-none motion-reduce:hover:transform-none
         group/card
-      '>
+      '
+      href={ link } target='_blank'
+      referrerPolicy='no-referrer'
+      rel='noopener noreferrer'>
         { image && (
-          <a className='
+          <div className='
             flex flex-row
             justify-center items-center
-            w-48 h-48
-          '
-          href={ link } target='_blank'
-          referrerPolicy='no-referrer'
-          rel='noopener noreferrer'>
+            w-14 h-14
+          '>
             <img src={image.src} alt={image.alt}
             className='
-              w-full h-36
               group-hover/card:scale-110
               transition transform
               ease-in-out
@@ -45,19 +44,19 @@ export default function ContactCard(props) {
               duration-300
               motion-reduce:transition-none motion-reduce:hover:transform-none
             ' />
-          </a>
+          </div>
         ) }
         { title && (
-          <p className='text-lg font-normal leading-8'>
+          <p className='text-xl font-normal leading-6'>
             { title }
           </p>
         ) }
         { paragraph && (
-          <p className='text-base font-light leading-6 text-center'>
+          <p className='text-xl font-semibold leading-6 text-center'>
             { paragraph }
           </p>
         ) }
-      </div>
+      </a>
     </React.Fragment>
   );
 }
@@ -66,5 +65,5 @@ ContactCard.propTypes = {
   image: PropTypes.object,
   title: PropTypes.string,
   paragraph: PropTypes.string,
-  link: PropTypes.string
+  link: PropTypes.string,
 };

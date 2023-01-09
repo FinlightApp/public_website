@@ -1,19 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Panel from './Panel';
 import ContactCard from './ContactCard';
 
-import location_icon from '../img/location_icon_black.svg';
-import mail_icon from '../img/mail_icon_black.svg';
-import linkedIn_logo from '../img/linkedin_logo_black.svg';
+import location_icon from '/static/img/location.png';
+import mail_icon from '/static/img/email.png';
+import linkedIn_logo from '/static/img/linkedin.png';
 
-export default function Contact(props) {
-  const {
-    title,
-    paragraph,
-  } = props;
-
+export default function Contact() {
   return (
     <React.Fragment>
       <div className='
@@ -28,8 +22,7 @@ export default function Contact(props) {
           p-12
         '>
           <Panel
-          title={ title }
-          paragraph={ paragraph }>
+          title='Where you can find us'>
             <div className='
               flex flex-wrap
               justify-center
@@ -41,23 +34,24 @@ export default function Contact(props) {
                 src: mail_icon,
                 alt: 'Email Icon'
               } }
-              title={ 'Email' }
+              title={ 'Email us at' }
               paragraph={ 'contact@finlight.com' }
-              link={ 'mailto: contact@finlight.com' } />
+              link={ 'mailto: {contact@finlight.com}' } />
               <ContactCard
               image={ {
                 src: location_icon,
                 alt: 'Address Icon'
               } }
-              title={ 'Address' }
-              paragraph={ '20 St Thomas St, London, SE1 9RS' } />
+              title={ 'Find us in' }
+              paragraph={ '20 St Thomas St, London, SE1 9RS' }
+              link={ 'https://goo.gl/maps/81QG6ygdkBd8es556' } />
               <ContactCard
               image={ {
                 src: linkedIn_logo,
                 alt: 'LinkedIn Icon'
               } }
-              title={ 'LinkedIn' }
-              paragraph={ 'linkedin.com/company/finlight' }
+              title={ 'Follow us on' }
+              paragraph={ 'LinkedIn' }
               link={ 'https://www.linkedin.com/company/finlight' } />
             </div>
           </Panel>
@@ -66,8 +60,3 @@ export default function Contact(props) {
     </React.Fragment>
   );
 }
-
-Contact.propTypes = {
-  title: PropTypes.string,
-  paragraph: PropTypes.string
-};
