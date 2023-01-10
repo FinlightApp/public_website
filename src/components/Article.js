@@ -73,52 +73,52 @@ export const HTMLContent = ({ content, description, image, title }) => (
             gap-6
             py-12 px-6 md:p-12
           '>
-          { image?.src?.url ? (
-            <img className='w-full'
-            src={ getImage(image.src) || image.src }
-            alt={ image.alt } />
-          ) : (
-            <GatsbyImage className='w-full'
-            formats={ ['auto', 'webp'] }
-            image={ getImage(image.src) || image.src }
-            alt={ image.alt } />
-          ) }
-          { description && (
-            <p className='
-              px-6
-              text-center
-              text-xs font-light leading-4
-              italic
-            '> 
-              { description }
-            </p>
-          ) }
-          <div className='
-            hidden lg:flex
-            flex-row
-            justify-center
-            gap-12
-          '>
-            <TwitterShareButton url={ articleLink } >
-              <img
-              src={ twitter }
-              alt='Twitter' />
-            </TwitterShareButton>
-            <LinkedinShareButton url={ articleLink } >
-              <img
-                className='w-6 h-6'
-                src={ linkedIn }
-                alt='LinkedIn' />
-            </LinkedinShareButton>
-            <EmailShareButton url={ articleLink }>
-              <img
-              src={ email }
-              alt='Email' />
-            </EmailShareButton>
-          </div>
+            { image?.src?.url ? (
+              <img className='w-full'
+              src={ getImage(image.src) || image.src }
+              alt={ image.alt } />
+            ) : (
+              <GatsbyImage className='w-full'
+              formats={ ['auto', 'webp'] }
+              image={ getImage(image.src) || image.src }
+              alt={ image.alt } />
+            ) }
+            { description && (
+              <p className='
+                px-6
+                text-center
+                text-xs font-light leading-4
+                italic
+              '> 
+                { description }
+              </p>
+            ) }
+            <div className='
+              hidden lg:flex
+              flex-row
+              justify-center
+              gap-12
+            '>
+              <TwitterShareButton url={ articleLink } >
+                <img
+                src={ twitter }
+                alt='Twitter' />
+              </TwitterShareButton>
+              <LinkedinShareButton url={ articleLink } >
+                <img
+                  className='w-6 h-6'
+                  src={ linkedIn }
+                  alt='LinkedIn' />
+              </LinkedinShareButton>
+              <EmailShareButton url={ articleLink }>
+                <img
+                src={ email }
+                alt='Email' />
+              </EmailShareButton>
+            </div>
           </div>
         </div>
-      </div>
+    </div>
     )}
   </React.Fragment>
 );
