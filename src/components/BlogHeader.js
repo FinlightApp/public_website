@@ -43,7 +43,7 @@ export default function BlogHeader(props){
               w-full lg:max-w-[50%] lg:h-96
               p-6 md:p-12
               gap-3 lg:gap-6
-              bg-[#F6F6F6] 
+              bg-[#F6F6F6]
             '>
               { ( title &&
                 <h1 className='
@@ -55,7 +55,10 @@ export default function BlogHeader(props){
               ) }
               <div className='flex flex-col justify-center items-start'>
                 { ( author &&
-                  <p className='lg:hidden text-sm font-light leading-6'>
+                  <p className='
+                    lg:hidden
+                    text-sm font-light leading-6
+                  '>
                     { author }
                   </p>
                 ) }
