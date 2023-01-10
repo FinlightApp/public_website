@@ -12,6 +12,7 @@ const articleLink = typeof window !== 'undefined' && window.location.href;
 
 export const HTMLContent = ({ content, description, image, title }) => (
   <React.Fragment>
+    {( content || description || image ) && (
       <div className='
         container
         grid grid-cols-1 lg:grid-cols-10
@@ -21,7 +22,7 @@ export const HTMLContent = ({ content, description, image, title }) => (
           col-span-1
         '>
         </div>
-          {/* Central Side */}
+        {/* Central Side */}
         <div className='
           col-span-6
         '>
@@ -61,7 +62,7 @@ export const HTMLContent = ({ content, description, image, title }) => (
             </EmailShareButton>
           </div>
         </div>
-          {/* Right Side */}
+        {/* Right Side */}
         <div className='
           col-span-3
         '>
@@ -92,32 +93,33 @@ export const HTMLContent = ({ content, description, image, title }) => (
               { description }
             </p>
           ) }
-          <div className='
-            hidden lg:flex
-            flex-row
-            justify-center
-            gap-12
-          '>
-            <TwitterShareButton url={ articleLink } >
-              <img
-              src={ twitter }
-              alt='Twitter' />
-            </TwitterShareButton>
-            <LinkedinShareButton url={ articleLink } >
-              <img
-                className='w-6 h-6'
-                src={ linkedIn }
-                alt='LinkedIn' />
-            </LinkedinShareButton>
-            <EmailShareButton url={ articleLink }>
-              <img
-              src={ email }
-              alt='Email' />
-            </EmailShareButton>
+            <div className='
+              hidden lg:flex
+              flex-row
+              justify-center
+              gap-12
+            '>
+              <TwitterShareButton url={ articleLink } >
+                <img
+                src={ twitter }
+                alt='Twitter' />
+              </TwitterShareButton>
+              <LinkedinShareButton url={ articleLink } >
+                <img
+                  className='w-6 h-6'
+                  src={ linkedIn }
+                  alt='LinkedIn' />
+              </LinkedinShareButton>
+              <EmailShareButton url={ articleLink }>
+                <img
+                src={ email }
+                alt='Email' />
+              </EmailShareButton>
+            </div>
           </div>
         </div>
-        </div>
       </div>
+    )}
   </React.Fragment>
 );
 
