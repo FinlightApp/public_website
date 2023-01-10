@@ -118,7 +118,7 @@ export const HTMLContent = ({ content, description, image, title }) => (
             </div>
           </div>
         </div>
-    </div>
+      </div>
     )}
   </React.Fragment>
 );
