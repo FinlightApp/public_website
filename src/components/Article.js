@@ -17,7 +17,7 @@ export const HTMLContent = ({ content, description, image, title }) => (
         container
         grid grid-cols-1 lg:grid-cols-10
       '>
-         {/* Left Side */}
+        {/* Left Side */}
         <div className='
           col-span-1
         '>
@@ -67,12 +67,12 @@ export const HTMLContent = ({ content, description, image, title }) => (
           col-span-3
         '>
           <div className='
-          lg:sticky lg:top-20
-          grow lg:grow-[4]
-          flex flex-col
-          gap-6
-          py-12 px-6 md:p-12
-        '>
+            lg:sticky lg:top-20
+            grow lg:grow-[4]
+            flex flex-col
+            gap-6
+            py-12 px-6 md:p-12
+          '>
           { image?.src?.url ? (
             <img className='w-full'
             src={ getImage(image.src) || image.src }
@@ -93,29 +93,29 @@ export const HTMLContent = ({ content, description, image, title }) => (
               { description }
             </p>
           ) }
-            <div className='
-              hidden lg:flex
-              flex-row
-              justify-center
-              gap-12
-            '>
-              <TwitterShareButton url={ articleLink } >
-                <img
-                src={ twitter }
-                alt='Twitter' />
-              </TwitterShareButton>
-              <LinkedinShareButton url={ articleLink } >
-                <img
-                  className='w-6 h-6'
-                  src={ linkedIn }
-                  alt='LinkedIn' />
-              </LinkedinShareButton>
-              <EmailShareButton url={ articleLink }>
-                <img
-                src={ email }
-                alt='Email' />
-              </EmailShareButton>
-            </div>
+          <div className='
+            hidden lg:flex
+            flex-row
+            justify-center
+            gap-12
+          '>
+            <TwitterShareButton url={ articleLink } >
+              <img
+              src={ twitter }
+              alt='Twitter' />
+            </TwitterShareButton>
+            <LinkedinShareButton url={ articleLink } >
+              <img
+                className='w-6 h-6'
+                src={ linkedIn }
+                alt='LinkedIn' />
+            </LinkedinShareButton>
+            <EmailShareButton url={ articleLink }>
+              <img
+              src={ email }
+              alt='Email' />
+            </EmailShareButton>
+          </div>
           </div>
         </div>
       </div>
