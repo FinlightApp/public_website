@@ -12,18 +12,18 @@ const articleLink = typeof window !== 'undefined' && window.location.href;
 
 export const HTMLContent = ({ content, description, image, title }) => (
   <React.Fragment>
-    {( content || description || image ) && (
       <div className='
         container
-        flex flex-col-reverse lg:flex-row
-        lg:justify-start lg:items-start
+        grid grid-cols-1 lg:grid-cols-10
       '>
-        {/* Text side */}
+         {/* Left Side */}
         <div className='
-          grow lg:grow-[6]
-          flex flex-col
-          px-6 py-12 md:p-12
-          gap-6
+          col-span-1
+        '>
+        </div>
+          {/* Central Side */}
+        <div className='
+          col-span-6
         '>
           { content && (
             <div className='
@@ -61,8 +61,11 @@ export const HTMLContent = ({ content, description, image, title }) => (
             </EmailShareButton>
           </div>
         </div>
-        {/* Image side */}
+          {/* Right Side */}
         <div className='
+          col-span-3
+        '>
+          <div className='
           lg:sticky lg:top-20
           grow lg:grow-[4]
           flex flex-col
@@ -113,8 +116,8 @@ export const HTMLContent = ({ content, description, image, title }) => (
             </EmailShareButton>
           </div>
         </div>
+        </div>
       </div>
-    )}
   </React.Fragment>
 );
 
