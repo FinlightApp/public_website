@@ -2,6 +2,7 @@ import * as React from 'react';
 import { TwitterShareButton, LinkedinShareButton, EmailShareButton } from 'react-share';
 import PropTypes from 'prop-types';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { Link } from 'gatsby';
 
 import Panel from './Panel';
 import linkedIn from '../img/linkedin_logo_blue.svg';
@@ -27,18 +28,20 @@ export const HTMLContent = ({ content, description, image, title }) => (
         <div className='
           col-span-6
           flex flex-col
-          p-6 md:px-12 lg:p-12
+          p-6 md:p-12 lg:p-12
           gap-6 lg:gap-12   
         '>
-          <p className='
-            hidden lg:flex
-            justify-end
-          '>
-          <img className='w-6 h-6'
-          src={arrow}
-          alt='arrow' />
-            Back to Spotlight
-          </p>
+          <Link to='/spotlight'>
+            <p className='
+              hidden lg:flex
+              justify-end
+            '>
+            <img className='w-6 h-6'
+            src={arrow}
+            alt='arrow' />
+              Back to Spotlight
+            </p>
+          </Link>
           { content && (
             <div className='
               flex-1
@@ -51,15 +54,17 @@ export const HTMLContent = ({ content, description, image, title }) => (
             dangerouslySetInnerHTML={{ __html: content }}
             />
           ) }
-          <p className='
-            flex lg:hidden
-            justify-end
-          '>
-          <img className='w-6 h-6'
-          src={arrow}
-          alt='arrow' />
-            Back to Spotlight
-          </p>
+          <Link to='/spotlight'>
+            <p className='
+              flex lg:hidden
+              justify-end
+            '>
+            <img className='w-6 h-6'
+            src={arrow}
+            alt='arrow' />
+              Back to Spotlight
+            </p>
+          </Link>
           <div className='
             flex lg:hidden
             flex-row
