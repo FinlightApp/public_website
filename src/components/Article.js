@@ -25,9 +25,9 @@ export const HTMLContent = ({ content, description, image, title }) => (
         </div>
         {/* Central Side */}
         <div className='
-          flex flex-col
           col-span-6
-          py-6 px-6 lg:p-12 md:py-6 md:px-12
+          flex flex-col
+          p-6 md:px-12 lg:p-12
           gap-6 lg:gap-12   
         '>
           <p className='
@@ -36,7 +36,7 @@ export const HTMLContent = ({ content, description, image, title }) => (
           '>
           <img className='w-6 h-6'
           src={arrow}
-          alt="arrow" />
+          alt='arrow' />
             Back to Spotlight
           </p>
           { content && (
@@ -54,10 +54,10 @@ export const HTMLContent = ({ content, description, image, title }) => (
           <p className='
             flex lg:hidden
             justify-end
-            '>
+          '>
           <img className='w-6 h-6'
           src={arrow}
-          alt="arrow" />
+          alt='arrow' />
             Back to Spotlight
           </p>
           <div className='
