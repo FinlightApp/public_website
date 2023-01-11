@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/evoarticle.png
   alt: Image description
+authorImage: 
+  src: /img/teamjb.webp
+  alt: JB
 ---
 The potential for technology to reshape the asset management industry has come into sharp focus in recent months. Catalysed by Covid-19, asset managers are stretching their capabilities, tapping into the value of disruptive technologies like automation, artificial intelligence (AI), machine learning and analytics. They are preparing for the short-term and are developing seamless operational processes that can effectively overcome future shocks of their business functions.
 

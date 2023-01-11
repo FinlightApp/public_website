@@ -10,9 +10,9 @@ import email from '../img/mail_icon_blue.svg';
 
 const articleLink = typeof window !== 'undefined' && window.location.href;
 
-export const HTMLContent = ({ content, description, image, title }) => (
+export const HTMLContent = ({ content, description, image, author, authorImage }) => (
   <React.Fragment>
-    {( content || description || image ) && (
+    {( content || description || image || author, authorImage ) && (
       <div className='
         container
         grid grid-cols-1 lg:grid-cols-10
@@ -65,57 +65,45 @@ export const HTMLContent = ({ content, description, image, title }) => (
         {/* Right Side */}
         <div className='
           col-span-3
+          flex flex-col items-center
+          gap-12
+          h-fit
+          p-6 lg:p-12
         '>
-          <div className='
-            lg:sticky lg:top-20
-            grow lg:grow-[4]
-            flex flex-col
-            gap-6
-            py-12 px-6 md:p-12
+          <h1 className='
+            hidden lg:flex 
+            text-3xl font-semibold
           '>
-            { image?.src?.url ? (
-              <img className='w-full'
-              src={ getImage(image.src) || image.src }
-              alt={ image.alt } />
-            ) : (
-              <GatsbyImage className='w-full'
-              formats={ ['auto', 'webp'] }
-              image={ getImage(image.src) || image.src }
-              alt={ image.alt } />
-            ) }
-            { description && (
+            Author
+          </h1>
+          <div className='
+            hidden lg:flex flex-col items-center
+            p-6 gap-12
+            w-full
+            rounded-2xl
+            shadow-card hover:shadow-card-hover
+          '>
+            <div className='flex w-44 h-44'>
+              { authorImage?.src?.url ? (
+                <img className='w-full h-full rounded-full'
+                src={ getImage(authorImage.src) || authorImage.src }
+                alt={ authorImage.alt } />
+              ) : (
+                <GatsbyImage className='w-full h-full rounded-full'
+                formats={ ['auto', 'webp'] }
+                image={ getImage(authorImage.src) || authorImage.src }
+                alt={ authorImage.alt } />
+              ) }
+            </div>
+            { author && (
               <p className='
                 px-6
                 text-center
-                text-xs font-light leading-4
-                italic
+                text-xl font-light leading-4
               '> 
-                { description }
+                { author }
               </p>
             ) }
-            <div className='
-              hidden lg:flex
-              flex-row
-              justify-center
-              gap-12
-            '>
-              <TwitterShareButton url={ articleLink } >
-                <img
-                src={ twitter }
-                alt='Twitter' />
-              </TwitterShareButton>
-              <LinkedinShareButton url={ articleLink } >
-                <img
-                  className='w-6 h-6'
-                  src={ linkedIn }
-                  alt='LinkedIn' />
-              </LinkedinShareButton>
-              <EmailShareButton url={ articleLink }>
-                <img
-                src={ email }
-                alt='Email' />
-              </EmailShareButton>
-            </div>
           </div>
         </div>
       </div>
@@ -140,7 +128,7 @@ const Article = ({ content, className }) => (
 
 Article.propTypes = {
   content: PropTypes.node,
-  description: PropTypes.string,
+  author: PropTypes.string,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 

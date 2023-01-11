@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/philanthropy.jpg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.webp
+  alt: JB
 ---
 Climate change and environmental degradation, inequality, poverty, food and water insecurity, lack of education, inadequate healthcare provision - philanthropy plays a key role in tackling the biggest challenges that the world faces today. These are monumental issues and wealthy families are thinking suitably big. From the Gates Foundation reducing child mortality to the Chan Zuckerberg Initiative’s pledge to cure, prevent or manage all diseases by the end of the century.
 

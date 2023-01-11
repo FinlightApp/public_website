@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/familyofficeselection.jpg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.webp
+  alt: JB
 ---
 When it comes to selecting investment funds, most investors would undertake a thorough due diligence process. This practice is widely accepted and no one would invest in a fund without performing such due diligence.
 

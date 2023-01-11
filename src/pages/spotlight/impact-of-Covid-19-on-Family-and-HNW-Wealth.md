@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/impactOfCovid19.jpg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.webp
+  alt: JB
 ---
 The current pandemic has unravelled one of the most significant challenges of our time in an increasingly globalised world, with fortunes of the wealth being under scrutiny. According to a new report co-written by Morgan Stanley and Oliver Wyman, the base case scenario model for global HNW wealth shows that global HNW wealth is expected to fall by 4% (or $3.1 trillion) in 2020 before rebounding in 2021 (Oliver Wyman, 2020). This reflects roughly one year of low wealth growth compared with pre-Covid19 forecasts. Given this uncertain future, families may need to reassess their investment strategies to preserve their wealth levels and adapt to this “new normal”. They now need to shift their priorities from wealth expansion to wealth preservation, staying vigilant and responsive to protect their assets carefully. They may even consider a diversification approach for their investments to protect their wealth. The potential restructuring of family assets may also be necessary to achieve resilience and flexibility in times of market volatility with the extreme scope of uncertainty (KPMG, 2020).
 

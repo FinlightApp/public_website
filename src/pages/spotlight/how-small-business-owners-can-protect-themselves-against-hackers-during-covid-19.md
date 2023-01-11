@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/covid19.jpg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.webp
+  alt: JB
 ---
 We understand the recent events are creating extraordinary levels of concern and anxiety for website owners.
 

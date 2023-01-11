@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/lessonsforinvestors.jpg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.webp
+  alt: JB
 ---
 The Neil Woodford case that has shaken the UK reminds investors of basic principles for managing their assets. The guy may be praised and blamed for many things but investors need to take some responsibility.
 

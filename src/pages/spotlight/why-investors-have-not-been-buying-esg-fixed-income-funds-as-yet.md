@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/handwithbulbdollar.jpg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.webp
+  alt: JB
 ---
 According to Morningstar, inflows into European-domiciled ESG funds (and ETFs) have been more substantial since the beginning of the year on the back of COVID. We would however make two observations. Firstly, the strong inflows are primarily driven by ESG equity strategies. In fact, inflows into ESG equity vehicles were three times higher than those into fixed income vehicles. Secondly, as a % of total funds’ assets under management, this allocation into ESG funds is still small, especially in fixed income. This is despite the vast underlying universe that fixed income ESG managers can tap into (see below discussion on labelled/unlabelled bonds).
 

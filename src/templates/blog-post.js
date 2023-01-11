@@ -13,8 +13,8 @@ export const BlogPostTemplate = ({
   title,
   author,
   date,
-  description,
   image,
+  authorImage,
 }) => {
   const PostContent = contentComponent || Article;
 
@@ -27,8 +27,9 @@ export const BlogPostTemplate = ({
       <PostContent
       title={ title }
       content={ content }
-      description={ description }
-      image={ image } />
+      author={ author }
+      image={ image } 
+      authorImage={ authorImage }/>
     </>
   );
 };
@@ -41,6 +42,7 @@ BlogPostTemplate.propTypes = {
   date: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  authorImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   keywords: PropTypes.string,
 };
 
@@ -60,6 +62,7 @@ const BlogPost = ({ data }) => {
         date={post.frontmatter.date}
         description={post.frontmatter.description}
         image={post.frontmatter.image}
+        authorImage={post.frontmatter.authorImage}
         content={post.html}
         contentComponent={HTMLContent}
       />
@@ -87,6 +90,19 @@ export const pageQuery = graphql`
         date(formatString: "DD MMMM, YYYY")
         description
         image {
+          src {
+            childImageSharp {
+              gatsbyImageData(
+                quality: 100
+                placeholder: BLURRED
+                formats: [AUTO, WEBP]
+                layout: FULL_WIDTH
+              )
+            }
+          }
+          alt
+        }
+        authorImage {
           src {
             childImageSharp {
               gatsbyImageData(

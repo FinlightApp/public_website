@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/risingConcernsOverCyberSecurity.jpeg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.webp
+  alt: JB
 ---
 <b>Rising concerns over cybersecurity – Steps to protect family offices from cyber threats</b>
 

@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/artificialIntelligence.jpg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.webp
+  alt: JB
 ---
 It is a strange and disturbing fact that gathering formatted, structured data from a custodian or private bank is so tricky. One solution that seemed promising was banking APIs[1]. Still, after a few years, it appears that those are expensive (both in terms of integration, because no two APIs are the same and users generally need to pay licensing fees), and not always providing high quality information. Moreover, not all banks have APIs, leaving integration service providers looking for alternatives, or doing the work manually.
 

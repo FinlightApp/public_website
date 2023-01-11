@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/whyfinancialengineering.jpg
   alt: Why financial engineering is at the heart of what we do
+authorImage: 
+  src: /img/teamjb.webp
+  alt: JB
 ---
 2019 promises yet more market volatility. This means your investment tools will need to work harder than ever before. In a sea of technology platforms, it can be difficult to assess which ones suit your needs best.
 
