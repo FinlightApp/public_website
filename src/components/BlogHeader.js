@@ -18,12 +18,12 @@ export default function BlogHeader(props){
           container
           flex flex-col lg:flex-row
           mx-auto p-6 md:p-12
-          w-fit h-fit
+          h-full
           z-0
         '>
           <div className='
             overflow-hidden
-            flex-1 h-[300px] lg:h-[400px]
+            flex-1 min-w-[300px] lg:min-h-[400px]
             rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none
           '>
             { image?.src?.url ? (
@@ -65,7 +65,7 @@ export default function BlogHeader(props){
                 { date }
               </p>
             ) }
-         </div>
+          </div>
         </div>
       ) }
     </>
