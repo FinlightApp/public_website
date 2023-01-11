@@ -9,7 +9,7 @@ image:
   src: /img/managingMoney.jpg
   alt: Image description
 authorImage: 
-  src: /img/teamjb.webp
+  src: /img/teamjb.png
   alt: JB
 ---
 Wealthy families have always existed. Families tend to become rich by someone doing something special like being a really good entrepreneur. Often the general thought is to develop a good idea into a successful business and eventually sell it off for good money. In an ideal world, the next generations can then live off the spoils. Unfortunately, as we all know, there is no such thing as an ideal world.

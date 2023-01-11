@@ -9,7 +9,7 @@ image:
   src: /img/arkhineo.jpeg
   alt: Image description
 authorImage: 
-  src: /img/teamjb.webp
+  src: /img/teamjb.png
   alt: JB
 ---
 <b>Press release: Finlight announces partnership with Arkhineo</b>

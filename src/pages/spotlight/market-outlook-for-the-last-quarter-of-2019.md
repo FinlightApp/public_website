@@ -9,7 +9,7 @@ image:
   src: /img/marketoutlookforthelastquarterof2019.jpg
   alt: Image description
 authorImage: 
-  src: /img/teamjb.webp
+  src: /img/teamjb.png
   alt: JB
 ---
 *Triple A advisors b.v.b.a. Mr. R. Barge 27-09-2019*

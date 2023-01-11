@@ -9,7 +9,7 @@ image:
   src: /img/fractal.jpg
   alt: Image description
 authorImage: 
-  src: /img/teamjb.webp
+  src: /img/teamjb.png
   alt: JB
 ---
 In this period, risk management is once again a hot topic. To manage risks, you need a model. It has been shown that traditional models fail to capture such risks. This is when the Mandelbrot name surges again. But what is it really about?

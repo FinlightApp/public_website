@@ -9,7 +9,7 @@ image:
   src: /img/pressRelease.jpg
   alt: Image description
 authorImage: 
-  src: /img/teamjb.webp
+  src: /img/teamjb.png
   alt: JB
 ---
 London, UK: Finlight is proud to announce that Adam Denning, Etienne de Merlis and Justin Abbott Chalew have joined the company as Non-Executive Directors.

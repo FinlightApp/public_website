@@ -9,7 +9,7 @@ image:
   src: /img/thechallengesandopprtunities.jpg
   alt: Image description
 authorImage: 
-  src: /img/teamjb.webp
+  src: /img/teamjb.png
   alt: JB
 ---
 By Marianne Magnin, Arteïa UK Managing Director

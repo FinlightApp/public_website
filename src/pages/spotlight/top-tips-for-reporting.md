@@ -9,7 +9,7 @@ image:
   src: /img/toptipsforreporting.jpg
   alt: book
 authorImage: 
-  src: /img/teamjb.webp
+  src: /img/teamjb.png
   alt: JB
 ---
 We understand the recent events are creating extraordinary levels of concern and anxiety for website owners.

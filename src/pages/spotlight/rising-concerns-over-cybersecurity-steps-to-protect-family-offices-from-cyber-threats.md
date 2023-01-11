@@ -9,7 +9,7 @@ image:
   src: /img/risingConcernsOverCyberSecurity.jpeg
   alt: Image description
 authorImage: 
-  src: /img/teamjb.webp
+  src: /img/teamjb.png
   alt: JB
 ---
 <b>Rising concerns over cybersecurity – Steps to protect family offices from cyber threats</b>

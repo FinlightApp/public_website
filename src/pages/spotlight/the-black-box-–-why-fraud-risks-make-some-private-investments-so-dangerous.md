@@ -9,7 +9,7 @@ image:
   src: /img/theblackbox.jpg
   alt: Image description
 authorImage: 
-  src: /img/teamjb.webp
+  src: /img/teamjb.png
   alt: JB
 ---
 By Dr. Ricardo Gomez Alcazar & Madhura Sawant, Forensics & Integrity Services, EY.

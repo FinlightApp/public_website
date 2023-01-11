@@ -60,7 +60,7 @@ collections:
               label: Image,
               name: src,
               widget: image,
-              default: /img/teamjb.webp
+              default: /img/teamjb.png
             },
             {
               label: SEO - Author Image,

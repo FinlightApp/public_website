@@ -9,7 +9,7 @@ image:
   src: /img/theNewConceptOfCooperationAmongAssetAlocators.jpeg
   alt: Image description
 authorImage: 
-  src: /img/teamjb.webp
+  src: /img/teamjb.png
   alt: JB
 ---
 In the last 20th century, competition represents a critical factor for ensuring development. It plays a crucial role in stimulating creative problem-solving skills and indeed avoids conflict of interests. However, according to Yuval Noah, the author of "Sapiens a brief history of mankind", the key to success lies in the ability to cooperate and believe infiction. The Sapiens secret of success is large-scale flexible cooperation.

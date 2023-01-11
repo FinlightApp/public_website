@@ -9,7 +9,7 @@ image:
   src: /img/default.png
   alt: Image description
 authorImage: 
-  src: /img/teamjb.webp
+  src: /img/teamjb.png
   alt: JB
 ---
 Before I start, my aim is not to criticise banks but to highlight that their economic interests are not structurally aligned with those of their clients. Their motivation is to make a profit from the money they manage. Banks are fundamentally important economic players that everyone needs. However, a sensible private client must have a form of control. Here’s why:

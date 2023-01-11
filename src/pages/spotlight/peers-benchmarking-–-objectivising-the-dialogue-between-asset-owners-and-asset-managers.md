@@ -11,7 +11,7 @@ image:
   src: /img/benchmarking.jpg
   alt: Image description
 authorImage: 
-  src: /img/teamjb.webp
+  src: /img/teamjb.png
   alt: JB
 ---
 
