@@ -30,7 +30,7 @@ export const BlogPostTemplate = ({
       content={ content }
       author={ author }
       image={ image } 
-      authorImage={ authorImage }/>
+      authorImage={ authorImage } />
     </>
   );
 };

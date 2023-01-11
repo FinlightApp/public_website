@@ -116,7 +116,7 @@ export const HTMLContent = ({ content, description, image, author, authorImage }
             motion-reduce:transition-none motion-reduce:hover:transform-none
             group/card
           '>
-            <div className='flex w-44 h-44'>
+            <div className='w-44 h-44'>
               { authorImage?.src?.url ? (
                 <img className='
                   w-full h-full
