@@ -15,15 +15,17 @@ export default function BlogHeader(props){
     <>
       { ( image || title || author || date ) && (
         <div className='
-          relative
           container
-          overflow-hidden
           flex flex-col lg:flex-row
-          m-6 md:m-12
+          mx-auto p-6 md:p-12
           w-fit h-fit
-          z-0 rounded-2xl
+          z-0
         '>
-          <div className='flex w-full lg:w-[50%] lg:h-96'>
+          <div className='
+            overflow-hidden
+            flex-1 h-[300px] lg:h-[400px]
+            rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none
+          '>
             { image?.src?.url ? (
               <img className='w-full h-full'
               src={ getImage(image.src) || image.src }
@@ -36,11 +38,11 @@ export default function BlogHeader(props){
             ) }
           </div>
           <div className='
-            flex flex-col justify-center
-            w-full lg:max-w-[50%] lg:h-96
+            flex flex-1 flex-col justify-center
             p-6 md:p-12
             gap-3 lg:gap-6
             bg-[#F6F6F6]
+            rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none
           '>
             { ( title &&
               <h1 className='
