@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/yvinterview.jpg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.png
+  alt: JB
 ---
 A few questions to our CTO and Head of Scientific Research, Yves Coignard
 

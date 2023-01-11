@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/technosphere.jpg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.png
+  alt: JB
 ---
 I had the opportunity to discuss with Mr Markus Iofcea from UBS’ think-tank, UBS-y. The think-tank objective is to try and figure out what the work would look like in the next 30 years. Why? To help UBS board plan for the future. One of their themes is the “trillion sensor network”, meaning that everything will get more instantaneously connected. We will no longer need to search for things; they’ll be automatically suggested to us.
 

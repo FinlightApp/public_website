@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/atransatlanticview.jpg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.png
+  alt: JB
 ---
 I’ve just come back from a very interesting week in the US. First stop was Silicon Valley which included attendance at the excellent MorningStar Plug and Play event. Invited by the Head of Fintech at MorningStar, we showcased Finlight to family offices and end-investors. Next up was an East Coast visit and a catch up with other family offices and our New York team. I made a few observations about the different European and US markets.
 

@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/finlightAnnouncesPartnershipWithTaxScouts.jpeg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.png
+  alt: JB
 ---
 <b>Press release: Finlight announces partnership with TaxScouts</b>
 

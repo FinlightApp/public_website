@@ -10,6 +10,9 @@ description: Default description
 image:
   src: /img/benchmarking.jpg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.png
+  alt: JB
 ---
 
 

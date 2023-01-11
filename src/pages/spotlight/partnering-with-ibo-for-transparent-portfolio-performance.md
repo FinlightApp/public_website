@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/IBO.png
   alt: Image description
+authorImage: 
+  src: /img/teamjb.png
+  alt: JB
 ---
 <b>Partnering with IBO for transparent portfolio performance</b>
 

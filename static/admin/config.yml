@@ -50,6 +50,26 @@ collections:
             },
           ]
         }
+      - {
+        label: Author Image,
+        name: authorImage,
+        widget: object,
+        fields:
+          [
+            {
+              label: Image,
+              name: src,
+              widget: image,
+              default: /img/teamjb.png
+            },
+            {
+              label: SEO - Author Image,
+              name: alt,
+              widget: string,
+              default: Author Image
+            },
+          ]
+        }
       - { label: Body, name: body, widget: markdown }
   - name: pages
     label: Pages

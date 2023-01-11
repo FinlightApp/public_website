@@ -8,6 +8,9 @@ description: ""
 image:
   src: /img/ibo_image.jpeg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.png
+  alt: JB
 ---
 <b>Interview with our CEO on IBO partnership</b>
 

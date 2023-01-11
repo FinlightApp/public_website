@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/whyhiringforculturalfitdoesntjustapplytolargecorporates.jpg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.png
+  alt: JB
 ---
 By [Agreusgroup.com](https://www.agreusgroup.com/)
 

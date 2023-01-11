@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/periodofcrisis.jpg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.png
+  alt: JB
 ---
 The scenario is always the same: we feel confident that things are under control or, at least, manageable. Still, we get caught by a black swan that no one can really predict. This time in the form of a virus. A bad one which creates havoc. Not so much because of the number of people infected but rather the impact it can have on national health systems, thus social stability.
 

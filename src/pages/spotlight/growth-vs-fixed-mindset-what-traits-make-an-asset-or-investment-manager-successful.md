@@ -10,6 +10,9 @@ description: Default description
 image:
   src: /img/growthVsFixedMindset.jpg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.png
+  alt: JB
 ---
 I stumbled upon Stanford University’s psychology professor, Dr Carol Dweck, who wrote the book “The growth mindset – changing the way to fulfil your potential.” Although the name initially sounded a bit mumbo-jumboesque, it provides useful insights on manager selection. The core idea of the book is to depict the two mindsets teachers’ et al. encounter: the fixed versus growth mindsets.
 

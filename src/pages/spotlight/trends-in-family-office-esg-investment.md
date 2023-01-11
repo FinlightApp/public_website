@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/trendsinfamilyofficeesginvestment.jpg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.png
+  alt: JB
 ---
 **Trends in family office ESG investment**
 

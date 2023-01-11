@@ -8,6 +8,9 @@ description: Default description
 image:
   src: /img/newresearch.jpg
   alt: Image description
+authorImage: 
+  src: /img/teamjb.png
+  alt: JB
 ---
 Yet, the Campden *Global Family Office Report* (2018) revealed that just 43% of family offices actually have a succession plan (with only a quarter having a formal, written plan). So the biggest takeaway here is: get a plan in place and one that is fit for purpose.
 
