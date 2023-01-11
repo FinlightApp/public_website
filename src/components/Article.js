@@ -5,9 +5,9 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
 
 import Panel from './Panel';
-import linkedIn from '../img/linkedin_logo_blue.svg';
-import twitter from '../img/twitter_logo_blue.svg';
-import email from '../img/mail_icon_blue.svg';
+import linkedIn from '../img/linkedin_logo_black.png';
+import twitter from '../img/twitter_logo_black.png';
+import email from '../img/mail_icon_black.png';
 import arrow from '../img/arrow_icon_black.png';
 
 const articleLink = typeof window !== 'undefined' && window.location.href;
@@ -22,7 +22,36 @@ export const HTMLContent = ({ content, description, image, title }) => (
         {/* Left Side */}
         <div className='
           col-span-1
+          flex flex-col
+          gap-6 lg:gap-12
         '>
+          <div className='
+              lg:sticky top-24
+              hidden lg:flex
+              flex-col
+              w-20
+              justify-center items-center
+              p-6
+              gap-12
+              bg-white rounded-2xl
+              shadow-card hover:shadow-card-hover
+            '>
+              <TwitterShareButton url={ articleLink } >
+                <img
+                src={ twitter }
+                alt='Twitter' />
+              </TwitterShareButton>
+              <LinkedinShareButton url={ articleLink } >
+                <img
+                  src={ linkedIn }
+                  alt='LinkedIn' />
+              </LinkedinShareButton>
+              <EmailShareButton url={ articleLink }>
+                <img
+                src={ email }
+                alt='Email' />
+              </EmailShareButton>
+            </div>
         </div>
         {/* Central Side */}
         <div className='
@@ -31,6 +60,31 @@ export const HTMLContent = ({ content, description, image, title }) => (
           p-6 md:p-12 lg:p-12
           gap-6 lg:gap-12   
         '>
+          <div className='
+            flex lg:hidden
+            flex-row
+            h-20
+            justify-center items-center
+            gap-12
+            bg-white rounded-2xl
+            shadow-card hover:shadow-card-hover
+          '>
+            <TwitterShareButton url={ articleLink }>
+              <img
+              src={ twitter }
+              alt='Twitter' />
+            </TwitterShareButton>
+            <LinkedinShareButton url={ articleLink }>
+              <img
+                src={ linkedIn }
+                alt='LinkedIn' />
+            </LinkedinShareButton>
+            <EmailShareButton url={ articleLink }>
+              <img
+              src={ email }
+              alt='Email' />
+            </EmailShareButton>
+          </div>
           <Link className='
             hidden lg:flex
             justify-end
