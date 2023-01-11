@@ -107,15 +107,41 @@ export const HTMLContent = ({ content, description, image, author, authorImage }
             p-6 gap-12
             w-full
             rounded-2xl
-            shadow-card hover:shadow-card-hover
+            shadow-card
+            transition transform
+            ease-in-out
+            delay-150
+            hover:-translate-y-2 hover:scale-105
+            duration-300
+            motion-reduce:transition-none motion-reduce:hover:transform-none
+            group/card
           '>
             <div className='flex w-44 h-44'>
               { authorImage?.src?.url ? (
-                <img className='w-full h-full rounded-full'
+                <img className='
+                  w-full h-full
+                  rounded-full
+                  group-hover/card:scale-110
+                  transition transform
+                  ease-in-out
+                  delay-150
+                  duration-300
+                  motion-reduce:transition-none motion-reduce:hover:transform-none
+                  group/card
+                '
                 src={ getImage(authorImage.src) || authorImage.src }
                 alt={ authorImage.alt } />
               ) : (
-                <GatsbyImage className='w-full h-full rounded-full'
+                <GatsbyImage className='
+                  w-full h-full
+                  rounded-full
+                  group-hover/card:scale-110
+                  transition transform
+                  ease-in-out
+                  delay-150
+                  duration-300
+                  motion-reduce:transition-none motion-reduce:hover:transform-none
+                '
                 formats={ ['auto', 'webp'] }
                 image={ getImage(authorImage.src) || authorImage.src }
                 alt={ authorImage.alt } />
