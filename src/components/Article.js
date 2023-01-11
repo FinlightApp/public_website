@@ -26,32 +26,32 @@ export const HTMLContent = ({ content, description, image, title }) => (
           gap-6 lg:gap-12
         '>
           <div className='
-              lg:sticky top-24
-              hidden lg:flex
-              flex-col
-              w-20
-              justify-center items-center
-              p-6
-              gap-12
-              bg-white rounded-2xl
-              shadow-card hover:shadow-card-hover
+            lg:sticky top-24
+            hidden lg:flex
+            flex-col
+            w-20
+            justify-center items-center
+            p-6
+            gap-12
+            bg-white rounded-2xl
+            shadow-card hover:shadow-card-hover
           '>
-              <TwitterShareButton url={ articleLink }>
-                <img
-                src={ twitter }
-                alt='Twitter' />
-              </TwitterShareButton>
-              <LinkedinShareButton url={ articleLink }>
-                <img
-                  src={ linkedIn }
-                  alt='LinkedIn' />
-              </LinkedinShareButton>
-              <EmailShareButton url={ articleLink }>
-                <img
-                src={ email }
-                alt='Email' />
-              </EmailShareButton>
-            </div>
+            <TwitterShareButton url={ articleLink }>
+              <img
+              src={ twitter }
+              alt='Twitter' />
+            </TwitterShareButton>
+            <LinkedinShareButton url={ articleLink }>
+              <img
+                src={ linkedIn }
+                alt='LinkedIn' />
+            </LinkedinShareButton>
+            <EmailShareButton url={ articleLink }>
+              <img
+              src={ email }
+              alt='Email' />
+            </EmailShareButton>
+          </div>
         </div>
         {/* Central Side */}
         <div className='
