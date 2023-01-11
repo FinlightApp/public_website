@@ -7,6 +7,7 @@ import Panel from './Panel';
 import linkedIn from '../img/linkedin_logo_blue.svg';
 import twitter from '../img/twitter_logo_blue.svg';
 import email from '../img/mail_icon_blue.svg';
+import arrow from '../img/arrow_icon_black.png';
 
 const articleLink = typeof window !== 'undefined' && window.location.href;
 
@@ -24,8 +25,20 @@ export const HTMLContent = ({ content, description, image, title }) => (
         </div>
         {/* Central Side */}
         <div className='
+          flex flex-col
           col-span-6
+          py-6 px-6 lg:p-12 md:py-6 md:px-12
+          gap-6 lg:gap-12   
         '>
+          <p className='
+            hidden lg:flex
+            justify-end
+          '>
+          <img className='w-6 h-6'
+          src={arrow}
+          alt="arrow" />
+            Back to Spotlight
+          </p>
           { content && (
             <div className='
               flex-1
@@ -38,6 +51,15 @@ export const HTMLContent = ({ content, description, image, title }) => (
             dangerouslySetInnerHTML={{ __html: content }}
             />
           ) }
+          <p className='
+            flex lg:hidden
+            justify-end
+            '>
+          <img className='w-6 h-6'
+          src={arrow}
+          alt="arrow" />
+            Back to Spotlight
+          </p>
           <div className='
             flex lg:hidden
             flex-row
