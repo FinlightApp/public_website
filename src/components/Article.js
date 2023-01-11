@@ -31,16 +31,15 @@ export const HTMLContent = ({ content, description, image, title }) => (
           p-6 md:p-12 lg:p-12
           gap-6 lg:gap-12   
         '>
-          <Link to='/spotlight'>
-            <p className='
-              hidden lg:flex
-              justify-end
-            '>
+          <Link className='
+            hidden lg:flex
+            justify-end
+          '
+          to='/spotlight'>
             <img className='w-6 h-6'
             src={arrow}
             alt='arrow' />
-              Back to Spotlight
-            </p>
+            Back to Spotlight
           </Link>
           { content && (
             <div className='
@@ -54,16 +53,16 @@ export const HTMLContent = ({ content, description, image, title }) => (
             dangerouslySetInnerHTML={{ __html: content }}
             />
           ) }
-          <Link to='/spotlight'>
-            <p className='
-              flex lg:hidden
-              justify-end
-            '>
+          <Link
+          className='
+            flex lg:hidden
+            justify-end
+          '
+          to='/spotlight'>
             <img className='w-6 h-6'
             src={arrow}
             alt='arrow' />
-              Back to Spotlight
-            </p>
+            Back to spotlight
           </Link>
           <div className='
             flex lg:hidden
