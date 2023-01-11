@@ -35,13 +35,13 @@ export const HTMLContent = ({ content, description, image, title }) => (
               gap-12
               bg-white rounded-2xl
               shadow-card hover:shadow-card-hover
-            '>
-              <TwitterShareButton url={ articleLink } >
+          '>
+              <TwitterShareButton url={ articleLink }>
                 <img
                 src={ twitter }
                 alt='Twitter' />
               </TwitterShareButton>
-              <LinkedinShareButton url={ articleLink } >
+              <LinkedinShareButton url={ articleLink }>
                 <img
                   src={ linkedIn }
                   alt='LinkedIn' />
@@ -58,7 +58,7 @@ export const HTMLContent = ({ content, description, image, title }) => (
           col-span-6
           flex flex-col
           p-6 md:p-12 lg:p-12
-          gap-6 lg:gap-12   
+          gap-6 lg:gap-12
         '>
           <div className='
             flex lg:hidden
