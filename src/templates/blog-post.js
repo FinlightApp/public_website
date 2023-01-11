@@ -21,6 +21,7 @@ export const BlogPostTemplate = ({
   return (
     <>
       <BlogHeader
+      image={ image }
       title={ title }
       author={ author }
       date={ date } />
