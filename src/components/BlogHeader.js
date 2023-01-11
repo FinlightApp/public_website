@@ -23,7 +23,7 @@ export default function BlogHeader(props){
         '>
           <div className='
             overflow-hidden
-            flex-1 min-w-[300px] lg:min-h-[400px]
+            flex-1 min-h-[300px] lg:min-h-[400px]
             rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none
           '>
             { image?.src?.url ? (
