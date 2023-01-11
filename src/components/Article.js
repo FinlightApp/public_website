@@ -15,15 +15,16 @@ export const HTMLContent = ({ content, description, image, title }) => (
     {( content || description || image ) && (
       <div className='
         container
-        flex flex-col-reverse lg:flex-row
-        lg:justify-start lg:items-start
+        grid grid-cols-1 lg:grid-cols-10
       '>
-        {/* Text side */}
+        {/* Left Side */}
         <div className='
-          grow lg:grow-[6]
-          flex flex-col
-          px-6 py-12 md:p-12
-          gap-6
+          col-span-1
+        '>
+        </div>
+        {/* Central Side */}
+        <div className='
+          col-span-6
         '>
           { content && (
             <div className='
@@ -61,56 +62,60 @@ export const HTMLContent = ({ content, description, image, title }) => (
             </EmailShareButton>
           </div>
         </div>
-        {/* Image side */}
+        {/* Right Side */}
         <div className='
-          lg:sticky lg:top-20
-          grow lg:grow-[4]
-          flex flex-col
-          gap-6
-          py-12 px-6 md:p-12
+          col-span-3
         '>
-          { image?.src?.url ? (
-            <img className='w-full'
-            src={ getImage(image.src) || image.src }
-            alt={ image.alt } />
-          ) : (
-            <GatsbyImage className='w-full'
-            formats={ ['auto', 'webp'] }
-            image={ getImage(image.src) || image.src }
-            alt={ image.alt } />
-          ) }
-          { description && (
-            <p className='
-              px-6
-              text-center
-              text-xs font-light leading-4
-              italic
-            '> 
-              { description }
-            </p>
-          ) }
           <div className='
-            hidden lg:flex
-            flex-row
-            justify-center
-            gap-12
+            lg:sticky lg:top-20
+            grow lg:grow-[4]
+            flex flex-col
+            gap-6
+            py-12 px-6 md:p-12
           '>
-            <TwitterShareButton url={ articleLink } >
-              <img
-              src={ twitter }
-              alt='Twitter' />
-            </TwitterShareButton>
-            <LinkedinShareButton url={ articleLink } >
-              <img
-                className='w-6 h-6'
-                src={ linkedIn }
-                alt='LinkedIn' />
-            </LinkedinShareButton>
-            <EmailShareButton url={ articleLink }>
-              <img
-              src={ email }
-              alt='Email' />
-            </EmailShareButton>
+            { image?.src?.url ? (
+              <img className='w-full'
+              src={ getImage(image.src) || image.src }
+              alt={ image.alt } />
+            ) : (
+              <GatsbyImage className='w-full'
+              formats={ ['auto', 'webp'] }
+              image={ getImage(image.src) || image.src }
+              alt={ image.alt } />
+            ) }
+            { description && (
+              <p className='
+                px-6
+                text-center
+                text-xs font-light leading-4
+                italic
+              '> 
+                { description }
+              </p>
+            ) }
+            <div className='
+              hidden lg:flex
+              flex-row
+              justify-center
+              gap-12
+            '>
+              <TwitterShareButton url={ articleLink } >
+                <img
+                src={ twitter }
+                alt='Twitter' />
+              </TwitterShareButton>
+              <LinkedinShareButton url={ articleLink } >
+                <img
+                  className='w-6 h-6'
+                  src={ linkedIn }
+                  alt='LinkedIn' />
+              </LinkedinShareButton>
+              <EmailShareButton url={ articleLink }>
+                <img
+                src={ email }
+                alt='Email' />
+              </EmailShareButton>
+            </div>
           </div>
         </div>
       </div>
