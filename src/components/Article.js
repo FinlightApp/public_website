@@ -9,10 +9,12 @@ import linkedIn from '../img/linkedin_logo_blue.svg';
 import twitter from '../img/twitter_logo_blue.svg';
 import email from '../img/mail_icon_blue.svg';
 import arrow from '../img/arrow_icon_black.png';
+import LatestArticle from '../components/LatestArticle'
 
 const articleLink = typeof window !== 'undefined' && window.location.href;
 
 export const HTMLContent = ({ content, description, image, author, authorImage }) => (
+
   <React.Fragment>
     {( content || description || image || author, authorImage ) && (
       <div className='
@@ -94,7 +96,7 @@ export const HTMLContent = ({ content, description, image, author, authorImage }
           flex flex-col items-center
           gap-12
           h-fit
-          p-6 lg:p-12
+          p-6 md:p-12
         '>
           <h1 className='
             hidden lg:flex 
@@ -157,6 +159,7 @@ export const HTMLContent = ({ content, description, image, author, authorImage }
               </p>
             ) }
           </div>
+          <LatestArticle />
         </div>
       </div>
     )}
