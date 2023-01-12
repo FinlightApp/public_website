@@ -23,6 +23,8 @@ export const HTMLContent = ({ content, description, image, title }) => (
         <div className='
           col-span-1
           flex flex-col
+          justify-start items-center
+          p-6 md:p-12 lg:p-12
           gap-6 lg:gap-12
         '>
           <div className='
@@ -30,7 +32,7 @@ export const HTMLContent = ({ content, description, image, title }) => (
             hidden lg:flex
             flex-col
             w-20
-            justify-center items-center
+            justify-around items-center
             p-6
             gap-12
             bg-white rounded-2xl
@@ -64,23 +66,23 @@ export const HTMLContent = ({ content, description, image, title }) => (
             flex lg:hidden
             flex-row
             h-20
-            justify-center items-center
+            justify-around items-center
             gap-12
             bg-white rounded-2xl
             shadow-card hover:shadow-card-hover
           '>
             <TwitterShareButton url={ articleLink }>
-              <img
+              <img className='w-6 h-6'
               src={ twitter }
               alt='Twitter' />
             </TwitterShareButton>
             <LinkedinShareButton url={ articleLink }>
-              <img
+              <img className='w-6 h-6'
                 src={ linkedIn }
                 alt='LinkedIn' />
             </LinkedinShareButton>
             <EmailShareButton url={ articleLink }>
-              <img
+              <img className='w-6 h-6'
               src={ email }
               alt='Email' />
             </EmailShareButton>
@@ -116,7 +118,7 @@ export const HTMLContent = ({ content, description, image, title }) => (
             <img className='w-6 h-6'
             src={arrow}
             alt='arrow' />
-            Back to spotlight
+            Back to Spotlight
           </Link>
           <div className='
             flex lg:hidden
