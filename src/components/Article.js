@@ -9,12 +9,14 @@ import linkedIn from '../img/linkedin_logo_black.png';
 import twitter from '../img/twitter_logo_black.png';
 import email from '../img/mail_icon_black.png';
 import arrow from '../img/arrow_icon_black.png';
+import LatestArticle from '../components/LatestArticle'
 
 const articleLink = typeof window !== 'undefined' && window.location.href;
 
 export const HTMLContent = ({ content, description, image, author, authorImage }) => (
+
   <React.Fragment>
-    {( content || description || image || author, authorImage ) && (
+    {( content || description || image || author || authorImage ) && (
       <div className='
         container
         grid grid-cols-1 lg:grid-cols-10
@@ -165,14 +167,14 @@ export const HTMLContent = ({ content, description, image, author, authorImage }
           flex flex-col items-center
           gap-12
           h-fit
-          p-6 lg:p-12
+          p-6 md:p-12
         '>
-          <h1 className='
+          <h2 className='
             hidden lg:flex 
             text-3xl font-semibold
           '>
             Author
-          </h1>
+          </h2>
           <div className='
             hidden lg:flex flex-col items-center
             p-6 gap-12
@@ -228,6 +230,7 @@ export const HTMLContent = ({ content, description, image, author, authorImage }
               </p>
             ) }
           </div>
+          <LatestArticle />
         </div>
       </div>
     )}
@@ -253,6 +256,8 @@ Article.propTypes = {
   content: PropTypes.node,
   author: PropTypes.string,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  authorImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  title: PropTypes.string,
 };
 
 HTMLContent.propTypes = Article.propTypes;
