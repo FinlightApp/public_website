@@ -5,9 +5,9 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
 
 import Panel from './Panel';
-import linkedIn from '../img/linkedin_logo_blue.svg';
-import twitter from '../img/twitter_logo_blue.svg';
-import email from '../img/mail_icon_blue.svg';
+import linkedIn from '../img/linkedin_logo_black.png';
+import twitter from '../img/twitter_logo_black.png';
+import email from '../img/mail_icon_black.png';
 import arrow from '../img/arrow_icon_black.png';
 
 const articleLink = typeof window !== 'undefined' && window.location.href;
@@ -22,15 +22,86 @@ export const HTMLContent = ({ content, description, image, author, authorImage }
         {/* Left Side */}
         <div className='
           col-span-1
+          hidden lg:flex
+          flex-col
+          justify-start items-center
+          p-6 md:p-12 lg:p-12
+          gap-6 lg:gap-12
         '>
+          <div className='
+            lg:sticky top-32
+            hidden lg:flex
+            flex-col
+            w-20
+            justify-around items-center
+            p-6
+            gap-12
+            bg-white rounded-2xl
+            shadow-card hover:shadow-card-hover
+            transition transform
+            ease-in-out
+            delay-150
+            hover:-translate-y-2 hover:scale-105
+            duration-300
+            motion-reduce:transition-none motion-reduce:hover:transform-none
+            group/card
+          '>
+            <TwitterShareButton url={ articleLink }>
+              <img
+              src={ twitter }
+              alt='Twitter' />
+            </TwitterShareButton>
+            <LinkedinShareButton url={ articleLink }>
+              <img
+                src={ linkedIn }
+                alt='LinkedIn' />
+            </LinkedinShareButton>
+            <EmailShareButton url={ articleLink }>
+              <img
+              src={ email }
+              alt='Email' />
+            </EmailShareButton>
+          </div>
         </div>
         {/* Central Side */}
         <div className='
           col-span-6
           flex flex-col
           p-6 md:p-12 lg:p-12
-          gap-6 lg:gap-12   
+          gap-6 lg:gap-12
         '>
+          <div className='
+            flex lg:hidden
+            flex-row
+            h-20
+            justify-around items-center
+            gap-12
+            bg-white rounded-2xl
+            shadow-card hover:shadow-card-hover
+            transition transform
+            ease-in-out
+            delay-150
+            hover:-translate-y-2 hover:scale-105
+            duration-300
+            motion-reduce:transition-none motion-reduce:hover:transform-none
+            group/card
+          '>
+            <TwitterShareButton url={ articleLink }>
+              <img className='w-6 h-6'
+              src={ twitter }
+              alt='Twitter' />
+            </TwitterShareButton>
+            <LinkedinShareButton url={ articleLink }>
+              <img className='w-6 h-6'
+                src={ linkedIn }
+                alt='LinkedIn' />
+            </LinkedinShareButton>
+            <EmailShareButton url={ articleLink }>
+              <img className='w-6 h-6'
+              src={ email }
+              alt='Email' />
+            </EmailShareButton>
+          </div>
           <Link className='
             hidden lg:flex
             justify-end
@@ -62,7 +133,7 @@ export const HTMLContent = ({ content, description, image, author, authorImage }
             <img className='w-6 h-6'
             src={arrow}
             alt='arrow' />
-            Back to spotlight
+            Back to Spotlight
           </Link>
           <div className='
             flex lg:hidden
