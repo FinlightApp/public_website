@@ -22,13 +22,14 @@ export const HTMLContent = ({ content, description, image, title }) => (
         {/* Left Side */}
         <div className='
           col-span-1
-          flex flex-col
+          hidden lg:flex
+          flex-col
           justify-start items-center
           p-6 md:p-12 lg:p-12
           gap-6 lg:gap-12
         '>
           <div className='
-            lg:sticky top-24
+            lg:sticky top-32
             hidden lg:flex
             flex-col
             w-20
@@ -37,6 +38,13 @@ export const HTMLContent = ({ content, description, image, title }) => (
             gap-12
             bg-white rounded-2xl
             shadow-card hover:shadow-card-hover
+            transition transform
+            ease-in-out
+            delay-150
+            hover:-translate-y-2 hover:scale-105
+            duration-300
+            motion-reduce:transition-none motion-reduce:hover:transform-none
+            group/card
           '>
             <TwitterShareButton url={ articleLink }>
               <img
@@ -70,6 +78,13 @@ export const HTMLContent = ({ content, description, image, title }) => (
             gap-12
             bg-white rounded-2xl
             shadow-card hover:shadow-card-hover
+            transition transform
+            ease-in-out
+            delay-150
+            hover:-translate-y-2 hover:scale-105
+            duration-300
+            motion-reduce:transition-none motion-reduce:hover:transform-none
+            group/card
           '>
             <TwitterShareButton url={ articleLink }>
               <img className='w-6 h-6'
