@@ -77,4 +77,5 @@ BlogHeader.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
   date: PropTypes.string,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };

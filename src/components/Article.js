@@ -13,10 +13,10 @@ import LatestArticle from '../components/LatestArticle'
 
 const articleLink = typeof window !== 'undefined' && window.location.href;
 
-export const HTMLContent = ({ content, description, image, author, authorImage }) => (
+export const HTMLContent = ({ content, description, image, author, authorImage, title }) => (
 
   <React.Fragment>
-    {( content || description || image || author, authorImage ) && (
+    {( content || description || image || author || authorImage || title ) && (
       <div className='
         container
         grid grid-cols-1 lg:grid-cols-10
@@ -159,7 +159,7 @@ export const HTMLContent = ({ content, description, image, author, authorImage }
               </p>
             ) }
           </div>
-          <LatestArticle />
+          <LatestArticle title={ title } />
         </div>
       </div>
     )}
@@ -185,6 +185,8 @@ Article.propTypes = {
   content: PropTypes.node,
   author: PropTypes.string,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  authorImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  title: PropTypes.string,
 };
 
 HTMLContent.propTypes = Article.propTypes;

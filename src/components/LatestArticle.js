@@ -6,9 +6,15 @@ import { getImage } from 'gatsby-plugin-image';
 import SpotlightCard from './SpotlightCard';
 
 const LatestArticle = (props) => {
+  const {
+    title
+  } = props;
 
+console.log(title)
   const { edges: posts } = props.data.allMarkdownRemark;
   const lastArticle = Object.values(posts)[0]
+  //const perviousArticle = Object.values(posts)[1]
+
   return (
     <React.Fragment>
       { posts && (
@@ -27,14 +33,16 @@ const LatestArticle = (props) => {
                 w-full
                 gap-12
               '>
-                <SpotlightCard
-                image={ {
-                  src: getImage(lastArticle.node.frontmatter.image.src) || lastArticle.node.frontmatter.image.src,
-                  alt: lastArticle.node.frontmatter.image.alt
-                } }
-                title={ lastArticle.node.frontmatter.title }
-                date={ lastArticle.node.frontmatter.date }
-                link={ lastArticle.node.fields.slug } />
+                {
+                  <SpotlightCard
+                  image={ {
+                    src: getImage(lastArticle.node.frontmatter.image.src) || lastArticle.node.frontmatter.image.src,
+                    alt: lastArticle.node.frontmatter.image.alt
+                  } }
+                  title={ lastArticle.node.frontmatter.title }
+                  date={ lastArticle.node.frontmatter.date }
+                  link={ lastArticle.node.fields.slug } />
+                }
               </div>
             ) }
           </div>
