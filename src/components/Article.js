@@ -13,10 +13,10 @@ import LatestArticle from '../components/LatestArticle'
 
 const articleLink = typeof window !== 'undefined' && window.location.href;
 
-export const HTMLContent = ({ content, description, image, author, authorImage, title }) => (
+export const HTMLContent = ({ content, description, image, author, authorImage }) => (
 
   <React.Fragment>
-    {( content || description || image || author || authorImage || title ) && (
+    {( content || description || image || author || authorImage ) && (
       <div className='
         container
         grid grid-cols-1 lg:grid-cols-10
@@ -98,12 +98,12 @@ export const HTMLContent = ({ content, description, image, author, authorImage, 
           h-fit
           p-6 md:p-12
         '>
-          <h1 className='
+          <h2 className='
             hidden lg:flex 
             text-3xl font-semibold
           '>
             Author
-          </h1>
+          </h2>
           <div className='
             hidden lg:flex flex-col items-center
             p-6 gap-12
@@ -159,7 +159,7 @@ export const HTMLContent = ({ content, description, image, author, authorImage, 
               </p>
             ) }
           </div>
-          <LatestArticle title={ title } />
+          <LatestArticle />
         </div>
       </div>
     )}

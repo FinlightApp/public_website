@@ -6,14 +6,12 @@ import { getImage } from 'gatsby-plugin-image';
 import SpotlightCard from './SpotlightCard';
 
 const LatestArticle = (props) => {
-  const {
-    title
-  } = props;
 
-console.log(title)
   const { edges: posts } = props.data.allMarkdownRemark;
   const lastArticle = Object.values(posts)[0]
-  //const perviousArticle = Object.values(posts)[1]
+  const perviousArticle = Object.values(posts)[1]
+  const articleLink = typeof window !== 'undefined' && window.location.pathname;
+  const article = lastArticle.node.fields.slug === articleLink ? perviousArticle : lastArticle
 
   return (
     <React.Fragment>
@@ -24,11 +22,11 @@ console.log(title)
           w-full
           gap-6 md:gap-12
         '>
-          <h1 className='text-3xl font-semibold'>
+          <h2 className='text-3xl font-semibold'>
             Latest Article
-          </h1>
+          </h2>
           <div>
-            { lastArticle && (
+            { article && (
               <div className='
                 w-full
                 gap-12
@@ -36,12 +34,12 @@ console.log(title)
                 {
                   <SpotlightCard
                   image={ {
-                    src: getImage(lastArticle.node.frontmatter.image.src) || lastArticle.node.frontmatter.image.src,
-                    alt: lastArticle.node.frontmatter.image.alt
+                    src: getImage(article.node.frontmatter.image.src) || article.node.frontmatter.image.src,
+                    alt: article.node.frontmatter.image.alt
                   } }
-                  title={ lastArticle.node.frontmatter.title }
-                  date={ lastArticle.node.frontmatter.date }
-                  link={ lastArticle.node.fields.slug } />
+                  title={ article.node.frontmatter.title }
+                  date={ article.node.frontmatter.date }
+                  link={ article.node.fields.slug } />
                 }
               </div>
             ) }
