@@ -137,29 +137,6 @@ export const HTMLContent = ({ content, description, image, author, authorImage }
             alt='arrow' />
             Back to Spotlight
           </Link>
-          <div className='
-            flex lg:hidden
-            flex-row
-            justify-center
-            gap-12
-          '>
-            <TwitterShareButton url={ articleLink }>
-              <img
-              src={ twitter }
-              alt='Twitter' />
-            </TwitterShareButton>
-            <LinkedinShareButton url={ articleLink }>
-              <img
-                className='w-6 h-6'
-                src={ linkedIn }
-                alt='LinkedIn' />
-            </LinkedinShareButton>
-            <EmailShareButton url={ articleLink }>
-              <img
-              src={ email }
-              alt='Email' />
-            </EmailShareButton>
-          </div>
         </div>
         {/* Right Side */}
         <div className='
