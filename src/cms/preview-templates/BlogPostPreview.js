@@ -8,6 +8,7 @@ const BlogPostPreview = ({ entry, widgetFor }) => {
       content={widgetFor('body')}
       title={entry.getIn(['data', 'title'])}
       author={entry.getIn(['data', 'author'])}
+      date={ entry.getIn(['data', 'date']).toLocaleDateString() }
       description={entry.getIn(['data', 'description'])}
       image={entry.getIn(['data', 'image'])}
       authorImage={entry.getIn(['data', 'authorImage'])}
