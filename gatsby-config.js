@@ -132,6 +132,16 @@ module.exports = {
         },
       },
     }, // must be after other CSS plugins
+    {
+      resolve: `gatsby-plugin-umami`,
+      options: {
+        websiteId: '4064bf41-a4f8-409f-ab94-d9116189cdbf',
+        srcUrl: 'https://analytics.finlight.com/umami.js',
+        includeInDevelopment: false,
+        autoTrack: true,
+        respectDoNotTrack: true
+      },
+    },
     "gatsby-plugin-netlify", // make sure to keep it last in the array
   ],
 };
