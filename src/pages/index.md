@@ -118,7 +118,8 @@ applyPanel:
     src: /img/heroBg.webp
     alt: SEO - alt
   title: Ready to Finlight?
-  paragraph: VC investing made simple with Finlight.
+  paragraph: Launching and allocating to VCs are always systematically better with
+    Finlight.
   button: Apply for an account
   modalContent: |
     <p style=height:100px;width:150px;>
