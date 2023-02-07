@@ -34,6 +34,7 @@ applyPanel:
     src: /img/heroBg.webp
     alt: Background Alt
   title: Ready to Finlight?
-  paragraph: Asset consolidation processes are always systematically better with Finlight.
+  paragraph: Launching and allocating to VCs are always systematically better with
+    Finlight.
   button: Apply for an account
 ---
