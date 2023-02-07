@@ -135,7 +135,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-umami`,
       options: {
-        websiteId: '4064bf41-a4f8-409f-ab94-d9116189cdbf',
+        websiteId: '91278755-5200-4d1d-98b4-e53c2f943d75',
         srcUrl: 'https://analytics.finlight.com/umami.js',
         includeInDevelopment: false,
         autoTrack: true,

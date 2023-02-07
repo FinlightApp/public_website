@@ -44,7 +44,7 @@ const Footer = () => {
         </a>
       </div>
       <p className='font-light text-xs leading-6 text-white'>
-        Ⓒ MONEY-PEASY LTD - FINLIGHT.COMTM 2022
+        Ⓒ MONEY-PEASY LTD - FINLIGHT.COMTM 2023
       </p>
     </footer>
   );
