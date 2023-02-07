@@ -9,7 +9,7 @@ heroPanel:
   theme:
     header: text-white
     line: via-primary
-    highlight: text-secondary
+    highlight: text-primary
     paragraph: text-white
     button: text-black bg-primary
   backgroundImg:
