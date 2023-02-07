@@ -39,7 +39,7 @@ module.exports = {
         'secondary': '#3273DC',
       },
       fontFamily: {
-        'body': ['Inter'],
+        'body': ['Nunito Sans'],
       },
       container: {
         center: true

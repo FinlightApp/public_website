@@ -1,1 +1,1 @@
-import "@fontsource/inter";
+import "@fontsource/nunito-sans";
