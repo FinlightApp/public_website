@@ -68,7 +68,7 @@ applyPanel:
     src: /img/heroBg.webp
     alt: Background Alt
   title: Ready to Finlight?
-  paragraph: Launching or allocating to VCs are always systematically better with
+  paragraph: Launching and allocating to VCs are always systematically better with
     Finlight.
   button: Apply for an account
   modalContent: |
