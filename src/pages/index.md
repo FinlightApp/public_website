@@ -30,7 +30,7 @@ featurePanel:
     connecting them all through one sigle, secure platform:"
   cards:
     - image:
-        src: /img/solutionfive.svg
+        src: /img/solutionfive.png
         alt: "The infrastructure "
       title: The Infrastructure
       paragraph: Whether it is a SPV, a fund or a note, we can have you started in
@@ -38,7 +38,7 @@ featurePanel:
         in place. No more headache or bad compliance surprises to raise assets
         or allocate funds.
     - image:
-        src: /img/solutionone.svg
+        src: /img/solutionone.png
         alt: The Stack
       title: The Stack
       paragraph: All assets and portfolios on one lens. One single tool enabling both
