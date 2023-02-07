@@ -6,7 +6,7 @@ export default function Button(props) {
         ${ props.class }
         px-4 py-2
         rounded
-        text-xl font-normal leading-5
+        text-2xl font-normal leading-5
         hover:font-medium
         transition-all transform
         ease-in-out

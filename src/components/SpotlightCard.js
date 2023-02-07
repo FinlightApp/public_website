@@ -67,7 +67,7 @@ export default function SpotlightCard(props) {
               p-6 gap-6
             '>
               { title && (
-                <p className='text-lg font-normal leading-8 text-left'>
+                <p className='text-xl font-normal leading-8 text-left'>
                   { title }
                 </p>
               ) }
@@ -79,7 +79,7 @@ export default function SpotlightCard(props) {
               { link && (
                 <div className='flex-1 flex justify-start items-end'>
                   <Link className='
-                    text-base
+                    text-lg
                     font-normal
                     leading-6
                     underline

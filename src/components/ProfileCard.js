@@ -62,12 +62,12 @@ export default function ProfileCard(props) {
               alt={ image.alt } />
             ) }
             { title && (
-              <p className='text-center text-lg font-normal leading-8'>
+              <p className='text-center text-xl font-normal leading-8'>
                 { title }
               </p>
             ) }
             { subheading && (
-              <p className='text-center text-base font-light leading-4'>
+              <p className='text-center text-lg font-light leading-4'>
                 { subheading }
               </p>
             ) }

@@ -12,9 +12,9 @@ export default function DataCard(props) {
   return (
     <React.Fragment>
       <div className='
-        max-w-sm
-        flex flex-col
-        basis-full md:basis-1/2-6 lg:basis-1/3-8
+        max-w-4xl
+        flex flex-col md:flex-row
+        basis-full
         items-center
         p-6 gap-6
         bg-white rounded-2xl
@@ -62,16 +62,18 @@ export default function DataCard(props) {
             ) }
           </div>
         ) }
-        { title && (
-          <p className='text-lg font-normal leading-8'>
-            { title }
-          </p>
-        ) }
-        { paragraph && (
-          <p className='text-base font-light leading-6 text-center'>
-            { paragraph }
-          </p>
-        ) }
+        <div className='flex-1 flex flex-col justify-around items-start gap-6 h-full'>
+          { title && (
+            <p className='text-xl font-normal leading-8 text-center md:text-start w-full'>
+              { title }
+            </p>
+          ) }
+          { paragraph && (
+            <p className='text-lg font-light leading-6 text-center md:text-start'>
+              { paragraph }
+            </p>
+          ) }
+        </div>
       </div>
     </React.Fragment>
   );

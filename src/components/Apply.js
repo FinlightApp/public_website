@@ -58,8 +58,8 @@ export default function Apply(props) {
             <Box className='
               col-span-10
               md:col-start-3 md:col-span-6
-              lg:col-start-6 lg:col-span-4
-              xl:col-start-7 xl:col-span-3
+              lg:col-start-4 lg:col-span-6
+              xl:col-start-3 xl:col-span-7
               justify-center items-center
               px-8 py-12 gap-12
             '>

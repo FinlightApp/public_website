@@ -10,7 +10,7 @@ export default function Subheader(props) {
       '>
         <h2 className={`
           ${ props.headerClass }
-          text-3xl text-center font-semibold leading-10
+          text-4xl text-center font-semibold leading-10
         `}>
           { props.children }
         </h2>

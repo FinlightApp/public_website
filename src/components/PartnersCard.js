@@ -64,7 +64,7 @@ export default function PartnersCard(props) {
             alt={ `${title} logo` } />
           ) }
         </div>
-        <p className='text-lg font-normal leading-8 text-center'>
+        <p className='text-xl font-normal leading-8 text-center'>
           { title }
         </p>
       </a>

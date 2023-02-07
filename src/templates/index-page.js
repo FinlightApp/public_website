@@ -175,6 +175,7 @@ export const pageQuery = graphql`
               alt
             }
             title
+            paragraph
           }
         }
         applyPanel {

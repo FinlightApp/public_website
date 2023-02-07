@@ -29,7 +29,7 @@ export default function Header(props) {
       '>
         <h1 className={`
           ${ props.headerClass }
-          text-4xl text-center font-bold leading-[48px]
+          text-5xl text-center font-bold leading-[48px]
         `}
         ref={ titleEl }>
           { props.children }

@@ -56,7 +56,7 @@ const Navbar = () => {
           { navItems.map((navItem, i) => (
             <Link className='
               px-2
-              text-base font-normal leading-6
+              text-lg font-normal leading-6
               text-white hover:text-primary
             '
             activeClassName='
@@ -93,7 +93,7 @@ const Navbar = () => {
           className='
             hidden md:flex
             px-4
-            text-base font-normal leading-6 text-primary
+            text-lg font-normal leading-6 text-primary
           '>
             Sign In
           </a>

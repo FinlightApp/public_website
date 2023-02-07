@@ -4,7 +4,7 @@ export default function Paragraph(props) {
     <React.Fragment>
       <p className={`
         ${ props.class }
-        text-lg text-center font-normal leading-8
+        text-xl text-center font-normal leading-8
       `}>
         { props.children }
       </p>
