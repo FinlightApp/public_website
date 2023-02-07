@@ -17,11 +17,10 @@ heroPanel:
     alt: Paris
   title: Our Partners
   titleHighlight: Partners
-  paragraph: >
-    Our goal is to simplify our clients’ journey to access all the insights they
-    need to serve their clients more efficiently with zero friction. If you
-    believe your offerings can nicely complement or enhance ours, please do
-    contact us via partners@finlight.com
+  paragraph: Our goal is to simplify our clients’ journey to access all the
+    insights they need efficiently with zero friction. If you believe your
+    offerings can nicely complement or enhance ours, please do contact us via
+    contact@finlight.com
   button: null
   modalContent: to remove
 partnersPanel:
@@ -36,10 +35,6 @@ partnersPanel:
         src: /img/adan.jpg
       title: ADAN CORPORATE
       link: https://adancorporate.com/
-    - image:
-        src: /img/aim.jpg
-      title: AiM
-      link: https://www.aim-services.ch
     - image:
         src: /img/arkhineo.jpg
       title: Arkhineo
@@ -56,14 +51,6 @@ partnersPanel:
         src: /img/bloomberg.jpg
       title: Bloomberg
       link: https://www.bloomberg.com/
-    - image:
-        src: /img/daaimon.jpg
-      title: daaimon
-      link: http://www.daaimon.com/
-    - image:
-        src: /img/edmiston.jpg
-      title: Edmiston
-      link: https://www.edmiston.com
     - image:
         src: /img/focf.jpg
       title: The Family Office Circle Foundation
@@ -84,14 +71,6 @@ partnersPanel:
         src: /img/monexeurope.jpg
       title: Monex Europe
       link: https://www.monexeurope.com/
-    - image:
-        src: /img/sharingalpha.jpg
-      title: SharingAlpha
-      link: https://sharingalpha.com/
-    - image:
-        src: /img/suttonwinson.jpg
-      title: Sutton Winson
-      link: https://www.suttonwinson.com/
     - image:
         src: /img/wperformancewatcher.jpg
       title: Performance Watcher
