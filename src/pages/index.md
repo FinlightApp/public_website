@@ -33,19 +33,23 @@ featurePanel:
         src: /img/solutionfive.svg
         alt: "The infrastructure "
       title: The Infrastructure
-      paragraph: Your commitments to different VC funds with varying records of
-        capital all in one single dashboard
+      paragraph: Whether it is a SPV, a fund or a note, we can have you started in
+        moments with all the relevant marketing authorisations in the UK and EU
+        in place. No more headache or bad compliance surprises to raise assets
+        or allocate funds.
     - image:
         src: /img/solutionone.svg
         alt: The Stack
       title: The Stack
-      paragraph: All assets and portfolios on one lens
+      paragraph: All assets and portfolios on one lens. One single tool enabling both
+        Gps and LPs to keep tracks of all commitments, capital calls,
+        distributions, fees, NAVs and performance.
     - image:
         src: /img/peoplesearch.svg
         alt: The community
       title: The community
-      paragraph: One location to keep tracks of all commitments, capital calls,
-        distributions, fees
+      paragraph: "One engaging community of GPs, LPs and advisors meeting and transact
+        together seamlessly. "
 servePanel:
   title: Who Do We Serve
   paragraph: "We eliminate hurdles GPs, LPs and advisors have been facing to do
