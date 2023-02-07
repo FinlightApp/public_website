@@ -19,7 +19,7 @@ heroPanel:
   titleHighlight: VC Investing
   paragraph: " We eliminate the operational and compliance barriers GPs, LPs and
     advisors face to meet and transact together safely and seamlessly."
-  button: Request Info
+  button: Apply for an account
   modalContent: |
     <p style=height:100px;width:150px;>
       Hero Content
