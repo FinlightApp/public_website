@@ -30,18 +30,18 @@ featurePanel:
     connecting them all through one sigle, secure platform:"
   cards:
     - image:
-        src: /img/solutionfive.png
+        src: /img/solutionfive.svg
         alt: "The infrastructure "
       title: The Infrastructure
       paragraph: Your commitments to different VC funds with varying records of
         capital all in one single dashboard
     - image:
-        src: /img/solutionone.png
+        src: /img/solutionone.svg
         alt: The Stack
-      title: The stack
+      title: The Stack
       paragraph: All assets and portfolios on one lens
     - image:
-        src: /img/peoplesearch.png
+        src: /img/peoplesearch.svg
         alt: The community
       title: The community
       paragraph: One location to keep tracks of all commitments, capital calls,
