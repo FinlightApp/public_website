@@ -226,6 +226,12 @@ collections:
                           widget: string,
                           default: Feature
                         },
+                        {
+                          label: Text,
+                          name: paragraph,
+                          widget: text,
+                          default: Text
+                        },
                       ],
                   },
                 ],
