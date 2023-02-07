@@ -31,14 +31,14 @@ featurePanel:
   cards:
     - image:
         src: /img/solutionfive.svg
-        alt: The infrastructure to launch or allocate to a fund
+        alt: "The infrastructure "
       title: The Infrastructure
       paragraph: Your commitments to different VC funds with varying records of
         capital all in one single dashboard
     - image:
         src: /img/solutionone.svg
         alt: The Stack
-      title: The stack to transact and manage
+      title: The stack
       paragraph: All assets and portfolios on one lens
     - image:
         src: /img/peoplesearch.svg
