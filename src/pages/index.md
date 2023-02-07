@@ -31,8 +31,8 @@ featurePanel:
   cards:
     - image:
         src: /img/solutionfive.png
-        alt: "The infrastructure "
-      title: The Infrastructure
+        alt: turnkey infrastructure
+      title: "The turnkey infrastructure to launch and manage funds and allocations "
       paragraph: Whether it is a SPV, a fund or a note, we can have you started in
         moments with all the relevant marketing authorisations in the UK and EU
         in place. No more headache or bad compliance surprises to raise assets
@@ -40,16 +40,18 @@ featurePanel:
     - image:
         src: /img/solutionone.png
         alt: The Stack
-      title: The Stack
+      title: The security to manage and monitor investments or allocations from one
+        place
       paragraph: All assets and portfolios on one lens. One single tool enabling both
         Gps and LPs to keep tracks of all commitments, capital calls,
         distributions, fees, NAVs and performance.
     - image:
         src: /img/peoplesearch.png
         alt: The community
-      title: The community
-      paragraph: "One engaging community of GPs, LPs and advisors meeting and transact
-        together seamlessly. "
+      title: The investors community to engage with to raise or share VC opportunities
+      paragraph: One engaging community of GPs, LPs and advisors meeting and transact
+        together seamlessly. No more reciprocal access challenges. All in a
+        vetted and compliant environment.
 servePanel:
   title: Who Do We Serve
   paragraph: "We eliminate hurdles GPs, LPs and advisors have been facing to do
