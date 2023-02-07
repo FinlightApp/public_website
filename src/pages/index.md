@@ -45,7 +45,7 @@ featurePanel:
         Gps and LPs to keep tracks of all commitments, capital calls,
         distributions, fees, NAVs and performance.
     - image:
-        src: /img/peoplesearch.svg
+        src: /img/peoplesearch.png
         alt: The community
       title: The community
       paragraph: "One engaging community of GPs, LPs and advisors meeting and transact
