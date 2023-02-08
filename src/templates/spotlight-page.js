@@ -25,7 +25,8 @@ export const SpotlightPageTemplate = ({
       title={ heroPanel.title }
       titleHighlight={ heroPanel.titleHighlight }
       paragraph={ heroPanel.paragraph }
-      button={ heroPanel.button } />
+      button={ heroPanel.button }
+      modalContent={ heroPanel.modalContent } />
       <SpotlightPanel />
       <Apply
       theme={ applyPanel.theme }
@@ -55,6 +56,7 @@ SpotlightPageTemplate.propTypes = {
     titleHighlight: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
+    modalContent: PropTypes.string,
   }),
   applyPanel: PropTypes.shape({
     theme: PropTypes.object,
@@ -126,6 +128,7 @@ export const spotlightPageQuery = graphql`
           titleHighlight
           paragraph
           button
+          modalContent
         }
         applyPanel {
           theme {
