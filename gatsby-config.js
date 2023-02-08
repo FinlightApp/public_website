@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://demo-finlight.netlify.app",
+    siteUrl: "https://demo.finlight.com",
     title: "Finlight",
     description:
       "Finlight public website.",
@@ -12,7 +12,7 @@ module.exports = {
       options: {
         name: "Finlight",
         short_name: "Finlight",
-        description: "Finlight public website.",
+        description: "Finlight Demo",
         start_url: "/",
         background_color: "#000000",
         theme_color: "#000000",
