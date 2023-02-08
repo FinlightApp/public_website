@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://demo-finlight.netlify.app",
+    siteUrl: "https://finlight.com",
     title: "Finlight",
     description:
-      "Finlight public website.",
+      "Finlight",
   },
   plugins: [
     "gatsby-plugin-sitemap",
@@ -12,7 +12,7 @@ module.exports = {
       options: {
         name: "Finlight",
         short_name: "Finlight",
-        description: "Finlight public website.",
+        description: "Finlight",
         start_url: "/",
         background_color: "#000000",
         theme_color: "#000000",
