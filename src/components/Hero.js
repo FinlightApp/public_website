@@ -77,12 +77,12 @@ export default function Hero(props) {
                   { paragraph }
                 </Paragraph>
               ) }
-              {/* { button && (
+              { button && (
                 <Button class={ theme.button }
                 onClick={() => setModalActive(!modalActive)}>
                   { button }
                 </Button>
-              ) } */}
+              ) }
             </Box>
           </div>
         ) }

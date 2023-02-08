@@ -75,12 +75,12 @@ export default function Apply(props) {
                   { paragraph }
                 </Paragraph>
               ) }
-              {/* { button && (
+              { button && (
                 <Button class={ theme.button }
                 onClick={() => setModalActive(!modalActive)}>
                   { button }
                 </Button>
-              ) } */}
+              ) }
             </Box>
           </div>
         ) }

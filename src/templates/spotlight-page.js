@@ -35,7 +35,8 @@ export const SpotlightPageTemplate = ({
       } }
       title={ applyPanel.title }
       paragraph={ applyPanel.paragraph }
-      button={ applyPanel.button } />
+      button={ applyPanel.button }
+      modalContent={ applyPanel.modalContent } />
     </>
   );
 };
@@ -61,6 +62,7 @@ SpotlightPageTemplate.propTypes = {
     title: PropTypes.string,
     paragraph: PropTypes.string,
     button: PropTypes.string,
+    modalContent: PropTypes.string,
   }),
 };
 
@@ -152,6 +154,7 @@ export const spotlightPageQuery = graphql`
           title
           paragraph
           button
+          modalContent
         }
       }
     }

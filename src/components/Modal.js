@@ -23,13 +23,14 @@ export default function Modal(props) {
           container
           grid grid-cols-10
           items-center
-          px-8 py-12 md:p-0
+          px-8 py-12
         '>
           <Box className='
             col-span-10
-            md:col-start-3 md:col-span-6
-            xl:col-start-4 xl:col-span-4
-            h-fit min-h-[25rem]
+            md:col-start-2 md:col-span-8
+            xl:col-start-3 xl:col-span-6
+            h-full min-h-[25rem]
+            pb-12
             bg-white
           '>
             <div className='
