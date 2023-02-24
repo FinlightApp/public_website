@@ -29,8 +29,8 @@ featurePanel:
   title: Key Benefits
   paragraph: "We are the first truly one-touch platform to launch, raise and
     manage VC funds globally without any structuring, compliance or operational
-    hurdles. This way, we provide the entire VC investing ecosystem with 3 key
-    benefits by connecting them all through one sigle, secure platform:"
+    hurdles. To do so, we provide the entire VC investing ecosystem with 3 key
+    benefits by connecting them all through one single and secure platform:"
   cards:
     - image:
         src: /img/solutionfive.png
