@@ -15,17 +15,22 @@ heroPanel:
   backgroundImg:
     src: /img/london.jpg
     alt: Background Alt
-  title: VC Investing streamlined
-  titleHighlight: VC Investing
-  paragraph: " We eliminate the operational and compliance barriers GPs, LPs and
-    advisors face to meet and transact together safely and seamlessly."
+  title: One-touch platform for VC funds
+  titleHighlight: One-touch
+  paragraph: We remove the barriers GPs, LPs and advisors keep facing to raise,
+    allocate and manage VC investments globally
   button: Apply for an account
-  modalContent: |
-    <iframe class="flex-1" src="https://3e90d66e.sibforms.com/serve/MUIEAKtciN5ZBPyP2NywEZwH2zP8C3EbPBXSHIKMxRmSBRq2OomfSzZNQX6pmQ--jsHB-wP2HgEF5Ftnb8lodJH-lgTFALJmDdtyNNxJ_be3Pn0FScqtlzWf1wsqDUw0soW6jjKTVKHAs6dvCB3mp8cDSi_XIc17mBHMrQ4DIK8-WP0AGt-_nRNgOa9oMJrNf3ynaNcCVsJYFwMq" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+  modalContent: >
+    <iframe class="flex-1"
+    src="https://3e90d66e.sibforms.com/serve/MUIEAKtciN5ZBPyP2NywEZwH2zP8C3EbPBXSHIKMxRmSBRq2OomfSzZNQX6pmQ--jsHB-wP2HgEF5Ftnb8lodJH-lgTFALJmDdtyNNxJ_be3Pn0FScqtlzWf1wsqDUw0soW6jjKTVKHAs6dvCB3mp8cDSi_XIc17mBHMrQ4DIK8-WP0AGt-_nRNgOa9oMJrNf3ynaNcCVsJYFwMq"
+    frameborder="0" scrolling="auto" allowfullscreen style="display:
+    block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
 featurePanel:
   title: Key Benefits
-  paragraph: "We provide the entire VC investing ecosystem with 3 key benefits by
-    connecting them all through one sigle, secure platform:"
+  paragraph: "We are the first truly one-touch platform to launch, raise and
+    manage VC funds globally without any structuring, compliance or operational
+    hurdles. This way, we provide the entire VC investing ecosystem with 3 key
+    benefits by connecting them all through one sigle, secure platform:"
   cards:
     - image:
         src: /img/solutionfive.png
@@ -121,6 +126,9 @@ applyPanel:
   paragraph: Launching and allocating to VCs are always systematically better with
     Finlight.
   button: Apply for an account
-  modalContent: |
-    <iframe class="flex-1" src="https://3e90d66e.sibforms.com/serve/MUIEAKtciN5ZBPyP2NywEZwH2zP8C3EbPBXSHIKMxRmSBRq2OomfSzZNQX6pmQ--jsHB-wP2HgEF5Ftnb8lodJH-lgTFALJmDdtyNNxJ_be3Pn0FScqtlzWf1wsqDUw0soW6jjKTVKHAs6dvCB3mp8cDSi_XIc17mBHMrQ4DIK8-WP0AGt-_nRNgOa9oMJrNf3ynaNcCVsJYFwMq" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+  modalContent: >
+    <iframe class="flex-1"
+    src="https://3e90d66e.sibforms.com/serve/MUIEAKtciN5ZBPyP2NywEZwH2zP8C3EbPBXSHIKMxRmSBRq2OomfSzZNQX6pmQ--jsHB-wP2HgEF5Ftnb8lodJH-lgTFALJmDdtyNNxJ_be3Pn0FScqtlzWf1wsqDUw0soW6jjKTVKHAs6dvCB3mp8cDSi_XIc17mBHMrQ4DIK8-WP0AGt-_nRNgOa9oMJrNf3ynaNcCVsJYFwMq"
+    frameborder="0" scrolling="auto" allowfullscreen style="display:
+    block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
 ---
