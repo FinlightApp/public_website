@@ -51,15 +51,16 @@ export default function Hero(props) {
         { ( title || paragraph || button ) && (
           <div className='
             container
-            grid grid-cols-10
+            grid grid-cols-12
             items-center
             px-8 py-12 md:p-0
           '>
             <Box className='
-              col-span-10
-              md:col-start-3 md:col-span-6
-              lg:col-start-2 lg:col-span-6
-              xl:col-start-2 xl:col-span-7
+              col-span-12
+              md:col-start-2
+              md:col-span-10
+              xl:col-start-3
+              xl:col-span-8
               justify-center items-center
               px-8 py-12 gap-12
             '>
