@@ -123,8 +123,7 @@ applyPanel:
     src: /img/heroBg.webp
     alt: SEO - alt
   title: Ready to Finlight?
-  paragraph: Launching and allocating to VCs are always systematically better with
-    Finlight.
+  paragraph: Launching and allocating to VCs is systematically better with Finlight.
   button: Apply for an account
   modalContent: >
     <iframe class="flex-1"
