@@ -40,18 +40,6 @@ teamPanel:
       title: Claudiu Cornea
       subheading: Software Engineer, CTO
       link: https://www.linkedin.com/in/ClaudiuCornea/
-    - image:
-        src: /img/teammatthew.webp
-        alt: Matthew Harding
-      title: Matthew Harding
-      subheading: Software Engineer
-      link: https://www.linkedin.com/in/matthew-harding-528312179/
-    - image:
-        src: /img/teamben.webp
-        alt: Ben Hughes
-      title: Ben Hughes
-      subheading: Data Scientist
-      link: https://www.linkedin.com/in/ben-h-3315aa44/
 nonExecutiveDirectorsPanel:
   title: Non-executive Directors
   paragraph: null
@@ -88,6 +76,9 @@ applyPanel:
   paragraph: Launching and allocating to VCs are always systematically better with
     Finlight.
   button: Apply for an account
-  modalContent: |
-    <iframe class="flex-1" src="https://3e90d66e.sibforms.com/serve/MUIEAKtciN5ZBPyP2NywEZwH2zP8C3EbPBXSHIKMxRmSBRq2OomfSzZNQX6pmQ--jsHB-wP2HgEF5Ftnb8lodJH-lgTFALJmDdtyNNxJ_be3Pn0FScqtlzWf1wsqDUw0soW6jjKTVKHAs6dvCB3mp8cDSi_XIc17mBHMrQ4DIK8-WP0AGt-_nRNgOa9oMJrNf3ynaNcCVsJYFwMq" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+  modalContent: >
+    <iframe class="flex-1"
+    src="https://3e90d66e.sibforms.com/serve/MUIEAKtciN5ZBPyP2NywEZwH2zP8C3EbPBXSHIKMxRmSBRq2OomfSzZNQX6pmQ--jsHB-wP2HgEF5Ftnb8lodJH-lgTFALJmDdtyNNxJ_be3Pn0FScqtlzWf1wsqDUw0soW6jjKTVKHAs6dvCB3mp8cDSi_XIc17mBHMrQ4DIK8-WP0AGt-_nRNgOa9oMJrNf3ynaNcCVsJYFwMq"
+    frameborder="0" scrolling="auto" allowfullscreen style="display:
+    block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
 ---
