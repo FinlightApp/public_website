@@ -81,8 +81,8 @@ applyPanel:
   backgroundImg:
     src: /img/heroBg.webp
     alt: SEO - alt
-  title: Ready to Finlight?
-  paragraph: Launching and allocating to VCs is systematically better with Finlight.
+  title: Ready to take your VC & PE fund to the next level?
+  paragraph: Structuring, marketing authorisation, admin and community in one place
   button: Apply for an account
   modalContent: >
     <iframe class="flex-1"
