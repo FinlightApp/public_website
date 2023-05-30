@@ -82,7 +82,7 @@ applyPanel:
     src: /img/heroBg.webp
     alt: SEO - alt
   title: Ready to take your VC & PE fund to the next level?
-  paragraph: Structuring, marketing authorisation, admin and community in one place
+  paragraph: Structuring, Marketing authorisation, Admin and Community in one place
   button: Apply for an account
   modalContent: >
     <iframe class="flex-1"
