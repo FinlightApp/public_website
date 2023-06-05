@@ -20,18 +20,15 @@ export default function Head(props) {
         <meta property='og:type' content='business.business' />
         <meta property='og:title' content={ seo?.title || 'Finlight' } />
         <meta name='theme-color' content='#fff' />
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=G-8KF6HM5V9M`}
-          strategy="off-main-thread"
-        />
-        <Script id="gtag-config" strategy="off-main-thread" forward={[`gtag`]}>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments)};
-            gtag('js', new Date());
-            gtag('config', 'G-8KF6HM5V9M', { page_path: location ? location.pathname + location.search + location.hash : undefined })
-          `}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8KF6HM5V9M"></script>
+        <Script>
+        {` window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-8KF6HM5V9M');`}
         </Script>
+        <script async src="https://analytics.finlight.com/script.js" data-website-id="91278755-5200-4d1d-98b4-e53c2f943d75"></script>
     </>
   );
 }
