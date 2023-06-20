@@ -38,7 +38,7 @@ export default function HowItWorks(props) {
                 '> 
                   { cards.map((card, i) => (
                     <DataCard key={ i }
-                    index={ i }
+                    index={ i + 1 }
                     right={ i%2 === 1}
                     image={ card.image ?{
                       src : getImage(card.image.src) || card.image.src,
