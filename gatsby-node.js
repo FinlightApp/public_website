@@ -79,6 +79,11 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       paragraph: String
     }
+    type DataColumn {
+      image: ImageEl
+      title: String
+      paragraph: String
+    }
     type ProfileCard {
       image: ImageEl
       title: String
@@ -168,6 +173,24 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       paragraph: String
       cards: [DataCard]
+    }
+
+    type Frontmatter implements Node {
+      communityPanel: CommunityPanel
+    }
+    type CommunityPanel implements Node {
+      title: String
+      paragraph: String
+      cards: [DataColumn]
+    }
+
+    type Frontmatter implements Node {
+      FAQPanel: FAQPanel
+    }
+    type FAQPanel implements Node {
+      title: String
+      paragraph: String
+      cards: [DataColumn]
     }
   `
   createTypes(typeDefs)

@@ -372,6 +372,190 @@ collections:
                   { label: Modal Content, name: modalContent, widget: text , required: false },
                 ],
             }
+          - {
+            label: Community Panel,
+            name: communityPanel,
+            widget: object,
+            fields:
+              [
+                { label: Title, name: title, widget: string, required: false },
+                { label: Text, name: paragraph, widget: string, required: false },
+                {
+                  label: Cards,
+                  name: cards,
+                  widget: list,
+                  required: false,
+                  fields:
+                    [
+                      {
+                        label: Image,
+                        name: image,
+                        widget: object,
+                        fields:
+                        [
+                          {
+                            label: Image,
+                            name: src,
+                            widget: image,
+                            default: /img/default.png
+                          },
+                          {
+                            label: SEO - Image Description,
+                            name: alt,
+                            widget: string,
+                            default: Image Description
+                          },
+                        ],
+                      },
+                      {
+                        label: Title,
+                        name: title,
+                        widget: string,
+                        default: Title
+                      },
+                      {
+                        label: Text,
+                        name: paragraph,
+                        widget: text,
+                        default: Text
+                      },
+                    ]
+                },
+              ],
+            }
+          - {
+            label: The Private Market OS Panel,
+            name: privateMarketPanel,
+            widget: object,
+            fields:
+              [
+                { label: Title, name: title, widget: string, required: false },
+                { label: Text, name: paragraph, widget: string, required: false },
+                {
+                  label: Cards,
+                  name: cards,
+                  widget: list,
+                  required: false,
+                  fields:
+                    [
+                      {
+                        label: Image,
+                        name: image,
+                        widget: object,
+                        fields:
+                        [
+                          {
+                            label: Image,
+                            name: src,
+                            widget: image,
+                            default: /img/default.png
+                          },
+                          {
+                            label: SEO - Image Description,
+                            name: alt,
+                            widget: string,
+                            default: Image Description
+                          },
+                        ],
+                      },
+                      {
+                        label: Title,
+                        name: title,
+                        widget: string,
+                        default: Title
+                      },
+                      {
+                        label: Text,
+                        name: paragraph,
+                        widget: text,
+                        default: Text
+                      },
+                    ]
+                },
+              ],
+            }
+          - {
+            label: How it works,
+            name: howItWorksPanel,
+            widget: object,
+            fields:
+              [
+                { label: Title, name: title, widget: string, required: false },
+                { label: Text, name: paragraph, widget: string, required: false },
+                {
+                  label: Cards,
+                  name: cards,
+                  widget: list,
+                  required: false,
+                  fields:
+                    [
+                      {
+                        label: Image,
+                        name: image,
+                        widget: object,
+                        fields:
+                        [
+                          {
+                            label: Image,
+                            name: src,
+                            widget: image,
+                            default: /img/default.png
+                          },
+                          {
+                            label: SEO - Image Description,
+                            name: alt,
+                            widget: string,
+                            default: Image Description
+                          },
+                        ],
+                      },
+                      {
+                        label: Title,
+                        name: title,
+                        widget: string,
+                        default: Title
+                      },
+                      {
+                        label: Text,
+                        name: paragraph,
+                        widget: text,
+                        default: Text
+                      },
+                    ]
+                },
+              ],
+            }
+          - {
+            label: FAQ,
+            name: FAQPanel,
+            widget: object,
+            fields:
+              [
+                { label: Title, name: title, widget: string, required: false },
+                { label: Text, name: paragraph, widget: string, required: false },
+                {
+                  label: Cards,
+                  name: cards,
+                  widget: list,
+                  required: false,
+                  fields:
+                    [
+                      {
+                        label: Title,
+                        name: title,
+                        widget: string,
+                        default: Title
+                      },
+                      {
+                        label: Text,
+                        name: paragraph,
+                        widget: text,
+                        default: Text
+                      },
+                    ]
+                },
+              ],
+            }
       - file: src/pages/team/index.md
         label: Team Page
         name: team

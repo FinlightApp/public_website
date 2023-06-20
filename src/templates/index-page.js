@@ -5,6 +5,9 @@ import { getImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
+import Community from '../components/Community';
+import HowItWorks from '../components/HowItWorks';
+import FAQ from '../components/FAQ';
 import Feature from '../components/Feature';
 import Apply from '../components/Apply';
 import Serve from '../components/Serve';
@@ -14,6 +17,10 @@ import SpotlightPanel from '../components/SpotlightPanel';
 export const IndexPageTemplate = ({
   seo,
   heroPanel,
+  communityPanel,
+  privateMarketPanel,
+  howItWorksPanel,
+  FAQPanel,
   servePanel,
   featurePanel,
   applyPanel,
@@ -39,6 +46,22 @@ export const IndexPageTemplate = ({
       title={ servePanel.title }
       paragraph={ servePanel.paragraph }
       cards={ servePanel.cards } />
+      <HowItWorks
+      title={ howItWorksPanel.title }
+      paragraph={ howItWorksPanel.paragraph }
+      cards={ howItWorksPanel.cards } />
+      <Community
+      title={ communityPanel.title }
+      paragraph={ communityPanel.paragraph }
+      cards={ communityPanel.cards } />
+      <Community
+      title={ privateMarketPanel.title }
+      paragraph={ privateMarketPanel.paragraph }
+      cards={ privateMarketPanel.cards } />
+      <FAQ
+      title={ FAQPanel.title }
+      paragraph={ FAQPanel.paragraph }
+      cards={ FAQPanel.cards } />
       <SpotlightPanel
       limit={ 3 } />
       <Apply
@@ -71,6 +94,26 @@ IndexPageTemplate.propTypes = {
     button: PropTypes.string,
     modalContent: PropTypes.string,
   }),
+  communityPanel: PropTypes.shape({
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
+    cards: PropTypes.array
+  }),
+  privateMarketPanel: PropTypes.shape({
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
+    cards: PropTypes.array
+  }),
+  howItWorksPanel: PropTypes.shape({
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
+    cards: PropTypes.array
+  }),
+  FAQPanel: PropTypes.shape({
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
+    cards: PropTypes.array
+  }),
   servePanel: PropTypes.shape({
     title: PropTypes.string,
     paragraph: PropTypes.string,
@@ -97,6 +140,10 @@ const IndexPage = ({ data }) => {
     <Layout seo={ frontmatter.seo }>
       <IndexPageTemplate
       heroPanel={ frontmatter.heroPanel }
+      communityPanel={ frontmatter.communityPanel }
+      privateMarketPanel={ frontmatter.privateMarketPanel }
+      howItWorksPanel={ frontmatter.howItWorksPanel }
+      FAQPanel={ frontmatter.FAQPanel }
       servePanel={ frontmatter.servePanel }
       featurePanel={ frontmatter.featurePanel }
       applyPanel={ frontmatter.applyPanel } />
@@ -145,6 +192,62 @@ export const pageQuery = graphql`
           paragraph
           button
           modalContent
+        }
+        communityPanel {
+          title
+          paragraph
+          cards {
+            image {
+              src {
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+                }
+              }
+              alt
+            }
+            title
+            paragraph
+          }
+        }
+        privateMarketPanel {
+          title
+          paragraph
+          cards {
+            image {
+              src {
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+                }
+              }
+              alt
+            }
+            title
+            paragraph
+          }
+        }
+        howItWorksPanel {
+          title
+          paragraph
+          cards {
+            image {
+              src {
+                childImageSharp {
+                  gatsbyImageData(quality: 100)
+                }
+              }
+              alt
+            }
+            title
+            paragraph
+          }
+        }
+        FAQPanel {
+          title
+          paragraph
+          cards {
+            title
+            paragraph
+          }
         }
         servePanel {
           title
