@@ -12,6 +12,7 @@ import Feature from '../components/Feature';
 import Apply from '../components/Apply';
 import Serve from '../components/Serve';
 import SpotlightPanel from '../components/SpotlightPanel';
+import ChatBot from '../components/ChatBot';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -38,6 +39,7 @@ export const IndexPageTemplate = ({
       paragraph={ heroPanel.paragraph }
       button={ heroPanel.button }
       modalContent={ heroPanel.modalContent } />
+      <ChatBot />
       <Feature
       title={ featurePanel.title }
       paragraph={ featurePanel.paragraph}

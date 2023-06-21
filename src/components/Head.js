@@ -29,6 +29,7 @@ export default function Head(props) {
           gtag('config', 'G-8KF6HM5V9M');`}
         </Script>
         <script async src="https://analytics.finlight.com/script.js" data-website-id="91278755-5200-4d1d-98b4-e53c2f943d75"></script>
+        <script src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
     </>
   );
 }
