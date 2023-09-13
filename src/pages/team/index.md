@@ -35,17 +35,17 @@ teamPanel:
       subheading: Founder, CEO
       link: https://www.linkedin.com/in/jbtanqueray/
     - image:
-        src: /img/teamclaudiu.webp
-        alt: Claudiu Cornea
-      title: Claudiu Cornea
-      subheading: Senior Software Engineer
-      link: https://www.linkedin.com/in/ClaudiuCornea/
-    - image:
         src: /img/nedjustin.webp
         alt: Justin Abbott-Chalew
       title: Justin Abbott-Chalew
       subheading: CTO lead
       link: https://www.linkedin.com/in/justinabbottchalew/
+    - image:
+        src: /img/teamclaudiu.webp
+        alt: Claudiu Cornea
+      title: Claudiu Cornea
+      subheading: Senior Software Engineer
+      link: https://www.linkedin.com/in/ClaudiuCornea/
 nonExecutiveDirectorsPanel:
   title: Product Advisors & Non-executive Directors
   paragraph: null
