@@ -38,24 +38,24 @@ teamPanel:
         src: /img/teamclaudiu.webp
         alt: Claudiu Cornea
       title: Claudiu Cornea
-      subheading: Software Engineer, CTO
+      subheading: Senior Software Engineer
       link: https://www.linkedin.com/in/ClaudiuCornea/
+    - image:
+        src: /img/nedjustin.webp
+        alt: Justin Abbott-Chalew
+      title: Justin Abbott-Chalew
+      subheading: CTO lead
+      link: https://www.linkedin.com/in/justinabbottchalew/
 nonExecutiveDirectorsPanel:
-  title: Non-executive Directors
+  title: Product Advisors & Non-executive Directors
   paragraph: null
   cards:
     - image:
         src: /img/teamnatacha.webp
         alt: Natacha Beaumont
       title: Natacha Beaumont
-      subheading: Non-Executive Director
+      subheading: Product Advisor
       link: https://www.linkedin.com/in/nbeaumont1/
-    - image:
-        src: /img/nedjustin.webp
-        alt: Justin Abbott Chalew
-      title: Justin Abbott Chalew
-      subheading: Non-Executive Director
-      link: https://www.linkedin.com/in/justinabbottchalew/
     - image:
         src: /img/nedadam.webp
         alt: Adam Denning
